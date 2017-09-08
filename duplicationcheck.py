@@ -22,9 +22,6 @@ def excelinput(filetoeopn, filecheckksheets):
 
     # print(next(data)[0:])
 
-
-
-
     for r in data:
         # print(r[0])
         columnlist.append(r[0])

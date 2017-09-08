@@ -52,20 +52,18 @@ def matchcase():
 
 excelinput('ner.xlsx', 0)
 excelinput('singish.xlsx', 1)
-userWeb=''
+userWeb = ''
 
-
-
-while(userWeb!="exit"):
+while (userWeb != "exit"):
 
     print("-----------------------------")
-    userWeb = input("Enter 'exit' to exit"+"\n" +"Word duplication check:"+"\n")
+    userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
     userinput = str(userWeb)
 
-    if(userinput=="exit"):
+    if (userinput == "exit"):
         break
 
-    matchorsearcase = input("Use Match or Search? m=Match, s=Search"+"\n")
+    matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
     matchsc = str(matchorsearcase)
 
     if matchsc == "m":
@@ -80,8 +78,6 @@ while(userWeb!="exit"):
     else:
         for i in alllistarr:
             print(i)
-    print("**Records found: " + str(len(alllistarr))+"**")
+    print("**Records found: " + str(len(alllistarr)) + "**")
     alllistarr.clear()
     print("Total records scanned: " + str(len(columnlist) - 1))
-
-

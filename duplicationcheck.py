@@ -14,7 +14,7 @@ def excelinput(filetoeopn, filecheckksheets):
 
     print("Sheets names:")
     # obtaining sheets names
-    print(wb.get_sheet_names()[0])
+    print(wb.get_sheet_names())
     sheet = wb[wb.get_sheet_names()[filecheckksheets]]
 
     #
@@ -52,24 +52,36 @@ def matchcase():
 
 excelinput('ner.xlsx', 0)
 excelinput('singish.xlsx', 1)
+userWeb=''
 
-userWeb = input("Word duplication check: ")
-userinput = str(userWeb)
 
-matchorsearcase = input("Use Match or Search? m=Match, s=Search")
-matchsc = str(matchorsearcase)
 
-if matchsc == "m":
-    matchcase()
-elif matchsc == "s":
-    searchcase()
+while(userWeb!="exit"):
 
-# searchcase()
-print(len(alllistarr))
-if (len(alllistarr) == 0):
-    print("No match found")
-else:
-    for i in alllistarr:
-        print(i)
+    print("-----------------------------")
+    userWeb = input("Enter 'exit' to exit"+"\n" +"Word duplication check:"+"\n")
+    userinput = str(userWeb)
 
-print("Records found: " + str(len(columnlist) - 1))
+    if(userinput=="exit"):
+        break
+
+    matchorsearcase = input("Use Match or Search? m=Match, s=Search"+"\n")
+    matchsc = str(matchorsearcase)
+
+    if matchsc == "m":
+        matchcase()
+    elif matchsc == "s":
+        searchcase()
+
+    # searchcase()
+
+    if (len(alllistarr) == 0):
+        print("No match found")
+    else:
+        for i in alllistarr:
+            print(i)
+    print("**Records found: " + str(len(alllistarr))+"**")
+    alllistarr.clear()
+    print("Total records scanned: " + str(len(columnlist) - 1))
+
+

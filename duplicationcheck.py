@@ -1,53 +1,97 @@
-import os
+
 from openpyxl import load_workbook
-import pandas as pd
+
 import fnmatch
-import re
 
-# userWeb = input("Word duplication check: ")
 
-# loading in workbook
-wb = load_workbook('ner.xlsx')
 
-print("Sheets names:")
-# obtaining sheets names
-print(wb.get_sheet_names()[0])
-sheet = wb[wb.get_sheet_names()[0]]
-
-#
-data = sheet.values
-
-# print(next(data)[0:])
-columnlist =[]
-
-numbersss = 0
-for r in data:
-    # print(r[0])
-    columnlist.append(r[0])
-    numbersss += 1
 # print(columnlist)
 
+columnlist = []
 
 # regex test
+def excelinput(filetoeopn,filecheckksheets):
 
 
+    # loading in workbook
+    wb = load_workbook(filetoeopn)
+
+    print("Sheets names:")
+    # obtaining sheets names
+    print(wb.get_sheet_names()[0])
+    sheet = wb[wb.get_sheet_names()[filecheckksheets]]
+
+    #
+    data = sheet.values
+
+    # print(next(data)[0:])
+
+
+
+    for r in data:
+        # print(r[0])
+        columnlist.append(r[0])
+
+
+
+
+
+alllistarr=[]
 # for i in columnlist:
 #     print(i)
-
-for i in columnlist:
-    try:
-        if fnmatch.fnmatch(i,"*coll*"):
-            print(i)
-
-    except Exception:
-        pass
+def searchcase():
+    for i in columnlist:
+            # print(i)
+            if fnmatch.fnmatch(str(i),"*"+userinput +"*"):
+                alllistarr.append(i)
+                # print(i)
 
 
 
 
+def matchcase():
+    for i in columnlist:
+        # print(i)
+        if fnmatch.fnmatch(str(i), userinput):
+            alllistarr.append(i)
+            # print(i)
 
 
-print(numbersss)
+excelinput('ner.xlsx',0)
+excelinput('singish.xlsx',1)
+
+
+
+
+
+
+userWeb = input("Word duplication check: ")
+userinput = str(userWeb)
+
+matchorsearcase = input("Use Match or Search? m=Match, s=Search")
+matchsc = str(matchorsearcase)
+
+
+if matchsc=="m":
+    matchcase()
+elif matchsc=="s":
+    searchcase()
+
+
+
+
+
+
+# searchcase()
+print(len(alllistarr))
+if (len(alllistarr)==0):
+    print("No match found")
+else:
+    for i in alllistarr:
+        print(i)
+
+
+print("Records found: "+str(len(columnlist)-1))
 
 
 

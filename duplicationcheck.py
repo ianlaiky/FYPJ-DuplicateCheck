@@ -79,3 +79,4 @@ while (userWeb != "exit"):
     print("**Records found: " + str(len(alllistarr)) + "**")
     alllistarr.clear()
     print("Total records scanned: " + str(len(columnlist) - 1))
+

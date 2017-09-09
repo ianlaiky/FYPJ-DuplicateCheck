@@ -47,9 +47,13 @@ def matchcase():
             alllistarr.append(i)
             # print(i)
 
-
+#files to read
 excelinput('ner.xlsx', 0)
 excelinput('singish.xlsx', 1)
+excelinput('singish.xlsx', 3)
+excelinput('singish.xlsx', 4)
+excelinput('singish.xlsx', 5)
+excelinput('singish.xlsx', 6)
 userWeb = ''
 
 while (userWeb != "exit"):

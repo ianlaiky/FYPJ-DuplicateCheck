@@ -4,11 +4,25 @@ import fnmatch
 
 # print(columnlist)
 
-columnlist = []
+
+columnObjectListlist = []
+
+
+class Files():
+    def __init__(self, filename, dataArr):
+        self.name = filename
+        self.dat = dataArr
+
+    def getArray(self):
+        return self.dat
+
+    def getFilename(self, name):
+        return self.name
 
 
 # regex test
-def excelinput(filetoeopn, filecheckksheets):
+def excelinput(filetoeopn, filecheckksheets, columnNo):
+    columnlist = []
     # loading in workbook
     wb = load_workbook(filetoeopn)
 
@@ -24,63 +38,82 @@ def excelinput(filetoeopn, filecheckksheets):
 
     for r in data:
         # print(r[0])
-        columnlist.append(r[0])
+        columnlist.append(r[columnNo])
 
+    return columnlist
 
-alllistarr = []
+def pythonFile(filetoopen):
+    pyarr=[]
+    f = open(filetoopen,'r')
+    message = f.readlines()
+
+    # print(message)
+    f.close()
+    # print(message)
+    for myString in message:
+        # print(myString)
+        try:
+            pyarr.append(myString[myString.index("['")+2:myString.index("']")])
+        except:
+            pass
+    return pyarr
 
 
 # for i in columnlist:
 #     print(i)
-def searchcase():
-    for i in columnlist:
+def searchcase(columarr):
+    alllistarr = []
+    for i in columarr:
         # print(i)
         if fnmatch.fnmatch(str(i), "*" + userinput + "*"):
             alllistarr.append(i)
+    return alllistarr
             # print(i)
 
 
-def matchcase():
-    for i in columnlist:
+def matchcase(columarr):
+    alllistarr = []
+    for i in columarr:
         # print(i)
         if fnmatch.fnmatch(str(i), userinput):
             alllistarr.append(i)
+    return alllistarr
             # print(i)
 
-#files to read
-excelinput('ner.xlsx', 0)
-excelinput('singish.xlsx', 1)
-excelinput('singish.xlsx', 3)
-excelinput('singish.xlsx', 4)
-excelinput('singish.xlsx', 5)
-excelinput('singish.xlsx', 6)
+
+# files to read
+# excelinput('ner.xlsx', 0, 0)
+print(pythonFile('senticnet.py'))
+
 userWeb = ''
+userinput=''
 
-while (userWeb != "exit"):
 
-    print("-----------------------------")
-    userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
-    userinput = str(userWeb)
 
-    if (userinput == "exit"):
-        break
-
-    matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
-    matchsc = str(matchorsearcase)
-
-    if matchsc == "m":
-        matchcase()
-    elif matchsc == "s":
-        searchcase()
-
-    # searchcase()
-
-    if (len(alllistarr) == 0):
-        print("No match found")
-    else:
-        for i in alllistarr:
-            print(i)
-    print("**Records found: " + str(len(alllistarr)) + "**")
-    alllistarr.clear()
-    print("Total records scanned: " + str(len(columnlist) - 1))
-
+# while (userWeb != "exit"):
+#
+#     print("-----------------------------")
+#     userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
+#     userinput = str(userWeb)
+#
+#     if (userinput == "exit"):
+#         break
+#
+#     matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
+#     matchsc = str(matchorsearcase)
+#
+#     if matchsc == "m":
+#         matchcase()
+#     elif matchsc == "s":
+#         searchcase()
+#
+#     # searchcase()
+#
+#     if (len(alllistarr) == 0):
+#         print("No match found")
+#     else:
+#         for i in alllistarr:
+#             print(i)
+#     print("**Records found: " + str(len(alllistarr)) + "**")
+#     alllistarr.clear()
+#     print("Total records scanned: " + str(len(columnlist) - 1))

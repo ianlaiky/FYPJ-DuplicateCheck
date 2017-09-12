@@ -1,0 +1,24 @@
+# For xlsx
+# ext,filename.ext,sheet index, column
+# Example: first column of the first sheet in singlish.xlsx
+# Format:
+# xlsx,singlish.ext,0,0
+#
+#
+# For .py
+# ext,filename.ext, character to start reading from, character to end read,no. of index to reach the start,words to omit from scan
+# Example:
+# if data is
+# "#microtext[""oov_word""] = [""iv_word"",""polarity""]"
+# "microtext[""kys""] = [""kill_yourself"",""negative""]"
+#
+# and you want to omit "#microtext from the scan
+#  
+# Format:
+# py,microtext.py,["",""],3,"#microtext"
+# 3 is entered since in ["" the words start after ["" after 3 characters
+xlsx,ner.xlsx,0,0
+py,senticnet.py,[','],2,-----nil--------
+py,microtext.py,["",""],3,"#microtext"
+phonetic,ortho_variant.txt
+#

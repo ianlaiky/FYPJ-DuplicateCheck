@@ -42,9 +42,10 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 
     return columnlist
 
-def pythonFile(filetoopen,startreadArea,endReadArea,indextoadd,wordstoignore):
-    pyarr=[]
-    f = open(filetoopen,'r')
+
+def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore):
+    pyarr = []
+    f = open(filetoopen, 'r')
     message = f.readlines()
 
     # print(message)
@@ -55,7 +56,7 @@ def pythonFile(filetoopen,startreadArea,endReadArea,indextoadd,wordstoignore):
 
         try:
             if myString.find(wordstoignore) == -1:
-                pyarr.append(myString[myString.index(startreadArea)+indextoadd:myString.index(endReadArea)])
+                pyarr.append(myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)])
         except:
             pass
     return pyarr
@@ -70,7 +71,7 @@ def searchcase(columarr):
         if fnmatch.fnmatch(str(i), "*" + userinput + "*"):
             alllistarr.append(i)
     return alllistarr
-            # print(i)
+    # print(i)
 
 
 def matchcase(columarr):
@@ -83,11 +84,11 @@ def matchcase(columarr):
             print(i)
             # print(userinput)
     return alllistarr
-            # print(i)
+    # print(i)
 
-def checkandreturn(matchorsearch,arrayparsein):
 
-    if matchorsearch=='m':
+def checkandreturn(matchorsearch, arrayparsein):
+    if matchorsearch == 'm':
         return matchcase(arrayparsein)
     else:
         return searchcase(arrayparsein)
@@ -95,62 +96,58 @@ def checkandreturn(matchorsearch,arrayparsein):
 
 # files to read
 # print(excelinput('ner.xlsx', 0, 0))
-s = 'bla, buu, jii'
+arrofileobjects = []
 
-# for x in s.split(','):
-#     print(x.strip())
-print(s.split(",")[0].strip())
+# arrofileobjects.append(Files("senticnet.py",pythonFile('senticnet.py',"['","']",2,"         -------------           ")))
+# arrofileobjects.append(Files("microtext.py",pythonFile('microtext.py','[""','""]',3,"#microtext")))
 
 # print(len(pythonFile('senticnet.py',"['","']",2,"         -------------           ")))
 # print(pythonFile('microtext.py','[""','""]',3,"#microtext"))
 # print(len(pythonFile('microtext.py','[""','""]',3,"#microtext")))
 
-confff = open("config.txt",'r')
+confff = open("config.txt", 'r')
 conf = confff.readlines()
 confff.close()
 # print(conf)
+
 for i in conf:
-    if i.find("#") == -1:
+    if i[:1] != "#":
         x = i.split(",")[0].strip()
         print(x)
-
-
-
-
-
-arrofileobjects=[]
-
-arrofileobjects.append(Files("ner.xlsx",excelinput('ner.xlsx', 0, 0)))
-arrofileobjects.append(Files("senticnet.py",pythonFile('senticnet.py',"['","']",2,"         -------------           ")))
-arrofileobjects.append(Files("microtext.py",pythonFile('microtext.py','[""','""]',3,"#microtext")))
-
+        if x == "xlsx":
+            # print("Value check to be deleteed(): "+str(i.split(",")[1].strip())+str(i.split(",")[2].strip())+str(i.split(",")[3].strip()))
+            arrofileobjects.append(Files(i.split(",")[1].strip(),
+                                         excelinput(i.split(",")[1].strip(), int(i.split(",")[2].strip()),
+                                                    int(i.split(",")[3].strip()))))
+        elif x == "py":
+            print("Value check to be deleteed(): " + str(i.split(",")[1].strip()))
+            arrofileobjects.append(Files(i.split(",")[1].strip(),
+                                         pythonFile(i.split(",")[1].strip(), i.split(",")[2].strip(),
+                                                    i.split(",")[3].strip(), int(i.split(",")[4].strip()),
+                                                    i.split(",")[5].strip())))
 
 for i in arrofileobjects:
     print(i.getFilename())
     print(i.getArray())
 
-
 userWeb = ''
-userinput=''
+userinput = ''
 
+while (userWeb != "exit"):
 
+    print("-----------------------------")
+    userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
+    userinput = str(userWeb)
 
-# while (userWeb != "exit"):
-#
-#     print("-----------------------------")
-#     userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
-#     userinput = str(userWeb)
-#
-#     if (userinput == "exit"):
-#         break
-#
-#     matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
-#     matchsc = str(matchorsearcase)
-#
-#     for i in arrofileobjects:
-#         print("--------")
-#         print("File:"+str(i.getFilename()))
-#         print(checkandreturn(matchsc,i.getArray()))
-#         print("Records Found:"+str(len(checkandreturn(matchsc,i.getArray()))))
-#         print("Records Scanned:"+str(len(i.getArray())))
+    if (userinput == "exit"):
+        break
 
+    matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
+    matchsc = str(matchorsearcase)
+
+    for i in arrofileobjects:
+        print("--------")
+        print("File:" + str(i.getFilename()))
+        print(checkandreturn(matchsc, i.getArray()))
+        print("Records Found:" + str(len(checkandreturn(matchsc, i.getArray()))))
+        print("Records Scanned:" + str(len(i.getArray())))

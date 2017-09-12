@@ -95,10 +95,28 @@ def checkandreturn(matchorsearch,arrayparsein):
 
 # files to read
 # print(excelinput('ner.xlsx', 0, 0))
+s = 'bla, buu, jii'
+
+# for x in s.split(','):
+#     print(x.strip())
+print(s.split(",")[0].strip())
 
 # print(len(pythonFile('senticnet.py',"['","']",2,"         -------------           ")))
 # print(pythonFile('microtext.py','[""','""]',3,"#microtext"))
 # print(len(pythonFile('microtext.py','[""','""]',3,"#microtext")))
+
+confff = open("config.txt",'r')
+conf = confff.readlines()
+confff.close()
+# print(conf)
+for i in conf:
+    if i.find("#") == -1:
+        x = i.split(",")[0].strip()
+        print(x)
+
+
+
+
 
 arrofileobjects=[]
 
@@ -117,22 +135,22 @@ userinput=''
 
 
 
-while (userWeb != "exit"):
-
-    print("-----------------------------")
-    userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
-    userinput = str(userWeb)
-
-    if (userinput == "exit"):
-        break
-
-    matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
-    matchsc = str(matchorsearcase)
-
-    for i in arrofileobjects:
-        print("--------")
-        print("File:"+str(i.getFilename()))
-        print(checkandreturn(matchsc,i.getArray()))
-        print("Records Found:"+str(len(checkandreturn(matchsc,i.getArray()))))
-        print("Records Scanned:"+str(len(i.getArray())))
+# while (userWeb != "exit"):
+#
+#     print("-----------------------------")
+#     userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
+#     userinput = str(userWeb)
+#
+#     if (userinput == "exit"):
+#         break
+#
+#     matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
+#     matchsc = str(matchorsearcase)
+#
+#     for i in arrofileobjects:
+#         print("--------")
+#         print("File:"+str(i.getFilename()))
+#         print(checkandreturn(matchsc,i.getArray()))
+#         print("Records Found:"+str(len(checkandreturn(matchsc,i.getArray()))))
+#         print("Records Scanned:"+str(len(i.getArray())))
 

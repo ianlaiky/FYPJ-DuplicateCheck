@@ -61,6 +61,35 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
             pass
     return pyarr
 
+def phoneticcase(filetotopen):
+    f = open(filetotopen, 'r')
+    message = f.readlines()
+
+    f.close()
+    phoneticarr =[]
+    newphonecticlist=[]
+
+    for m in message:
+
+        for i in m.strip().split(","):
+            # print(i)
+            for x in i.strip().split("'"):
+                if x.find("[")==-1:
+                    if x.find("]")==-1:
+                        if x!= " ":
+                            if x!="":
+                                # print(x)
+                                phoneticarr.append(x)
+
+    for x in phoneticarr:
+        if x not in newphonecticlist:
+            newphonecticlist.append(x)
+
+    return newphonecticlist
+
+
+
+    print(newphonecticlist)
 
 # for i in columnlist:
 #     print(i)
@@ -94,21 +123,14 @@ def checkandreturn(matchorsearch, arrayparsein):
         return searchcase(arrayparsein)
 
 
-# files to read
-# print(excelinput('ner.xlsx', 0, 0))
+#files read form config
 arrofileobjects = []
 
-# arrofileobjects.append(Files("senticnet.py",pythonFile('senticnet.py',"['","']",2,"         -------------           ")))
-# arrofileobjects.append(Files("microtext.py",pythonFile('microtext.py','[""','""]',3,"#microtext")))
-
-# print(len(pythonFile('senticnet.py',"['","']",2,"         -------------           ")))
-# print(pythonFile('microtext.py','[""','""]',3,"#microtext"))
-# print(len(pythonFile('microtext.py','[""','""]',3,"#microtext")))
 
 confff = open("config.txt", 'r')
 conf = confff.readlines()
 confff.close()
-# print(conf)
+
 
 for i in conf:
     if i[:1] != "#":
@@ -120,15 +142,23 @@ for i in conf:
                                          excelinput(i.split(",")[1].strip(), int(i.split(",")[2].strip()),
                                                     int(i.split(",")[3].strip()))))
         elif x == "py":
-            print("Value check to be deleteed(): " + str(i.split(",")[1].strip()))
+            # print("Value check to be deleteed(): " + str(i.split(",")[1].strip()))
             arrofileobjects.append(Files(i.split(",")[1].strip(),
                                          pythonFile(i.split(",")[1].strip(), i.split(",")[2].strip(),
                                                     i.split(",")[3].strip(), int(i.split(",")[4].strip()),
                                                     i.split(",")[5].strip())))
+        elif x == "phonetic":
+            arrofileobjects.append(Files(i.split(",")[1].strip(),phoneticcase(i.split(",")[1].strip())))
+
 
 for i in arrofileobjects:
     print(i.getFilename())
     print(i.getArray())
+
+
+
+
+
 
 userWeb = ''
 userinput = ''

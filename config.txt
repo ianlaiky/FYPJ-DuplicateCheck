@@ -2,7 +2,7 @@
 # ext,filename.ext,sheet index, column
 # Example: first column of the first sheet in singlish.xlsx
 # Format:
-# xlsx,singlish.ext,0,0
+# E.g. xlsx,singlish.ext,0,0
 #
 #
 # For .py
@@ -15,10 +15,20 @@
 # and you want to omit "#microtext from the scan
 #  
 # Format:
-# py,microtext.py,["",""],3,"#microtext"
+# E.g. py,microtext.py,["",""],3,"#microtext"
 # 3 is entered since in ["" the words start after ["" after 3 characters
+#
+# For phonetic:
+# Format: phonetic,filename.ext
+# E.g. phonetic,ortho_variant.txt
+#
+#
+#
+#
+#
+# Enter Files Below:
 xlsx,ner.xlsx,0,0
 py,senticnet.py,[','],2,-----nil--------
 py,microtext.py,["",""],3,"#microtext"
 phonetic,ortho_variant.txt
-#
+

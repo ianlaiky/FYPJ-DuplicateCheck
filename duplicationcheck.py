@@ -61,23 +61,24 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
             pass
     return pyarr
 
+
 def phoneticcase(filetotopen):
     f = open(filetotopen, 'r')
     message = f.readlines()
 
     f.close()
-    phoneticarr =[]
-    newphonecticlist=[]
+    phoneticarr = []
+    newphonecticlist = []
 
     for m in message:
 
         for i in m.strip().split(","):
             # print(i)
             for x in i.strip().split("'"):
-                if x.find("[")==-1:
-                    if x.find("]")==-1:
-                        if x!= " ":
-                            if x!="":
+                if x.find("[") == -1:
+                    if x.find("]") == -1:
+                        if x != " ":
+                            if x != "":
                                 # print(x)
                                 phoneticarr.append(x)
 
@@ -87,9 +88,8 @@ def phoneticcase(filetotopen):
 
     return newphonecticlist
 
-
-
     print(newphonecticlist)
+
 
 # for i in columnlist:
 #     print(i)
@@ -123,14 +123,12 @@ def checkandreturn(matchorsearch, arrayparsein):
         return searchcase(arrayparsein)
 
 
-#files read form config
+# files read form config
 arrofileobjects = []
-
 
 confff = open("config.txt", 'r')
 conf = confff.readlines()
 confff.close()
-
 
 for i in conf:
     if i[:1] != "#":
@@ -148,17 +146,11 @@ for i in conf:
                                                     i.split(",")[3].strip(), int(i.split(",")[4].strip()),
                                                     i.split(",")[5].strip())))
         elif x == "phonetic":
-            arrofileobjects.append(Files(i.split(",")[1].strip(),phoneticcase(i.split(",")[1].strip())))
-
+            arrofileobjects.append(Files(i.split(",")[1].strip(), phoneticcase(i.split(",")[1].strip())))
 
 for i in arrofileobjects:
     print(i.getFilename())
     print(i.getArray())
-
-
-
-
-
 
 userWeb = ''
 userinput = ''

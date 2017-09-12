@@ -173,3 +173,4 @@ while (userWeb != "exit"):
         print(checkandreturn(matchsc, i.getArray()))
         print("Records Found:" + str(len(checkandreturn(matchsc, i.getArray()))))
         print("Records Scanned:" + str(len(i.getArray())))
+

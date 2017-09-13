@@ -78,17 +78,19 @@ f = open('test.txt','w',encoding="utf-8")
 
 
 
-
+counttttt=0
 
 for i in excelinput("datafiles\sgforums.xlsx",0,0):
-    print(i)
+    # print(i)
+    print("Currently scanning Line: "+str(counttttt))
+    counttttt=counttttt+1
     i=str(i).replace('\n'," ")
     i=str(i).replace('\\n'," ")
     i=str(i).lower()
     #do blank check to see if have space
     if str(i).find(" ")!=-1:
         for x in re.split(" |,",i):
-            print(x)
+            # print(x)
             # f.writelines(x+"\n")
             wordduplicationcheck(str(x).strip())
     else:

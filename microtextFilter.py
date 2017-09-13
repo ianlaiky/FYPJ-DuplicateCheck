@@ -1,4 +1,4 @@
-
+import re
 from openpyxl import load_workbook
 
 
@@ -45,7 +45,8 @@ class DataValue():
 listoflistobjects=[]
 listtt=[]
 listtt.append("testttttt")
-listtt.append()
+listtt.append(0)
+listoflistobjects.append(listtt)
 def wordduplicationcheck(wordstocheck):
     wordcount=0
     templist=[]
@@ -53,8 +54,15 @@ def wordduplicationcheck(wordstocheck):
         if str(i[0])==wordstocheck:
             wordcount=wordcount+1
     if wordcount==0:
-        templist.append(wordstocheck,1)
-    # else:
+        if wordstocheck!="":
+            templist.append(wordstocheck)
+            templist.append(1)
+            listoflistobjects.append(templist)
+    else:
+        for count,element in enumerate(listoflistobjects):
+            if str(element[0])==wordstocheck:
+                tempcont = listoflistobjects[count][1]
+                listoflistobjects[count][1]=tempcont+1
 
 
 
@@ -74,22 +82,23 @@ f = open('test.txt','w',encoding="utf-8")
 
 for i in excelinput("datafiles\sgforums.xlsx",0,0):
     print(i)
-    # try:
-    # f.writelines(str(i)+"\n")
-    # except:
-    #     pass
-    # try:
-
+    i=str(i).replace('\n'," ")
+    i=str(i).replace('\\n'," ")
+    i=str(i).lower()
     #do blank check to see if have space
     if str(i).find(" ")!=-1:
         for x in i.split(" "):
             print(x)
             f.writelines(x+"\n")
+            wordduplicationcheck(str(x).strip())
     else:
+        wordduplicationcheck(str(i).strip())
         f.writelines(str(i) + "\n")
     # except:
     #     pass
+listoflistobjects.sort(key = lambda x: x[1],reverse=True)
 
 
+print(listoflistobjects)
 
 f.close()

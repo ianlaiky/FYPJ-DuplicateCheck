@@ -1,6 +1,6 @@
 import re
 from openpyxl import load_workbook
-
+from collections import Counter
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
@@ -47,25 +47,26 @@ listtt=[]
 listtt.append("testttttt")
 listtt.append(0)
 listoflistobjects.append(listtt)
+# def wordduplicationcheck(wordstocheck):
+#     wordcount=0
+#     templist=[]
+#     for i in listoflistobjects:
+#         if str(i[0])==wordstocheck:
+#             wordcount=wordcount+1
+#     if wordcount==0:
+#         if wordstocheck!="":
+#             templist.append(wordstocheck)
+#             templist.append(1)
+#             listoflistobjects.append(templist)
+#     else:
+#         for count,element in enumerate(listoflistobjects):
+#             if str(element[0])==wordstocheck:
+#                 tempcont = listoflistobjects[count][1]
+#                 listoflistobjects[count][1]=tempcont+1
+
+tempppppaarrrrr=[]
 def wordduplicationcheck(wordstocheck):
-    wordcount=0
-    templist=[]
-    for i in listoflistobjects:
-        if str(i[0])==wordstocheck:
-            wordcount=wordcount+1
-    if wordcount==0:
-        if wordstocheck!="":
-            templist.append(wordstocheck)
-            templist.append(1)
-            listoflistobjects.append(templist)
-    else:
-        for count,element in enumerate(listoflistobjects):
-            if str(element[0])==wordstocheck:
-                tempcont = listoflistobjects[count][1]
-                listoflistobjects[count][1]=tempcont+1
-
-
-
+    tempppppaarrrrr.append(wordstocheck)
 
 
 
@@ -100,12 +101,20 @@ for i in excelinput("datafiles\sgforums.xlsx",0,0):
     #     pass
 listoflistobjects.sort(key = lambda x: x[1],reverse=True)
 
-for h in listoflistobjects:
-    f.writelines(str(h[0])+"\t\t"+str(h[1])+"\n")
+# obsolete
+# for h in listoflistobjects:
+#     f.writelines(str(h[0])+"\t\t"+str(h[1])+"\n")
 
+my_dict = Counter(tempppppaarrrrr)
+# f.writelines(str(my_dict) + "\n")
+# print(my_dict)
+del my_dict[' ']
+del my_dict['']
 
+for fg in my_dict:
+    f.writelines(fg+"\t\t"+str(my_dict[fg])+"\n")
+print("Done")
 
-
-print(listoflistobjects)
+# print(listoflistobjects)
 
 f.close()

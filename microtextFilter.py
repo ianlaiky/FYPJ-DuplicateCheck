@@ -1,4 +1,6 @@
+
 from openpyxl import load_workbook
+
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
@@ -13,15 +15,53 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     #
     data = sheet.values
 
-    # print(next(data)[0:])
+
 
     for r in data:
         # print(r[0])
-        columnlist.append(r[columnNo])
+        if r[columnNo] is not None:
+            # print(r[columnNo])
+            columnlist.append(r[columnNo])
 
     return columnlist
 
-# print(excelinput("datafiles\sgforums.xlsx",0,0))
+# excelinput("datafiles\sgforums.xlsx",0,0)
+
+
+class DataValue():
+    def __init__(self, itemm, countt):
+        self.item = itemm
+        self.count = countt
+
+    def getitem(self):
+        return self.item
+
+    def getitemCount(self):
+        return self.countt
+    def setitemCounr(self,itemm):
+        self.item=itemm
+        return self.item
+
+
+f = open('test.txt','w',encoding="utf-8")
+
+
+
 
 for i in excelinput("datafiles\sgforums.xlsx",0,0):
     print(i)
+    # try:
+    # f.writelines(str(i)+"\n")
+    # except:
+    #     pass
+    # try:
+
+    #do blank check to see if have space
+    for x in i.split(" "):
+        print(x)
+        f.writelines(x+"\n")
+    # except:
+    #     pass
+
+
+f.close()

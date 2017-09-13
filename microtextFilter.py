@@ -42,8 +42,32 @@ class DataValue():
         self.item=itemm
         return self.item
 
+listoflistobjects=[]
+listtt=[]
+listtt.append("testttttt")
+listtt.append()
+def wordduplicationcheck(wordstocheck):
+    wordcount=0
+    templist=[]
+    for i in listoflistobjects:
+        if str(i[0])==wordstocheck:
+            wordcount=wordcount+1
+    if wordcount==0:
+        templist.append(wordstocheck,1)
+    # else:
+
+
+
+
+
+
+
+
+
 
 f = open('test.txt','w',encoding="utf-8")
+
+
 
 
 
@@ -65,6 +89,7 @@ for i in excelinput("datafiles\sgforums.xlsx",0,0):
         f.writelines(str(i) + "\n")
     # except:
     #     pass
+
 
 
 f.close()

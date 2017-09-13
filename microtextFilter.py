@@ -57,9 +57,12 @@ for i in excelinput("datafiles\sgforums.xlsx",0,0):
     # try:
 
     #do blank check to see if have space
-    for x in i.split(" "):
-        print(x)
-        f.writelines(x+"\n")
+    if str(i).find(" ")!=-1:
+        for x in i.split(" "):
+            print(x)
+            f.writelines(x+"\n")
+    else:
+        f.writelines(str(i) + "\n")
     # except:
     #     pass
 

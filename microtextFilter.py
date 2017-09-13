@@ -87,16 +87,21 @@ for i in excelinput("datafiles\sgforums.xlsx",0,0):
     i=str(i).lower()
     #do blank check to see if have space
     if str(i).find(" ")!=-1:
-        for x in i.split(" "):
+        for x in re.split(" |,",i):
             print(x)
-            f.writelines(x+"\n")
+            # f.writelines(x+"\n")
             wordduplicationcheck(str(x).strip())
     else:
         wordduplicationcheck(str(i).strip())
-        f.writelines(str(i) + "\n")
+        # f.writelines(str(i) + "\n")
     # except:
     #     pass
 listoflistobjects.sort(key = lambda x: x[1],reverse=True)
+
+for h in listoflistobjects:
+    f.writelines(str(h[0])+"\t\t"+str(h[1])+"\n")
+
+
 
 
 print(listoflistobjects)

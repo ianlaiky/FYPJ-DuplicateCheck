@@ -1,3 +1,4 @@
+from __future__ import division
 import re
 from openpyxl import load_workbook
 from collections import Counter
@@ -83,7 +84,7 @@ print("Done")
 
 f.close()
 
-#duplication checker
+# duplication checker
 
 
 columnObjectListlist = []
@@ -238,18 +239,16 @@ userinput = ''
 fdup = open('dupefound.txt', 'w', encoding="utf-8")
 fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
 
-
-
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")
 
 
 
 
-for index,abc in enumerate(my_dict):
+for index, abc in enumerate(my_dict):
     wordsfoundaryyyy = []
-    print("Scanning: "+str(index)+"/"+str(len(my_dict)))
-    sabc=str(abc).lower()
+    print("Scanning: " + str(index) + "/" + str(len(my_dict))+"\t" +str(round(int(index) / int(len(my_dict))*100,2))+"% Completed")
+    sabc = str(abc).lower()
 
     for c in arrofileobjects:
         # print(c.getFilename())
@@ -258,24 +257,12 @@ for index,abc in enumerate(my_dict):
 
             wordsfoundaryyyy.append(str(c.getFilename()))
 
-
-    if len(wordsfoundaryyyy)!=0:
+    if len(wordsfoundaryyyy) != 0:
         fdup.writelines("Words: " + str(sabc.lower()) + "\n")
         fdup.writelines("File Found In: " + str(wordsfoundaryyyy) + "\n\n")
     else:
-        fnodup.writelines("Words: "+str(sabc.lower())+ "\n")
-        fnodup.writelines("Frequency: "+str(my_dict[abc])+ "\n\n")
-
-
-
-
-
-
-
-
-
-
-
+        fnodup.writelines("Words: " + str(sabc.lower()) + "\n")
+        fnodup.writelines("Frequency: " + str(my_dict[abc]) + "\n\n")
 
 fdup.close()
 fnodup.close()

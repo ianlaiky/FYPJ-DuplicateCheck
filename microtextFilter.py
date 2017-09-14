@@ -248,7 +248,7 @@ fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
 
 for index,abc in enumerate(my_dict):
     wordsfoundaryyyy = []
-    # print(abc)
+    print("Scanning: "+str(index)+"/"+str(len(my_dict)))
     sabc=str(abc).lower()
 
     for c in arrofileobjects:

@@ -1,4 +1,3 @@
-from __future__ import division
 import re
 from openpyxl import load_workbook
 from collections import Counter
@@ -247,7 +246,8 @@ fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
 
 for index, abc in enumerate(my_dict):
     wordsfoundaryyyy = []
-    print("Scanning: " + str(index) + "/" + str(len(my_dict))+"\t" +str(round(int(index) / int(len(my_dict))*100,2))+"% Completed")
+    print("Scanning: " + str(index) + "/" + str(len(my_dict)) + "\t" + str(
+        round(int(index) / int(len(my_dict)) * 100, 2)) + "% Completed")
     sabc = str(abc).lower()
 
     for c in arrofileobjects:

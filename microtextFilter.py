@@ -138,7 +138,10 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
 
         try:
             if myString.find(wordstoignore) == -1:
-                pyarr.append(myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)])
+                if startreadArea!="":
+                    pyarr.append(myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)])
+                else:
+                    pyarr.append(myString.replace("\n",""))
         except:
             pass
     return pyarr

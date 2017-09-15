@@ -103,26 +103,7 @@ class Files():
 
 
 # regex test
-def excelinput(filetoeopn, filecheckksheets, columnNo):
-    columnlist = []
-    # loading in workbook
-    wb = load_workbook(filetoeopn)
 
-    print("Sheets names:")
-    # obtaining sheets names
-    print(wb.get_sheet_names())
-    sheet = wb[wb.get_sheet_names()[filecheckksheets]]
-
-    #
-    data = sheet.values
-
-    # print(next(data)[0:])
-
-    for r in data:
-        # print(r[0])
-        columnlist.append(r[columnNo])
-
-    return columnlist
 
 
 def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore):
@@ -246,28 +227,33 @@ fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")
 
+my_dicInArray=[]
 
-
+parseinDict={}
+parseinDictDiff={}
 
 for index, abc in enumerate(my_dict):
     wordsfoundaryyyy = []
     print("Scanning: " + str(index) + "/" + str(len(my_dict)) + "\t" + str(
         round(int(index) / int(len(my_dict)) * 100, 2)) + "% Completed")
     sabc = str(abc).lower()
+    my_dicInArray.append(sabc)
 
-    for c in arrofileobjects:
-        # print(c.getFilename())
-        if sabc.lower() in (str(name).lower() for name in c.getArray()):
-            # print(sabc.lower())
+for c in arrofileobjects:
+    print(c.getFilename())
+    listyincheck=[]
 
-            wordsfoundaryyyy.append(str(c.getFilename()))
+    listyincheck= list(set(c.getArray()).intersection(set(my_dicInArray)))
+    for gh in listyincheck:
+        if gh in parseinDict:
+            parseinDict[gh] = str(parseinDict[gh])+str(c.getFilename())
+        else:
+            parseinDict[gh]=str(c.getFilename())
+    #do differ
 
-    if len(wordsfoundaryyyy) != 0:
-        fdup.writelines("Words: " + str(sabc.lower()) + "\n")
-        fdup.writelines("File Found In: " + str(wordsfoundaryyyy) + "\n\n")
-    else:
-        fnodup.writelines("Words: " + str(sabc.lower()) + "\n")
-        fnodup.writelines("Frequency: " + str(my_dict[abc]) + "\n\n")
+
+
+print(parseinDict)
 
 fdup.close()
 fnodup.close()

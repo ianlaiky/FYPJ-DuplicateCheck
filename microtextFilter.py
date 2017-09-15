@@ -234,6 +234,7 @@ for i in conf:
             arrofileobjects.append(Files(i.split(",")[1].strip(), phoneticcase(i.split(",")[1].strip())))
 
 for i in arrofileobjects:
+    print("Files loaded")
     print(i.getFilename())
     print(i.getArray())
 

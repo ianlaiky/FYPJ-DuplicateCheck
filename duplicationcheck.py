@@ -6,7 +6,7 @@ import fnmatch
 
 
 columnObjectListlist = []
-
+arrofileobjects = []
 
 class Files():
     def __init__(self, filename, dataArr):
@@ -127,7 +127,7 @@ def checkandreturn(matchorsearch, arrayparsein):
 
 
 # files read form config
-arrofileobjects = []
+
 
 confff = open("config.txt", 'r')
 conf = confff.readlines()
@@ -151,9 +151,15 @@ for i in conf:
         elif x == "phonetic":
             arrofileobjects.append(Files(i.split(",")[1].strip(), phoneticcase(i.split(",")[1].strip())))
 
-for i in arrofileobjects:
-    print(i.getFilename())
-    print(i.getArray())
+
+print("Files"+str(len(arrofileobjects)))
+for iiiii in arrofileobjects:
+    print("Files loaded")
+    print(iiiii.getFilename())
+
+# for xxxx in arrofileobjects:
+#     print(xxxx.getArray())
+# print(arrofileobjects[1].getArray())
 
 userWeb = ''
 userinput = ''

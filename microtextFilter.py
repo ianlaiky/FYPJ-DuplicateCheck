@@ -57,7 +57,7 @@ f = open('allfreq.txt', 'w', encoding="utf-8")
 counttttt = 0
 
 # RAW DATA HERE
-for i in excelinput("datafiles\singtel_data.txt.xlsx", 0, 0):
+for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
     # print(i)
     print("Currently scanning Line: " + str(counttttt))
     counttttt = counttttt + 1

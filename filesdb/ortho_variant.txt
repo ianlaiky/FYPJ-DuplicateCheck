@@ -1,0 +1,227 @@
+ortho_variant['baik']=['baik', 'baig', 'bayk', 'bayg', 'byek', 'byeg', 'paik', 'paig', 'payk', 'payg', 'pyek', 'pyeg', 'baik_', 'baig_', 'bayk_', 'bayg_', 'byek_', 'byeg_', 'paik_', 'paig_', 'payk_', 'payg_', 'pyek_', 'pyeg_', 'bayik', 'bayig', 'bayeek', 'bayeeg', 'bayyk', 'bayyg', 'bayek', 'bayeg', 'bahyik', 'bahyig', 'bahyeek', 'bahyeeg', 'bahyyk', 'bahyyg', 'bahyek', 'bahyeg', 'baryik', 'baryig', 'baryeek', 'baryeeg', 'baryyk', 'baryyg', 'baryek', 'baryeg', 'payik', 'payig', 'payeek', 'payeeg', 'payyk', 'payyg', 'payek', 'payeg', 'pahyik', 'pahyig', 'pahyeek', 'pahyeeg', 'pahyyk', 'pahyyg', 'pahyek', 'pahyeg', 'paryik', 'paryig', 'paryeek', 'paryeeg', 'paryyk', 'paryyg', 'paryek', 'paryeg', 'ba_yik', 'ba_yig', 'ba_yeek', 'ba_yeeg', 'ba_yyk', 'ba_yyg', 'ba_yek', 'ba_yeg', 'bah_yik', 'bah_yig', 'bah_yeek', 'bah_yeeg', 'bah_yyk', 'bah_yyg', 'bah_yek', 'bah_yeg', 'bar_yik', 'bar_yig', 'bar_yeek', 'bar_yeeg', 'bar_yyk', 'bar_yyg', 'bar_yek', 'bar_yeg', 'pa_yik', 'pa_yig', 'pa_yeek', 'pa_yeeg', 'pa_yyk', 'pa_yyg', 'pa_yek', 'pa_yeg', 'pah_yik', 'pah_yig', 'pah_yeek', 'pah_yeeg', 'pah_yyk', 'pah_yyg', 'pah_yek', 'pah_yeg', 'par_yik', 'par_yig', 'par_yeek', 'par_yeeg', 'par_yyk', 'par_yyg', 'par_yek', 'par_yeg', 'bayik', 'bayig', 'bayeek', 'bayeeg', 'bayyk', 'bayyg', 'bayek', 'bayeg', 'bahyik', 'bahyig', 'bahyeek', 'bahyeeg', 'bahyyk', 'bahyyg', 'bahyek', 'bahyeg', 'baryik', 'baryig', 'baryeek', 'baryeeg', 'baryyk', 'baryyg', 'baryek', 'baryeg', 'payik', 'payig', 'payeek', 'payeeg', 'payyk', 'payyg', 'payek', 'payeg', 'pahyik', 'pahyig', 'pahyeek', 'pahyeeg', 'pahyyk', 'pahyyg', 'pahyek', 'pahyeg', 'paryik', 'paryig', 'paryeek', 'paryeeg', 'paryyk', 'paryyg', 'paryek', 'paryeg', 'ba_yik', 'ba_yig', 'ba_yeek', 'ba_yeeg', 'ba_yyk', 'ba_yyg', 'ba_yek', 'ba_yeg', 'bah_yik', 'bah_yig', 'bah_yeek', 'bah_yeeg', 'bah_yyk', 'bah_yyg', 'bah_yek', 'bah_yeg', 'bar_yik', 'bar_yig', 'bar_yeek', 'bar_yeeg', 'bar_yyk', 'bar_yyg', 'bar_yek', 'bar_yeg', 'pa_yik', 'pa_yig', 'pa_yeek', 'pa_yeeg', 'pa_yyk', 'pa_yyg', 'pa_yek', 'pa_yeg', 'pah_yik', 'pah_yig', 'pah_yeek', 'pah_yeeg', 'pah_yyk', 'pah_yyg', 'pah_yek', 'pah_yeg', 'par_yik', 'par_yig', 'par_yeek', 'par_yeeg', 'par_yyk', 'par_yyg', 'par_yek', 'par_yeg']
+
+ortho_variant['belah']=['bla', 'blah', 'blar', 'pla', 'plah', 'plar', 'bla_', 'blah_', 'blar_', 'pla_', 'plah_', 'plar_', 'bela', 'belah', 'belar', 'berla', 'berlah', 'berlar', 'pela', 'pelah', 'pelar', 'perla', 'perlah', 'perlar', 'be_la', 'be_lah', 'be_lar', 'ber_la', 'ber_lah', 'ber_lar', 'pe_la', 'pe_lah', 'pe_lar', 'per_la', 'per_lah', 'per_lar', 'bela', 'belah', 'belar', 'berla', 'berlah', 'berlar', 'pela', 'pelah', 'pelar', 'perla', 'perlah', 'perlar', 'be_la', 'be_lah', 'be_lar', 'ber_la', 'ber_lah', 'ber_lar', 'pe_la', 'pe_lah', 'pe_lar', 'per_la', 'per_lah', 'per_lar']
+
+ortho_variant['beng']=['beng', 'beng_']
+
+ortho_variant['berg']=['beg', 'bek', 'berg', 'berk', 'peg', 'pek', 'perg', 'perk', 'beg_', 'bek_', 'berg_', 'berk_', 'peg_', 'pek_', 'perg_', 'perk_', 'burg', 'burk', 'boorg', 'boork', 'borg', 'bork', 'purg', 'purk', 'poorg', 'poork', 'porg', 'pork', 'burg_', 'burk_', 'boorg_', 'boork_', 'borg_', 'bork_', 'purg_', 'purk_', 'poorg_', 'poork_', 'porg_', 'pork_']
+
+ortho_variant['bhai']=['bai', 'bay', 'bye', 'pai', 'pay', 'pye', 'bai_', 'bay_', 'bye_', 'pai_', 'pay_', 'pye_', 'bhai', 'bhay', 'bhye', 'phai', 'phay', 'phye', 'bhai_', 'bhay_', 'bhye_', 'phai_', 'phay_', 'phye_']
+
+ortho_variant['boleh']=['blay', 'bley', 'bleh', 'blei', 'ble', 'blae', 'play', 'pley', 'pleh', 'plei', 'ple', 'plae', 'blay_', 'bley_', 'bleh_', 'blei_', 'ble_', 'blae_', 'play_', 'pley_', 'pleh_', 'plei_', 'ple_', 'plae_', 'bolay', 'boley', 'boleh', 'bolei', 'bole', 'bolae', 'boulay', 'bouley', 'bouleh', 'boulei', 'boule', 'boulae', 'bohlay', 'bohley', 'bohleh', 'bohlei', 'bohle', 'bohlae', 'bowlay', 'bowley', 'bowleh', 'bowlei', 'bowle', 'bowlae', 'polay', 'poley', 'poleh', 'polei', 'pole', 'polae', 'poulay', 'pouley', 'pouleh', 'poulei', 'poule', 'poulae', 'pohlay', 'pohley', 'pohleh', 'pohlei', 'pohle', 'pohlae', 'powlay', 'powley', 'powleh', 'powlei', 'powle', 'powlae', 'bo_lay', 'bo_ley', 'bo_leh', 'bo_lei', 'bo_le', 'bo_lae', 'bou_lay', 'bou_ley', 'bou_leh', 'bou_lei', 'bou_le', 'bou_lae', 'boh_lay', 'boh_ley', 'boh_leh', 'boh_lei', 'boh_le', 'boh_lae', 'bow_lay', 'bow_ley', 'bow_leh', 'bow_lei', 'bow_le', 'bow_lae', 'po_lay', 'po_ley', 'po_leh', 'po_lei', 'po_le', 'po_lae', 'pou_lay', 'pou_ley', 'pou_leh', 'pou_lei', 'pou_le', 'pou_lae', 'poh_lay', 'poh_ley', 'poh_leh', 'poh_lei', 'poh_le', 'poh_lae', 'pow_lay', 'pow_ley', 'pow_leh', 'pow_lei', 'pow_le', 'pow_lae', 'bolay', 'boley', 'boleh', 'bolei', 'bole', 'bolae', 'boulay', 'bouley', 'bouleh', 'boulei', 'boule', 'boulae', 'bohlay', 'bohley', 'bohleh', 'bohlei', 'bohle', 'bohlae', 'bowlay', 'bowley', 'bowleh', 'bowlei', 'bowle', 'bowlae', 'polay', 'poley', 'poleh', 'polei', 'pole', 'polae', 'poulay', 'pouley', 'pouleh', 'poulei', 'poule', 'poulae', 'pohlay', 'pohley', 'pohleh', 'pohlei', 'pohle', 'pohlae', 'powlay', 'powley', 'powleh', 'powlei', 'powle', 'powlae', 'bo_lay', 'bo_ley', 'bo_leh', 'bo_lei', 'bo_le', 'bo_lae', 'bou_lay', 'bou_ley', 'bou_leh', 'bou_lei', 'bou_le', 'bou_lae', 'boh_lay', 'boh_ley', 'boh_leh', 'boh_lei', 'boh_le', 'boh_lae', 'bow_lay', 'bow_ley', 'bow_leh', 'bow_lei', 'bow_le', 'bow_lae', 'po_lay', 'po_ley', 'po_leh', 'po_lei', 'po_le', 'po_lae', 'pou_lay', 'pou_ley', 'pou_leh', 'pou_lei', 'pou_le', 'pou_lae', 'poh_lay', 'poh_ley', 'poh_leh', 'poh_lei', 'poh_le', 'poh_lae', 'pow_lay', 'pow_ley', 'pow_leh', 'pow_lei', 'pow_le', 'pow_lae']
+
+ortho_variant['buah']=['bua', 'bwa', 'boa', 'buah', 'bwah', 'boah', 'buar', 'bwar', 'boar', 'pua', 'pwa', 'poa', 'puah', 'pwah', 'poah', 'puar', 'pwar', 'poar', 'bua_', 'bwa_', 'boa_', 'buah_', 'bwah_', 'boah_', 'buar_', 'bwar_', 'boar_', 'pua_', 'pwa_', 'poa_', 'puah_', 'pwah_', 'poah_', 'puar_', 'pwar_', 'poar_']
+
+ortho_variant['buang']=['buang', 'bwang', 'boang', 'buarng', 'bwarng', 'boarng', 'puang', 'pwang', 'poang', 'puarng', 'pwarng', 'poarng', 'buang_', 'bwang_', 'boang_', 'buarng_', 'bwarng_', 'boarng_', 'puang_', 'pwang_', 'poang_', 'puarng_', 'pwarng_', 'poarng_']
+
+ortho_variant['cham']=['cam', 'carm', 'cham', 'charm', 'tsam', 'tsarm', 'cam_', 'carm_', 'cham_', 'charm_', 'tsam_', 'tsarm_']
+
+ortho_variant['chao']=['cau', 'cao', 'caw', 'cou', 'cow', 'chau', 'chao', 'chaw', 'chou', 'chow', 'tsau', 'tsao', 'tsaw', 'tsou', 'tsow', 'cau_', 'cao_', 'caw_', 'cou_', 'cow_', 'chau_', 'chao_', 'chaw_', 'chou_', 'chow_', 'tsau_', 'tsao_', 'tsaw_', 'tsou_', 'tsow_']
+
+ortho_variant['cheem']=['cim', 'ceem', 'cym', 'cem', 'chim', 'cheem', 'chym', 'chem', 'tsim', 'tseem', 'tsym', 'tsem', 'qim', 'cim_', 'ceem_', 'cym_', 'cem_', 'chim_', 'cheem_', 'chym_', 'chem_', 'tsim_', 'tseem_', 'tsym_', 'tsem_', 'qim_']
+
+ortho_variant['cheh']=['cay', 'cey', 'ceh', 'cei', 'ce', 'cae', 'chay', 'chey', 'cheh', 'chei', 'che', 'chae', 'tsay', 'tsey', 'tseh', 'tsei', 'tsae', 'cay_', 'cey_', 'ceh_', 'cei_', 'ce_', 'cae_', 'chay_', 'chey_', 'cheh_', 'chei_', 'che_', 'chae_', 'tsay_', 'tsey_', 'tseh_', 'tsei_', 'tsae_']
+
+ortho_variant['chio']=['cio', 'ceo', 'cyo', 'cioh', 'ceoh', 'cyoh', 'chio', 'cheo', 'chyo', 'chioh', 'cheoh', 'chyoh', 'tsio', 'tseo', 'tsyo', 'tsioh', 'tseoh', 'tsyoh', 'qio', 'qioh', 'cio_', 'ceo_', 'cyo_', 'cioh_', 'ceoh_', 'cyoh_', 'chio_', 'cheo_', 'chyo_', 'chioh_', 'cheoh_', 'chyoh_', 'tsio_', 'tseo_', 'tsyo_', 'tsioh_', 'tseoh_', 'tsyoh_', 'qio_', 'qioh_']
+
+ortho_variant['chiong']=['ciong', 'ciorng', 'ceeong', 'ceeorng', 'cyong', 'cyorng', 'ceong', 'ceorng', 'chiong', 'chiorng', 'cheeong', 'cheeorng', 'chyong', 'chyorng', 'cheong', 'cheorng', 'tsiong', 'tsiorng', 'tseeong', 'tseeorng', 'tsyong', 'tsyorng', 'tseong', 'tseorng', 'qiong', 'qiorng', 'ciong_', 'ciorng_', 'ceeong_', 'ceeorng_', 'cyong_', 'cyorng_', 'ceong_', 'ceorng_', 'chiong_', 'chiorng_', 'cheeong_', 'cheeorng_', 'chyong_', 'chyorng_', 'cheong_', 'cheorng_', 'tsiong_', 'tsiorng_', 'tseeong_', 'tseeorng_', 'tsyong_', 'tsyorng_', 'tseong_', 'tseorng_', 'qiong_', 'qiorng_']
+
+ortho_variant['choi']=['coi', 'coy', 'choi', 'choy', 'tsoi', 'tsoy', 'coi_', 'coy_', 'choi_', 'choy_', 'tsoi_', 'tsoy_']
+
+ortho_variant['chor']=['co', 'cor', 'cho', 'chor', 'tso', 'tsor', 'co_', 'cor_', 'cho_', 'chor_', 'tso_', 'tsor_']
+
+ortho_variant['chou']=['co', 'cou', 'coh', 'cow', 'cho', 'chou', 'choh', 'chow', 'tso', 'tsou', 'tsoh', 'tsow', 'co_', 'cou_', 'coh_', 'cow_', 'cho_', 'chou_', 'choh_', 'chow_', 'tso_', 'tsou_', 'tsoh_', 'tsow_']
+
+ortho_variant['chow']=['cau', 'cao', 'caw', 'cou', 'cow', 'chau', 'chao', 'chaw', 'chou', 'chow', 'tsau', 'tsao', 'tsaw', 'tsou', 'tsow', 'cau_', 'cao_', 'caw_', 'cou_', 'cow_', 'chau_', 'chao_', 'chaw_', 'chou_', 'chow_', 'tsau_', 'tsao_', 'tsaw_', 'tsou_', 'tsow_']
+
+ortho_variant['dao']=['dau', 'dao', 'daw', 'dou', 'dow', 'tau', 'tao', 'taw', 'tou', 'tow', 'dau_', 'dao_', 'daw_', 'dou_', 'dow_', 'tau_', 'tao_', 'taw_', 'tou_', 'tow_']
+
+ortho_variant['dey']=['day', 'dey', 'deh', 'dei', 'de', 'dae', 'tay', 'tey', 'teh', 'tei', 'te', 'tae', 'day_', 'dey_', 'deh_', 'dei_', 'de_', 'dae_', 'tay_', 'tey_', 'teh_', 'tei_', 'te_', 'tae_']
+
+ortho_variant['diam']=['diam', 'dyam', 'diarm', 'dyarm', 'tiam', 'tyam', 'tiarm', 'tyarm', 'diam_', 'dyam_', 'diarm_', 'dyarm_', 'tiam_', 'tyam_', 'tiarm_', 'tyarm_']
+
+ortho_variant['diao']=['diau', 'diao', 'diaw', 'diou', 'diow', 'deow', 'diow', 'tiau', 'tiao', 'tiaw', 'tiou', 'tiow', 'teow', 'tiow', 'diau_', 'diao_', 'diaw_', 'diou_', 'diow_', 'deow_', 'diow_', 'tiau_', 'tiao_', 'tiaw_', 'tiou_', 'tiow_', 'teow_', 'tiow_']
+
+ortho_variant['diaoz']=['diauz', 'diaus', 'diaoz', 'diaos', 'diawz', 'diaws', 'diouz', 'dious', 'diowz', 'diows', 'deowz', 'deows', 'diowz', 'diows', 'tiauz', 'tiaus', 'tiaoz', 'tiaos', 'tiawz', 'tiaws', 'tiouz', 'tious', 'tiowz', 'tiows', 'teowz', 'teows', 'tiowz', 'tiows', 'diauz_', 'diaus_', 'diaoz_', 'diaos_', 'diawz_', 'diaws_', 'diouz_', 'dious_', 'diowz_', 'diows_', 'deowz_', 'deows_', 'diowz_', 'diows_', 'tiauz_', 'tiaus_', 'tiaoz_', 'tiaos_', 'tiawz_', 'tiaws_', 'tiouz_', 'tious_', 'tiowz_', 'tiows_', 'teowz_', 'teows_', 'tiowz_', 'tiows_']
+
+ortho_variant['feng']=['feng', 'fang', 'veng', 'vang', 'feng_', 'fang_', 'veng_', 'vang_']
+
+ortho_variant['fiak']=['fiak', 'fiag', 'fyak', 'fyag', 'fiahk', 'fiahg', 'fyahk', 'fyahg', 'fiark', 'fiarg', 'fyark', 'fyarg', 'viak', 'viag', 'vyak', 'vyag', 'viahk', 'viahg', 'vyahk', 'vyahg', 'viark', 'viarg', 'vyark', 'vyarg', 'fiak_', 'fiag_', 'fyak_', 'fyag_', 'fiahk_', 'fiahg_', 'fyahk_', 'fyahg_', 'fiark_', 'fiarg_', 'fyark_', 'fyarg_', 'viak_', 'viag_', 'vyak_', 'vyag_', 'viahk_', 'viahg_', 'vyahk_', 'vyahg_', 'viark_', 'viarg_', 'vyark_', 'vyarg_']
+
+ortho_variant['fuh']=['fu', 'foo', 'fo', 'vu', 'voo', 'vo', 'fu_', 'foo_', 'fo_', 'vu_', 'voo_', 'vo_', 'fuh', 'fooh', 'foh', 'vuh', 'vooh', 'voh', 'fuh_', 'fooh_', 'foh_', 'vuh_', 'vooh_', 'voh_']
+
+ortho_variant['gah']=['ga', 'gah', 'gar', 'ka', 'kah', 'kar', 'ga_', 'gah_', 'gar_', 'ka_', 'kah_', 'kar_']
+
+ortho_variant['gau']=['gau', 'gao', 'gaw', 'gou', 'gow', 'kau', 'kao', 'kaw', 'kou', 'kow', 'gau_', 'gao_', 'gaw_', 'gou_', 'gow_', 'kau_', 'kao_', 'kaw_', 'kou_', 'kow_']
+
+ortho_variant['geng']=['geng', 'gang', 'keng', 'kang', 'geng_', 'gang_', 'keng_', 'kang_']
+
+ortho_variant['gong']=['gong', 'gorng', 'kong', 'korng', 'gong_', 'gorng_', 'kong_', 'korng_']
+
+ortho_variant['haish']=['haish', 'haysh', 'hyesh', 'haish_', 'haysh_', 'hyesh_', 'haiz', 'hais', 'hayz', 'hays', 'hyez', 'hyes', 'haiz_', 'hais_', 'hayz_', 'hays_', 'hyez_', 'hyes_']
+
+ortho_variant['heng']=['heing', 'heng', 'haeng', 'heing_', 'heng_', 'haeng_']
+
+ortho_variant['heong']=['hiong', 'heong', 'hyong', 'hiong_', 'heong_', 'hyong_']
+
+ortho_variant['hiam']=['hiam', 'hyam', 'hiarm', 'hyarm', 'hiam_', 'hyam_', 'hiarm_', 'hyarm_']
+
+ortho_variant['hiao']=['hiau', 'hiao', 'hiaw', 'hiou', 'hiow', 'heow', 'hiow', 'hiau_', 'hiao_', 'hiaw_', 'hiou_', 'hiow_', 'heow_', 'hiow_']
+
+ortho_variant['hoot']=['hut', 'hud', 'hoot', 'hood', 'hot', 'hod', 'hut_', 'hud_', 'hoot_', 'hood_', 'hot_', 'hod_']
+
+ortho_variant['huat']=['huat', 'huad', 'hwat', 'hwad', 'hoat', 'hoad', 'huaht', 'hwaht', 'hoaht', 'huart', 'huard', 'hwart', 'hward', 'hoart', 'hoard', 'huat_', 'huad_', 'hwat_', 'hwad_', 'hoat_', 'hoad_', 'huaht_', 'hwaht_', 'hoaht_', 'huart_', 'huard_', 'hwart_', 'hward_', 'hoart_', 'hoard_']
+
+ortho_variant['jiak']=['cia', 'cya', 'ciah', 'cyah', 'ciar', 'cyar', 'chia', 'chya', 'chiah', 'chyah', 'chiar', 'chyar', 'tsia', 'tsya', 'tsiah', 'tsyah', 'tsiar', 'tsyar', 'qia', 'qiah', 'qiar', 'cia_', 'cya_', 'ciah_', 'cyah_', 'ciar_', 'cyar_', 'chia_', 'chya_', 'chiah_', 'chyah_', 'chiar_', 'chyar_', 'tsia_', 'tsya_', 'tsiah_', 'tsyah_', 'tsiar_', 'tsyar_', 'qia_', 'qiah_', 'qiar_', 'ciak', 'ciag', 'cyak', 'cyag', 'ciahk', 'ciahg', 'cyahk', 'cyahg', 'ciark', 'ciarg', 'cyark', 'cyarg', 'chiak', 'chiag', 'chyak', 'chyag', 'chiahk', 'chiahg', 'chyahk', 'chyahg', 'chiark', 'chiarg', 'chyark', 'chyarg', 'tsiak', 'tsiag', 'tsyak', 'tsyag', 'tsiahk', 'tsiahg', 'tsyahk', 'tsyahg', 'tsiark', 'tsiarg', 'tsyark', 'tsyarg', 'qiak', 'qiag', 'qiahk', 'qiahg', 'qiark', 'qiarg', 'ciak_', 'ciag_', 'cyak_', 'cyag_', 'ciahk_', 'ciahg_', 'cyahk_', 'cyahg_', 'ciark_', 'ciarg_', 'cyark_', 'cyarg_', 'chiak_', 'chiag_', 'chyak_', 'chyag_', 'chiahk_', 'chiahg_', 'chyahk_', 'chyahg_', 'chiark_', 'chiarg_', 'chyark_', 'chyarg_', 'tsiak_', 'tsiag_', 'tsyak_', 'tsyag_', 'tsiahk_', 'tsiahg_', 'tsyahk_', 'tsyahg_', 'tsiark_', 'tsiarg_', 'tsyark_', 'tsyarg_', 'qiak_', 'qiag_', 'qiahk_', 'qiahg_', 'qiark_', 'qiarg_']
+
+ortho_variant['jio']=['cio', 'ceo', 'cyo', 'cioh', 'ceoh', 'cyoh', 'chio', 'cheo', 'chyo', 'chioh', 'cheoh', 'chyoh', 'tsio', 'tseo', 'tsyo', 'tsioh', 'tseoh', 'tsyoh', 'qio', 'qioh', 'cio_', 'ceo_', 'cyo_', 'cioh_', 'ceoh_', 'cyoh_', 'chio_', 'cheo_', 'chyo_', 'chioh_', 'cheoh_', 'chyoh_', 'tsio_', 'tseo_', 'tsyo_', 'tsioh_', 'tseoh_', 'tsyoh_', 'qio_', 'qioh_']
+
+ortho_variant['jom']=['jom', 'joum', 'jowm', 'jom_', 'joum_', 'jowm_']
+
+ortho_variant['kan']=['kan', 'kahn', 'karn', 'gan', 'gahn', 'garn', 'kan_', 'kahn_', 'karn_', 'gan_', 'gahn_', 'garn_']
+
+ortho_variant['kay']=['kay', 'key', 'keh', 'kei', 'ke', 'kae', 'gay', 'gey', 'geh', 'gei', 'ge', 'gae', 'kay_', 'key_', 'keh_', 'kei_', 'ke_', 'kae_', 'gay_', 'gey_', 'geh_', 'gei_', 'ge_', 'gae_']
+
+ortho_variant['keng']=['keing', 'keng', 'kaeng', 'geing', 'geng', 'gaeng', 'keing_', 'keng_', 'kaeng_', 'geing_', 'geng_', 'gaeng_']
+
+ortho_variant['keps']=['kayps', 'kaypz', 'kaybs', 'kaybz', 'keyps', 'keypz', 'keybs', 'keybz', 'kehps', 'kehpz', 'kehbs', 'kehbz', 'keips', 'keipz', 'keibs', 'keibz', 'keps', 'kepz', 'kebs', 'kebz', 'kaeps', 'kaepz', 'kaebs', 'kaebz', 'gayps', 'gaypz', 'gaybs', 'gaybz', 'geyps', 'geypz', 'geybs', 'geybz', 'gehps', 'gehpz', 'gehbs', 'gehbz', 'geips', 'geipz', 'geibs', 'geibz', 'geps', 'gepz', 'gebs', 'gebz', 'gaeps', 'gaepz', 'gaebs', 'gaebz', 'kayps_', 'kaypz_', 'kaybs_', 'kaybz_', 'keyps_', 'keypz_', 'keybs_', 'keybz_', 'kehps_', 'kehpz_', 'kehbs_', 'kehbz_', 'keips_', 'keipz_', 'keibs_', 'keibz_', 'keps_', 'kepz_', 'kebs_', 'kebz_', 'kaeps_', 'kaepz_', 'kaebs_', 'kaebz_', 'gayps_', 'gaypz_', 'gaybs_', 'gaybz_', 'geyps_', 'geypz_', 'geybs_', 'geybz_', 'gehps_', 'gehpz_', 'gehbs_', 'gehbz_', 'geips_', 'geipz_', 'geibs_', 'geibz_', 'geps_', 'gepz_', 'gebs_', 'gebz_', 'gaeps_', 'gaepz_', 'gaebs_', 'gaebz_']
+
+ortho_variant['kiam']=['kiam', 'kyam', 'kiarm', 'kyarm', 'giam', 'gyam', 'giarm', 'gyarm', 'qiam', 'qiarm', 'kiam_', 'kyam_', 'kiarm_', 'kyarm_', 'giam_', 'gyam_', 'giarm_', 'gyarm_', 'qiam_', 'qiarm_']
+
+ortho_variant['kiap']=['kiap', 'kiab', 'kyap', 'kyab', 'kiahp', 'kiahb', 'kyahp', 'kyahb', 'kiarp', 'kiarb', 'kyarp', 'kyarb', 'giap', 'giab', 'gyap', 'gyab', 'giahp', 'giahb', 'gyahp', 'gyahb', 'giarp', 'giarb', 'gyarp', 'gyarb', 'qiap', 'qiab', 'qiahp', 'qiahb', 'qiarp', 'qiarb', 'kiap_', 'kiab_', 'kyap_', 'kyab_', 'kiahp_', 'kiahb_', 'kyahp_', 'kyahb_', 'kiarp_', 'kiarb_', 'kyarp_', 'kyarb_', 'giap_', 'giab_', 'gyap_', 'gyab_', 'giahp_', 'giahb_', 'gyahp_', 'gyahb_', 'giarp_', 'giarb_', 'gyarp_', 'gyarb_', 'qiap_', 'qiab_', 'qiahp_', 'qiahb_', 'qiarp_', 'qiarb_']
+
+ortho_variant['kin']=['kin', 'keen', 'kyn', 'ken', 'gin', 'geen', 'gyn', 'gen', 'qin', 'kin_', 'keen_', 'kyn_', 'ken_', 'gin_', 'geen_', 'gyn_', 'gen_', 'qin_']
+
+ortho_variant['kiut']=['kiewt', 'kiewd', 'kiut', 'kiud', 'kyut', 'kyud', 'kewt', 'kewd', 'giewt', 'giewd', 'giut', 'giud', 'gyut', 'gyud', 'gewt', 'gewd', 'qiewt', 'qiewd', 'qiut', 'qiud', 'kiewt_', 'kiewd_', 'kiut_', 'kiud_', 'kyut_', 'kyud_', 'kewt_', 'kewd_', 'giewt_', 'giewd_', 'giut_', 'giud_', 'gyut_', 'gyud_', 'gewt_', 'gewd_', 'qiewt_', 'qiewd_', 'qiut_', 'qiud_']
+
+ortho_variant['koon']=['kun', 'koon', 'kon', 'gun', 'goon', 'gon', 'qun', 'kun_', 'koon_', 'kon_', 'gun_', 'goon_', 'gon_', 'qun_']
+
+ortho_variant['kuai']=['kuai', 'kwai', 'kuay', 'kway', 'guai', 'gwai', 'guay', 'gway', 'quai', 'qwai', 'quay', 'qway', 'kuai_', 'kwai_', 'kuay_', 'kway_', 'guai_', 'gwai_', 'guay_', 'gway_', 'quai_', 'qwai_', 'quay_', 'qway_']
+
+ortho_variant['kuat']=['kuat', 'kuad', 'kwat', 'kwad', 'koat', 'koad', 'kuaht', 'kwaht', 'koaht', 'kuart', 'kuard', 'kwart', 'kward', 'koart', 'koard', 'guat', 'guad', 'gwat', 'gwad', 'goat', 'goad', 'guaht', 'gwaht', 'goaht', 'guart', 'guard', 'gwart', 'gward', 'goart', 'goard', 'quat', 'quad', 'qwat', 'qwad', 'quaht', 'qwaht', 'quart', 'quard', 'qwart', 'qward', 'kuat_', 'kuad_', 'kwat_', 'kwad_', 'koat_', 'koad_', 'kuaht_', 'kwaht_', 'koaht_', 'kuart_', 'kuard_', 'kwart_', 'kward_', 'koart_', 'koard_', 'guat_', 'guad_', 'gwat_', 'gwad_', 'goat_', 'goad_', 'guaht_', 'gwaht_', 'goaht_', 'guart_', 'guard_', 'gwart_', 'gward_', 'goart_', 'goard_', 'quat_', 'quad_', 'qwat_', 'qwad_', 'quaht_', 'qwaht_', 'quart_', 'quard_', 'qwart_', 'qward_']
+
+ortho_variant['kuih']=['kue', 'kwe', 'kuey', 'kway', 'kwey', 'kuay', 'kueh', 'kweh', 'gue', 'gwe', 'guey', 'gway', 'gwey', 'guay', 'gueh', 'gweh', 'que', 'qwe', 'quey', 'qway', 'qwey', 'quay', 'queh', 'qweh', 'kue_', 'kwe_', 'kuey_', 'kway_', 'kwey_', 'kuay_', 'kueh_', 'kweh_', 'gue_', 'gwe_', 'guey_', 'gway_', 'gwey_', 'guay_', 'gueh_', 'gweh_', 'que_', 'qwe_', 'quey_', 'qway_', 'qwey_', 'quay_', 'queh_', 'qweh_', 'kui', 'kwi', 'kooi', 'kuih', 'kwih', 'kuee', 'kwee', 'gui', 'gwi', 'gooi', 'guih', 'gwih', 'guee', 'gwee', 'qui', 'qwi', 'quih', 'qwih', 'quee', 'qwee', 'kui_', 'kwi_', 'kooi_', 'kuih_', 'kwih_', 'kuee_', 'kwee_', 'gui_', 'gwi_', 'gooi_', 'guih_', 'gwih_', 'guee_', 'gwee_', 'qui_', 'qwi_', 'quih_', 'qwih_', 'quee_', 'qwee_']
+
+ortho_variant['kway']=['kue', 'kwe', 'kuey', 'kway', 'kwey', 'kuay', 'kueh', 'kweh', 'gue', 'gwe', 'guey', 'gway', 'gwey', 'guay', 'gueh', 'gweh', 'que', 'qwe', 'quey', 'qway', 'qwey', 'quay', 'queh', 'qweh', 'kue_', 'kwe_', 'kuey_', 'kway_', 'kwey_', 'kuay_', 'kueh_', 'kweh_', 'gue_', 'gwe_', 'guey_', 'gway_', 'gwey_', 'guay_', 'gueh_', 'gweh_', 'que_', 'qwe_', 'quey_', 'qway_', 'qwey_', 'quay_', 'queh_', 'qweh_']
+
+ortho_variant['lan']=['lan', 'lahn', 'larn', 'lan_', 'lahn_', 'larn_']
+
+ortho_variant['lao']=['lau', 'lao', 'law', 'lou', 'low', 'lau_', 'lao_', 'law_', 'lou_', 'low_']
+
+ortho_variant['lian']=['lien', 'lian', 'lean', 'lien_', 'lian_', 'lean_']
+
+ortho_variant['liao']=['liau', 'liao', 'liaw', 'liou', 'liow', 'leow', 'liow', 'liau_', 'liao_', 'liaw_', 'liou_', 'liow_', 'leow_', 'liow_']
+
+ortho_variant['lood']=['lud', 'lut', 'lood', 'loot', 'lod', 'lot', 'lud_', 'lut_', 'lood_', 'loot_', 'lod_', 'lot_']
+
+ortho_variant['lui']=['lui', 'lwi', 'looi', 'luih', 'lwih', 'luee', 'lwee', 'lui_', 'lwi_', 'looi_', 'luih_', 'lwih_', 'luee_', 'lwee_']
+
+ortho_variant['mai']=['mai', 'may', 'mye', 'mai_', 'may_', 'mye_']
+
+ortho_variant['main']=['main', 'mayn', 'myen', 'main_', 'mayn_', 'myen_']
+
+ortho_variant['man']=['man', 'mahn', 'marn', 'man_', 'mahn_', 'marn_']
+
+ortho_variant['mat']=['mat', 'mad', 'maht', 'mart', 'mard', 'mat_', 'mad_', 'maht_', 'mart_', 'mard_']
+
+ortho_variant['mee']=['mi', 'mee', 'my', 'me', 'mi_', 'mee_', 'my_', 'me_']
+
+ortho_variant['naan']=['nan', 'nahn', 'narn', 'nan_', 'nahn_', 'narn_', 'naan', 'naahn', 'naarn', 'nahan', 'nahahn', 'naharn', 'naran', 'narahn', 'naan_', 'naahn_', 'naarn_', 'nahan_', 'nahahn_', 'naharn_', 'naran_', 'narahn_']
+
+ortho_variant['ngeow']=['ngiau', 'ngiao', 'ngiaw', 'ngiou', 'ngiow', 'ngeow', 'ngiow', 'ngiau_', 'ngiao_', 'ngiaw_', 'ngiou_', 'ngiow_', 'ngeow_', 'ngiow_', 'niau', 'niao', 'niaw', 'niou', 'niow', 'neow', 'niow', 'niau_', 'niao_', 'niaw_', 'niou_', 'niow_', 'neow_', 'niow_']
+
+ortho_variant['nua']=['nua', 'nwa', 'noa', 'nuah', 'nwah', 'noah', 'nuar', 'nwar', 'noar', 'nua_', 'nwa_', 'noa_', 'nuah_', 'nwah_', 'noah_', 'nuar_', 'nwar_', 'noar_']
+
+ortho_variant['pai']=['pai', 'pay', 'pye', 'bai', 'bay', 'bye', 'pai_', 'pay_', 'pye_', 'bai_', 'bay_', 'bye_']
+
+ortho_variant['pau']=['pau', 'pao', 'paw', 'pou', 'pow', 'bau', 'bao', 'baw', 'bou', 'bow', 'pau_', 'pao_', 'paw_', 'pou_', 'pow_', 'bau_', 'bao_', 'baw_', 'bou_', 'bow_']
+
+ortho_variant['peng']=['peng', 'perng', 'beng', 'berng', 'peng_', 'perng_', 'beng_', 'berng_']
+
+ortho_variant['piak']=['piak', 'piag', 'pyak', 'pyag', 'piahk', 'piahg', 'pyahk', 'pyahg', 'piark', 'piarg', 'pyark', 'pyarg', 'biak', 'biag', 'byak', 'byag', 'biahk', 'biahg', 'byahk', 'byahg', 'biark', 'biarg', 'byark', 'byarg', 'piak_', 'piag_', 'pyak_', 'pyag_', 'piahk_', 'piahg_', 'pyahk_', 'pyahg_', 'piark_', 'piarg_', 'pyark_', 'pyarg_', 'biak_', 'biag_', 'byak_', 'byag_', 'biahk_', 'biahg_', 'byahk_', 'byahg_', 'biark_', 'biarg_', 'byark_', 'byarg_']
+
+ortho_variant['pok']=['pok', 'pog', 'pork', 'porg', 'bok', 'bog', 'bork', 'borg', 'pok_', 'pog_', 'pork_', 'porg_', 'bok_', 'bog_', 'bork_', 'borg_']
+
+ortho_variant['pon']=['pon', 'porn', 'bon', 'born', 'pon_', 'porn_', 'bon_', 'born_']
+
+ortho_variant['por']=['po', 'por', 'bo', 'bor', 'po_', 'por_', 'bo_', 'bor_']
+
+ortho_variant['puas']=['puas', 'puaz', 'pwas', 'pwaz', 'poas', 'poaz', 'puahs', 'puahz', 'pwahs', 'pwahz', 'poahs', 'poahz', 'puars', 'puarz', 'pwars', 'pwarz', 'poars', 'poarz', 'buas', 'buaz', 'bwas', 'bwaz', 'boas', 'boaz', 'buahs', 'buahz', 'bwahs', 'bwahz', 'boahs', 'boahz', 'buars', 'buarz', 'bwars', 'bwarz', 'boars', 'boarz', 'puas_', 'puaz_', 'pwas_', 'pwaz_', 'poas_', 'poaz_', 'puahs_', 'puahz_', 'pwahs_', 'pwahz_', 'poahs_', 'poahz_', 'puars_', 'puarz_', 'pwars_', 'pwarz_', 'poars_', 'poarz_', 'buas_', 'buaz_', 'bwas_', 'bwaz_', 'boas_', 'boaz_', 'buahs_', 'buahz_', 'bwahs_', 'bwahz_', 'boahs_', 'boahz_', 'buars_', 'buarz_', 'bwars_', 'bwarz_', 'boars_', 'boarz_']
+
+ortho_variant['pui']=['pui', 'pwi', 'pooi', 'puih', 'pwih', 'puee', 'pwee', 'bui', 'bwi', 'booi', 'buih', 'bwih', 'buee', 'bwee', 'pui_', 'pwi_', 'pooi_', 'puih_', 'pwih_', 'puee_', 'pwee_', 'bui_', 'bwi_', 'booi_', 'buih_', 'bwih_', 'buee_', 'bwee_']
+
+ortho_variant['ren']=['ren', 'rern', 'ren_', 'rern_']
+
+ortho_variant['saht']=['sat', 'sad', 'saht', 'sart', 'sard', 'zat', 'zad', 'zaht', 'zart', 'zard', 'xat', 'xad', 'xaht', 'xart', 'xard', 'sat_', 'sad_', 'saht_', 'sart_', 'sard_', 'zat_', 'zad_', 'zaht_', 'zart_', 'zard_', 'xat_', 'xad_', 'xaht_', 'xart_', 'xard_', 'saat', 'saad', 'saaht', 'saart', 'saard', 'sahat', 'sahad', 'sahaht', 'sahart', 'sahard', 'sarat', 'sarad', 'saraht', 'zaat', 'zaad', 'zaaht', 'zaart', 'zaard', 'zahat', 'zahad', 'zahaht', 'zahart', 'zahard', 'zarat', 'zarad', 'zaraht', 'xaat', 'xaad', 'xaaht', 'xaart', 'xaard', 'xahat', 'xahad', 'xahaht', 'xahart', 'xahard', 'xarat', 'xarad', 'xaraht', 'saat_', 'saad_', 'saaht_', 'saart_', 'saard_', 'sahat_', 'sahad_', 'sahaht_', 'sahart_', 'sahard_', 'sarat_', 'sarad_', 'saraht_', 'zaat_', 'zaad_', 'zaaht_', 'zaart_', 'zaard_', 'zahat_', 'zahad_', 'zahaht_', 'zahart_', 'zahard_', 'zarat_', 'zarad_', 'zaraht_', 'xaat_', 'xaad_', 'xaaht_', 'xaart_', 'xaard_', 'xahat_', 'xahad_', 'xahaht_', 'xahart_', 'xahard_', 'xarat_', 'xarad_', 'xaraht_', 'sud', 'sut', 'sood', 'soot', 'sod', 'sot', 'zud', 'zut', 'zood', 'zoot', 'zod', 'zot', 'xud', 'xut', 'xood', 'xoot', 'xod', 'xot', 'sud_', 'sut_', 'sood_', 'soot_', 'sod_', 'sot_', 'zud_', 'zut_', 'zood_', 'zoot_', 'zod_', 'zot_', 'xud_', 'xut_', 'xood_', 'xoot_', 'xod_', 'xot_']
+
+ortho_variant['seh']=['say', 'sey', 'seh', 'sei', 'sae', 'zay', 'zey', 'zeh', 'zei', 'zae', 'xay', 'xey', 'xeh', 'xei', 'xae', 'say_', 'sey_', 'seh_', 'sei_', 'sae_', 'zay_', 'zey_', 'zeh_', 'zei_', 'zae_', 'xay_', 'xey_', 'xeh_', 'xei_', 'xae_']
+
+ortho_variant['sei']=['say', 'sey', 'seh', 'sei', 'sae', 'zay', 'zey', 'zeh', 'zei', 'zae', 'xay', 'xey', 'xeh', 'xei', 'xae', 'say_', 'sey_', 'seh_', 'sei_', 'sae_', 'zay_', 'zey_', 'zeh_', 'zei_', 'zae_', 'xay_', 'xey_', 'xeh_', 'xei_', 'xae_']
+
+ortho_variant['sek']=['sek', 'seg', 'sak', 'sag', 'zek', 'zeg', 'zak', 'zag', 'xek', 'xeg', 'xak', 'xag', 'sek_', 'seg_', 'sak_', 'sag_', 'zek_', 'zeg_', 'zak_', 'zag_', 'xek_', 'xeg_', 'xak_', 'xag_']
+
+ortho_variant['shiok']=['shiok', 'shiog', 'sheok', 'sheog', 'shyok', 'shyog', 'syiok', 'syiog', 'syeok', 'syeog', 'syyok', 'syyog', 'shiok_', 'shiog_', 'sheok_', 'sheog_', 'shyok_', 'shyog_', 'syiok_', 'syiog_', 'syeok_', 'syeog_', 'syyok_', 'syyog_']
+
+ortho_variant['shuai']=['shuai', 'shwai', 'shuay', 'shway', 'syuai', 'sywai', 'syuay', 'syway', 'shuai_', 'shwai_', 'shuay_', 'shway_', 'syuai_', 'sywai_', 'syuay_', 'syway_']
+
+ortho_variant['sial']=['sial', 'syal', 'siahl', 'syahl', 'siarl', 'syarl', 'zial', 'zyal', 'ziahl', 'zyahl', 'ziarl', 'zyarl', 'xial', 'xyal', 'xiahl', 'xyahl', 'xiarl', 'xyarl', 'sial_', 'syal_', 'siahl_', 'syahl_', 'siarl_', 'syarl_', 'zial_', 'zyal_', 'ziahl_', 'zyahl_', 'ziarl_', 'zyarl_', 'xial_', 'xyal_', 'xiahl_', 'xyahl_', 'xiarl_', 'xyarl_', 'sia', 'sya', 'siah', 'syah', 'siar', 'syar', 'zia', 'zya', 'ziah', 'zyah', 'ziar', 'zyar', 'xia', 'xya', 'xiah', 'xyah', 'xiar', 'xyar', 'sia_', 'sya_', 'siah_', 'syah_', 'siar_', 'syar_', 'zia_', 'zya_', 'ziah_', 'zyah_', 'ziar_', 'zyar_', 'xia_', 'xya_', 'xiah_', 'xyah_', 'xiar_', 'xyar_', 'siak', 'siag', 'syak', 'syag', 'siahk', 'siahg', 'syahk', 'syahg', 'siark', 'siarg', 'syark', 'syarg', 'ziak', 'ziag', 'zyak', 'zyag', 'ziahk', 'ziahg', 'zyahk', 'zyahg', 'ziark', 'ziarg', 'zyark', 'zyarg', 'xiak', 'xiag', 'xyak', 'xyag', 'xiahk', 'xiahg', 'xyahk', 'xyahg', 'xiark', 'xiarg', 'xyark', 'xyarg', 'siak_', 'siag_', 'syak_', 'syag_', 'siahk_', 'siahg_', 'syahk_', 'syahg_', 'siark_', 'siarg_', 'syark_', 'syarg_', 'ziak_', 'ziag_', 'zyak_', 'zyag_', 'ziahk_', 'ziahg_', 'zyahk_', 'zyahg_', 'ziark_', 'ziarg_', 'zyark_', 'zyarg_', 'xiak_', 'xiag_', 'xyak_', 'xyag_', 'xiahk_', 'xiahg_', 'xyahk_', 'xyahg_', 'xiark_', 'xiarg_', 'xyark_', 'xyarg_', 'siot', 'siod', 'seot', 'seod', 'syot', 'syod', 'ziot', 'ziod', 'zeot', 'zeod', 'zyot', 'zyod', 'xiot', 'xiod', 'xeot', 'xeod', 'xyot', 'xyod', 'siot_', 'siod_', 'seot_', 'seod_', 'syot_', 'syod_', 'ziot_', 'ziod_', 'zeot_', 'zeod_', 'zyot_', 'zyod_', 'xiot_', 'xiod_', 'xeot_', 'xeod_', 'xyot_', 'xyod_']
+
+ortho_variant['siam']=['siam', 'syam', 'siarm', 'syarm', 'ziam', 'zyam', 'ziarm', 'zyarm', 'xiam', 'xyam', 'xiarm', 'xyarm', 'siam_', 'syam_', 'siarm_', 'syarm_', 'ziam_', 'zyam_', 'ziarm_', 'zyarm_', 'xiam_', 'xyam_', 'xiarm_', 'xyarm_']
+
+ortho_variant['sian']=['sien', 'sian', 'sean', 'zien', 'zian', 'zean', 'xien', 'xian', 'xean', 'sien_', 'sian_', 'sean_', 'zien_', 'zian_', 'zean_', 'xien_', 'xian_', 'xean_']
+
+ortho_variant['siao']=['siau', 'siao', 'siaw', 'siou', 'siow', 'seow', 'siow', 'ziau', 'ziao', 'ziaw', 'ziou', 'ziow', 'zeow', 'ziow', 'xiau', 'xiao', 'xiaw', 'xiou', 'xiow', 'xeow', 'xiow', 'siau_', 'siao_', 'siaw_', 'siou_', 'siow_', 'seow_', 'siow_', 'ziau_', 'ziao_', 'ziaw_', 'ziou_', 'ziow_', 'zeow_', 'ziow_', 'xiau_', 'xiao_', 'xiaw_', 'xiou_', 'xiow_', 'xeow_', 'xiow_']
+
+ortho_variant['sio']=['sio', 'seo', 'syo', 'sioh', 'seoh', 'syoh', 'zio', 'zeo', 'zyo', 'zioh', 'zeoh', 'zyoh', 'xio', 'xeo', 'xyo', 'xioh', 'xeoh', 'xyoh', 'sio_', 'seo_', 'syo_', 'sioh_', 'seoh_', 'syoh_', 'zio_', 'zeo_', 'zyo_', 'zioh_', 'zeoh_', 'zyoh_', 'xio_', 'xeo_', 'xyo_', 'xioh_', 'xeoh_', 'xyoh_']
+
+ortho_variant['siong']=['siong', 'seong', 'syong', 'ziong', 'zeong', 'zyong', 'xiong', 'xeong', 'xyong', 'siong_', 'seong_', 'syong_', 'ziong_', 'zeong_', 'zyong_', 'xiong_', 'xeong_', 'xyong_']
+
+ortho_variant['siot']=['siot', 'siod', 'seot', 'seod', 'syot', 'syod', 'ziot', 'ziod', 'zeot', 'zeod', 'zyot', 'zyod', 'xiot', 'xiod', 'xeot', 'xeod', 'xyot', 'xyod', 'siot_', 'siod_', 'seot_', 'seod_', 'syot_', 'syod_', 'ziot_', 'ziod_', 'zeot_', 'zeod_', 'zyot_', 'zyod_', 'xiot_', 'xiod_', 'xeot_', 'xeod_', 'xyot_', 'xyod_']
+
+ortho_variant['sod']=['sod', 'sot', 'sord', 'sort', 'zod', 'zot', 'zord', 'zort', 'xod', 'xot', 'xord', 'xort', 'sod_', 'sot_', 'sord_', 'sort_', 'zod_', 'zot_', 'zord_', 'zort_', 'xod_', 'xot_', 'xord_', 'xort_']
+
+ortho_variant['song']=['song', 'soung', 'zong', 'zoung', 'xong', 'xoung', 'song_', 'soung_', 'zong_', 'zoung_', 'xong_', 'xoung_']
+
+ortho_variant['spiak']=['spiak', 'spiag', 'spyak', 'spyag', 'spiahk', 'spiahg', 'spyahk', 'spyahg', 'spiark', 'spiarg', 'spyark', 'spyarg', 'xpiak', 'xpiag', 'xpyak', 'xpyag', 'xpiahk', 'xpiahg', 'xpyahk', 'xpyahg', 'xpiark', 'xpiarg', 'xpyark', 'xpyarg', 'xbiak', 'xbiag', 'xbyak', 'xbyag', 'xbiahk', 'xbiahg', 'xbyahk', 'xbyahg', 'xbiark', 'xbiarg', 'xbyark', 'xbyarg', 'spiak_', 'spiag_', 'spyak_', 'spyag_', 'spiahk_', 'spiahg_', 'spyahk_', 'spyahg_', 'spiark_', 'spiarg_', 'spyark_', 'spyarg_', 'xpiak_', 'xpiag_', 'xpyak_', 'xpyag_', 'xpiahk_', 'xpiahg_', 'xpyahk_', 'xpyahg_', 'xpiark_', 'xpiarg_', 'xpyark_', 'xpyarg_', 'xbiak_', 'xbiag_', 'xbyak_', 'xbyag_', 'xbiahk_', 'xbiahg_', 'xbyahk_', 'xbyahg_', 'xbiark_', 'xbiarg_', 'xbyark_', 'xbyarg_']
+
+ortho_variant['stoink']=['stoink', 'stoing', 'stoynk', 'xtoink', 'xtoing', 'xtoynk', 'xdoink', 'xdoing', 'xdoynk', 'stoink_', 'stoing_', 'stoynk_', 'xtoink_', 'xtoing_', 'xtoynk_', 'xdoink_', 'xdoing_', 'xdoynk_']
+
+ortho_variant['suan']=['suan', 'swan', 'soan', 'suahn', 'swahn', 'soahn', 'suarn', 'swarn', 'soarn', 'zuan', 'zwan', 'zoan', 'zuahn', 'zwahn', 'zoahn', 'zuarn', 'zwarn', 'zoarn', 'xuan', 'xwan', 'xoan', 'xuahn', 'xwahn', 'xoahn', 'xuarn', 'xwarn', 'xoarn', 'suan_', 'swan_', 'soan_', 'suahn_', 'swahn_', 'soahn_', 'suarn_', 'swarn_', 'soarn_', 'zuan_', 'zwan_', 'zoan_', 'zuahn_', 'zwahn_', 'zoahn_', 'zuarn_', 'zwarn_', 'zoarn_', 'xuan_', 'xwan_', 'xoan_', 'xuahn_', 'xwahn_', 'xoahn_', 'xuarn_', 'xwarn_', 'xoarn_']
+
+ortho_variant['suay']=['sue', 'swe', 'suey', 'sway', 'swey', 'suay', 'sueh', 'sweh', 'zue', 'zwe', 'zuey', 'zway', 'zwey', 'zuay', 'zueh', 'zweh', 'xue', 'xwe', 'xuey', 'xway', 'xwey', 'xuay', 'xueh', 'xweh', 'sue_', 'swe_', 'suey_', 'sway_', 'swey_', 'suay_', 'sueh_', 'sweh_', 'zue_', 'zwe_', 'zuey_', 'zway_', 'zwey_', 'zuay_', 'zueh_', 'zweh_', 'xue_', 'xwe_', 'xuey_', 'xway_', 'xwey_', 'xuay_', 'xueh_', 'xweh_']
+
+ortho_variant['sup']=['sup', 'sub', 'soop', 'soob', 'sop', 'sob', 'zup', 'zub', 'zoop', 'zoob', 'zop', 'zob', 'xup', 'xub', 'xoop', 'xoob', 'xop', 'xob', 'sup_', 'sub_', 'soop_', 'soob_', 'sop_', 'sob_', 'zup_', 'zub_', 'zoop_', 'zoob_', 'zop_', 'zob_', 'xup_', 'xub_', 'xoop_', 'xoob_', 'xop_', 'xob_']
+
+ortho_variant['swee']=['sui', 'swi', 'sooi', 'suih', 'swih', 'suee', 'swee', 'zui', 'zwi', 'zooi', 'zuih', 'zwih', 'zuee', 'zwee', 'xui', 'xwi', 'xooi', 'xuih', 'xwih', 'xuee', 'xwee', 'sui_', 'swi_', 'sooi_', 'suih_', 'swih_', 'suee_', 'swee_', 'zui_', 'zwi_', 'zooi_', 'zuih_', 'zwih_', 'zuee_', 'zwee_', 'xui_', 'xwi_', 'xooi_', 'xuih_', 'xwih_', 'xuee_', 'xwee_']
+
+ortho_variant['tair']=['tair', 'tayr', 'tyer', 'dair', 'dayr', 'dyer', 'tair_', 'tayr_', 'tyer_', 'dair_', 'dayr_', 'dyer_']
+
+ortho_variant['tau']=['tau', 'tao', 'taw', 'tou', 'tow', 'dau', 'dao', 'daw', 'dou', 'dow', 'tau_', 'tao_', 'taw_', 'tou_', 'tow_', 'dau_', 'dao_', 'daw_', 'dou_', 'dow_', 'tahu', 'tahoo', 'taho', 'tahhu', 'tahhoo', 'tahho', 'tarhu', 'tarhoo', 'tarho', 'dahu', 'dahoo', 'daho', 'dahhu', 'dahhoo', 'dahho', 'darhu', 'darhoo', 'darho', 'ta_hu', 'ta_hoo', 'ta_ho', 'tah_hu', 'tah_hoo', 'tah_ho', 'tar_hu', 'tar_hoo', 'tar_ho', 'da_hu', 'da_hoo', 'da_ho', 'dah_hu', 'dah_hoo', 'dah_ho', 'dar_hu', 'dar_hoo', 'dar_ho', 'tahu', 'tahoo', 'taho', 'tahhu', 'tahhoo', 'tahho', 'tarhu', 'tarhoo', 'tarho', 'dahu', 'dahoo', 'daho', 'dahhu', 'dahhoo', 'dahho', 'darhu', 'darhoo', 'darho', 'ta_hu', 'ta_hoo', 'ta_ho', 'tah_hu', 'tah_hoo', 'tah_ho', 'tar_hu', 'tar_hoo', 'tar_ho', 'da_hu', 'da_hoo', 'da_ho', 'dah_hu', 'dah_hoo', 'dah_ho', 'dar_hu', 'dar_hoo', 'dar_ho']
+
+ortho_variant['teh']=['tay', 'tey', 'teh', 'tei', 'te', 'tae', 'day', 'dey', 'deh', 'dei', 'de', 'dae', 'tay_', 'tey_', 'teh_', 'tei_', 'te_', 'tae_', 'day_', 'dey_', 'deh_', 'dei_', 'de_', 'dae_']
+
+ortho_variant['terh']=['teh', 'terh', 'deh', 'derh', 'teh_', 'terh_', 'deh_', 'derh_']
+
+ortho_variant['tiu']=['tio', 'teo', 'tyo', 'tioh', 'teoh', 'tyoh', 'dio', 'deo', 'dyo', 'dioh', 'deoh', 'dyoh', 'tio_', 'teo_', 'tyo_', 'tioh_', 'teoh_', 'tyoh_', 'dio_', 'deo_', 'dyo_', 'dioh_', 'deoh_', 'dyoh_', 'tiew', 'tiu', 'tyu', 'tew', 'diew', 'diu', 'dyu', 'dew', 'tiew_', 'tiu_', 'tyu_', 'tew_', 'diew_', 'diu_', 'dyu_', 'dew_']
+
+ortho_variant['toh']=['to', 'tou', 'toh', 'tow', 'do', 'dou', 'doh', 'dow', 'to_', 'tou_', 'toh_', 'tow_', 'do_', 'dou_', 'doh_', 'dow_']
+
+ortho_variant['toot']=['tut', 'tud', 'toot', 'tood', 'tot', 'tod', 'dut', 'dud', 'doot', 'dood', 'dot', 'dod', 'tut_', 'tud_', 'toot_', 'tood_', 'tot_', 'tod_', 'dut_', 'dud_', 'doot_', 'dood_', 'dot_', 'dod_']
+
+ortho_variant['tua']=['tua', 'twa', 'toa', 'tuah', 'twah', 'toah', 'tuar', 'twar', 'toar', 'dua', 'dwa', 'doa', 'duah', 'dwah', 'doah', 'duar', 'dwar', 'doar', 'tua_', 'twa_', 'toa_', 'tuah_', 'twah_', 'toah_', 'tuar_', 'twar_', 'toar_', 'dua_', 'dwa_', 'doa_', 'duah_', 'dwah_', 'doah_', 'duar_', 'dwar_', 'doar_']
+
+ortho_variant['tuang']=['tuang', 'twang', 'toang', 'tuarng', 'twarng', 'toarng', 'duang', 'dwang', 'doang', 'duarng', 'dwarng', 'doarng', 'tuang_', 'twang_', 'toang_', 'tuarng_', 'twarng_', 'toarng_', 'duang_', 'dwang_', 'doang_', 'duarng_', 'dwarng_', 'doarng_']
+
+ortho_variant['ular']=['ula', 'ulah', 'ular', 'oola', 'oolah', 'oolar', 'ola', 'olah', 'olar', 'ula_', 'ulah_', 'ular_', 'oola_', 'oolah_', 'oolar_', 'ola_', 'olah_', 'olar_']
+
+ortho_variant['zai']=['cai', 'cay', 'cye', 'chai', 'chay', 'chye', 'zai', 'zay', 'zye', 'zhai', 'zhay', 'zhye', 'jai', 'jay', 'jye', 'tzai', 'tzay', 'tzye', 'cai_', 'cay_', 'cye_', 'chai_', 'chay_', 'chye_', 'zai_', 'zay_', 'zye_', 'zhai_', 'zhay_', 'zhye_', 'jai_', 'jay_', 'jye_', 'tzai_', 'tzay_', 'tzye_']
+
+ortho_variant['zao']=['cau', 'cao', 'caw', 'cou', 'cow', 'chau', 'chao', 'chaw', 'chou', 'chow', 'zau', 'zao', 'zaw', 'zou', 'zow', 'zhau', 'zhao', 'zhaw', 'zhou', 'zhow', 'jau', 'jao', 'jaw', 'jou', 'jow', 'tzau', 'tzao', 'tzaw', 'tzou', 'tzow', 'cau_', 'cao_', 'caw_', 'cou_', 'cow_', 'chau_', 'chao_', 'chaw_', 'chou_', 'chow_', 'zau_', 'zao_', 'zaw_', 'zou_', 'zow_', 'zhau_', 'zhao_', 'zhaw_', 'zhou_', 'zhow_', 'jau_', 'jao_', 'jaw_', 'jou_', 'jow_', 'tzau_', 'tzao_', 'tzaw_', 'tzou_', 'tzow_']
+
+ortho_variant['zhng']=['cng', 'chng', 'zhng', 'jng', 'tzng', 'cng_', 'chng_', 'zhng_', 'jng_', 'tzng_', 'ceng', 'cerng', 'cheng', 'cherng', 'zeng', 'zerng', 'zheng', 'zherng', 'jeng', 'jerng', 'tzeng', 'tzerng', 'ceng_', 'cerng_', 'cheng_', 'cherng_', 'zeng_', 'zerng_', 'zheng_', 'zherng_', 'jeng_', 'jerng_', 'tzeng_', 'tzerng_']
+
+ortho_variant['zhun']=['cun', 'coon', 'con', 'chun', 'choon', 'chon', 'zun', 'zoon', 'zon', 'zhun', 'zhoon', 'zhon', 'jun', 'joon', 'jon', 'tzun', 'tzoon', 'tzon', 'cun_', 'coon_', 'con_', 'chun_', 'choon_', 'chon_', 'zun_', 'zoon_', 'zon_', 'zhun_', 'zhoon_', 'zhon_', 'jun_', 'joon_', 'jon_', 'tzun_', 'tzoon_', 'tzon_']
+
+ortho_variant['zhup']=['cap', 'cab', 'cup', 'cub', 'chap', 'chab', 'chup', 'chub', 'zap', 'zab', 'zup', 'zub', 'zhap', 'zhab', 'zhup', 'zhub', 'jap', 'jab', 'jup', 'jub', 'tzap', 'tzab', 'tzup', 'tzub', 'cap_', 'cab_', 'cup_', 'cub_', 'chap_', 'chab_', 'chup_', 'chub_', 'zap_', 'zab_', 'zup_', 'zub_', 'zhap_', 'zhab_', 'zhup_', 'zhub_', 'jap_', 'jab_', 'jup_', 'jub_', 'tzap_', 'tzab_', 'tzup_', 'tzub_']
+
+# 113 words recorded.

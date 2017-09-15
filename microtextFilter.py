@@ -260,7 +260,7 @@ for ixxx in parseinDictDiff:
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
 for oiw in parseinDict:
-    fdup.writelines("Word: " + str(oiw) + "\n")
+    fdup.writelines("Word: " + str(oiw) +" | Freq: "+ str(my_dict[oiw])+"\n")
     fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
 
 print("All complete")

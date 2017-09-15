@@ -119,10 +119,10 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
 
         try:
             if myString.find(wordstoignore) == -1:
-                if startreadArea!="":
+                if startreadArea != "":
                     pyarr.append(myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)])
                 else:
-                    pyarr.append(myString.replace("\n",""))
+                    pyarr.append(myString.replace("\n", ""))
         except:
             pass
     return pyarr
@@ -227,10 +227,10 @@ fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")
 
-my_dicInArray=[]
+my_dicInArray = []
 
-parseinDict={}
-parseinDictDiff={}
+parseinDict = {}
+parseinDictDiff = {}
 
 for index, abc in enumerate(my_dict):
     wordsfoundaryyyy = []
@@ -240,20 +240,30 @@ for index, abc in enumerate(my_dict):
     my_dicInArray.append(sabc)
 
 for c in arrofileobjects:
-    print(c.getFilename())
-    listyincheck=[]
+    print("Processing File: " + str(c.getFilename()))
+    listyincheck = []
 
-    listyincheck= list(set(c.getArray()).intersection(set(my_dicInArray)))
+    listyincheck = list(set(c.getArray()).intersection(set(my_dicInArray)))
     for gh in listyincheck:
         if gh in parseinDict:
-            parseinDict[gh] = str(parseinDict[gh])+str(c.getFilename())
+            parseinDict[gh] = str(parseinDict[gh]) + ", " + str(c.getFilename())
         else:
-            parseinDict[gh]=str(c.getFilename())
-    #do differ
+            parseinDict[gh] = str("Word found in: ") + str(c.getFilename())
+    listyincheckdiff = list(set(my_dicInArray).difference(set(c.getArray())))
+    # print(listyincheckdiff)
 
+    for wer in listyincheckdiff:
+        parseinDictDiff[wer] = my_dict[wer]
 
+for ixxx in parseinDictDiff:
+    fnodup.writelines("Word: " + str(ixxx) + "\n")
+    fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
-print(parseinDict)
+for oiw in parseinDict:
+    fdup.writelines("Word: " + str(oiw) + "\n")
+    fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
+
+print("All complete")
 
 fdup.close()
 fnodup.close()

@@ -4,6 +4,7 @@ from collections import Counter
 import fnmatch
 import operator
 
+
 def excelinput(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
     # loading in workbook
@@ -78,9 +79,7 @@ my_dict = Counter(tempppppaarrrrr)
 del my_dict[' ']
 del my_dict['']
 
-
-
-for fg in sorted(my_dict, key=my_dict.get,reverse=True):
+for fg in sorted(my_dict, key=my_dict.get, reverse=True):
     f.writelines(str(fg) + "\t\t" + str(my_dict[fg]) + "\n")
 print("Done")
 
@@ -257,17 +256,12 @@ for c in arrofileobjects:
     for wer in listyincheckdiff:
         parseinDictDiff[wer] = my_dict[wer]
 
-
-
-
-
-
-for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get,reverse=True):
+for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
 for oiw in parseinDict:
-    fdup.writelines("Word: " + str(oiw) +" | Freq: "+ str(my_dict[oiw])+"\n")
+    fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict[oiw]) + "\n")
     fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
 
 print("All complete")

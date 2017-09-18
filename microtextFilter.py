@@ -78,8 +78,10 @@ my_dict = Counter(tempppppaarrrrr)
 del my_dict[' ']
 del my_dict['']
 
-for fg in my_dict:
-    f.writelines(fg + "\t\t" + str(my_dict[fg]) + "\n")
+
+
+for fg in sorted(my_dict, key=my_dict.get,reverse=True):
+    f.writelines(str(fg) + "\t\t" + str(my_dict[fg]) + "\n")
 print("Done")
 
 f.close()
@@ -260,7 +262,7 @@ for c in arrofileobjects:
 
 
 
-for ixxx in sorted(parseinDictDiff.items(), key=operator.itemgetter(1),reverse=True):
+for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get,reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 

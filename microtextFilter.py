@@ -2,7 +2,7 @@ import re
 from openpyxl import load_workbook
 from collections import Counter
 import fnmatch
-
+import operator
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
@@ -255,7 +255,12 @@ for c in arrofileobjects:
     for wer in listyincheckdiff:
         parseinDictDiff[wer] = my_dict[wer]
 
-for ixxx in parseinDictDiff:
+
+
+
+
+
+for ixxx in sorted(parseinDictDiff.items(), key=operator.itemgetter(1),reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 

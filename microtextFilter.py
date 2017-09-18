@@ -64,6 +64,10 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
     counttttt = counttttt + 1
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
+    i = str(i).replace('"', " ")
+    i = str(i).replace('(', " ")
+    i = str(i).replace(')', " ")
+    i = str(i).replace('“', " ")
     i = str(i).lower()
     # do blank check to see if have space
     if str(i).find(" ") != -1:

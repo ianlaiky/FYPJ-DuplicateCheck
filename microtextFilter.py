@@ -50,7 +50,15 @@ tempppppaarrrrr = []
 
 
 def wordduplicationcheck(wordstocheck):
-    tempppppaarrrrr.append(wordstocheck)
+
+    if wordstocheck[-1:]==".":
+        tempppppaarrrrr.append(wordstocheck[0:-1])
+    elif wordstocheck[-1:]==":":
+        tempppppaarrrrr.append(wordstocheck[0:-1])
+
+    else:
+        tempppppaarrrrr.append(wordstocheck)
+
 
 
 f = open('allfreq.txt', 'w', encoding="utf-8")

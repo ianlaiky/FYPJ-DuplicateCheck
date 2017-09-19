@@ -272,8 +272,17 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
-for oiw in parseinDict:
-    fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict[oiw]) + "\n")
+my_dict2fordup={}
+
+for i in parseinDict:
+    my_dict2fordup[i]=my_dict[i]
+
+
+
+for oiw in sorted(my_dict2fordup,key=my_dict2fordup.get,reverse=True):
+    # fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict[oiw]) + "\n")
+    fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict2fordup[oiw]) + "\n")
+
     fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
 
 print("All complete")

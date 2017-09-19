@@ -74,6 +74,7 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
     i = str(i).replace('(', " ")
     i = str(i).replace(')', " ")
     i = str(i).replace('“', " ")
+    i = str(i).replace(';', " ")
     i = str(i).lower()
     # do blank check to see if have space
     if str(i).find(" ") != -1:
@@ -281,6 +282,7 @@ for oiw in sorted(my_dict2fordup, key=my_dict2fordup.get, reverse=True):
 
     fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
 
+print(len(parseinDict))
 print("All complete")
 
 fdup.close()

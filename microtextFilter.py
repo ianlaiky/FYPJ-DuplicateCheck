@@ -239,10 +239,20 @@ for gitdata in parseinDict:
 
 listwhosewordsarenotfound = list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
 
+# not found
+print("Cleaning up links...")
+for links in listwhosewordsarenotfound:
+    if links in 'www.':
+        listwhosewordsarenotfound.remove(links)
+
+
 for savedata in listwhosewordsarenotfound:
     parseinDictDiff[savedata] = my_dict[savedata]
 
-# not found
+
+
+
+
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")

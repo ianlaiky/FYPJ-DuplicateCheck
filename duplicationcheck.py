@@ -45,7 +45,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 
 def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore):
     pyarr = []
-    f = open(filetoopen, 'r')
+    f = open(filetoopen, 'r', encoding="utf8")
     message = f.readlines()
 
     # print(message)
@@ -142,7 +142,7 @@ for i in conf:
             arrofileobjects.append(Files(i.split(",")[1].strip(),
                                          excelinput(i.split(",")[1].strip(), int(i.split(",")[2].strip()),
                                                     int(i.split(",")[3].strip()))))
-        elif x == "py":
+        elif x == "text":
             # print("Value check to be deleteed(): " + str(i.split(",")[1].strip()))
             arrofileobjects.append(Files(i.split(",")[1].strip(),
                                          pythonFile(i.split(",")[1].strip(), i.split(",")[2].strip(),

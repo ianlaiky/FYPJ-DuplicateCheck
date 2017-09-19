@@ -217,7 +217,7 @@ for i in conf:
             arrofileobjects.append(Files(i.split(",")[1].strip(),
                                          excelinput(i.split(",")[1].strip(), int(i.split(",")[2].strip()),
                                                     int(i.split(",")[3].strip()))))
-        elif x == "py":
+        elif x == "text":
             # print("Value check to be deleteed(): " + str(i.split(",")[1].strip()))
             arrofileobjects.append(Files(i.split(",")[1].strip(),
                                          pythonFile(i.split(",")[1].strip(), i.split(",")[2].strip(),
@@ -255,18 +255,40 @@ for c in arrofileobjects:
     print("Processing File: " + str(c.getFilename()))
     listyincheck = []
 
+    # found
     listyincheck = list(set(c.getArray()).intersection(set(my_dicInArray)))
     for gh in listyincheck:
         if gh in parseinDict:
             parseinDict[gh] = str(parseinDict[gh]) + ", " + str(c.getFilename())
         else:
             parseinDict[gh] = str("Word found in: ") + str(c.getFilename())
-    listyincheckdiff = list(set(my_dicInArray).difference(set(c.getArray())))
+
+    # notfound nt working
+    # listyincheckdiff = list(set(my_dicInArray).difference(set(c.getArray())))
     # print(listyincheckdiff)
 
-    for wer in listyincheckdiff:
-        parseinDictDiff[wer] = my_dict[wer]
+    # for wer in listyincheckdiff:
+    #     parseinDictDiff[wer] = my_dict[wer]
 
+    # print(my_dicInArray.index("the"))
+    #
+    # print(c.getArray().index("the"))
+
+listwhosewordsarenotfound=[]
+temparrtocheckagainstdata=[]
+print("Saving File.....")
+for gitdata in parseinDict:
+    temparrtocheckagainstdata.append(gitdata)
+
+
+
+
+listwhosewordsarenotfound=list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
+
+for savedata in listwhosewordsarenotfound:
+    parseinDictDiff[savedata]=my_dict[savedata]
+
+#not found
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
@@ -276,6 +298,7 @@ my_dict2fordup = {}
 for i in parseinDict:
     my_dict2fordup[i] = my_dict[i]
 
+#found
 for oiw in sorted(my_dict2fordup, key=my_dict2fordup.get, reverse=True):
     # fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict[oiw]) + "\n")
     fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict2fordup[oiw]) + "\n")

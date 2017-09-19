@@ -244,6 +244,7 @@ print("Cleaning up links...")
 for links in listwhosewordsarenotfound:
     if links in 'www.':
         listwhosewordsarenotfound.remove(links)
+        #links
 
 
 for savedata in listwhosewordsarenotfound:

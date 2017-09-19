@@ -50,15 +50,13 @@ tempppppaarrrrr = []
 
 
 def wordduplicationcheck(wordstocheck):
-
-    if wordstocheck[-1:]==".":
+    if wordstocheck[-1:] == ".":
         tempppppaarrrrr.append(wordstocheck[0:-1])
-    elif wordstocheck[-1:]==":":
+    elif wordstocheck[-1:] == ":":
         tempppppaarrrrr.append(wordstocheck[0:-1])
 
     else:
         tempppppaarrrrr.append(wordstocheck)
-
 
 
 f = open('allfreq.txt', 'w', encoding="utf-8")
@@ -272,14 +270,12 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
-my_dict2fordup={}
+my_dict2fordup = {}
 
 for i in parseinDict:
-    my_dict2fordup[i]=my_dict[i]
+    my_dict2fordup[i] = my_dict[i]
 
-
-
-for oiw in sorted(my_dict2fordup,key=my_dict2fordup.get,reverse=True):
+for oiw in sorted(my_dict2fordup, key=my_dict2fordup.get, reverse=True):
     # fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict[oiw]) + "\n")
     fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict2fordup[oiw]) + "\n")
 

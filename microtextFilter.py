@@ -120,7 +120,7 @@ class Files():
 
 def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore):
     pyarr = []
-    f = open(filetoopen, 'r')
+    f = open(filetoopen, 'r', encoding="utf8")
     message = f.readlines()
 
     # print(message)
@@ -141,7 +141,7 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
 
 
 def phoneticcase(filetotopen):
-    f = open(filetotopen, 'r')
+    f = open(filetotopen, 'r', encoding="utf8")
     message = f.readlines()
 
     f.close()
@@ -167,38 +167,6 @@ def phoneticcase(filetotopen):
     return newphonecticlist
 
     print(newphonecticlist)
-
-
-# for i in columnlist:
-#     print(i)
-def searchcase(columarr):
-    alllistarr = []
-    for i in columarr:
-        # print(i)
-        if fnmatch.fnmatch(str(i), "*" + userinput + "*"):
-            alllistarr.append(i)
-    return alllistarr
-    # print(i)
-
-
-def matchcase(columarr):
-    alllistarr = []
-    for i in columarr:
-        # print(i)
-        # print(userinput)
-        if fnmatch.fnmatch(str(i), userinput):
-            alllistarr.append(i)
-            print(i)
-            # print(userinput)
-    return alllistarr
-    # print(i)
-
-
-def checkandreturn(matchorsearch, arrayparsein):
-    if matchorsearch == 'm':
-        return matchcase(arrayparsein)
-    else:
-        return searchcase(arrayparsein)
 
 
 # files read form config
@@ -263,32 +231,18 @@ for c in arrofileobjects:
         else:
             parseinDict[gh] = str("Word found in: ") + str(c.getFilename())
 
-    # notfound nt working
-    # listyincheckdiff = list(set(my_dicInArray).difference(set(c.getArray())))
-    # print(listyincheckdiff)
-
-    # for wer in listyincheckdiff:
-    #     parseinDictDiff[wer] = my_dict[wer]
-
-    # print(my_dicInArray.index("the"))
-    #
-    # print(c.getArray().index("the"))
-
-listwhosewordsarenotfound=[]
-temparrtocheckagainstdata=[]
+listwhosewordsarenotfound = []
+temparrtocheckagainstdata = []
 print("Saving File.....")
 for gitdata in parseinDict:
     temparrtocheckagainstdata.append(gitdata)
 
-
-
-
-listwhosewordsarenotfound=list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
+listwhosewordsarenotfound = list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
 
 for savedata in listwhosewordsarenotfound:
-    parseinDictDiff[savedata]=my_dict[savedata]
+    parseinDictDiff[savedata] = my_dict[savedata]
 
-#not found
+# not found
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     fnodup.writelines("Word: " + str(ixxx) + "\n")
     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
@@ -298,14 +252,14 @@ my_dict2fordup = {}
 for i in parseinDict:
     my_dict2fordup[i] = my_dict[i]
 
-#found
+# found
 for oiw in sorted(my_dict2fordup, key=my_dict2fordup.get, reverse=True):
     # fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict[oiw]) + "\n")
     fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict2fordup[oiw]) + "\n")
 
     fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
 
-print(len(parseinDict))
+print(len(listwhosewordsarenotfound))
 print("All complete")
 
 fdup.close()

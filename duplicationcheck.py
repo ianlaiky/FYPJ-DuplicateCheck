@@ -66,7 +66,7 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
 
 
 def phoneticcase(filetotopen):
-    f = open(filetotopen, 'r')
+    f = open(filetotopen, 'r', encoding="utf8")
     message = f.readlines()
 
     f.close()

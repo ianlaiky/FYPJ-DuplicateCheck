@@ -30,20 +30,20 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 # excelinput("datafiles\sgforums.xlsx",0,0)
 
 
-class DataValue():
-    def __init__(self, itemm, countt):
-        self.item = itemm
-        self.count = countt
-
-    def getitem(self):
-        return self.item
-
-    def getitemCount(self):
-        return self.countt
-
-    def setitemCounr(self, itemm):
-        self.item = itemm
-        return self.item
+# class DataValue():
+#     def __init__(self, itemm, countt):
+#         self.item = itemm
+#         self.count = countt
+#
+#     def getitem(self):
+#         return self.item
+#
+#     def getitemCount(self):
+#         return self.countt
+#
+#     def setitemCounr(self, itemm):
+#         self.item = itemm
+#         return self.item
 
 
 tempppppaarrrrr = []
@@ -237,14 +237,31 @@ print("Saving File.....")
 for gitdata in parseinDict:
     temparrtocheckagainstdata.append(gitdata)
 
-listwhosewordsarenotfound = list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
-
+oldlistwhosewordsarenotfound = list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
+listwhosewordsarenotfound=[]
 # not found
 print("Cleaning up links...")
-for links in listwhosewordsarenotfound:
-    if links in 'www.':
-        listwhosewordsarenotfound.remove(links)
-        #links
+for links in oldlistwhosewordsarenotfound:
+    if 'http' in links:
+        print(links)
+    if 'https' in links:
+        print(links)
+    if 'www.' in links:
+        print(links)
+    if '.com' in links:
+        print(links)
+
+
+
+    if 'http' not in links:
+        if 'https' not in links:
+            if 'www.' not in links:
+                if '.com' not in links:
+                    listwhosewordsarenotfound.append(links)
+
+
+
+
 
 
 for savedata in listwhosewordsarenotfound:

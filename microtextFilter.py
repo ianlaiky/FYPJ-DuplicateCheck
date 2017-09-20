@@ -288,8 +288,8 @@ for savedata in listwhosewordsarenotfound:
 
 
 def characterinvalidationchecker(word):
-    texttochecktoinvalidate = ['...', '?', '-', '?','!','=','--',"'",'/b','>','/','+','–']
-    returnvalue=True
+    texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–']
+    returnvalue = True
 
     for io in texttochecktoinvalidate:
         # print(len(texttochecktoinvalidate))
@@ -298,9 +298,8 @@ def characterinvalidationchecker(word):
         if str(io) == str(word):
             # print(word)
             # print("true")
-            returnvalue=False
+            returnvalue = False
     return returnvalue
-
 
 
 # sort special char to diff file

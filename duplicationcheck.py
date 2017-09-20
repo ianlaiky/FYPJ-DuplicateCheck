@@ -175,11 +175,19 @@ while (userWeb != "exit"):
 
     matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
     matchsc = str(matchorsearcase)
-
+    filenames=[]
     for i in arrofileobjects:
         print("--------")
         print("File:" + str(i.getFilename()))
         print(checkandreturn(matchsc, i.getArray()))
         print("Records Found:" + str(len(checkandreturn(matchsc, i.getArray()))))
         print("Records Scanned:" + str(len(i.getArray())))
+
+        if len(checkandreturn(matchsc, i.getArray()))>0:
+            filenames.append(i.getFilename())
+
+    print("---***************-----")
+    print("Word: "+str(userinput)+" is found in: ")
+
+    print(filenames)
 

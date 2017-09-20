@@ -291,7 +291,7 @@ for savedata in listwhosewordsarenotfound:
 
 # filtering only non-duplication, thus saving to another file
 def characterinvalidationchecker(word):
-    texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–']
+    texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -305,7 +305,7 @@ def characterinvalidationchecker(word):
     return returnvalue
 
 
-# sort special char to diff file
+# sort special char to diff file, save all non-dup to one file
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     line = re.search('[^A-Za-z]', str(ixxx))
     # print(line)

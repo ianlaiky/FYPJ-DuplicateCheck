@@ -51,7 +51,8 @@ tempppppaarrrrr = []
 
 def wordduplicationcheck(wordstocheck):
     if wordstocheck[-1:] == ".":
-        tempppppaarrrrr.append(wordstocheck[0:-1])
+        if wordstocheck[-2:-1]!=".":
+            tempppppaarrrrr.append(wordstocheck[0:-1])
     elif wordstocheck[-1:] == ":":
         tempppppaarrrrr.append(wordstocheck[0:-1])
 

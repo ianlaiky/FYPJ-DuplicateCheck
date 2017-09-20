@@ -55,6 +55,8 @@ def multiplepunctuationRemover(words):
     line = re.sub('\!!+', '!', line)
     line = re.sub('\?\?+', '?', line)
     line = re.sub('\-\-+', '---', line)
+    line = re.sub('\_\_+', '___', line)
+    line = re.sub('\=\=+', '===', line)
 
     return line
 

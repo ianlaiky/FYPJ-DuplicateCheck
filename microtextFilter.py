@@ -266,6 +266,8 @@ for gitdata in parseinDict:
 oldlistwhosewordsarenotfound = list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
 listwhosewordsarenotfound = []
 # not found
+
+# filtering globally
 print("Cleaning up links...")
 for links in oldlistwhosewordsarenotfound:
     if 'http' in links:
@@ -287,6 +289,7 @@ for savedata in listwhosewordsarenotfound:
     parseinDictDiff[savedata] = my_dict[savedata]
 
 
+# filtering only non-duplication, thus saving to another file
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–']
     returnvalue = True

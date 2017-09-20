@@ -305,7 +305,8 @@ for savedata in listwhosewordsarenotfound:
 
 # filtering only non-duplication, thus saving to another file
 def characterinvalidationchecker(word):
-    texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>','---',')','(']
+    texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
+                               '---', ')', '(']
     returnvalue = True
 
     for io in texttochecktoinvalidate:

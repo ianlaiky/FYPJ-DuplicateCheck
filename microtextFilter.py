@@ -48,16 +48,31 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 
 tempppppaarrrrr = []
 
+# punctuation remover
+def multiplepunctuationRemover(words):
+    line = re.sub('\.\.+', '...', words)
+    line = re.sub('\!!+', '!', line)
+    line = re.sub('\?\?+', '?', line)
+
+    return line
+
 
 def wordduplicationcheck(wordstocheck):
     if wordstocheck[-1:] == ".":
-        if wordstocheck[-2:-1]!=".":
-            tempppppaarrrrr.append(wordstocheck[0:-1])
+        if wordstocheck[-2:-1] != ".":
+
+            tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck[0:-1]))
+
+        else:
+            tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck))
+
     elif wordstocheck[-1:] == ":":
-        tempppppaarrrrr.append(wordstocheck[0:-1])
+
+        tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck[0:-1]))
 
     else:
-        tempppppaarrrrr.append(wordstocheck)
+
+        tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck))
 
 
 f = open('allfreq.txt', 'w', encoding="utf-8")
@@ -76,15 +91,20 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
     i = str(i).replace(')', " ")
     i = str(i).replace('“', " ")
     i = str(i).replace(';', " ")
+    i = str(i).replace('[', " ")
+    i = str(i).replace(']', " ")
     i = str(i).lower()
     # do blank check to see if have space
+
+
+    # .replace to fix Ellipsis problem
     if str(i).find(" ") != -1:
         for x in re.split(" |,", i):
             # print(x)
             # f.writelines(x+"\n")
-            wordduplicationcheck(str(x).strip())
+            wordduplicationcheck(str(x).strip().replace('…', '...'))
     else:
-        wordduplicationcheck(str(i).strip())
+        wordduplicationcheck(str(i).strip().replace('…', '...'))
 
 my_dict = Counter(tempppppaarrrrr)
 
@@ -204,6 +224,7 @@ userWeb = ''
 userinput = ''
 fdup = open('dupefound.txt', 'w', encoding="utf-8")
 fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
+fnodupwspecial = open('nodupefoundSpecialCharacter.txt', 'w', encoding="utf-8")
 
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")
@@ -239,7 +260,7 @@ for gitdata in parseinDict:
     temparrtocheckagainstdata.append(gitdata)
 
 oldlistwhosewordsarenotfound = list(set(my_dicInArray).difference(set(temparrtocheckagainstdata)))
-listwhosewordsarenotfound=[]
+listwhosewordsarenotfound = []
 # not found
 print("Cleaning up links...")
 for links in oldlistwhosewordsarenotfound:
@@ -252,29 +273,30 @@ for links in oldlistwhosewordsarenotfound:
     if '.com' in links:
         print(links)
 
-
-
     if 'http' not in links:
         if 'https' not in links:
             if 'www.' not in links:
                 if '.com' not in links:
                     listwhosewordsarenotfound.append(links)
-
-
-
-
-
-
+# not found in db
 for savedata in listwhosewordsarenotfound:
     parseinDictDiff[savedata] = my_dict[savedata]
 
-
-
-
-
+# sort special char to diff file
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
-    fnodup.writelines("Word: " + str(ixxx) + "\n")
-    fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+    line = re.search('[^A-Za-z0-9]', str(ixxx))
+    # print(line)
+    if 'None' != str(line):
+        # print("RUN")
+        fnodupwspecial.writelines("Word: " + str(ixxx) + "\n")
+        fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+    else:
+
+        fnodup.writelines("Word: " + str(ixxx) + "\n")
+        fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+
+
+
 
 my_dict2fordup = {}
 
@@ -288,8 +310,12 @@ for oiw in sorted(my_dict2fordup, key=my_dict2fordup.get, reverse=True):
 
     fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
 
+
+
+
 print(len(listwhosewordsarenotfound))
 print("All complete")
 
 fdup.close()
 fnodup.close()
+fnodupwspecial.close()

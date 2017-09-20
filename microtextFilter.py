@@ -48,11 +48,13 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 
 tempppppaarrrrr = []
 
+
 # punctuation remover
 def multiplepunctuationRemover(words):
     line = re.sub('\.\.+', '...', words)
     line = re.sub('\!!+', '!', line)
     line = re.sub('\?\?+', '?', line)
+    line = re.sub('\-\-+', '---', line)
 
     return line
 
@@ -282,21 +284,34 @@ for links in oldlistwhosewordsarenotfound:
 for savedata in listwhosewordsarenotfound:
     parseinDictDiff[savedata] = my_dict[savedata]
 
+
+def characterinvalidationchecker(word):
+    texttochecktoinvalidate = ['...', '?', '-', '?','!','=','--',"'",'/b','>','/','+','–']
+    returnvalue=True
+
+    for io in texttochecktoinvalidate:
+        # print(len(texttochecktoinvalidate))
+        # print("I: " + word)
+        # print("C: " + io)
+        if str(io) == str(word):
+            # print(word)
+            # print("true")
+            returnvalue=False
+    return returnvalue
+
+
+
 # sort special char to diff file
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
-    line = re.search('[^A-Za-z0-9]', str(ixxx))
+    line = re.search('[^A-Za-z]', str(ixxx))
     # print(line)
     if 'None' != str(line):
-        # print("RUN")
-        fnodupwspecial.writelines("Word: " + str(ixxx) + "\n")
-        fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
-    else:
+        if characterinvalidationchecker(str(ixxx).strip()) is True:
+            fnodupwspecial.writelines("Word: " + str(ixxx) + "\n")
+            fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
-        fnodup.writelines("Word: " + str(ixxx) + "\n")
-        fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
-
-
-
+    fnodup.writelines("Word: " + str(ixxx) + "\n")
+    fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
 my_dict2fordup = {}
 
@@ -309,9 +324,6 @@ for oiw in sorted(my_dict2fordup, key=my_dict2fordup.get, reverse=True):
     fdup.writelines("Word: " + str(oiw) + " | Freq: " + str(my_dict2fordup[oiw]) + "\n")
 
     fdup.writelines("File : " + str(parseinDict[oiw]) + "\n\n")
-
-
-
 
 print(len(listwhosewordsarenotfound))
 print("All complete")

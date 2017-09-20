@@ -65,18 +65,32 @@ def wordduplicationcheck(wordstocheck):
     if wordstocheck[-1:] == ".":
         if wordstocheck[-2:-1] != ".":
 
-            tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck[0:-1]))
+            # if multiplepunctuationRemover(wordstocheck[0:-1])[-1:] == "?":
+            #
+            #     if multiplepunctuationRemover(wordstocheck[0:-1])[-2:-1] != "?":
+            #         tempppppaarrrrr.append(
+            #             multiplepunctuationRemover(multiplepunctuationRemover(wordstocheck[0:-1]))[0:-1])
+            #
+            #     else:
+            #         tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck))
+            # else:
+
+            tempppppaarrrrr.append((wordstocheck)[0:-1])
 
         else:
-            tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck))
+            tempppppaarrrrr.append((wordstocheck))
 
     elif wordstocheck[-1:] == ":":
 
-        tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck[0:-1]))
+        tempppppaarrrrr.append((wordstocheck[0:-1]))
+
+    elif wordstocheck[-1:] == "?":
+
+        tempppppaarrrrr.append((wordstocheck[0:-1]))
 
     else:
 
-        tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck))
+        tempppppaarrrrr.append((wordstocheck))
 
 
 f = open('allfreq.txt', 'w', encoding="utf-8")
@@ -91,12 +105,12 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
     i = str(i).replace('"', " ")
-    i = str(i).replace('(', " ")
-    i = str(i).replace(')', " ")
+    # i = str(i).replace('(', " ")
+    # i = str(i).replace(')', " ")
     i = str(i).replace('“', " ")
-    i = str(i).replace(';', " ")
-    i = str(i).replace('[', " ")
-    i = str(i).replace(']', " ")
+    # i = str(i).replace(';', " ")
+    # i = str(i).replace('[', " ")
+    # i = str(i).replace(']', " ")
     i = str(i).lower()
     # do blank check to see if have space
 
@@ -106,9 +120,9 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
         for x in re.split(" |,", i):
             # print(x)
             # f.writelines(x+"\n")
-            wordduplicationcheck(str(x).strip().replace('…', '...'))
+            wordduplicationcheck(multiplepunctuationRemover(str(x).strip().replace('…', '...')))
     else:
-        wordduplicationcheck(str(i).strip().replace('…', '...'))
+        wordduplicationcheck(multiplepunctuationRemover(str(i).strip().replace('…', '...')))
 
 my_dict = Counter(tempppppaarrrrr)
 

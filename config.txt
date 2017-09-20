@@ -28,8 +28,8 @@
 #
 # Enter Files Below:
 xlsx,filesdb\ner.xlsx,0,0
-py,filesdb\senticnet.py,[','],2,-----nil--------
-py,filesdb\microtext.py,[","],2,"#microtext"
+text,filesdb\senticnet.py,[','],2,-----nil--------
+text,filesdb\microtext.py,[","],2,"#microtext"
 phonetic,filesdb\ortho_variant.txt
 text,filesdb\wordlist.txt,,,0,------nil----
 text,filesdb\words.txt,,,0,-----nil------

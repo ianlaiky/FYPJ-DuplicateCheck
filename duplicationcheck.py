@@ -108,13 +108,16 @@ def searchcase(columarr):
 
 def matchcase(columarr):
     alllistarr = []
-    for i in columarr:
+    # for i in columarr:
         # print(i)
         # print(userinput)
-        if fnmatch.fnmatch(str(i), userinput):
-            alllistarr.append(i)
-            print(i)
+        # if fnmatch.fnmatch(str(i), userinput):
+        #     alllistarr.append(i)
+            # print(i)
             # print(userinput)
+    if userinput in columarr:
+        alllistarr.append(userinput)
+
     return alllistarr
     # print(i)
 

@@ -229,8 +229,8 @@ for i in conf:
             # print("Value check to be deleteed(): " + str(i.split(",")[1].strip()))
             arrofileobjects.append(Files(i.split(",")[1].strip(),
                                          pythonFile(i.split(",")[1].strip(), i.split(",")[2].strip(),
-                                                    i.split(",")[3].strip(), int(i.split(",")[4].strip()),
-                                                    i.split(",")[5].strip())))
+                                                    i.split(",")[3].strip(), int(len(i.split(",")[3].strip())),
+                                                    i.split(",")[4].strip())))
         elif x == "phonetic":
             arrofileobjects.append(Files(i.split(",")[1].strip(), phoneticcase(i.split(",")[1].strip())))
 
@@ -323,7 +323,7 @@ def characterinvalidationchecker(word):
 
     elif str(re.match("^[0-9]+$", word)) != "None":
         returnvalue = False
-    elif str(re.match("^\([0-9]\)+$", x)) != "None":
+    elif str(re.match("^\([0-9]\)+$", word)) != "None":
         returnvalue = False
 
 

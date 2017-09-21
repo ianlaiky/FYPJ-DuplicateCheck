@@ -167,13 +167,13 @@ for iiiii in arrofileobjects:
 userWeb = ''
 userinput = ''
 
-while (userWeb != "exit"):
+while (userWeb != "exit()"):
 
     print("-----------------------------")
-    userWeb = input("Enter 'exit' to exit" + "\n" + "Word duplication check:" + "\n")
+    userWeb = input("Enter 'exit()' to exit" + "\n" + "Word duplication check:" + "\n")
     userinput = str(userWeb)
 
-    if (userinput == "exit"):
+    if (userinput == "exit()"):
         break
 
     matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")

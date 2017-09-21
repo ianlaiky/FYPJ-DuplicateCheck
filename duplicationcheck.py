@@ -8,6 +8,7 @@ import fnmatch
 columnObjectListlist = []
 arrofileobjects = []
 
+
 class Files():
     def __init__(self, filename, dataArr):
         self.name = filename
@@ -56,10 +57,10 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
 
         try:
             if myString.find(wordstoignore) == -1:
-                if startreadArea!="":
+                if startreadArea != "":
                     pyarr.append(myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)])
                 else:
-                    pyarr.append(myString.replace("\n",""))
+                    pyarr.append(myString.replace("\n", ""))
         except:
             pass
     return pyarr
@@ -109,12 +110,12 @@ def searchcase(columarr):
 def matchcase(columarr):
     alllistarr = []
     # for i in columarr:
-        # print(i)
-        # print(userinput)
-        # if fnmatch.fnmatch(str(i), userinput):
-        #     alllistarr.append(i)
-            # print(i)
-            # print(userinput)
+    # print(i)
+    # print(userinput)
+    # if fnmatch.fnmatch(str(i), userinput):
+    #     alllistarr.append(i)
+    # print(i)
+    # print(userinput)
     if userinput in columarr:
         alllistarr.append(userinput)
 
@@ -154,8 +155,7 @@ for i in conf:
         elif x == "phonetic":
             arrofileobjects.append(Files(i.split(",")[1].strip(), phoneticcase(i.split(",")[1].strip())))
 
-
-print("Files"+str(len(arrofileobjects)))
+print("Files" + str(len(arrofileobjects)))
 for iiiii in arrofileobjects:
     print("Files loaded")
     print(iiiii.getFilename())
@@ -178,7 +178,7 @@ while (userWeb != "exit()"):
 
     matchorsearcase = input("Use Match or Search? m=Match, s=Search" + "\n")
     matchsc = str(matchorsearcase)
-    filenames=[]
+    filenames = []
     for i in arrofileobjects:
         print("--------")
         print("File:" + str(i.getFilename()))
@@ -186,11 +186,10 @@ while (userWeb != "exit()"):
         print("Records Found:" + str(len(checkandreturn(matchsc, i.getArray()))))
         print("Records Scanned:" + str(len(i.getArray())))
 
-        if len(checkandreturn(matchsc, i.getArray()))>0:
+        if len(checkandreturn(matchsc, i.getArray())) > 0:
             filenames.append(i.getFilename())
 
     print("---***************-----")
-    print("Word: "+str(userinput)+" is found in: ")
+    print("Word: " + str(userinput) + " is found in: ")
 
     print(filenames)
-

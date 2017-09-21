@@ -108,6 +108,7 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
     # i = str(i).replace('(', " ")
     # i = str(i).replace(')', " ")
     i = str(i).replace('“', " ")
+    # i = str(i).replace('. ', " ")
     # i = str(i).replace(';', " ")
     # i = str(i).replace('[', " ")
     # i = str(i).replace(']', " ")
@@ -303,7 +304,7 @@ for savedata in listwhosewordsarenotfound:
     parseinDictDiff[savedata] = my_dict[savedata]
 
 
-# filtering only non-duplication, thus saving to another file
+# filtering only non-duplication, thus saving to another file; also checks for numbers string only
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
                                '---', ')', '(']
@@ -317,6 +318,9 @@ def characterinvalidationchecker(word):
             # print(word)
             # print("true")
             returnvalue = False
+        elif str(re.search("^[0-9]+$", word)) != "None":
+            returnvalue = False
+
     return returnvalue
 
 

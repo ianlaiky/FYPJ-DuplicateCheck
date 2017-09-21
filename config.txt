@@ -28,6 +28,8 @@
 #
 # Enter Files Below:
 xlsx,filesdb\ner.xlsx,0,0
+xlsx,filesdb\Singlish+English Microtext.xlsx,4,0
+xlsx,filesdb\Singlish+English Microtext.xlsx,5,0
 text,filesdb\senticnet.py,[','],-----nil--------
 text,filesdb\microtext.py,[","],"#microtext"
 phonetic,filesdb\ortho_variant.txt
@@ -36,3 +38,4 @@ text,filesdb\words.txt,,,-----nil------
 text,filesdb\wordsen.txt,,,-------nil-------
 text,filesdb\emoticons.py,[","],emoticon = {}
 text,filesdb\stopwordsen.txt,,,-----nil--------
+

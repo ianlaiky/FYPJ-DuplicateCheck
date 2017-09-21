@@ -28,11 +28,11 @@
 #
 # Enter Files Below:
 xlsx,filesdb\ner.xlsx,0,0
-text,filesdb\senticnet.py,[','],2,-----nil--------
-text,filesdb\microtext.py,[","],2,"#microtext"
+text,filesdb\senticnet.py,[','],-----nil--------
+text,filesdb\microtext.py,[","],"#microtext"
 phonetic,filesdb\ortho_variant.txt
-text,filesdb\wordlist.txt,,,0,------nil----
-text,filesdb\words.txt,,,0,-----nil------
-text,filesdb\wordsen.txt,,,0,-------nil-------
-text,filesdb\emoticons.py,[","],2,emoticon = {}
-text,filesdb\stopwordsen.txt,,,0,-----nil--------
+text,filesdb\wordlist.txt,,,------nil----
+text,filesdb\words.txt,,,-----nil------
+text,filesdb\wordsen.txt,,,-------nil-------
+text,filesdb\emoticons.py,[","],emoticon = {}
+text,filesdb\stopwordsen.txt,,,-----nil--------

@@ -323,6 +323,8 @@ def characterinvalidationchecker(word):
 
     elif str(re.match("^[0-9]+$", word)) != "None":
         returnvalue = False
+    elif str(re.match("^\([0-9]\)+$", x)) != "None":
+        returnvalue = False
 
 
     return returnvalue

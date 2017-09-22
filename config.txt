@@ -1,32 +1,37 @@
-# For xlsx
-# ext,filename.ext,sheet index, column
+# For xlsx:
+# ext,filename.ext location,sheet index, column
 # Example: first column of the first sheet in singlish.xlsx
 # Format:
-# E.g. xlsx,singlish.ext,0,0
+# E.g. xlsx,filesdb\singlish.ext,0,0
 #
 #
-# For .py
-# ext,filename.ext, character to start reading from, character to end read,no. of index to reach the start,words to omit from scan
+# For .py or text files
+# ext,filename.ext, character to start reading from, character to end read,words to omit from scan("--------nil--------" if not needed)
 # Example:
 # if data is
 # "#microtext[""oov_word""] = [""iv_word"",""polarity""]"
 # "microtext[""kys""] = [""kill_yourself"",""negative""]"
 #
-# and you want to omit "#microtext from the scan
+# and if you want to omit "#microtext from the scan
 #  
 # Format:
 # E.g. py,microtext.py,["",""],3,"#microtext"
 # 3 is entered since in ["" the words start after ["" after 3 characters
 #
-# For phonetic:
+#
+#
+#
+#
+# For the phonetic(ortho_variant file since it has different formatting: ortho_variant['baik']=['baik', 'baig', 'bayk',])
 # Format: phonetic,filename.ext
 # E.g. phonetic,ortho_variant.txt
 #
 #
 #
 #
-#
+# "#" to comment out line
 # Enter Files Below:
+
 xlsx,filesdb\ner.xlsx,0,0
 xlsx,filesdb\Singlish+English Microtext.xlsx,4,0
 xlsx,filesdb\Singlish+English Microtext.xlsx,5,0

@@ -1,13 +1,22 @@
+import re
+# import enchant
+# d = enchant.Dict("en_US")
+# de = enchant.Dict("en_GB")
+# print(d.check("america"))
+# # print(de.check("afk"))
+#
+# if d.check("americans") is True:
+#     print("ts")
 
-import enchant
-d = enchant.Dict("en_US")
-de = enchant.Dict("en_GB")
-print(d.check("america"))
-# print(de.check("afk"))
-
-if d.check("americans") is True:
-    print("ts")
-
+# import unicodedata
+#
+# def normalize_caseless(text):
+#     return unicodedata.normalize("NFKD", text.casefold())
+#
+# def caseless_equal(left, right):
+#     return normalize_caseless(left) == normalize_caseless(right)
+#
+# print(caseless_equal("james" ,"Jamess"))
 
 
 
@@ -42,14 +51,14 @@ if d.check("americans") is True:
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-# x="(1)"
-# x1="2)dsad"
-# x2="3) dasasad"
-#
-# print(re.match("^[0-9]\)+$",x))
-#
-# if str(re.match("^\([0-9]\)+$", x)) != "None":
-#     print("false")
+x="1)"
+x1="2)dsad"
+x2="3) dasasad"
+
+print(re.match("^[0-9]\)+$",x))
+
+if str(re.match("^\([0-9]\)+$", x)) != "None":
+    print("false")
 
 
 # y="text,,,0"
@@ -59,5 +68,4 @@ if d.check("americans") is True:
 # print(y.split(","))
 #
 # print(x[x.index(y.split(",")[1])+int(y.split(",")[3]):x.index(y.split(",")[2])])
-
 

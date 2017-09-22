@@ -116,7 +116,7 @@ def matchcase(columarr):
     #     alllistarr.append(i)
     # print(i)
     # print(userinput)
-    if userinput in columarr:
+    if str(userinput.lower()) in [str(x).lower() for x in columarr]:
         alllistarr.append(userinput)
 
     return alllistarr

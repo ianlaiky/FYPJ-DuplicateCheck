@@ -1,8 +1,11 @@
 import re
 from openpyxl import load_workbook
 from collections import Counter
-import fnmatch
-import operator
+import enchant
+import unicodedata
+
+# forum data for reading
+forumdataforreading = "datafiles\sgforums.xlsx"
 
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
@@ -27,23 +30,13 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     return columnlist
 
 
-# excelinput("datafiles\sgforums.xlsx",0,0)
+# comparing 2 words: https://stackoverflow.com/questions/319426/how-do-i-do-a-case-insensitive-string-comparison-in-python
+def normalize_caseless(text):
+    return unicodedata.normalize("NFKD", text.casefold())
 
 
-# class DataValue():
-#     def __init__(self, itemm, countt):
-#         self.item = itemm
-#         self.count = countt
-#
-#     def getitem(self):
-#         return self.item
-#
-#     def getitemCount(self):
-#         return self.countt
-#
-#     def setitemCounr(self, itemm):
-#         self.item = itemm
-#         return self.item
+def caseless_equal(left, right):
+    return normalize_caseless(left) == normalize_caseless(right)
 
 
 tempppppaarrrrr = []
@@ -93,12 +86,10 @@ def wordduplicationcheck(wordstocheck):
         tempppppaarrrrr.append((wordstocheck))
 
 
-f = open('allfreq.txt', 'w', encoding="utf-8")
-
 counttttt = 0
 
 # RAW DATA HERE
-for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
+for i in excelinput(forumdataforreading, 0, 0):
     # print(i)
     print("Currently scanning Line: " + str(counttttt))
     counttttt = counttttt + 1
@@ -112,7 +103,7 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
     # i = str(i).replace(';', " ")
     # i = str(i).replace('[', " ")
     # i = str(i).replace(']', " ")
-    i = str(i).lower()
+    # i = str(i).lower()
     # do blank check to see if have space
 
 
@@ -123,13 +114,20 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
             # f.writelines(x+"\n")
             wordduplicationcheck(multiplepunctuationRemover(str(x).strip().replace('…', '...')))
     else:
-        wordduplicationcheck(multiplepunctuationRemover(str(i).strip().replace('…', '...')))
 
-my_dict = Counter(tempppppaarrrrr)
+        wordduplicationcheck(multiplepunctuationRemover(str(i).strip().replace('…', '...')))
+print("Converting to lowercase...")
+newtempppppaarrrrr = []
+for ghty in tempppppaarrrrr:
+    newtempppppaarrrrr.append(str(ghty).lower())
+
+my_dict = Counter(newtempppppaarrrrr)
 
 del my_dict[' ']
 del my_dict['']
 
+# total freq
+f = open('allfreq.txt', 'w', encoding="utf-8")
 for fg in sorted(my_dict, key=my_dict.get, reverse=True):
     f.writelines(str(fg) + "\t\t" + str(my_dict[fg]) + "\n")
 print("Done")
@@ -272,7 +270,6 @@ for c in arrofileobjects:
         else:
             parseinDict[gh] = str("Word found in: ") + str(c.getFilename())
 
-listwhosewordsarenotfound = []
 temparrtocheckagainstdata = []
 print("Saving File.....")
 for gitdata in parseinDict:
@@ -305,9 +302,10 @@ for savedata in listwhosewordsarenotfound:
 
 
 # filtering only non-duplication, thus saving to another file; also checks for numbers string only
+# single items to remove
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
-                               '---', ')', '(','[/b]']
+                               '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -325,22 +323,64 @@ def characterinvalidationchecker(word):
         returnvalue = False
     elif str(re.match("^\([0-9]\)+$", word)) != "None":
         returnvalue = False
-
+    elif str(re.match("^\([0-9]+$", word)) != "None":
+        returnvalue = False
+    elif str(re.match("^\([aA-zZ]\)+$", word)) != "None":
+        returnvalue = False
 
     return returnvalue
 
+def bracketsremover(word):
+    retuxx=word
+    if re.match("(^\()([aA-zZ])+$", str(word)) != "None":
+        print("dasdasasadsadsada")
+        retuxx = str(word).replace("(", "")
+    elif re.match("^([aA-zZ])+(\))$", str(word)) != "None":
+        retuxx = str(word).replace(")", "")
+
+    else:
+        return retuxx
+    return retuxx
+
+dictus = enchant.Dict("en_US")
+dictgb = enchant.Dict("en_GB")
+
+print("Removing english words...")
+indexforengremoval = 0
 
 # sort special char to diff file, save all non-dup to one file
-for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
-    line = re.search('[^A-Za-z]', str(ixxx))
-    # print(line)
-    if 'None' != str(line):
-        if characterinvalidationchecker(str(ixxx).strip()) is True:
-            fnodupwspecial.writelines("Word: " + str(ixxx) + "\n")
-            fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+for ixxxo in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
 
-    fnodup.writelines("Word: " + str(ixxx) + "\n")
-    fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+    if dictus.check(ixxxo) is False:
+        if dictgb.check(ixxxo) is False:
+            ixxx=str(bracketsremover(ixxxo))
+
+
+            line = re.search('[^A-Za-z]', str(ixxx))
+            # print(line)
+            if 'None' != str(line):
+                if characterinvalidationchecker(str(ixxx).strip()) is True:
+                    # start word check upper and lower case and end to variants list
+                    tempwordsthatonlyrunperword = ""
+                    # for checkkwor in tempppppaarrrrr:
+                    #     if caseless_equal(str(checkkwor), str(ixxx)) is True:
+                    #         tempwordsthatonlyrunperword = str(tempwordsthatonlyrunperword) + " / " + str(checkkwor)
+                    # end upper lower check
+
+                    fnodupwspecial.writelines("Word: " + str(ixxx) + " " + str(tempwordsthatonlyrunperword) + "\n")
+                    fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+            tempwordthatl = ""
+            # for chhs in tempppppaarrrrr:
+            #     if caseless_equal(str(chhs),str(ixxx)) is True:
+            #         tempwordthatl=str(tempwordthatl)+" / "+str(chhs)
+
+
+
+            fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
+            fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+    print("English removal & variant assignment: " + str(indexforengremoval) + "/" + str(
+        len(parseinDictDiff)) + "  " + str(round((int(indexforengremoval) / int(len(parseinDictDiff))) * 100)) + "%")
+    indexforengremoval = indexforengremoval + 1
 
 my_dict2fordup = {}
 

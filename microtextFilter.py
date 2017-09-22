@@ -95,10 +95,10 @@ for i in excelinput(forumdataforreading, 0, 0):
     counttttt = counttttt + 1
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
-    i = str(i).replace('"', " ")
+    # i = str(i).replace('"', " ")
     # i = str(i).replace('(', " ")
     # i = str(i).replace(')', " ")
-    i = str(i).replace('“', " ")
+    # i = str(i).replace('“', " ")
     # i = str(i).replace('. ', " ")
     # i = str(i).replace(';', " ")
     # i = str(i).replace('[', " ")
@@ -305,7 +305,7 @@ for savedata in listwhosewordsarenotfound:
 # single items to remove
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
-                               '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->']
+                               '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$','|','—','”',"''",';',"\\"]
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -330,17 +330,25 @@ def characterinvalidationchecker(word):
 
     return returnvalue
 
-def bracketsremover(word):
-    retuxx=word
-    if re.match("(^\()([aA-zZ])+$", str(word)) != "None":
-        print("dasdasasadsadsada")
+
+def specificcharacterremoverandother(word):
+    retuxx = word
+    if str(re.match("(^\()([aA-zZ])+$", str(word))) != "None":
+
+        # print(word)
+        # print("dasdasasadsadsada")
         retuxx = str(word).replace("(", "")
-    elif re.match("^([aA-zZ])+(\))$", str(word)) != "None":
+    elif str(re.match("^([aA-zZ])+(\))$", str(word))) != "None":
         retuxx = str(word).replace(")", "")
+    elif str(re.match("(^\")([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+    elif str(re.match("(^\')([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
 
     else:
         return retuxx
     return retuxx
+
 
 dictus = enchant.Dict("en_US")
 dictgb = enchant.Dict("en_GB")
@@ -350,11 +358,9 @@ indexforengremoval = 0
 
 # sort special char to diff file, save all non-dup to one file
 for ixxxo in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
-
-    if dictus.check(ixxxo) is False:
-        if dictgb.check(ixxxo) is False:
-            ixxx=str(bracketsremover(ixxxo))
-
+    ixxx = str(specificcharacterremoverandother(ixxxo))
+    if dictus.check(ixxx) is False:
+        if dictgb.check(ixxx) is False:
 
             line = re.search('[^A-Za-z]', str(ixxx))
             # print(line)

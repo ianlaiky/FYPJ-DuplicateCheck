@@ -305,7 +305,8 @@ for savedata in listwhosewordsarenotfound:
 # single items to remove
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
-                               '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$','|','—','”',"''",';',"\\"]
+                               '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
+                               "''", ';', "\\"]
     returnvalue = True
 
     for io in texttochecktoinvalidate:

@@ -1,7 +1,7 @@
 import re
 from openpyxl import load_workbook
 from collections import Counter
-
+import enchant
 
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
@@ -327,19 +327,29 @@ def characterinvalidationchecker(word):
 
 
     return returnvalue
+dictus = enchant.Dict("en_US")
+dictgb = enchant.Dict("en_GB")
 
 
+print("Removing english words...")
 # sort special char to diff file, save all non-dup to one file
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
-    line = re.search('[^A-Za-z]', str(ixxx))
-    # print(line)
-    if 'None' != str(line):
-        if characterinvalidationchecker(str(ixxx).strip()) is True:
-            fnodupwspecial.writelines("Word: " + str(ixxx) + "\n")
-            fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
-    fnodup.writelines("Word: " + str(ixxx) + "\n")
-    fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+
+
+    if dictus.check(ixxx) is False:
+        if dictgb.check(ixxx) is False:
+
+
+            line = re.search('[^A-Za-z]', str(ixxx))
+            # print(line)
+            if 'None' != str(line):
+                if characterinvalidationchecker(str(ixxx).strip()) is True:
+                    fnodupwspecial.writelines("Word: " + str(ixxx) + "\n")
+                    fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+
+            fnodup.writelines("Word: " + str(ixxx) + "\n")
+            fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
 my_dict2fordup = {}
 

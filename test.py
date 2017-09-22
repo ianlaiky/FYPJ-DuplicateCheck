@@ -2,8 +2,13 @@
 import enchant
 d = enchant.Dict("en_US")
 de = enchant.Dict("en_GB")
-print(d.check("afk"))
-print(de.check("afk"))
+print(d.check("america"))
+# print(de.check("afk"))
+
+if d.check("americans") is True:
+    print("ts")
+
+
 
 
 # import re

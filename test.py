@@ -51,13 +51,16 @@ import re
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-x="(iia1"
+x="iia)"
 x1="2)dsad"
-x2="3) dasasad"
+x2="3)dasasad"
+y="3"
 
-print(re.match("(^\()([aA-zZ])+$",x))
+print(re.match("^([aA-zZ])+(\))$",x))
 
 
+
+print(str(x).replace("i","2"))
 
 
 # y="text,,,0"

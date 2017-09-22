@@ -305,7 +305,7 @@ for savedata in listwhosewordsarenotfound:
 # single items to remove
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
-                               '---', ')', '(', '[/b]','','','','%','[/quote]','--->']
+                               '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -330,6 +330,17 @@ def characterinvalidationchecker(word):
 
     return returnvalue
 
+def bracketsremover(word):
+    retuxx=word
+    if re.match("(^\()([aA-zZ])+$", str(word)) != "None":
+        print("dasdasasadsadsada")
+        retuxx = str(word).replace("(", "")
+    elif re.match("^([aA-zZ])+(\))$", str(word)) != "None":
+        retuxx = str(word).replace(")", "")
+
+    else:
+        return retuxx
+    return retuxx
 
 dictus = enchant.Dict("en_US")
 dictgb = enchant.Dict("en_GB")
@@ -338,10 +349,12 @@ print("Removing english words...")
 indexforengremoval = 0
 
 # sort special char to diff file, save all non-dup to one file
-for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
+for ixxxo in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
 
-    if dictus.check(ixxx) is False:
-        if dictgb.check(ixxx) is False:
+    if dictus.check(ixxxo) is False:
+        if dictgb.check(ixxxo) is False:
+            ixxx=str(bracketsremover(ixxxo))
+
 
             line = re.search('[^A-Za-z]', str(ixxx))
             # print(line)

@@ -1,7 +1,9 @@
 
 import enchant
 d = enchant.Dict("en_US")
+de = enchant.Dict("en_GB")
 print(d.check("afk"))
+print(de.check("afk"))
 
 
 # import re

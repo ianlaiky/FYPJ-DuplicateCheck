@@ -1,8 +1,7 @@
 import re
 from openpyxl import load_workbook
 from collections import Counter
-import fnmatch
-import operator
+
 
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):

@@ -305,7 +305,7 @@ for savedata in listwhosewordsarenotfound:
 # single items to remove
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
-                               '---', ')', '(', '[/b]','','','','%','[/quote]']
+                               '---', ')', '(', '[/b]','','','','%','[/quote]','--->']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -322,6 +322,8 @@ def characterinvalidationchecker(word):
     elif str(re.match("^[0-9]+$", word)) != "None":
         returnvalue = False
     elif str(re.match("^\([0-9]\)+$", word)) != "None":
+        returnvalue = False
+    elif str(re.match("^\([0-9]+$", word)) != "None":
         returnvalue = False
     elif str(re.match("^\([aA-zZ]\)+$", word)) != "None":
         returnvalue = False

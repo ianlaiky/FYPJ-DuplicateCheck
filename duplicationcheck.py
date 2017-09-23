@@ -30,7 +30,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     print("Sheets names:")
     # obtaining sheets names
     print(wb.get_sheet_names())
-    print("Sheets Loaded: "+wb.get_sheet_names()[filecheckksheets])
+    print("Sheets Loaded: " + wb.get_sheet_names()[filecheckksheets])
     sheet = wb[wb.get_sheet_names()[filecheckksheets]]
 
     #
@@ -95,7 +95,7 @@ def phoneticcase(filetotopen):
     #         newphonecticlist.append(x1)
     #
     # return newphonecticlist
-    newphonecticlist=list(set(phoneticarr))
+    newphonecticlist = list(set(phoneticarr))
     # print(phoneticarr)
     return newphonecticlist
 

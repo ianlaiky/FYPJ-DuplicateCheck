@@ -44,12 +44,12 @@ tempppppaarrrrr = []
 
 # punctuation remover
 def multiplepunctuationRemover(words):
-    line = re.sub('\.\.+', '...', words)
-    line = re.sub('\!!+', '!', line)
-    line = re.sub('\?\?+', '?', line)
-    line = re.sub('\-\-+', '---', line)
-    line = re.sub('\_\_+', '___', line)
-    line = re.sub('\=\=+', '===', line)
+    line = re.sub('\.\.+', ' ', words)
+    line = re.sub('\!!+', ' ', line)
+    line = re.sub('\?\?+', ' ', line)
+    line = re.sub('\-\-+', ' ', line)
+    line = re.sub('\_\_+', ' ', line)
+    line = re.sub('\=\=+', ' ', line)
 
     return line
 
@@ -75,12 +75,26 @@ def specificcharacterremoverandother(word):
     elif str(re.match("^\([aA-zZ]+\)$", str(word))) != "None":
         retuxx = str(word).replace("(", "")
         retuxx = str(retuxx).replace(")", "")
+    elif str(re.match("^[aA-zZ]+\.;$", str(word))) != "None":
+        retuxx = str(word).replace(".;", "")
     elif str(re.match("^[\w\d]+(\?+)$", str(word))) != "None":
         retuxx = str(word).replace("?", "")
     elif str(re.match("^[\w\d]+(:+)$", str(word))) != "None":
         retuxx = str(word).replace(":", "")
     elif str(re.match("^[\w\d]+(;+)$", str(word))) != "None":
         retuxx = str(word).replace(";", "")
+    elif str(re.match("^[\w\d]+(!+)$", str(word))) != "None":
+        retuxx = str(word).replace("!", "")
+    elif str(re.match("^([aA-zZ])+(\.\")$", str(word))) != "None":
+        retuxx = str(word).replace('."', "")
+    elif str(re.match("^([aA-zZ])+\($", str(word))) != "None":
+        retuxx = str(word).replace('(', "")
+    elif str(re.match("^\'\'[\w\d]+$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+    elif str(re.match("^\'[\d]+\'$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+    elif str(re.match("^([aA-zZ])+\.\'\'$", str(word))) != "None":
+        retuxx = str(word).replace(".''", "")
 
     else:
         retuxx = word
@@ -90,22 +104,14 @@ def specificcharacterremoverandother(word):
 def wordduplicationcheckatEnd(wordstocheck):
     if wordstocheck[-1:] == ".":
         if wordstocheck[-2:-1] != ".":
-
             tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)[0:-1]))
-
         else:
             tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
-
-
-
-
     elif wordstocheck[-2:] == "'s":
-
         tempppppaarrrrr.append((wordstocheck[0:-2]))
-
-
+    elif wordstocheck[-2:] == "’s":
+        tempppppaarrrrr.append((wordstocheck[0:-2]))
     else:
-
         tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
 
 
@@ -121,6 +127,9 @@ for i in excelinput(forumdataforreading, 0, 0):
     i = str(i).replace('', "")
     i = str(i).replace('', "")
     i = str(i).replace('', "")
+    i = str(i).replace('', "")
+    i = str(i).replace('…', '...')
+
     # i = str(i).replace('/', " / ")
     # i = str(i).replace('"', " ")
     # i = str(i).replace('(', " ")
@@ -133,18 +142,21 @@ for i in excelinput(forumdataforreading, 0, 0):
     # i = str(i).lower()
     # do blank check to see if have space
 
+    ixre=multiplepunctuationRemover(str(i))
+
+
 
     # .replace to fix Ellipsis problem
-    if str(i).find(" ") != -1:
-        for x321 in re.split(" |,", i):
+    if str(ixre).find(" ") != -1:
+        for x321 in re.split(" |,", ixre):
             # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(x321))) != "None":
             #     for x321in in x321.split("/"):
             #         wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321in).strip().replace('…', '...')))
             # else:
-            wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip().replace('…', '...')))
+            wordduplicationcheckatEnd(str(x321).strip())
     else:
 
-        wordduplicationcheckatEnd(multiplepunctuationRemover(str(i).strip().replace('…', '...')))
+        wordduplicationcheckatEnd(str(ixre).strip())
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 for ghty in tempppppaarrrrr:
@@ -340,7 +352,7 @@ def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
                                '·',
-                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@']
+                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@','<!','<w:lsdexception','locked="false"']
     returnvalue = True
 
     for io in texttochecktoinvalidate:

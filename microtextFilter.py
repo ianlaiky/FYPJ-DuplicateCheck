@@ -51,6 +51,9 @@ def multiplepunctuationRemover(words):
     line = re.sub('\_\_+', ' ', line)
     line = re.sub('\=\=+', ' ', line)
 
+    if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line))) != "None":
+        line=line.replace("/"," ")
+
     return line
 
 
@@ -149,10 +152,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     # .replace to fix Ellipsis problem
     if str(ixre).find(" ") != -1:
         for x321 in re.split(" |,", ixre):
-            # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(x321))) != "None":
-            #     for x321in in x321.split("/"):
-            #         wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321in).strip().replace('…', '...')))
-            # else:
+
             wordduplicationcheckatEnd(str(x321).strip())
     else:
 

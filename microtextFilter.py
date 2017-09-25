@@ -72,14 +72,9 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace("'", "")
     elif str(re.match("^([aA-zZ])+\"$", str(word))) != "None":
         retuxx = str(word).replace('"', "")
-
-
     elif str(re.match("^\([aA-zZ]+\)$", str(word))) != "None":
         retuxx = str(word).replace("(", "")
         retuxx = str(retuxx).replace(")", "")
-
-
-
     elif str(re.match("^[\w\d]+(\?+)$", str(word))) != "None":
         retuxx = str(word).replace("?", "")
     elif str(re.match("^[\w\d]+(:+)$", str(word))) != "None":
@@ -344,7 +339,7 @@ def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
                                '·',
-                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->']
+                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->',':','@']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -363,6 +358,8 @@ def characterinvalidationchecker(word):
     elif str(re.match("^\([0-9]+\)$", word)) != "None":
         returnvalue = False
     elif str(re.match("^\([0-9]+$", word)) != "None":
+        returnvalue = False
+    elif str(re.match("^[0-9]+%$", word)) != "None":
         returnvalue = False
     # elif str(re.match("^\([aA-zZ]+\)$", word)) != "None":
     #     returnvalue = False
@@ -420,9 +417,9 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
             # new test
 
 
-
-            fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
-            fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+            if characterinvalidationchecker(str(ixxx).strip()) is True:
+                fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
+                fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
     print("English removal & variant assignment: " + str(indexforengremoval) + "/" + str(
         len(parseinDictDiff)) + "  " + str(round((int(indexforengremoval) / int(len(parseinDictDiff))) * 100)) + "%")
     indexforengremoval = indexforengremoval + 1

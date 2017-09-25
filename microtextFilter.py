@@ -98,6 +98,9 @@ for i in excelinput(forumdataforreading, 0, 0):
     counttttt = counttttt + 1
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
+    i = str(i).replace('', "")
+    i = str(i).replace('', "")
+    i = str(i).replace('', "")
     # i = str(i).replace('"', " ")
     # i = str(i).replace('(', " ")
     # i = str(i).replace(')', " ")
@@ -330,7 +333,7 @@ for savedata in listwhosewordsarenotfound:
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
-                               "''", ';', "\\"]
+                               "''", ';', "\\",'>>','$$$','===','[',']']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -362,8 +365,12 @@ dictus = enchant.Dict("en_US")
 dictgb = enchant.Dict("en_GB")
 
 print("Removing english words...")
+listofdicttoremoveforvariant=[]
+for uixxx in parseinDictDiff:
+    listofdicttoremoveforvariant.append(uixxx)
 
-verynewtempppppaarrrrr = list(set(tempppppaarrrrr))
+
+verynewtempppppaarrrrr = list(set(tempppppaarrrrr).difference(set(listofdicttoremoveforvariant)))
 uniqueverynewtempppppaarrrrr = [item.lower() for item in verynewtempppppaarrrrr]
 
 indexforengremoval = 0
@@ -376,10 +383,10 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
             tempwordthatl = ""
 
             try:
-                tempwordthatl = str(tempwordthatl) + " "+str(
+                tempwordthatl = str(tempwordthatl) + " / "+str(
                     verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())])
             except:
-                print(".")
+                print("not: "+str(verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())]))
                 pass
 
             line = re.search('[^A-Za-z]', str(ixxx))

@@ -137,11 +137,11 @@ for i in excelinput(forumdataforreading, 0, 0):
     # .replace to fix Ellipsis problem
     if str(i).find(" ") != -1:
         for x321 in re.split(" |,", i):
-            if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(x321))) != "None":
-                for x321in in x321.split("/"):
-                    wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321in).strip().replace('…', '...')))
-            else:
-                wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip().replace('…', '...')))
+            # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(x321))) != "None":
+            #     for x321in in x321.split("/"):
+            #         wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321in).strip().replace('…', '...')))
+            # else:
+            wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip().replace('…', '...')))
     else:
 
         wordduplicationcheckatEnd(multiplepunctuationRemover(str(i).strip().replace('…', '...')))

@@ -82,12 +82,8 @@ def specificcharacterremoverandother(word):
     elif str(re.match("^[\w\d]+(;+)$", str(word))) != "None":
         retuxx = str(word).replace(";", "")
 
-
-
-
-
     else:
-        return retuxx
+        retuxx = word
     return retuxx
 
 
@@ -125,6 +121,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     i = str(i).replace('', "")
     i = str(i).replace('', "")
     i = str(i).replace('', "")
+    # i = str(i).replace('/', " / ")
     # i = str(i).replace('"', " ")
     # i = str(i).replace('(', " ")
     # i = str(i).replace(')', " ")
@@ -140,7 +137,11 @@ for i in excelinput(forumdataforreading, 0, 0):
     # .replace to fix Ellipsis problem
     if str(i).find(" ") != -1:
         for x321 in re.split(" |,", i):
-            wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip().replace('…', '...')))
+            if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(x321))) != "None":
+                for x321in in x321.split("/"):
+                    wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321in).strip().replace('…', '...')))
+            else:
+                wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip().replace('…', '...')))
     else:
 
         wordduplicationcheckatEnd(multiplepunctuationRemover(str(i).strip().replace('…', '...')))
@@ -339,7 +340,7 @@ def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
                                '·',
-                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->',':','@']
+                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -361,8 +362,8 @@ def characterinvalidationchecker(word):
         returnvalue = False
     elif str(re.match("^[0-9]+%$", word)) != "None":
         returnvalue = False
-    # elif str(re.match("^\([aA-zZ]+\)$", word)) != "None":
-    #     returnvalue = False
+    elif str(re.match("^\$[0-9]+$", word)) != "None":
+        returnvalue = False
 
     return returnvalue
 

@@ -51,14 +51,14 @@ import re
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-x="(dsa"
-x1="2)dsad"
-x2="3)dasasad"
-y="3"
-
-print(re.match("(^\()([aA-zZ])+$",x))
-
-print("\\")
+# x="(dsa"
+# x1="2)dsad"
+# x2="3)dasasad"
+# y="3"
+#
+# print(re.match("(^\()([aA-zZ])+$",x))
+#
+# print("\\")
 
 
 
@@ -70,4 +70,12 @@ print("\\")
 # print(y.split(","))
 #
 # print(x[x.index(y.split(",")[1])+int(y.split(",")[3]):x.index(y.split(",")[2])])
+
+
+
+x=['James',"John",'Peter']
+new_list = [item.lower() for item in x]
+
+finder="john"
+print(x[new_list.index(finder.lower())])
 

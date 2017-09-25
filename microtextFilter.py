@@ -80,6 +80,9 @@ def wordduplicationcheck(wordstocheck):
     elif wordstocheck[-1:] == "?":
 
         tempppppaarrrrr.append((wordstocheck[0:-1]))
+    elif wordstocheck[-1:] == ";":
+
+        tempppppaarrrrr.append((wordstocheck[0:-1]))
 
     else:
 
@@ -210,6 +213,23 @@ def phoneticcase(filetotopen):
     # print(phoneticarr)
     return newphonecticlist
 
+def specificcharacterremoverandother(word):
+    retuxx = word
+    if str(re.match("(^\()([aA-zZ])+$", str(word))) != "None":
+
+        # print(word)
+        # print("dasdasasadsadsada")
+        retuxx = str(word).replace("(", "")
+    elif str(re.match("^([aA-zZ])+(\))$", str(word))) != "None":
+        retuxx = str(word).replace(")", "")
+    elif str(re.match("(^\")([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+    elif str(re.match("(^\')([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+
+    else:
+        return retuxx
+    return retuxx
 
 # files read form config
 arrofileobjects = []
@@ -260,7 +280,7 @@ for index, abc in enumerate(my_dict):
     print("Scanning: " + str(index) + "/" + str(len(my_dict)) + "\t" + str(
         round(int(index) / int(len(my_dict)) * 100, 2)) + "% Completed")
     sabc = str(abc).lower()
-    my_dicInArray.append(sabc)
+    my_dicInArray.append(specificcharacterremoverandother(sabc))
 
 for c in arrofileobjects:
     print("Processing File: " + str(c.getFilename()))
@@ -336,58 +356,57 @@ def characterinvalidationchecker(word):
     return returnvalue
 
 
-def specificcharacterremoverandother(word):
-    retuxx = word
-    if str(re.match("(^\()([aA-zZ])+$", str(word))) != "None":
-
-        # print(word)
-        # print("dasdasasadsadsada")
-        retuxx = str(word).replace("(", "")
-    elif str(re.match("^([aA-zZ])+(\))$", str(word))) != "None":
-        retuxx = str(word).replace(")", "")
-    elif str(re.match("(^\")([aA-zZ])+$", str(word))) != "None":
-        retuxx = str(word).replace('"', "")
-    elif str(re.match("(^\')([aA-zZ])+$", str(word))) != "None":
-        retuxx = str(word).replace("'", "")
-
-    else:
-        return retuxx
-    return retuxx
 
 
 dictus = enchant.Dict("en_US")
 dictgb = enchant.Dict("en_GB")
 
 print("Removing english words...")
+
+verynewtempppppaarrrrr = list(set(tempppppaarrrrr))
+uniqueverynewtempppppaarrrrr = [item.lower() for item in verynewtempppppaarrrrr]
+
 indexforengremoval = 0
 
 # sort special char to diff file, save all non-dup to one file
-for ixxxo in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
-    ixxx = str(specificcharacterremoverandother(ixxxo))
+for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
+    # ixxx = str(specificcharacterremoverandother(ixxxo))
     if dictus.check(ixxx) is False:
         if dictgb.check(ixxx) is False:
+            tempwordthatl = ""
+
+            try:
+                tempwordthatl = str(tempwordthatl) + " "+str(
+                    verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())])
+            except:
+                print(".")
+                pass
 
             line = re.search('[^A-Za-z]', str(ixxx))
             # print(line)
             if 'None' != str(line):
                 if characterinvalidationchecker(str(ixxx).strip()) is True:
-                    # start word check upper and lower case and end to variants list
-                    tempwordsthatonlyrunperword = ""
+                    # (variant assignment) start word check upper and lower case and end to variants list (*performance issue)
+
                     # for checkkwor in tempppppaarrrrr:
                     #     if caseless_equal(str(checkkwor), str(ixxx)) is True:
                     #         tempwordsthatonlyrunperword = str(tempwordsthatonlyrunperword) + " / " + str(checkkwor)
                     # end upper lower check
 
-                    fnodupwspecial.writelines("Word: " + str(ixxx) + " " + str(tempwordsthatonlyrunperword) + "\n")
+                    # new test
+
+                    fnodupwspecial.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
                     fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
-            tempwordthatl = ""
+
             # for chhs in tempppppaarrrrr:
             #     if caseless_equal(str(chhs),str(ixxx)) is True:
             #         tempwordthatl=str(tempwordthatl)+" / "+str(chhs)
 
+            # new test
 
 
-            fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
+
+            fnodup.writelines("Word: " + str(ixxx) + " / " + str(tempwordthatl) + "\n")
             fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
     print("English removal & variant assignment: " + str(indexforengremoval) + "/" + str(
         len(parseinDictDiff)) + "  " + str(round((int(indexforengremoval) / int(len(parseinDictDiff))) * 100)) + "%")

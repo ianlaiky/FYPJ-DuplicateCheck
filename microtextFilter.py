@@ -190,21 +190,25 @@ def phoneticcase(filetotopen):
 
         for i in m.strip().split(","):
             # print(i)
-            for x in i.strip().split("'"):
-                if x.find("[") == -1:
-                    if x.find("]") == -1:
-                        if x != " ":
-                            if x != "":
-                                # print(x)
-                                phoneticarr.append(x)
+            for re in i.strip().split("'"):
+                if re.find("[") == -1:
+                    if re.find("]") == -1:
+                        if re != " ":
+                            if re != "":
+                                # if x not in phoneticarr:
+                                # print(re)
+                                phoneticarr.append(re)
 
-    for x in phoneticarr:
-        if x not in newphonecticlist:
-            newphonecticlist.append(x)
-
+    # for index,x1 in enumerate(phoneticarr):
+    #     print(index)
+    #     print(len(phoneticarr))
+    #     if x1 not in newphonecticlist:
+    #         newphonecticlist.append(x1)
+    #
+    # return newphonecticlist
+    newphonecticlist = list(set(phoneticarr))
+    # print(phoneticarr)
     return newphonecticlist
-
-    print(newphonecticlist)
 
 
 # files read form config

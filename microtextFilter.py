@@ -64,14 +64,29 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace('"', "")
     elif str(re.match("^\'([aA-zZ])+$", str(word))) != "None":
         retuxx = str(word).replace("'", "")
-    elif str(re.match("^\([aA-zZ]+\)$", str(word))) != "None":
-        retuxx = str(word).replace("(", "")
-        retuxx=str(retuxx).replace(")","")
     elif str(re.match("^\"([aA-zZ])+\"$", str(word))) != "None":
         retuxx = str(word).replace('"', "")
-
     elif str(re.match("^\'([aA-zZ])+\'$", str(word))) != "None":
         retuxx = str(word).replace("'", "")
+    elif str(re.match("^([aA-zZ])+\'$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+    elif str(re.match("^([aA-zZ])+\"$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+
+
+    elif str(re.match("^\([aA-zZ]+\)$", str(word))) != "None":
+        retuxx = str(word).replace("(", "")
+        retuxx = str(retuxx).replace(")", "")
+
+
+
+    elif str(re.match("^[\w\d]+(\?+)$", str(word))) != "None":
+        retuxx = str(word).replace("?", "")
+    elif str(re.match("^[\w\d]+(:+)$", str(word))) != "None":
+        retuxx = str(word).replace(":", "")
+    elif str(re.match("^[\w\d]+(;+)$", str(word))) != "None":
+        retuxx = str(word).replace(";", "")
+
 
 
 
@@ -79,6 +94,7 @@ def specificcharacterremoverandother(word):
     else:
         return retuxx
     return retuxx
+
 
 def wordduplicationcheckatEnd(wordstocheck):
     if wordstocheck[-1:] == ".":
@@ -89,19 +105,9 @@ def wordduplicationcheckatEnd(wordstocheck):
         else:
             tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
 
-    # elif wordstocheck[-1:] == ":":
-    #
-    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
-    #
-    # elif wordstocheck[-1:] == "?":
-    #
-    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
-    # elif wordstocheck[-1:] == ";":
-    #
-    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
-    # elif wordstocheck[-1:] == "'":
-    #
-    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
+
+
+
     elif wordstocheck[-2:] == "'s":
 
         tempppppaarrrrr.append((wordstocheck[0:-2]))
@@ -110,7 +116,6 @@ def wordduplicationcheckatEnd(wordstocheck):
     else:
 
         tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
-
 
 
 counttttt = 0
@@ -140,8 +145,6 @@ for i in excelinput(forumdataforreading, 0, 0):
     # .replace to fix Ellipsis problem
     if str(i).find(" ") != -1:
         for x321 in re.split(" |,", i):
-
-
             wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip().replace('…', '...')))
     else:
 
@@ -239,7 +242,6 @@ def phoneticcase(filetotopen):
     newphonecticlist = list(set(phoneticarr))
     # print(phoneticarr)
     return newphonecticlist
-
 
 
 # files read form config

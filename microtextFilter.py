@@ -52,7 +52,7 @@ def multiplepunctuationRemover(words):
     line = re.sub('\=\=+', ' ', line)
 
     if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line))) != "None":
-        line=line.replace("/"," ")
+        line = line.replace("/", " ")
 
     return line
 
@@ -145,14 +145,11 @@ for i in excelinput(forumdataforreading, 0, 0):
     # i = str(i).lower()
     # do blank check to see if have space
 
-    ixre=multiplepunctuationRemover(str(i))
-
-
+    ixre = multiplepunctuationRemover(str(i))
 
     # .replace to fix Ellipsis problem
     if str(ixre).find(" ") != -1:
         for x321 in re.split(" |,", ixre):
-
             wordduplicationcheckatEnd(str(x321).strip())
     else:
 
@@ -352,7 +349,8 @@ def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
                                '·',
-                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@','<!','<w:lsdexception','locked="false"']
+                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@', '<!',
+                               '<w:lsdexception', 'locked="false"']
     returnvalue = True
 
     for io in texttochecktoinvalidate:

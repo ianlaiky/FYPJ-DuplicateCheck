@@ -54,45 +54,63 @@ def multiplepunctuationRemover(words):
     return line
 
 
-def wordduplicationcheck(wordstocheck):
+def specificcharacterremoverandother(word):
+    retuxx = word
+    if str(re.match("^\([aA-zZ]+$", str(word))) != "None":
+        retuxx = str(word).replace("(", "")
+    elif str(re.match("^([aA-zZ])+(\))$", str(word))) != "None":
+        retuxx = str(word).replace(")", "")
+    elif str(re.match("^\"([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+    elif str(re.match("^\'([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+    elif str(re.match("^\([aA-zZ]+\)$", str(word))) != "None":
+        retuxx = str(word).replace("(", "")
+        retuxx=str(retuxx).replace(")","")
+    elif str(re.match("^\"([aA-zZ])+\"$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+
+    elif str(re.match("^\'([aA-zZ])+\'$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+
+
+
+
+    else:
+        return retuxx
+    return retuxx
+
+def wordduplicationcheckatEnd(wordstocheck):
     if wordstocheck[-1:] == ".":
         if wordstocheck[-2:-1] != ".":
 
-            # if multiplepunctuationRemover(wordstocheck[0:-1])[-1:] == "?":
-            #
-            #     if multiplepunctuationRemover(wordstocheck[0:-1])[-2:-1] != "?":
-            #         tempppppaarrrrr.append(
-            #             multiplepunctuationRemover(multiplepunctuationRemover(wordstocheck[0:-1]))[0:-1])
-            #
-            #     else:
-            #         tempppppaarrrrr.append(multiplepunctuationRemover(wordstocheck))
-            # else:
-
-            tempppppaarrrrr.append((wordstocheck)[0:-1])
+            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)[0:-1]))
 
         else:
-            tempppppaarrrrr.append((wordstocheck))
+            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
 
-    elif wordstocheck[-1:] == ":":
-
-        tempppppaarrrrr.append((wordstocheck[0:-1]))
-
-    elif wordstocheck[-1:] == "?":
-
-        tempppppaarrrrr.append((wordstocheck[0:-1]))
-    elif wordstocheck[-1:] == ";":
-
-        tempppppaarrrrr.append((wordstocheck[0:-1]))
-    elif wordstocheck[-1:] == "'":
-
-        tempppppaarrrrr.append((wordstocheck[0:-1]))
+    # elif wordstocheck[-1:] == ":":
+    #
+    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
+    #
+    # elif wordstocheck[-1:] == "?":
+    #
+    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
+    # elif wordstocheck[-1:] == ";":
+    #
+    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
+    # elif wordstocheck[-1:] == "'":
+    #
+    #     tempppppaarrrrr.append((wordstocheck[0:-1]))
     elif wordstocheck[-2:] == "'s":
 
         tempppppaarrrrr.append((wordstocheck[0:-2]))
 
+
     else:
 
-        tempppppaarrrrr.append((wordstocheck))
+        tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
+
 
 
 counttttt = 0
@@ -121,13 +139,13 @@ for i in excelinput(forumdataforreading, 0, 0):
 
     # .replace to fix Ellipsis problem
     if str(i).find(" ") != -1:
-        for x in re.split(" |,", i):
-            # print(x)
-            # f.writelines(x+"\n")
-            wordduplicationcheck(multiplepunctuationRemover(str(x).strip().replace('…', '...')))
+        for x321 in re.split(" |,", i):
+
+
+            wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip().replace('…', '...')))
     else:
 
-        wordduplicationcheck(multiplepunctuationRemover(str(i).strip().replace('…', '...')))
+        wordduplicationcheckatEnd(multiplepunctuationRemover(str(i).strip().replace('…', '...')))
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 for ghty in tempppppaarrrrr:
@@ -222,23 +240,7 @@ def phoneticcase(filetotopen):
     # print(phoneticarr)
     return newphonecticlist
 
-def specificcharacterremoverandother(word):
-    retuxx = word
-    if str(re.match("(^\()([aA-zZ])+$", str(word))) != "None":
 
-        # print(word)
-        # print("dasdasasadsadsada")
-        retuxx = str(word).replace("(", "")
-    elif str(re.match("^([aA-zZ])+(\))$", str(word))) != "None":
-        retuxx = str(word).replace(")", "")
-    elif str(re.match("(^\")([aA-zZ])+$", str(word))) != "None":
-        retuxx = str(word).replace('"', "")
-    elif str(re.match("(^\')([aA-zZ])+$", str(word))) != "None":
-        retuxx = str(word).replace("'", "")
-
-    else:
-        return retuxx
-    return retuxx
 
 # files read form config
 arrofileobjects = []
@@ -339,7 +341,8 @@ for savedata in listwhosewordsarenotfound:
 def characterinvalidationchecker(word):
     texttochecktoinvalidate = ['...', '?', '-', '?', '!', '=', '--', "'", '/b', '>', '/', '+', '–', '<!---', '/>',
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
-                               "''", ';', "\\",'>>','$$$','===','[',']']
+                               '·',
+                               "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -350,31 +353,28 @@ def characterinvalidationchecker(word):
             # print(word)
             # print("true")
             returnvalue = False
-    if str(re.match("^[0-9]\)+$", word)) != "None":
+    if str(re.match("^[0-9]+\)$", word)) != "None":
         returnvalue = False
 
     elif str(re.match("^[0-9]+$", word)) != "None":
         returnvalue = False
-    elif str(re.match("^\([0-9]\)+$", word)) != "None":
+    elif str(re.match("^\([0-9]+\)$", word)) != "None":
         returnvalue = False
     elif str(re.match("^\([0-9]+$", word)) != "None":
         returnvalue = False
-    elif str(re.match("^\([aA-zZ]\)+$", word)) != "None":
-        returnvalue = False
+    # elif str(re.match("^\([aA-zZ]+\)$", word)) != "None":
+    #     returnvalue = False
 
     return returnvalue
-
-
 
 
 dictus = enchant.Dict("en_US")
 dictgb = enchant.Dict("en_GB")
 
 print("Removing english words...")
-listofdicttoremoveforvariant=[]
+listofdicttoremoveforvariant = []
 for uixxx in parseinDictDiff:
     listofdicttoremoveforvariant.append(uixxx)
-
 
 verynewtempppppaarrrrr = list(set(tempppppaarrrrr).difference(set(listofdicttoremoveforvariant)))
 uniqueverynewtempppppaarrrrr = [item.lower() for item in verynewtempppppaarrrrr]
@@ -389,10 +389,10 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
             tempwordthatl = ""
 
             try:
-                tempwordthatl = str(tempwordthatl) + " / "+str(
+                tempwordthatl = str(tempwordthatl) + " / " + str(
                     verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())])
             except:
-                print("not: "+str(ixxx))
+                print("not: " + str(ixxx))
                 pass
 
             line = re.search('[^A-Za-z]', str(ixxx))
@@ -419,7 +419,7 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
 
 
 
-            fnodup.writelines("Word: " + str(ixxx) + " / " + str(tempwordthatl) + "\n")
+            fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
             fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
     print("English removal & variant assignment: " + str(indexforengremoval) + "/" + str(
         len(parseinDictDiff)) + "  " + str(round((int(indexforengremoval) / int(len(parseinDictDiff))) * 100)) + "%")

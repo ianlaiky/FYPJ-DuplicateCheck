@@ -2,10 +2,11 @@ import re
 # import enchant
 # d = enchant.Dict("en_US")
 # de = enchant.Dict("en_GB")
-# print(d.check("america"))
-# # print(de.check("afk"))
-#
-# if d.check("americans") is True:
+# print(d.check("bs"))
+# print(d.check("organise"))
+# print(de.check("afk"))
+
+# if d.check("running") is True:
 #     print("ts")
 
 # import unicodedata
@@ -51,14 +52,14 @@ import re
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-# x="(dsa"
-# x1="2)dsad"
-# x2="3)dasasad"
-# y="3"
-#
-# print(re.match("(^\()([aA-zZ])+$",x))
-#
-# print("\\")
+x="dsad?"
+x1="2)dsad"
+x2="3)dasasad"
+y="3"
+
+print(re.match("^([aA-zZ]+)\?$",x))
+
+
 
 
 
@@ -73,9 +74,9 @@ import re
 
 
 
-x=['James',"John",'Peter']
-new_list = [item.lower() for item in x]
-
-finder="john"
-print(x[new_list.index(finder.lower())])
+# x=['James',"John",'Peter']
+# new_list = [item.lower() for item in x]
+#
+# finder="john"
+# print(x[new_list.index(finder.lower())])
 

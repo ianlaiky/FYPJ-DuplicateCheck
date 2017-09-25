@@ -83,6 +83,12 @@ def wordduplicationcheck(wordstocheck):
     elif wordstocheck[-1:] == ";":
 
         tempppppaarrrrr.append((wordstocheck[0:-1]))
+    elif wordstocheck[-1:] == "'":
+
+        tempppppaarrrrr.append((wordstocheck[0:-1]))
+    elif wordstocheck[-2:] == "'s":
+
+        tempppppaarrrrr.append((wordstocheck[0:-2]))
 
     else:
 
@@ -386,7 +392,7 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
                 tempwordthatl = str(tempwordthatl) + " / "+str(
                     verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())])
             except:
-                print("not: "+str(verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())]))
+                print("not: "+str(ixxx))
                 pass
 
             line = re.search('[^A-Za-z]', str(ixxx))

@@ -44,17 +44,17 @@ tempppppaarrrrr = []
 
 # punctuation remover
 def multiplepunctuationRemover(words):
-    line = re.sub('\.\.+', ' ', words)
-    line = re.sub('\!!+', ' ', line)
-    line = re.sub('\?\?+', ' ', line)
-    line = re.sub('\-\-+', ' ', line)
-    line = re.sub('\_\_+', ' ', line)
-    line = re.sub('\=\=+', ' ', line)
+    line1 = re.sub('\.\.+', ' ', str(words))
+    line1 = re.sub('\!!+', ' ', str(line1))
+    line1 = re.sub('\?\?+', ' ', str(line1))
+    line1 = re.sub('\-\-+', ' ', str(line1))
+    line1 = re.sub('\_\_+', ' ', str(line1))
+    line1 = re.sub('\=\=+', ' ', str(line1))
 
-    if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line))) != "None":
-        line = line.replace("/", " ")
+    # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line1))) != "None":
+    #     line1 = str(line1).replace("/", " ")
 
-    return line
+    return line1
 
 
 def specificcharacterremoverandother(word):
@@ -144,6 +144,9 @@ for i in excelinput(forumdataforreading, 0, 0):
     # i = str(i).replace(']', " ")
     # i = str(i).lower()
     # do blank check to see if have space
+
+#try to squeeze the slash split
+
 
     ixre = multiplepunctuationRemover(str(i))
 

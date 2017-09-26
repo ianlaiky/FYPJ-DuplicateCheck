@@ -52,13 +52,13 @@ import re
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-x='"Do'+"n't"
+x="(dsads-ca.d32sa"
 x1="2)dsad"
 x2="3)dasasad"
 y="3"
 
 print(x)
-print(re.match("^\"([\w]+\'[\w]+)$", x))
+print(re.match("^\(([aA-zZ\.\-])+$", x))
 
 
 

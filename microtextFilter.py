@@ -62,7 +62,7 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace("(", "")
     elif str(re.match("^([\w\d])+(\))$", str(word))) != "None":
         retuxx = str(word).replace(")", "")
-    elif str(re.match("^\"([aA-zZ])+$", str(word))) != "None":
+    elif str(re.match("^\"([\w\d])+$", str(word))) != "None":
         retuxx = str(word).replace('"', "")
     elif str(re.match("^\'([aA-zZ])+$", str(word))) != "None":
         retuxx = str(word).replace("'", "")
@@ -150,9 +150,6 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace(')', "")
     elif str(re.match("^([aA-zZ])+\.\'$", str(word))) != "None":
         retuxx = str(word).replace(".'", "")
-    elif str(re.match("^\[([aA-zZ/])+\]$", str(word))) != "None":
-        retuxx = str(word).replace("[", "")
-        retuxx = str(retuxx).replace("]", "")
     elif str(re.match("^\[([aA-zZ/])+$", str(word))) != "None":
         retuxx = str(word).replace("[", "")
     elif str(re.match("^\(([aA-zZ])+\):$", str(word))) != "None":
@@ -202,20 +199,30 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace('‘', "")
     elif str(re.match("^([aA-zZ])+\‘+$", str(word))) != "None":
         retuxx = str(word).replace('‘', "")
-    elif str(re.match("^\/([aA-zZ])+$", str(word))) != "None":
+    elif str(re.match("^\/([\w\d])+$", str(word))) != "None":
         retuxx = str(word).replace('/', "")
-    elif str(re.match("^([aA-zZ])+\/$", str(word))) != "None":
+    elif str(re.match("^([\w\d])+\/$", str(word))) != "None":
         retuxx = str(word).replace('/', "")
-    elif str(re.match("^\/([aA-zZ])+\/$", str(word))) != "None":
+    elif str(re.match("^\/([\w\d])+\/$", str(word))) != "None":
         retuxx = str(word).replace('/', "")
     elif str(re.match("^([$]+)$", str(word))) != "None":
         retuxx = str(word).replace('$', "")
     elif str(re.match("^\"([\w\'])+$", str(word))) != "None":
         retuxx = str(word).replace('"', "")
-    elif str(re.match("^\(([\w\.])+$", str(word))) != "None":
+    elif str(re.match("^\(([\w\.\-])+$", str(word))) != "None":
         retuxx = str(word).replace('(', "")
     elif str(re.match("^\"([\w]+\'[\w]+)$", str(word))) != "None":
         retuxx = str(word).replace('"', "")
+    elif str(re.match("^\'([\w]+\'[\w]+)$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+    elif str(re.match("^\(([\w]+\'[\w]+)$", str(word))) != "None":
+        retuxx = str(word).replace("(", "")
+    elif str(re.match("^([\w\d])+\]$", str(word))) != "None":
+        retuxx = str(word).replace("]", "")
+    elif str(re.match("^\[([\w\d])+$", str(word))) != "None":
+        retuxx = str(word).replace("[", "")
+    elif str(re.match("^[b]\]([\w\d])+$", str(word))) != "None":
+        retuxx = str(word).replace("b]", "")
     else:
         retuxx = word
     return str(retuxx).strip()
@@ -249,6 +256,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
     i = str(i).replace('…', '...')
 
     # i = str(i).replace('/', " / ")
@@ -469,7 +477,7 @@ def characterinvalidationchecker(word):
                                '·',
                                "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@', '<!',
                                '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium', '£',
-                               '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;','=>',':-']
+                               '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;','=>',':-','.;','?)','{','}','!"','!=','";']
     returnvalue = True
 
     for io in texttochecktoinvalidate:

@@ -99,23 +99,43 @@ def specificcharacterremoverandother(word):
     elif str(re.match("^([aA-zZ])+\.\'\'$", str(word))) != "None":
         retuxx = str(word).replace(".''", "")
 
+
+    # fullstop
+    if str(re.match("^([\w\d]+)(\.)$", str(word))) != "None":
+        retuxx = str(retuxx).replace(".", "")
+    # Apostrophe and fullstop
+
+    if str(re.match("^([\w\d]+)(\'[s])$", str(word))) != "None":
+        retuxx = str(retuxx).replace("'s", "")
+    elif str(re.match("^([\w\d]+)(’[s])$", str(word))) != "None":
+        retuxx = str(retuxx).replace("’s", "")
+
+
+
     else:
         retuxx = word
     return retuxx
 
 
 def wordduplicationcheckatEnd(wordstocheck):
-    if wordstocheck[-1:] == ".":
-        if wordstocheck[-2:-1] != ".":
-            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)[0:-1]))
-        else:
-            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
-    elif wordstocheck[-2:] == "'s":
-        tempppppaarrrrr.append((wordstocheck[0:-2]))
-    elif wordstocheck[-2:] == "’s":
-        tempppppaarrrrr.append((wordstocheck[0:-2]))
+    # if wordstocheck[-1:] == ".":
+    #     if wordstocheck[-2:-1] != ".":
+    #         tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)[0:-1]))
+    #     else:
+    #         tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
+    # elif wordstocheck[-2:] == "'s":
+    #     tempppppaarrrrr.append((wordstocheck[0:-2]))
+    # elif wordstocheck[-2:] == "’s":
+    #     tempppppaarrrrr.append((wordstocheck[0:-2]))
+    # else:
+    #     tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
+    getthewor=specificcharacterremoverandother(wordstocheck)
+
+    if str(re.match("^[\w]+/[\w]+$", str(getthewor))) != "None":
+        for splitter in str(getthewor).split("/"):
+            tempppppaarrrrr.append(str(splitter).strip())
     else:
-        tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
+        tempppppaarrrrr.append(str(getthewor).strip())
 
 
 counttttt = 0
@@ -148,15 +168,15 @@ for i in excelinput(forumdataforreading, 0, 0):
 #try to squeeze the slash split
 
 
-    ixre = multiplepunctuationRemover(str(i))
+    # ixre = multiplepunctuationRemover(str(i))
 
     # .replace to fix Ellipsis problem
-    if str(ixre).find(" ") != -1:
-        for x321 in re.split(" |,", ixre):
-            wordduplicationcheckatEnd(str(x321).strip())
+    if str(i).find(" ") != -1:
+        for x321 in re.split(" |,", i):
+            wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip()))
     else:
 
-        wordduplicationcheckatEnd(str(ixre).strip())
+        wordduplicationcheckatEnd(multiplepunctuationRemover(str(i).strip()))
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 for ghty in tempppppaarrrrr:

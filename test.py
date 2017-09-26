@@ -52,12 +52,12 @@ import re
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-x="!"
+x="pe1/ters"
 x1="2)dsad"
 x2="3)dasasad"
 y="3"
 
-print(re.match("\!!+",x))
+print(re.match("^[\w]+\/[\w]+$", x))
 
 
 

@@ -58,10 +58,9 @@ def multiplepunctuationRemover(words):
 
 
 def specificcharacterremoverandother(word):
-
-    if str(re.match("^\([aA-zZ]+$", str(word))) != "None":
+    if str(re.match("^\([\w\d]+$", str(word))) != "None":
         retuxx = str(word).replace("(", "")
-    elif str(re.match("^([aA-zZ])+(\))$", str(word))) != "None":
+    elif str(re.match("^([\w\d])+(\))$", str(word))) != "None":
         retuxx = str(word).replace(")", "")
     elif str(re.match("^\"([aA-zZ])+$", str(word))) != "None":
         retuxx = str(word).replace('"', "")
@@ -209,13 +208,17 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace('/', "")
     elif str(re.match("^\/([aA-zZ])+\/$", str(word))) != "None":
         retuxx = str(word).replace('/', "")
-
-
-
-
+    elif str(re.match("^([$]+)$", str(word))) != "None":
+        retuxx = str(word).replace('$', "")
+    elif str(re.match("^\"([\w\'])+$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+    elif str(re.match("^\(([\w\.])+$", str(word))) != "None":
+        retuxx = str(word).replace('(', "")
+    elif str(re.match("^\"([\w]+\'[\w]+)$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
     else:
         retuxx = word
-    return retuxx
+    return str(retuxx).strip()
 
 
 def wordduplicationcheckatEnd(wordstocheck):
@@ -225,9 +228,9 @@ def wordduplicationcheckatEnd(wordstocheck):
         else:
             tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
     elif wordstocheck[-2:] == "'s":
-        tempppppaarrrrr.append((wordstocheck[0:-2]))
+        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
     elif wordstocheck[-2:] == "’s":
-        tempppppaarrrrr.append((wordstocheck[0:-2]))
+        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
     else:
         tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
 
@@ -465,7 +468,8 @@ def characterinvalidationchecker(word):
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
                                '·',
                                "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@', '<!',
-                               '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium','£','€ڰ:','_','#','?"','<','~',"'')"]
+                               '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium', '£',
+                               '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;','=>',':-']
     returnvalue = True
 
     for io in texttochecktoinvalidate:

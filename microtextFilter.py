@@ -478,7 +478,7 @@ def characterinvalidationchecker(word):
                                "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@', '<!',
                                '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium', '£',
                                '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;', '=>', ':-', '.;', '?)', '{', '}', '!"',
-                               '!=', '";']
+                               '!=', '";','/b]']
     returnvalue = True
 
     for io in texttochecktoinvalidate:

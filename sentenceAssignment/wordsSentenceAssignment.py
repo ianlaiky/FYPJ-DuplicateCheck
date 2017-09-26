@@ -244,8 +244,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 
 forumdataforreading = "../datafiles/sgforums.xlsx"
 
-
-arrayoffilteredsentences=[]
+arrayoffilteredsentences = []
 
 for i in excelinput(forumdataforreading, 0, 0):
     # print(i)

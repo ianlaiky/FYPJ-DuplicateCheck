@@ -44,17 +44,17 @@ tempppppaarrrrr = []
 
 # punctuation remover
 def multiplepunctuationRemover(words):
-    line1 = re.sub('\.\.+', ' ', str(words))
-    line1 = re.sub('\!!+', ' ', str(line1))
-    line1 = re.sub('\?\?+', ' ', str(line1))
-    line1 = re.sub('\-\-+', ' ', str(line1))
-    line1 = re.sub('\_\_+', ' ', str(line1))
-    line1 = re.sub('\=\=+', ' ', str(line1))
+    line = re.sub('\.\.+', ' ', words)
+    line = re.sub('\!!+', ' ', line)
+    line = re.sub('\?\?+', ' ', line)
+    line = re.sub('\-\-+', ' ', line)
+    line = re.sub('\_\_+', ' ', line)
+    line = re.sub('\=\=+', ' ', line)
 
-    # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line1))) != "None":
-    #     line1 = str(line1).replace("/", " ")
+    # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line))) != "None":
+    #     line=line.replace("/"," ")
 
-    return line1
+    return line
 
 
 def specificcharacterremoverandother(word):
@@ -98,19 +98,12 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace("'", "")
     elif str(re.match("^([aA-zZ])+\.\'\'$", str(word))) != "None":
         retuxx = str(word).replace(".''", "")
-
-
-    # fullstop
-    if str(re.match("^([\w\d]+)(\.)$", str(word))) != "None":
-        retuxx = str(retuxx).replace(".", "")
-    # Apostrophe and fullstop
-
-    if str(re.match("^([\w\d]+)(\'[s])$", str(word))) != "None":
-        retuxx = str(retuxx).replace("'s", "")
-    elif str(re.match("^([\w\d]+)(’[s])$", str(word))) != "None":
-        retuxx = str(retuxx).replace("’s", "")
-
-
+    elif str(re.match("^“([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace("“", "")
+    elif str(re.match("^([\w\d])+\"\/\>$", str(word))) != "None":
+        retuxx = str(word).replace('"/>', "")
+    elif str(re.match("^([aA-zZ])+\)!$", str(word))) != "None":
+        retuxx = str(word).replace(")!", "")
 
     else:
         retuxx = word
@@ -118,24 +111,17 @@ def specificcharacterremoverandother(word):
 
 
 def wordduplicationcheckatEnd(wordstocheck):
-    # if wordstocheck[-1:] == ".":
-    #     if wordstocheck[-2:-1] != ".":
-    #         tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)[0:-1]))
-    #     else:
-    #         tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
-    # elif wordstocheck[-2:] == "'s":
-    #     tempppppaarrrrr.append((wordstocheck[0:-2]))
-    # elif wordstocheck[-2:] == "’s":
-    #     tempppppaarrrrr.append((wordstocheck[0:-2]))
-    # else:
-    #     tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
-    getthewor=specificcharacterremoverandother(wordstocheck)
-
-    if str(re.match("^[\w]+/[\w]+$", str(getthewor))) != "None":
-        for splitter in str(getthewor).split("/"):
-            tempppppaarrrrr.append(str(splitter).strip())
+    if wordstocheck[-1:] == ".":
+        if wordstocheck[-2:-1] != ".":
+            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)[0:-1]))
+        else:
+            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
+    elif wordstocheck[-2:] == "'s":
+        tempppppaarrrrr.append((wordstocheck[0:-2]))
+    elif wordstocheck[-2:] == "’s":
+        tempppppaarrrrr.append((wordstocheck[0:-2]))
     else:
-        tempppppaarrrrr.append(str(getthewor).strip())
+        tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
 
 
 counttttt = 0
@@ -165,18 +151,15 @@ for i in excelinput(forumdataforreading, 0, 0):
     # i = str(i).lower()
     # do blank check to see if have space
 
-#try to squeeze the slash split
-
-
-    # ixre = multiplepunctuationRemover(str(i))
+    ixre = multiplepunctuationRemover(str(i))
 
     # .replace to fix Ellipsis problem
-    if str(i).find(" ") != -1:
-        for x321 in re.split(" |,", i):
-            wordduplicationcheckatEnd(multiplepunctuationRemover(str(x321).strip()))
+    if str(ixre).find(" ") != -1:
+        for x321 in re.split(" |,", ixre):
+            wordduplicationcheckatEnd(str(x321).strip())
     else:
 
-        wordduplicationcheckatEnd(multiplepunctuationRemover(str(i).strip()))
+        wordduplicationcheckatEnd(str(ixre).strip())
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 for ghty in tempppppaarrrrr:
@@ -373,7 +356,7 @@ def characterinvalidationchecker(word):
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
                                '·',
                                "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@', '<!',
-                               '<w:lsdexception', 'locked="false"']
+                               '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium','£','€ڰ:','_','#','?"','<','~']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -396,6 +379,8 @@ def characterinvalidationchecker(word):
     elif str(re.match("^[0-9]+%$", word)) != "None":
         returnvalue = False
     elif str(re.match("^\$[0-9]+$", word)) != "None":
+        returnvalue = False
+    elif str(re.match("^[^(\w\d)]$", word)) != "None":
         returnvalue = False
 
     return returnvalue

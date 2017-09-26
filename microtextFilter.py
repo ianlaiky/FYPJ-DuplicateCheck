@@ -58,7 +58,7 @@ def multiplepunctuationRemover(words):
 
 
 def specificcharacterremoverandother(word):
-    retuxx = word
+
     if str(re.match("^\([aA-zZ]+$", str(word))) != "None":
         retuxx = str(word).replace("(", "")
     elif str(re.match("^([aA-zZ])+(\))$", str(word))) != "None":
@@ -73,7 +73,7 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace("'", "")
     elif str(re.match("^([aA-zZ])+\'$", str(word))) != "None":
         retuxx = str(word).replace("'", "")
-    elif str(re.match("^([aA-zZ])+\"$", str(word))) != "None":
+    elif str(re.match("^([aA-zZ\-])+\"$", str(word))) != "None":
         retuxx = str(word).replace('"', "")
     elif str(re.match("^\([aA-zZ]+\)$", str(word))) != "None":
         retuxx = str(word).replace("(", "")
@@ -104,6 +104,108 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace('"/>', "")
     elif str(re.match("^([aA-zZ])+\)!$", str(word))) != "None":
         retuxx = str(word).replace(")!", "")
+    elif str(re.match("^([aA-zZ])+\.\'$", str(word))) != "None":
+        retuxx = str(word).replace(".'", "")
+    elif str(re.match("^([aA-zZ])+\'\'$", str(word))) != "None":
+        retuxx = str(word).replace("''", "")
+    elif str(re.match("^\'\'([aA-zZ])+\'\'$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+    elif str(re.match("^([aA-zZ])+\([sS]\)$", str(word))) != "None":
+        retuxx = str(word).replace("(s)", "")
+        retuxx = str(retuxx).replace("(S)", "")
+    elif str(re.match("^\"([aA-zZ])+\'\'$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+        retuxx = str(retuxx).replace('"', "")
+    elif str(re.match("^([aA-zZ])+\?\;$", str(word))) != "None":
+        retuxx = str(word).replace("?;", "")
+    elif str(re.match("^([aA-zZ])+\"\?$", str(word))) != "None":
+        retuxx = str(word).replace('"?', "")
+    elif str(re.match("^\.([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('.', "")
+    elif str(re.match("^([aA-zZ])+\*$", str(word))) != "None":
+        retuxx = str(word).replace('*', "")
+    elif str(re.match("^\'\'([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace("''", "")
+    elif str(re.match("^\?([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace("?", "")
+    elif str(re.match("^([aA-zZ])+!\)$", str(word))) != "None":
+        retuxx = str(word).replace("!)", "")
+    elif str(re.match("^([aA-zZ])+\?\)$", str(word))) != "None":
+        retuxx = str(word).replace("?)", "")
+    elif str(re.match("^([aA-zZ])+\}$", str(word))) != "None":
+        retuxx = str(word).replace("}", "")
+    elif str(re.match("^\'([aA-zZ\-])+\'$", str(word))) != "None":
+        retuxx = str(word).replace("'", "")
+    elif str(re.match("^\"([aA-zZ\-])+\"$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+    elif str(re.match("^([aA-zZ\-])+\?\"$", str(word))) != "None":
+        retuxx = str(word).replace('?"', "")
+    elif str(re.match("^([aA-zZ\-])+\"\?$", str(word))) != "None":
+        retuxx = str(word).replace('"?', "")
+    elif str(re.match("^\"([aA-zZ\-])+\'\"$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+        retuxx = str(retuxx).replace("'", "")
+    elif str(re.match("^([aA-zZ\-])+\.\)$", str(word))) != "None":
+        retuxx = str(word).replace('.)', "")
+    elif str(re.match("^([aA-zZ\-])+\)$", str(word))) != "None":
+        retuxx = str(word).replace(')', "")
+    elif str(re.match("^([aA-zZ])+\.\'$", str(word))) != "None":
+        retuxx = str(word).replace(".'", "")
+    elif str(re.match("^\[([aA-zZ/])+\]$", str(word))) != "None":
+        retuxx = str(word).replace("[", "")
+        retuxx = str(retuxx).replace("]", "")
+    elif str(re.match("^\[([aA-zZ/])+$", str(word))) != "None":
+        retuxx = str(word).replace("[", "")
+    elif str(re.match("^\(([aA-zZ])+\):$", str(word))) != "None":
+        retuxx = str(word).replace("(", "")
+        retuxx = str(retuxx).replace("):", "")
+    elif str(re.match("^\"\(([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('"(', "")
+    elif str(re.match("^([aA-zZ])+\)\:$", str(word))) != "None":
+        retuxx = str(word).replace('):', "")
+    elif str(re.match("^\[([\w\d])+\]$", str(word))) != "None":
+        retuxx = str(word).replace("[", "")
+        retuxx = str(retuxx).replace("]", "")
+    elif str(re.match("^([aA-zZ])+\’$", str(word))) != "None":
+        retuxx = str(word).replace('’', "")
+    elif str(re.match("^([aA-zZ])+\”$", str(word))) != "None":
+        retuxx = str(word).replace('”', "")
+    elif str(re.match("^\”([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('”', "")
+    elif str(re.match("^([aA-zZ])+\.\”$", str(word))) != "None":
+        retuxx = str(word).replace('.”', "")
+    elif str(re.match("^\[([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('[', "")
+    elif str(re.match("^([aA-zZ])+\”$", str(word))) != "None":
+        retuxx = str(word).replace('”', "")
+    elif str(re.match("^([aA-zZ])+\!\?$", str(word))) != "None":
+        retuxx = str(word).replace('!?', "")
+    elif str(re.match("^([aA-zZ])+\?\!$", str(word))) != "None":
+        retuxx = str(word).replace('?!', "")
+    elif str(re.match("^([aA-zZ])+\?\'$", str(word))) != "None":
+        retuxx = str(word).replace("?'", "")
+    elif str(re.match("^\"([aA-zZ])+\?$", str(word))) != "None":
+        retuxx = str(word).replace('"', "")
+        retuxx = str(retuxx).replace('?', "")
+    elif str(re.match("^([aA-zZ])+\!\"$", str(word))) != "None":
+        retuxx = str(word).replace('!"', "")
+    elif str(re.match("^\-([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('-', "")
+    elif str(re.match("^\`+([aA-zZ])+\`+$", str(word))) != "None":
+        retuxx = str(word).replace('`', "")
+    elif str(re.match("^\`+([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('`', "")
+    elif str(re.match("^([aA-zZ])+\`+$", str(word))) != "None":
+        retuxx = str(word).replace('`', "")
+    elif str(re.match("^\‘+([aA-zZ])+\‘+$", str(word))) != "None":
+        retuxx = str(word).replace('‘', "")
+    elif str(re.match("^\‘+([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('‘', "")
+    elif str(re.match("^([aA-zZ])+\‘+$", str(word))) != "None":
+        retuxx = str(word).replace('‘', "")
+
+
+
 
     else:
         retuxx = word
@@ -133,10 +235,11 @@ for i in excelinput(forumdataforreading, 0, 0):
     counttttt = counttttt + 1
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
-    i = str(i).replace('', "")
-    i = str(i).replace('', "")
-    i = str(i).replace('', "")
-    i = str(i).replace('', "")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
     i = str(i).replace('…', '...')
 
     # i = str(i).replace('/', " / ")
@@ -356,7 +459,7 @@ def characterinvalidationchecker(word):
                                '---', ')', '(', '[/b]', '', '', '', '%', '[/quote]', '--->', '"', '$', '|', '—', '”',
                                '·',
                                "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@', '<!',
-                               '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium','£','€ڰ:','_','#','?"','<','~']
+                               '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium','£','€ڰ:','_','#','?"','<','~',"'')"]
     returnvalue = True
 
     for io in texttochecktoinvalidate:

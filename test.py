@@ -52,12 +52,16 @@ import re
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-x='dsadsa)!'
+x='‘fsdf‘'
 x1="2)dsad"
 x2="3)dasasad"
 y="3"
 
-print(re.match("^([aA-zZ])+\)!$", x))
+print(x)
+print(re.match("^\‘+([aA-zZ])+\‘+$", x))
+
+
+
 
 
 

@@ -477,7 +477,8 @@ def characterinvalidationchecker(word):
                                '·',
                                "''", ';', "\\", '>>', '$$$', '===', '[', ']', '___', '->', ':', '@', '<!',
                                '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium', '£',
-                               '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;','=>',':-','.;','?)','{','}','!"','!=','";']
+                               '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;', '=>', ':-', '.;', '?)', '{', '}', '!"',
+                               '!=', '";']
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -526,7 +527,7 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     if dictus.check(ixxx) is False:
         if dictgb.check(ixxx) is False:
             tempwordthatl = ""
-
+            # variation assignment
             try:
                 tempwordthatl = str(tempwordthatl) + " / " + str(
                     verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())])

@@ -276,7 +276,6 @@ for i in excelinput(forumdataforreading, 0, 0):
     # print(ixre)
     # input()
 
-
     if str(ixre).find(" ") != -1:
         sentencestringfiltered = ""
         for x321 in re.split(" |,", ixre):

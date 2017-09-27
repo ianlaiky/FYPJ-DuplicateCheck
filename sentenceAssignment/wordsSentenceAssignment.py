@@ -245,11 +245,13 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 forumdataforreading = "../datafiles/sgforums.xlsx"
 
 arrayoffilteredsentences = []
+listofunformattedsentence=[]
 
 for i in excelinput(forumdataforreading, 0, 0):
     # print(i)
     print("Currently scanning Line: " + str(counttttt))
     counttttt = counttttt + 1
+    listofunformattedsentence.append(i)
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
     i = str(i).replace('', " ")
@@ -273,25 +275,42 @@ for i in excelinput(forumdataforreading, 0, 0):
     # do blank check to see if have space
 
     ixre = multiplepunctuationRemover(str(i))
+
     # print(ixre)
     # input()
 
     if str(ixre).find(" ") != -1:
-        sentencestringfiltered = ""
+        sentencestringfiltered = []
         for x321 in re.split(" |,", ixre):
-            sentencestringfiltered = sentencestringfiltered + " " + wordduplicationcheckatEnd(str(x321).strip())
-        arrayoffilteredsentences.append(str(sentencestringfiltered))
+            tempword = wordduplicationcheckatEnd(str(x321).strip()).strip()
+            if tempword != "":
+                if tempword != " ":
+                    sentencestringfiltered.append(str(tempword).strip())
+        arrayoffilteredsentences.append(sentencestringfiltered)
 
     else:
-        sentencestringfiltered = ""
-        sentencestringfiltered = wordduplicationcheckatEnd(str(ixre).strip())
-        arrayoffilteredsentences.append(str(sentencestringfiltered))
+        sentencestringfiltered = []
+        sentencestringfiltered.append(str(ixre).strip().strip())
+        arrayoffilteredsentences.append(sentencestringfiltered)
 
 
+listofwordstocheck = []
+
+textreader = open("candidates.txt", 'r', encoding="utf-8")
+wordsfromfile=textreader.readlines()
+
+inputsen = open("sentencesAssignment.txt", 'w', encoding="utf-8")
+
+for readme in wordsfromfile:
+    listofwordstocheck.append(readme)
 
 
+for op in listofwordstocheck:
+    for index,opch in enumerate(arrayoffilteredsentences):
+        if op in opch:
+            inputsen.writelines(str(op) + " | " + listofunformattedsentence[index] + "\n")
+        # else:
+        #     print("Error: Word is: "+str(op))
 
-        # textreader = open("candidates.txt", 'r')
-        #
-        #
-        # textreader.close()
+textreader.close()
+inputsen.close()

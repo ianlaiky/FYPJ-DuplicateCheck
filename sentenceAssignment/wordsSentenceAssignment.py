@@ -302,13 +302,14 @@ wordsfromfile=textreader.readlines()
 inputsen = open("sentencesAssignment.txt", 'w', encoding="utf-8")
 
 for readme in wordsfromfile:
-    listofwordstocheck.append(readme)
+    print(str(readme))
+    listofwordstocheck.append(str(readme).strip())
 
 
 for op in listofwordstocheck:
     for index,opch in enumerate(arrayoffilteredsentences):
-        if op in opch:
-            inputsen.writelines(str(op) + " | " + listofunformattedsentence[index] + "\n")
+        if str(op) in opch:
+            inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n")
         # else:
         #     print("Error: Word is: "+str(op))
 

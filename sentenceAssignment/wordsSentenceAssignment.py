@@ -443,7 +443,7 @@ for i in excelinput(forumdataforreading, 0, 0):
                     tempsetecehold = tempsetecehold + " " + tempword
         arrayoffilteredsentences.append(list(filter(None, tempsetecehold.split(" "))))
 
-        print(arrayoffilteredsentences)
+        # print(arrayoffilteredsentences)
 
     else:
         sentencestringfiltered = []

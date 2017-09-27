@@ -272,7 +272,7 @@ def specificcharacterremoverandother(word):
 
     elif str(re.match("^\‘+([aA-zZ])+\’+$", str(word))) != "None":
         retuxx = str(word).replace('‘', "")
-        retuxx = str(word).retuxx('’', "")
+        retuxx = str(retuxx).replace('’', "")
 
     elif str(re.match("^\‘+([aA-zZ])+$", str(word))) != "None":
         retuxx = str(word).replace('‘', "")

@@ -282,7 +282,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     if str(ixre).find(" ") != -1:
         sentencestringfiltered = []
         for x321 in re.split(" |,", ixre):
-            tempword = wordduplicationcheckatEnd(str(x321).strip()).strip()
+            tempword = wordduplicationcheckatEnd(specificcharacterremoverandother(str(x321).strip())).strip()
             if tempword != "":
                 if tempword != " ":
                     sentencestringfiltered.append(str(tempword).strip())

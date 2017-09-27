@@ -390,7 +390,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 forumdataforreading = "../datafiles/sgforums.xlsx"
 
 arrayoffilteredsentences = []
-listofunformattedsentence=[]
+listofunformattedsentence = []
 
 for i in excelinput(forumdataforreading, 0, 0):
     # print(i)
@@ -433,14 +433,14 @@ for i in excelinput(forumdataforreading, 0, 0):
 
     if str(ixre).find(" ") != -1:
 
-        tempsetecehold=""
+        tempsetecehold = ""
 
         sentencestringfiltered = []
         for x321 in re.split(" |,", ixre):
             tempword = wordduplicationcheckatEnd(specificcharacterremoverandother(str(x321).strip())).strip()
             if tempword != "":
                 if tempword != " ":
-                    tempsetecehold=tempsetecehold+" "+tempword
+                    tempsetecehold = tempsetecehold + " " + tempword
         arrayoffilteredsentences.append(list(filter(None, tempsetecehold.split(" "))))
 
         print(arrayoffilteredsentences)
@@ -450,11 +450,10 @@ for i in excelinput(forumdataforreading, 0, 0):
         sentencestringfiltered.append(str(ixre).strip().strip())
         arrayoffilteredsentences.append(sentencestringfiltered)
 
-
 listofwordstocheck = []
 
 textreader = open("candidates.txt", 'r', encoding="utf-8")
-wordsfromfile=textreader.readlines()
+wordsfromfile = textreader.readlines()
 
 inputsen = open("sentencesAssignment.txt", 'w', encoding="utf-8")
 
@@ -462,13 +461,12 @@ for readme in wordsfromfile:
     print(str(readme))
     listofwordstocheck.append(str(readme).strip())
 
-
 for op in listofwordstocheck:
-    for index,opch in enumerate(arrayoffilteredsentences):
+    for index, opch in enumerate(arrayoffilteredsentences):
         if str(op) in opch:
             inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n")
-        # else:
-        #     print("Error: Word is: "+str(op))
+            # else:
+            #     print("Error: Word is: "+str(op))
 
 textreader.close()
 inputsen.close()

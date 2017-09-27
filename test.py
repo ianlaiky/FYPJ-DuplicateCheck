@@ -1,5 +1,6 @@
 import re
 import enchant
+
 # d = enchant.Dict("en_US")
 # de = enchant.Dict("en_GB")
 # print(d.check("co-applicant"))
@@ -52,10 +53,10 @@ import enchant
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-x='197a0"'
-x1="2)dsad"
-x2="3)dasasad"
-y="3"
+x = '197a0"'
+x1 = "2)dsad"
+x2 = "3)dasasad"
+y = "3"
 
 print(x)
 print(re.match("^([\w])+\"$", x))
@@ -83,4 +84,3 @@ print(re.match("^([\w])+\"$", x))
 #
 # finder="john"
 # print(x[new_list.index(finder.lower())])
-

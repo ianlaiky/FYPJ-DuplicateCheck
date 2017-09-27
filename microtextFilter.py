@@ -101,6 +101,9 @@ def specificcharacterremoverandother(word):
     elif str(re.match("^[\w\d]+(!+)$", str(word))) != "None":
         retuxx = str(word).replace("!", "")
 
+    elif str(re.match("^\![\w\d]+$", str(word))) != "None":
+        retuxx = str(word).replace("!", "")
+
     elif str(re.match("^([aA-zZ])+(\.\")$", str(word))) != "None":
         retuxx = str(word).replace('."', "")
 
@@ -219,6 +222,12 @@ def specificcharacterremoverandother(word):
 
     elif str(re.match("^\”([aA-zZ])+$", str(word))) != "None":
         retuxx = str(word).replace('”', "")
+    elif str(re.match("^\“([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('“', "")
+
+    elif str(re.match("^\“([aA-zZ])+\”$", str(word))) != "None":
+        retuxx = str(word).replace('“', "")
+        retuxx = str(retuxx).replace('”', "")
 
     elif str(re.match("^([aA-zZ])+\.\”$", str(word))) != "None":
         retuxx = str(word).replace('.”', "")
@@ -243,6 +252,8 @@ def specificcharacterremoverandother(word):
         retuxx = str(retuxx).replace('?', "")
     elif str(re.match("^([aA-zZ])+\!\"$", str(word))) != "None":
         retuxx = str(word).replace('!"', "")
+
+
     elif str(re.match("^\-([aA-zZ])+$", str(word))) != "None":
         retuxx = str(word).replace('-', "")
     elif str(re.match("^\`+([aA-zZ])+\`+$", str(word))) != "None":
@@ -275,6 +286,12 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace("'", "")
     elif str(re.match("^\(([\w]+\'[\w]+)$", str(word))) != "None":
         retuxx = str(word).replace("(", "")
+
+    elif str(re.match("^([\w]+\'[\w]+)\;$", str(word))) != "None":
+        retuxx = str(word).replace(";", "")
+
+
+
     elif str(re.match("^([\w\d])+\]$", str(word))) != "None":
         retuxx = str(word).replace("]", "")
     elif str(re.match("^\[([\w\d])+$", str(word))) != "None":
@@ -283,6 +300,26 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace("b]", "")
     elif str(re.match("^\[[b]\]([\w\d])+$", str(word))) != "None":
         retuxx = str(word).replace("[b]", "")
+
+    elif str(re.match("^([\w])+\"\;$", str(word))) != "None":
+        retuxx = str(word).replace('";', "")
+
+    elif str(re.match("^\"\$([\w])+$", str(word))) != "None":
+        retuxx = str(word).replace('"$', "")
+
+    elif str(re.match("^([\w])+\.\"\;$", str(word))) != "None":
+        retuxx = str(word).replace('.";', "")
+
+    elif str(re.match("^([\w])+\)\?\"$", str(word))) != "None":
+        retuxx = str(word).replace(')?"', "")
+
+    elif str(re.match("^([aA-zZ])+\/[sS]$", str(word))) != "None":
+        retuxx = str(word).replace('/s', "")
+        retuxx = str(retuxx).replace('/S', "")
+
+    elif str(re.match("^\>([aA-zZ])+$", str(word))) != "None":
+        retuxx = str(word).replace('>', "")
+
     else:
         retuxx = word
 
@@ -318,6 +355,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
     i = str(i).replace('…', '...')
 
     # i = str(i).replace('/', " / ")

@@ -198,6 +198,8 @@ def specificcharacterremoverandother(word):
         retuxx = str(word).replace("[", "")
     elif str(re.match("^[b]\]([\w\d])+$", str(word))) != "None":
         retuxx = str(word).replace("b]", "")
+
+
     else:
         retuxx = word
     return str(retuxx).strip()

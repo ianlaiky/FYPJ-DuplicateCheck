@@ -463,7 +463,7 @@ for readme in wordsfromfile:
 for op in listofwordstocheck:
     for index, opch in enumerate(arrayoffilteredsentences):
         if str(op).lower() in (str(checkword).lower() for checkword in opch):
-            inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n")
+            inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n\n")
             # else:
             #     print("Error: Word is: "+str(op))
 

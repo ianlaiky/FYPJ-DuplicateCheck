@@ -1,10 +1,11 @@
 import re
 import enchant
 
-# d = enchant.Dict("en_US")
-# de = enchant.Dict("en_GB")
-# print(d.check("co-applicant"))
-# print(d.check("organise"))
+d = enchant.Dict("en_US")
+de = enchant.Dict("en_GB")
+
+print(d.check("cool"))
+print(de.check("on-line"))
 # print(de.check("afk"))
 
 # if d.check("running") is True:

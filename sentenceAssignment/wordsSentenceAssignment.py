@@ -278,8 +278,6 @@ def specificcharacterremoverandother(word):
     elif str(re.match("^([\w]+\-[\w]+)\;$", str(word))) != "None":
         retuxx = str(word).replace(";", "")
 
-
-
     elif str(re.match("^([\w\d])+\]$", str(word))) != "None":
         retuxx = str(word).replace("]", "")
     elif str(re.match("^\[([\w\d])+$", str(word))) != "None":

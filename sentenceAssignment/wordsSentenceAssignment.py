@@ -463,12 +463,13 @@ for readme in wordsfromfile:
     print(str(readme))
     listofwordstocheck.append(str(readme).strip())
 
-for op in listofwordstocheck:
+for index,op in enumerate(listofwordstocheck):
     for index, opch in enumerate(arrayoffilteredsentences):
         if str(op).lower() in (str(checkword).lower() for checkword in opch):
             inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n\n")
             # else:
             #     print("Error: Word is: "+str(op))
+    print("Current: "+str(index)+" "+str(len(listofwordstocheck))+str(round(int(index)/int(len(listofwordstocheck)))*100)+" %")
 
 textreader.close()
 inputsen.close()

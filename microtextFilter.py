@@ -66,17 +66,17 @@ tempppppaarrrrr = []
 
 # punctuation remover
 def multiplepunctuationRemover(words):
-    line = re.sub('\.\.+', ' ', words)
-    line = re.sub('\!!+', ' ', line)
-    line = re.sub('\?\?+', ' ', line)
-    line = re.sub('\-\-+', ' ', line)
-    line = re.sub('\_\_+', ' ', line)
-    line = re.sub('\=\=+', ' ', line)
+    line32 = re.sub('\.\.+', ' ', words)
+    line32 = re.sub('\!!+', ' ', line32)
+    line32 = re.sub('\?\?+', ' ', line32)
+    line32 = re.sub('\-\-+', ' ', line32)
+    line32 = re.sub('\_\_+', ' ', line32)
+    line32 = re.sub('\=\=+', ' ', line32)
 
     # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line))) != "None":
     #     line=line.replace("/"," ")
 
-    return line
+    return line32
 
 
 def specificcharacterremoverandother(word):
@@ -396,15 +396,15 @@ def specificcharacterremoverandother(word):
 def wordduplicationcheckatEnd(wordstocheck):
     if wordstocheck[-1:] == ".":
         if wordstocheck[-2:-1] != ".":
-            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)[0:-1]))
+            tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-1]))
         else:
-            tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
+            tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck))
     elif wordstocheck[-2:] == "'s":
         tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
     elif wordstocheck[-2:] == "’s":
         tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
     else:
-        tempppppaarrrrr.append(specificcharacterremoverandother((wordstocheck)))
+        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck))
 
 
 counttttt = 0
@@ -498,11 +498,11 @@ class Files():
 
 def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore):
     pyarr = []
-    f = open(filetoopen, 'r', encoding="utf8")
-    message = f.readlines()
+    ef = open(filetoopen, 'r', encoding="utf8")
+    message = ef.readlines()
 
     # print(message)
-    f.close()
+    ef.close()
     # print(message)
     for myString in message:
         # print(myString)
@@ -606,7 +606,7 @@ for index, abc in enumerate(my_dict):
 for c in arrofileobjects:
     print("Processing File: " + str(c.getFilename()))
     # print(c.getArray())
-    listyincheck = []
+    # listyincheck = []
 
     # found
     listyincheck = list(set(c.getArray()).intersection(set(my_dicInArray)))

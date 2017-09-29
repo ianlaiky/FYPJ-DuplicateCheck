@@ -734,8 +734,6 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
             #         tempwordthatl=str(tempwordthatl)+" / "+str(chhs)
 
             # new test
-
-
             if characterinvalidationchecker(str(ixxx).strip()) is True:
                 fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
                 fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")

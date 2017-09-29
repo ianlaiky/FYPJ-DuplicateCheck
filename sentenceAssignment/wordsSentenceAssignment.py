@@ -465,15 +465,16 @@ for readme in wordsfromfile:
     print(str(readme))
     listofwordstocheck.append(str(readme).strip())
 
-for index1,op in enumerate(listofwordstocheck):
+for index1, op in enumerate(listofwordstocheck):
     for index, opch in enumerate(arrayoffilteredsentences):
         # if str(op).lower() in (str(checkword).lower() for checkword in opch):
         if str(op).lower() in (str(opch).split(" ")):
-        # if str(opch).find(str(op.lower()))!= -1:
+            # if str(opch).find(str(op.lower()))!= -1:
             inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n\n")
             # else:
             #     print("Error: Word is: "+str(op))
-    print("Current: "+str(index1)+" "+str(len(listofwordstocheck))+"  "+str((round((int(index1)/int(len(listofwordstocheck)))*100,2)))+" %")
+    print("Current: " + str(index1) + " " + str(len(listofwordstocheck)) + "  " + str(
+        (round((int(index1) / int(len(listofwordstocheck))) * 100, 2))) + " %")
 
 textreader.close()
 inputsen.close()

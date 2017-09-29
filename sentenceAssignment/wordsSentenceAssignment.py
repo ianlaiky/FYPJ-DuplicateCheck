@@ -443,14 +443,16 @@ for i in excelinput(forumdataforreading, 0, 0):
             if tempword != "":
                 if tempword != " ":
                     tempsetecehold = tempsetecehold + " " + tempword
-        arrayoffilteredsentences.append(list(filter(None, tempsetecehold.split(" "))))
+        arrayoffilteredsentences.append(str(tempsetecehold).lower())
+
+
 
         # print(arrayoffilteredsentences)
 
     else:
-        sentencestringfiltered = []
-        sentencestringfiltered.append(str(ixre).strip().strip())
-        arrayoffilteredsentences.append(sentencestringfiltered)
+        # sentencestringfiltered = []
+        # sentencestringfiltered.append(str(ixre).strip().strip())
+        arrayoffilteredsentences.append(str(ixre).lower())
 
 listofwordstocheck = []
 
@@ -465,11 +467,13 @@ for readme in wordsfromfile:
 
 for index1,op in enumerate(listofwordstocheck):
     for index, opch in enumerate(arrayoffilteredsentences):
-        if str(op).lower() in (str(checkword).lower() for checkword in opch):
+        # if str(op).lower() in (str(checkword).lower() for checkword in opch):
+        if str(op).lower() in (str(opch).split(" ")):
+        # if str(opch).find(str(op.lower()))!= -1:
             inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n\n")
             # else:
             #     print("Error: Word is: "+str(op))
-    print("Current: "+str(index1)+" "+str(len(listofwordstocheck))+"  "+str((round(int(index1)/int(len(listofwordstocheck)),2)*100))+" %")
+    print("Current: "+str(index1)+" "+str(len(listofwordstocheck))+"  "+str((round((int(index1)/int(len(listofwordstocheck)))*100,2)))+" %")
 
 textreader.close()
 inputsen.close()

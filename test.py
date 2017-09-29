@@ -54,15 +54,16 @@ print(de.check("on-line"))
 #     if re.search("don",str(i))!="None":
 #         print(i)
 #
-x = '197a0"'
-x1 = "2)dsad"
-x2 = "3)dasasad"
-y = "3"
+# x = '197a0"'
+# x1 = "2)dsad"
+# x2 = "3)dasasad"
+# y = "3"
+#
+# print(x)
+# print(re.match("^([\w])+\"$", x))
 
-print(x)
-print(re.match("^([\w])+\"$", x))
-
-
+x="asdsadsad fdsghgd haha"
+print(x.find("hahads"))
 
 # if x.startswith('‘'):
 #     print("work")

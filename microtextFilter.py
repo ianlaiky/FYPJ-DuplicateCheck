@@ -28,6 +28,8 @@ def excelinputRe(filetoeopn, filecheckksheets, columnNo):
             columnlist.append(str(r[columnNo]).lower().strip())
 
     return columnlist
+
+
 def excelinput(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
     # loading in workbook
@@ -48,6 +50,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
             columnlist.append(str(r[columnNo]))
 
     return columnlist
+
 
 # comparing 2 words: https://stackoverflow.com/questions/319426/how-do-i-do-a-case-insensitive-string-comparison-in-python
 def normalize_caseless(text):
@@ -507,7 +510,8 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
         try:
             if myString.find(wordstoignore) == -1:
                 if startreadArea != "":
-                    pyarr.append((myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)]).lower())
+                    pyarr.append(
+                        (myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)]).lower())
                 else:
                     pyarr.append(myString.replace("\n", ""))
         except:
@@ -563,7 +567,7 @@ for i in conf:
             # print("Value check to be deleteed(): "+str(i.split(",")[1].strip())+str(i.split(",")[2].strip())+str(i.split(",")[3].strip()))
             arrofileobjects.append(Files(i.split(",")[1].strip(),
                                          excelinputRe(i.split(",")[1].strip(), int(i.split(",")[2].strip()),
-                                                    int(i.split(",")[3].strip()))))
+                                                      int(i.split(",")[3].strip()))))
         elif x == "text":
             # print("Value check to be deleteed(): " + str(i.split(",")[1].strip()))
             arrofileobjects.append(Files(i.split(",")[1].strip(),
@@ -598,7 +602,6 @@ for index, abc in enumerate(my_dict):
         round(int(index) / int(len(my_dict)) * 100, 2)) + "% Completed")
     sabc = str(abc).lower()
     my_dicInArray.append(sabc)
-
 
 for c in arrofileobjects:
     print("Processing File: " + str(c.getFilename()))
@@ -758,5 +761,3 @@ print("All complete")
 fdup.close()
 fnodup.close()
 fnodupwspecial.close()
-
-

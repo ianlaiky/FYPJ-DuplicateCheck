@@ -469,7 +469,7 @@ for index1,op in enumerate(listofwordstocheck):
             inputsen.writelines(str(op) + " | " + str(listofunformattedsentence[index]) + "\n\n")
             # else:
             #     print("Error: Word is: "+str(op))
-    print("Current: "+str(index1)+" "+str(len(listofwordstocheck))+"  "+str(round(int(index)/int(len(listofwordstocheck)))*100)+" %")
+    print("Current: "+str(index1)+" "+str(len(listofwordstocheck))+"  "+str((round(int(index1)/int(len(listofwordstocheck)),2)*100))+" %")
 
 textreader.close()
 inputsen.close()

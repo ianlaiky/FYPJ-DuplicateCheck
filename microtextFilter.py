@@ -707,7 +707,7 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
             tempwordthatl = ""
             # variation assignment
             try:
-                tempwordthatl = str(tempwordthatl) + " / " + str(
+                tempwordthatl = str(tempwordthatl) + " | " + str(
                     verynewtempppppaarrrrr[uniqueverynewtempppppaarrrrr.index(ixxx.lower())])
             except:
                 print("not: " + str(ixxx))

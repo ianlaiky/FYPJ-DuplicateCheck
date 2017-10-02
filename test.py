@@ -1,11 +1,12 @@
 import re
-import enchant
 
-d = enchant.Dict("en_US")
-de = enchant.Dict("en_GB")
-
-print(d.check("cool"))
-print(de.check("on-line"))
+# import enchant
+#
+# d = enchant.Dict("en_US")
+# de = enchant.Dict("en_GB")
+#
+# print(d.check("cool"))
+# print(de.check("on-line"))
 # print(de.check("afk"))
 
 # if d.check("running") is True:
@@ -62,8 +63,8 @@ print(de.check("on-line"))
 # print(x)
 # print(re.match("^([\w])+\"$", x))
 
-x="asdsadsad fdsghgd haha"
-print(x.find("hahads"))
+# x="asdsadsad fdsghgd haha"
+# print(x.find("hahads"))
 
 # if x.startswith('‘'):
 #     print("work")
@@ -79,10 +80,15 @@ print(x.find("hahads"))
 #
 # print(x[x.index(y.split(",")[1])+int(y.split(",")[3]):x.index(y.split(",")[2])])
 
+word = "James John"
+allword = word.split(" ")
+firstword=allword[0]
 
+x = ['James', "John", 'Peter', 'Le', 'has']
 
-# x=['James',"John",'Peter']
-# new_list = [item.lower() for item in x]
-#
-# finder="john"
-# print(x[new_list.index(finder.lower())])
+# print(x.index("Peter"))
+if str(x[x.index(firstword)] + " " + x[x.index(firstword) + 1]) == word:
+    print(x[x.index(firstword)]+" "+x[x.index(firstword) + 1])
+    print(x.index(firstword))
+    print("Found")
+

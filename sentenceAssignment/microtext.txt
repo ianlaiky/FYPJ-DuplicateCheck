@@ -2,7 +2,6 @@ mps
 gdp
 gic
 isa
-pak
 kmt
 fts
 jbj

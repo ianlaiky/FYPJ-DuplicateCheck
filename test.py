@@ -93,26 +93,41 @@ import re
 #     print("Found")
 
 testarr = []
-stopword = ["|", "/", ".", ",", "a"]
+stopword = ["a","i'll","the"]
 
-x = "whiat the games ass | a d asd sd s/ads fdsf ds.fcdsfs,     fsdf ds     fdsf"
+x = "whiat the games ass | a d asd the sd s/ads i'll fdsf ds.fcdsfs,     fsdf ds     fdsf"
 
-for wor in stopword:
-    # x=x.replace(wor,"")
-    print(wor)
-    x = re.sub('^[' + str(wor) + ']$', '', x)
-    print(x)
+sentence=""
+for te in x.split(" "):
+    if str(te)!="":
+        if str(te)!=" ":
+            wordcount = 0
+            for qwe in stopword:
 
-print(x)
+                print(te.strip())
+                if str(re.match("^("+str(qwe)+")$", str(te).strip()))!="None":
+                    temp=str(te).replace(qwe, "")
+                    sentence=str(sentence)+" "+str(temp).strip()
+                    wordcount=wordcount+1
+            if wordcount==0:
+                sentence = str(sentence) + " " + str(te).strip()
+            else:
+                print("gdfg")
 
-for x1 in x.split(""):
-    if str(x1) != "":
-        if str(x1) != " ":
-            print(x1)
-            x1 = re.sub('\s+', ' ', x1).strip()
-            testarr.append(x1.strip())
 
-print(testarr)
+
+print(sentence)
+
+
+
+# for x1 in x.split(""):
+#     if str(x1) != "":
+#         if str(x1) != " ":
+#             print(x1)
+#             x1 = re.sub('\s+', ' ', x1).strip()
+#             testarr.append(x1.strip())
+#
+# print(testarr)
 
 
 

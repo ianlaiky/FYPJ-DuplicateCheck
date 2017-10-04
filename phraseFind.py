@@ -7,8 +7,7 @@ import unicodedata
 # forum data for reading
 forumdataforreading = "datafiles\sgforums.xlsx"
 
-
-stopwordsseperator=[]
+stopwordsseperator = []
 
 stopwirdin = open('filesdb\Seperator\stopwordSeperator.txt', 'r', encoding="utf-8")
 
@@ -19,8 +18,6 @@ for readlinesstopwoird in stopwilala:
 
 print(stopwordsseperator)
 stopwirdin.close()
-
-
 
 
 def excelinputRe(filetoeopn, filecheckksheets, columnNo):
@@ -464,30 +461,43 @@ for i in excelinput(forumdataforreading, 0, 0):
 
     ixre = multiplepunctuationRemover(str(i))
 
-    sentences=""
+    sentences = ""
 
     # .replace to fix Ellipsis problem
     if str(ixre).find(" ") != -1:
         for x321 in re.split(" |,", ixre):
-            sentences=sentences+" "+wordduplicationcheckatEnd(str(x321).strip())
+            sentences = sentences + " " + wordduplicationcheckatEnd(str(x321).strip())
     else:
 
-        sentences=sentences+" "+wordduplicationcheckatEnd(str(ixre).strip())
+        sentences = sentences + " " + wordduplicationcheckatEnd(str(ixre).strip())
     # print(sentences)
 
+# ngram stopword seperator
+
+    sentencetosave = ""
+    for te in sentences.split(" "):
+        te=str(te).lower()
+        if str(te) != "":
+            if str(te) != " ":
+                wordcount = 0
+                for qwe in stopwordsseperator:
+                    qwe=str(qwe).lower()
+
+                    # print(te.strip())
+                    if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
+                        # print(qwe)
+                        tempwordlaa = str(te).replace(qwe, "")
+                        sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
+                        wordcount = int(wordcount) + 1
+                if int(wordcount) == 0:
+                    # print(wordcount)
+                    sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
 
-    for stopwordpls in stopwordsseperator:
-        sentences=sentences.replace(stopwordpls,"")
-    print(sentences)
-
-    for x132 in sentences.split(""):
-        print(x132)
-        # x132=re.sub('\s+', ' ', x132).strip()
-        tempppppaarrrrr.append(str(x132))
+    # print(sentencetosave)
 
 
-    # tempppppaarrrrr.append(sentences)
+        # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 for ghty in tempppppaarrrrr:

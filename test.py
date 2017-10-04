@@ -69,7 +69,7 @@ import re
 # if x.startswith('‘'):
 #     print("work")
 
-{k:{"s","sewresdr rdstrfdsfr "}}
+
 
 
 # y="text,,,0"
@@ -80,15 +80,18 @@ import re
 #
 # print(x[x.index(y.split(",")[1])+int(y.split(",")[3]):x.index(y.split(",")[2])])
 
-word = "James John"
-allword = word.split(" ")
-firstword=allword[0]
+# word = "James John"
+# allword = word.split(" ")
+# firstword=allword[0]
+#
+# x = ['James', "John", 'Peter', 'Le', 'has']
+#
+# # print(x.index("Peter"))
+# if str(x[x.index(firstword)] + " " + x[x.index(firstword) + 1]) == word:
+#     print(x[x.index(firstword)]+" "+x[x.index(firstword) + 1])
+#     print(x.index(firstword))
+#     print("Found")
 
-x = ['James', "John", 'Peter', 'Le', 'has']
 
-# print(x.index("Peter"))
-if str(x[x.index(firstword)] + " " + x[x.index(firstword) + 1]) == word:
-    print(x[x.index(firstword)]+" "+x[x.index(firstword) + 1])
-    print(x.index(firstword))
-    print("Found")
-
+x="fdsfds"
+print(x.find("p"))

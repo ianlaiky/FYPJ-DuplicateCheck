@@ -227,5 +227,4 @@ b&tches
 cair
 rwrs
 npcos
-develpment
 cwards

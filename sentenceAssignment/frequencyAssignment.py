@@ -4,4 +4,7 @@ confff.close()
 
 
 for lines in conf:
+    if str(lines)!="":
+        if lines!=" ":
+
     print(lines)

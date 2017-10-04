@@ -95,7 +95,7 @@ import re
 testarr=[]
 stopword=["|","/",".",","]
 
-x="what the games ass|d asd sd s/ads fdsf ds.fcdsfs, fsdf dsfdsf"
+x="what the games ass|d asd sd s/ads fdsf ds.fcdsfs,     fsdf ds     fdsf"
 
 
 for wor in stopword:
@@ -104,7 +104,10 @@ for wor in stopword:
 
 for x1 in x.split(""):
     print(x1)
+    x1=re.sub('\s+', ' ', x1 ).strip()
+    testarr.append(x1.strip())
 
+print(testarr)
 
 
 

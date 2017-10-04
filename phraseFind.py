@@ -15,7 +15,7 @@ stopwirdin = open('filesdb\Seperator\stopwordSeperator.txt', 'r', encoding="utf-
 stopwilala = stopwirdin.readlines()
 
 for readlinesstopwoird in stopwilala:
-    stopwordsseperator.append(readlinesstopwoird)
+    stopwordsseperator.append(str(readlinesstopwoird).strip())
 
 print(stopwordsseperator)
 stopwirdin.close()
@@ -474,6 +474,18 @@ for i in excelinput(forumdataforreading, 0, 0):
 
         sentences=sentences+" "+wordduplicationcheckatEnd(str(ixre).strip())
     print(sentences)
+
+
+
+    for stopwordpls in stopwordsseperator:
+        sentences=sentences.replace(stopwordpls,"")
+
+    for x132 in sentences.split(""):
+        print(x132)
+        x132=re.sub('\s+', ' ', x132).strip()
+        tempppppaarrrrr.append(str(x132))
+
+
     # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
@@ -486,7 +498,7 @@ del my_dict[' ']
 del my_dict['']
 
 # total freq
-f = open('allfreq.txt', 'w', encoding="utf-8")
+f = open('ngram\Allfreq.txt', 'w', encoding="utf-8")
 for fg in sorted(my_dict, key=my_dict.get, reverse=True):
     f.writelines(str(fg) + "\t\t" + str(my_dict[fg]) + "\n")
 print("Done")
@@ -603,9 +615,9 @@ for i in arrofileobjects:
 
 userWeb = ''
 userinput = ''
-fdup = open('dupefound.txt', 'w', encoding="utf-8")
-fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
-fnodupwspecial = open('nodupefoundSpecialCharacter.txt', 'w', encoding="utf-8")
+fdup = open('ngram\dupefound.txt', 'w', encoding="utf-8")
+fnodup = open("ngram\AintNodupefound.txt", 'w', encoding="utf-8")
+fnodupwspecial = open("ngram\AintNodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
 
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")

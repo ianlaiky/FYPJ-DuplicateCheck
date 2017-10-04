@@ -473,16 +473,17 @@ for i in excelinput(forumdataforreading, 0, 0):
     else:
 
         sentences=sentences+" "+wordduplicationcheckatEnd(str(ixre).strip())
-    print(sentences)
+    # print(sentences)
 
 
 
     for stopwordpls in stopwordsseperator:
         sentences=sentences.replace(stopwordpls,"")
+    print(sentences)
 
     for x132 in sentences.split(""):
         print(x132)
-        x132=re.sub('\s+', ' ', x132).strip()
+        # x132=re.sub('\s+', ' ', x132).strip()
         tempppppaarrrrr.append(str(x132))
 
 

@@ -92,22 +92,28 @@ import re
 #     print(x.index(firstword))
 #     print("Found")
 
-testarr=[]
-stopword=["|","/",".",","]
+testarr = []
+stopword = ["|", "/", ".", ",", "a"]
 
-x="what the games ass|d asd sd s/ads fdsf ds.fcdsfs,     fsdf ds     fdsf"
-
+x = "whiat the games ass | a d asd sd s/ads fdsf ds.fcdsfs,     fsdf ds     fdsf"
 
 for wor in stopword:
-    x=x.replace(wor,"")
+    # x=x.replace(wor,"")
+    print(wor)
+    x = re.sub('^[' + str(wor) + ']$', '', x)
+    print(x)
 
+print(x)
 
 for x1 in x.split(""):
-    print(x1)
-    x1=re.sub('\s+', ' ', x1 ).strip()
-    testarr.append(x1.strip())
+    if str(x1) != "":
+        if str(x1) != " ":
+            print(x1)
+            x1 = re.sub('\s+', ' ', x1).strip()
+            testarr.append(x1.strip())
 
 print(testarr)
+
 
 
 

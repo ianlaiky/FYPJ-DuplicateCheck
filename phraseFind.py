@@ -8,6 +8,21 @@ import unicodedata
 forumdataforreading = "datafiles\sgforums.xlsx"
 
 
+stopwordsseperator=[]
+
+stopwirdin = open('filesdb\Seperator\stopwordSeperator.txt', 'r', encoding="utf-8")
+
+stopwilala = stopwirdin.readlines()
+
+for readlinesstopwoird in stopwilala:
+    stopwordsseperator.append(readlinesstopwoird)
+
+print(stopwordsseperator)
+stopwirdin.close()
+
+
+
+
 def excelinputRe(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
     # loading in workbook
@@ -396,15 +411,15 @@ def specificcharacterremoverandother(word):
 def wordduplicationcheckatEnd(wordstocheck):
     if wordstocheck[-1:] == ".":
         if wordstocheck[-2:-1] != ".":
-            tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-1]))
+            return (specificcharacterremoverandother(wordstocheck[0:-1]))
         else:
-            tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck))
+            return (specificcharacterremoverandother(wordstocheck))
     elif wordstocheck[-2:] == "'s":
-        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
+        return (specificcharacterremoverandother(wordstocheck[0:-2]))
     elif wordstocheck[-2:] == "’s":
-        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
+        return (specificcharacterremoverandother(wordstocheck[0:-2]))
     else:
-        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck))
+        return (specificcharacterremoverandother(wordstocheck))
 
 
 counttttt = 0
@@ -449,13 +464,17 @@ for i in excelinput(forumdataforreading, 0, 0):
 
     ixre = multiplepunctuationRemover(str(i))
 
+    sentences=""
+
     # .replace to fix Ellipsis problem
     if str(ixre).find(" ") != -1:
         for x321 in re.split(" |,", ixre):
-            wordduplicationcheckatEnd(str(x321).strip())
+            sentences=sentences+" "+wordduplicationcheckatEnd(str(x321).strip())
     else:
 
-        wordduplicationcheckatEnd(str(ixre).strip())
+        sentences=sentences+" "+wordduplicationcheckatEnd(str(ixre).strip())
+    print(sentences)
+    # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 for ghty in tempppppaarrrrr:

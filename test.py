@@ -92,6 +92,20 @@ import re
 #     print(x.index(firstword))
 #     print("Found")
 
+testarr=[]
+stopword=["|","/",".",","]
 
-x="fdsfds"
-print(x.find("p"))
+x="what the games ass|d asd sd s/ads fdsf ds.fcdsfs, fsdf dsfdsf"
+
+
+for wor in stopword:
+    x=x.replace(wor,"")
+
+
+for x1 in x.split(""):
+    print(x1)
+
+
+
+
+# print(testarr)

@@ -4,7 +4,7 @@ from collections import Counter
 import enchant
 import unicodedata
 
-filestoOpen="microtext"
+filestoOpen="emojicandidate"
 
 confff = open("../nodupefound.txt", 'r', encoding="utf-8")
 conf = confff.readlines()

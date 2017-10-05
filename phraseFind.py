@@ -494,12 +494,20 @@ for i in excelinput(forumdataforreading, 0, 0):
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
 
-    # print(sentencetosave)
+    print(sentencetosave)
+
+
+    for ghsplitted in sentencetosave.split(""):
+        if str(ghsplitted)!="":
+            if str(ghsplitted)!=" ":
+
+                tempppppaarrrrr.append(str(ghsplitted).strip())
 
 
         # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
+print(tempppppaarrrrr)
 for ghty in tempppppaarrrrr:
     newtempppppaarrrrr.append(str(ghty).lower())
 

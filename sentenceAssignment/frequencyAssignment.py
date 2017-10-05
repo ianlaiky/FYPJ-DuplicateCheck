@@ -20,13 +20,13 @@ for lines in conf:
         if str(lines)!=" ":
             if str(lines).find("Word: ")!=-1:
                 word=str(lines).replace("Word: ","")
-                if str(word).find("|")!=-1:
+                if str(word).find("")!=-1:
 
                     # print(str(word[:word.find("|")]).strip())
-                    currentword=str(word[:word.find("|")]).strip()
+                    currentword=str(word[:word.find("")]).strip()
                 else:
                     # print(str(word).strip())
-                    currentword = str(word[:word.find("|")]).strip()
+                    currentword = str(word[:word.find("")]).strip()
 
             elif str(lines).find("Frequency: ")!=-1:
                 freq = str(lines).replace("Frequency: ", "")

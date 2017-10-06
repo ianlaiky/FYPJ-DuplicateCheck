@@ -193,7 +193,7 @@ for i in excelinput("datafiles\sgforums.xlsx", 0, 0):
         i = str(i).replace('…', '...')
         print(i)
 
-        f = open("sentencesInFiles\sentence_"+str(currentFileNo)+".txt","w", encoding="utf-8")
+        f = open("../sentencesInFiles\sentence_"+str(currentFileNo)+".txt","w", encoding="utf-8")
         f.writelines(str(i))
         f.close()
         currentFileNo=int(currentFileNo)+1

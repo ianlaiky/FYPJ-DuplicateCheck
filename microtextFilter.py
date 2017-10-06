@@ -432,6 +432,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
 
     i = str(i).replace('…', '...')
 

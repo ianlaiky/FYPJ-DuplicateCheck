@@ -1,3 +1,6 @@
+import re
+from openpyxl import load_workbook
+
 def excelinput(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
     # loading in workbook

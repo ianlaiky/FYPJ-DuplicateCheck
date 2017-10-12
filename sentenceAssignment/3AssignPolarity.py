@@ -46,14 +46,15 @@ for o in sentence:
 
 
 
-                # fintake.writelines(str(o).strip() + "\n")
-                # fintake.writelines("*High Polarity*" + "\n\n")
-                # fintake.writelines("Negative Polarity: "+str(polarityDict[str(linescount)])+"\n\n")
+                fintake.writelines(str(o).strip() + "\n")
+                fintake.writelines("Negative Polarity: "+str(polarityDict[str(linescount)])+"\n")
+                fintake.writelines("Polarity*" + "\n\n")
             else:
                 firstpercent = int(firstpercent) + 1
                 secondpercent = int(secondpercent) + 1
-            # fintake.writelines(str(o).strip() + "\n")
-            # fintake.writelines("Netural Polarity" + "\n\n")
+            fintake.writelines(str(o).strip() + "\n")
+            fintake.writelines("Negative Polarity: " + str(polarityDict[str(linescount)]) + "\n")
+            fintake.writelines("Netural Polarity" + "\n\n")
             dictforword[str(o).strip()[:str(o).index("|") - 1]]=str(firstpercent)+"/"+str(secondpercent)
 
 

@@ -214,3 +214,7 @@ import fnmatch
 # print(x.fe le"
 #
 # print(x.find("jami4"))
+
+x="between marina bay"
+y="marina bay"
+print(y in x)

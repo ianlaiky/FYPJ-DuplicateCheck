@@ -29,5 +29,6 @@ for o in sentence:
         if str(o).strip()!=" ":
             # print(str(o).strip())
             print(str(o).strip()[str(o).index("|") + 2:])
+            print(polarityDict[str(linescount)])
             linescount=int(linescount)+1
 

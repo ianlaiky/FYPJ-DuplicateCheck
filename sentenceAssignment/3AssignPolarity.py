@@ -23,6 +23,8 @@ sentence=fout.readlines()
 fout.close()
 
 
+fintake=open("wordsSentenceAssignment\sentencesAssignmentWithPolarity.txt",'w',encoding="utf-8")
+
 linescount=0
 for o in sentence:
     if str(o).strip()!="":
@@ -30,5 +32,16 @@ for o in sentence:
             # print(str(o).strip())
             print(str(o).strip()[str(o).index("|") + 2:])
             print(polarityDict[str(linescount)])
+
+            if float(polarityDict[str(linescount)])>0.7 or float(polarityDict[str(linescount)])<0.3:
+                fintake.writelines(str(o).strip()+"\n")
+                fintake.writelines("*High Polarity*"+"\n\n")
+                # fintake.writelines("Negative Polarity: "+str(polarityDict[str(linescount)])+"\n\n")
+            else:
+                fintake.writelines(str(o).strip() + "\n")
+                fintake.writelines("Netural Polarity" + "\n\n")
+
             linescount=int(linescount)+1
 
+
+fintake.close()

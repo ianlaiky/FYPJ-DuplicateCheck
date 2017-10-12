@@ -14,4 +14,20 @@ for i in file:
             print(str(i).strip()[str(i).find("conf(pos)=")+10:str(i).find("conf(neg)")-1])
             polarityDict[str(i).strip()[str(i).find("sentence_")+9:str(i).find(".txt")]]=str(i).strip()[str(i).find("conf(pos)=")+10:str(i).find("conf(neg)")-1]
 
-print(polarityDict[str("2")])
+# print(polarityDict[str("2")])
+
+
+
+fout = open("wordsSentenceAssignment\sentencesAssignment.txt",'r',encoding="utf-8")
+sentence=fout.readlines()
+fout.close()
+
+
+linescount=0
+for o in sentence:
+    if str(o).strip()!="":
+        if str(o).strip()!=" ":
+            # print(str(o).strip())
+            print(str(o).strip()[str(o).index("|") + 2:])
+            linescount=int(linescount)+1
+

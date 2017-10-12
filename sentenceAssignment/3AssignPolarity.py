@@ -86,12 +86,12 @@ for oi in sentence:
             for oii in listofwordstosave:
                 if str(oi).strip()[:str(oi).index("|") - 1]==str(oii):
                     finsave.writelines(oi+"\n")
-print("Net")
-print(netrualwords)
-print(len(netrualwords))
+# print("Net")
+# print(netrualwords)
+# print(len(netrualwords))
 
 
-
+print(dictforword)
 
 
 

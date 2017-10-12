@@ -227,7 +227,6 @@ cair
 rwrs
 npcos
 cwards
-5|ng@p0re
 baxxard
 mucha
 fokkers

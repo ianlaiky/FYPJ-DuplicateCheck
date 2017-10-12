@@ -204,7 +204,13 @@ import fnmatch
 #
 # print(x)
 
-x = "0/2"
+# x = "0/2"
+#
+# print(x[:str(x).index("/")])
+# print(x[str(x).index("/")+1:])
 
-print(x[:str(x).index("/")])
-print(x[str(x).index("/")+1:])
+# x="jamie le"
+#
+# print(x.fe le"
+#
+# print(x.find("jami4"))

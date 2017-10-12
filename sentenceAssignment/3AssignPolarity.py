@@ -61,6 +61,7 @@ for o in sentence:
             print(linescount)
 
 listofwordstosave=[]
+netrualwords=[]
 
 for x in dictforword:
     per = dictforword[x]
@@ -72,6 +73,7 @@ for x in dictforword:
     else:
         print("Neutral")
         print(x)
+        netrualwords.append(x)
 # print(dictforword["fokkers"])
 
 fintake.close()
@@ -83,6 +85,9 @@ for oi in sentence:
             for oii in listofwordstosave:
                 if str(oi).strip()[:str(oi).index("|") - 1]==str(oii):
                     finsave.writelines(oi+"\n")
+print("Net")
+print(netrualwords)
+print(len(netrualwords))
 
 
 

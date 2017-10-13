@@ -457,7 +457,7 @@ for i in excelinput(forumdataforreading, 0, 0):
 
 listofwordstocheck = []
 
-textreader = open("candidates.txt", 'r', encoding="utf-8")
+textreader = open("microtext.txt", 'r', encoding="utf-8")
 wordsfromfile = textreader.readlines()
 
 inputsen = open("sentencesAssignment.txt", 'w', encoding="utf-8")

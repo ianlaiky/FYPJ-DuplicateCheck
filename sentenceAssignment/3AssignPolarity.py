@@ -25,6 +25,8 @@ fout.close()
 fintake = open("wordsSentenceAssignment\sentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
 
 dictforword = {}
+dictforwordPositive = {}
+dictforwordNegative = {}
 
 linescount = 0
 for o in sentence:
@@ -40,8 +42,17 @@ for o in sentence:
             percent = dictforword[str(o).strip()[:str(o).index("|") - 1]]
             firstpercent = str(percent[:str(percent).index("/")])
             secondpercent = str(percent[int(str(percent).index("/")) + 1:])
-            if float(polarityDict[str(linescount)]) > 0.7 or float(polarityDict[str(linescount)]) < 0.3:
+            positivity=0
+            negativity=0
 
+            if float(polarityDict[str(linescount)]) > 0.7 or float(polarityDict[str(linescount)]) < 0.3:
+                # print(float(polarityDict[str(linescount)]))
+                if float(polarityDict[str(linescount)]) < 0.3:
+
+                    positivity=int(positivity)+1
+                if float(polarityDict[str(linescount)]) > 0.7:
+                    negativity = int(negativity) + 1
+                firstpercent = int(firstpercent) + 1
                 secondpercent=int(secondpercent)+1
 
 
@@ -50,13 +61,14 @@ for o in sentence:
                 fintake.writelines("Negative Polarity: "+str(polarityDict[str(linescount)])+"\n")
                 fintake.writelines("Polarity*" + "\n\n")
             else:
-                firstpercent = int(firstpercent) + 1
-                secondpercent = int(secondpercent) + 1
-            fintake.writelines(str(o).strip() + "\n")
-            fintake.writelines("Negative Polarity: " + str(polarityDict[str(linescount)]) + "\n")
-            fintake.writelines("Netural Polarity" + "\n\n")
-            dictforword[str(o).strip()[:str(o).index("|") - 1]]=str(firstpercent)+"/"+str(secondpercent)
 
+                secondpercent = int(secondpercent) + 1
+                fintake.writelines(str(o).strip() + "\n")
+                fintake.writelines("Negative Polarity: " + str(polarityDict[str(linescount)]) + "\n")
+                fintake.writelines("Netural Polarity" + "\n\n")
+            dictforword[str(o).strip()[:str(o).index("|") - 1]]=str(firstpercent)+"/"+str(secondpercent)
+            dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]=str(positivity)+"/"+str(firstpercent)
+            dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]]=str(negativity)+"/"+str(firstpercent)
 
             linescount = int(linescount) + 1
             print(linescount)
@@ -86,12 +98,14 @@ for oi in sentence:
             for oii in listofwordstosave:
                 if str(oi).strip()[:str(oi).index("|") - 1]==str(oii):
                     finsave.writelines(oi+"\n")
-# print("Net")
-# print(netrualwords)
-# print(len(netrualwords))
+print("Net")
+print(netrualwords)
+print(len(netrualwords))
 
 
 print(dictforword)
+print(dictforwordPositive)
+print(dictforwordNegative)
 
 
 

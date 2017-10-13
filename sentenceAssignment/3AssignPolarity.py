@@ -123,6 +123,34 @@ print(dictforword["mps"])
 
 fextremePolarity = open("wordsSentenceAssignment\FourthFilteredsentencesAssignmentWithPolarity.txt", 'w',
                         encoding="utf-8")
+confff = open("../nodupefound.txt", 'r', encoding="utf-8")
+conf = confff.readlines()
+confff.close()
+wordsFreq={}
+currentword=""
+for lines in conf:
+
+
+
+    if str(lines)!="":
+        if str(lines)!=" ":
+            if str(lines).find("Word: ")!=-1:
+                word=str(lines).replace("Word: ","")
+                if str(word).find("")!=-1:
+
+                    # print(str(word[:word.find("|")]).strip())
+                    currentword=str(word[:word.find("")]).strip()
+                else:
+                    # print(str(word).strip())
+                    currentword = str(word[:word.find("")]).strip()
+
+            elif str(lines).find("Frequency: ")!=-1:
+                freq = str(lines).replace("Frequency: ", "")
+                # print(str(freq).strip())
+                # print(currentword)
+                wordsFreq[currentword] = str(freq).strip()
+
+print(wordsFreq)
 
 # savethewordsforin=[]
 
@@ -139,7 +167,7 @@ for lala in listofwordstosave:
 
     percentagePos = round((int(firstpos) / int(secpos)) * 100, 2)
     percentageNeg = round((int(firstneg) / int(secneg)) * 100, 2)
-
+    fextremePolarity.writelines("Frequency: "+wordsFreq[lala]+"\n")
     fextremePolarity.writelines("Positive Sentences: " + str(percentagePos) + "%" + "\n")
     fextremePolarity.writelines("Negative Sentences: " + str(percentageNeg) + "%" + "\n\n")
 

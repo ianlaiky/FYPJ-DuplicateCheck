@@ -6,7 +6,7 @@ from collections import Counter
 import enchant
 import unicodedata
 
-filestoOpen="emojicandidate"
+filestoOpen="microtext"
 
 confff = open("../nodupefound.txt", 'r', encoding="utf-8")
 conf = confff.readlines()
@@ -40,7 +40,7 @@ print(wordsFreq)
 
 
 f = open(filestoOpen+".txt", 'r', encoding="utf-8")
-conf = f.readlines()
+conff = f.readlines()
 f.close()
 
 try:
@@ -52,7 +52,7 @@ except:
 fout = open("wordsWithFrequency\\"+filestoOpen+"Frequency.txt", 'w', encoding="utf-8")
 
 
-for words in conf:
+for words in conff:
     if str(words)!="":
         if str(words)!=" ":
 

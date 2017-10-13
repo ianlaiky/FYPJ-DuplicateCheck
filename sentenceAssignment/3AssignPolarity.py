@@ -118,6 +118,11 @@ print(dictforword["ibm"])
 
 fextremePolarity = open("wordsSentenceAssignment\FourthFilteredsentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
 
+savethewordsforin=[]
+
+
+
+
 for i in dictforwordPositive:
     print(dictforwordPositive[i])
     print(int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])))
@@ -131,8 +136,20 @@ for i in dictforwordPositive:
 
     if float(extremePercent)>0.7 or float(extremePercent)<0.3:
         print("Candidates "+str(i))
-        fextremePolarity.writelines("Candidates "+str(i)+"\n\n")
+        # fextremePolarity.writelines("Candidates "+str(i)+"\n\n")
+        savethewordsforin.append(str(i))
+realsave=list(set(savethewordsforin).intersection(listofwordstosave))
+for all in sentence:
+    if str(all).strip() != "":
+        if str(all).strip() != " ":
+            # print(str(o).strip())
+            print(str(all).strip()[str(all).index("|") + 2:])
+            # print(str(o).strip()[:str(o).index("|") -1])
 
 
+            if str(all).strip()[:str(all).index("|") - 1] in realsave:
+                fextremePolarity.writelines(str(all)+ "\n")
+
+print(len(realsave))
 
 fextremePolarity.close()

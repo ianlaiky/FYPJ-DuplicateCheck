@@ -22,14 +22,16 @@ fout = open("wordsSentenceAssignment\sentencesAssignment.txt", 'r', encoding="ut
 sentence = fout.readlines()
 fout.close()
 
-fintake = open("wordsSentenceAssignment\sentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
+fintake = open("wordsSentenceAssignment\SecondsentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
 
 dictforword = {}
 dictforwordPositive = {}
 dictforwordNegative = {}
 
+
 linescount = 0
 for o in sentence:
+
     if str(o).strip() != "":
         if str(o).strip() != " ":
             # print(str(o).strip())
@@ -39,26 +41,28 @@ for o in sentence:
 
             if str(o).strip()[:str(o).index("|") - 1] not in dictforword:
                 dictforword[str(o).strip()[:str(o).index("|") - 1]] = "0/0"
+
+            if str(o).strip()[:str(o).index("|") - 1] not in dictforwordPositive:
+                dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]="0/0"
+
             percent = dictforword[str(o).strip()[:str(o).index("|") - 1]]
             firstpercent = str(percent[:str(percent).index("/")])
             secondpercent = str(percent[int(str(percent).index("/")) + 1:])
-            positivity=0
-            negativity=0
+            positivity=int(str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]][:str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]).index("/")]))
+            # negativity=int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
 
-            if float(polarityDict[str(linescount)]) > 0.7 or float(polarityDict[str(linescount)]) < 0.3:
+            if float(polarityDict[str(linescount)]) > 0.6 or float(polarityDict[str(linescount)]) < 0.4:
                 # print(float(polarityDict[str(linescount)]))
-                if float(polarityDict[str(linescount)]) < 0.3:
-
-                    positivity=int(positivity)+1
-                if float(polarityDict[str(linescount)]) > 0.7:
-                    negativity = int(negativity) + 1
+                if float(polarityDict[str(linescount)]) < 0.4:
+                    positivity = int(positivity) + 1
+                    # print("DDDDDDDDDDDDDDDDDDD")
+                # if float(polarityDict[str(linescount)]) > 0.6:
+                #     # negativity = int(negativity) + 1
                 firstpercent = int(firstpercent) + 1
-                secondpercent=int(secondpercent)+1
-
-
+                secondpercent = int(secondpercent) + 1
 
                 fintake.writelines(str(o).strip() + "\n")
-                fintake.writelines("Negative Polarity: "+str(polarityDict[str(linescount)])+"\n")
+                fintake.writelines("Negative Polarity: " + str(polarityDict[str(linescount)]) + "\n")
                 fintake.writelines("Polarity*" + "\n\n")
             else:
 
@@ -66,21 +70,22 @@ for o in sentence:
                 fintake.writelines(str(o).strip() + "\n")
                 fintake.writelines("Negative Polarity: " + str(polarityDict[str(linescount)]) + "\n")
                 fintake.writelines("Netural Polarity" + "\n\n")
-            dictforword[str(o).strip()[:str(o).index("|") - 1]]=str(firstpercent)+"/"+str(secondpercent)
-            dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]=str(positivity)+"/"+str(firstpercent)
-            dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]]=str(negativity)+"/"+str(firstpercent)
+            dictforword[str(o).strip()[:str(o).index("|") - 1]] = str(firstpercent) + "/" + str(secondpercent)
+
+            dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]] = str(positivity) + "/" + str(firstpercent)
+            # dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]] = str(negativity) + "/" + str(firstpercent)
 
             linescount = int(linescount) + 1
             print(linescount)
 
-listofwordstosave=[]
-netrualwords=[]
+listofwordstosave = []
+netrualwords = []
 
 for x in dictforword:
     per = dictforword[x]
-    firstper= per[:str(per).index("/")]
-    secper= per[int(str(per).index("/"))+1:]
-    if int(firstper)/int(secper) >0.6:
+    firstper = per[:str(per).index("/")]
+    secper = per[int(str(per).index("/")) + 1:]
+    if int(firstper) / int(secper) > 0.6:
         listofwordstosave.append(str(x))
         print(x)
     else:
@@ -90,28 +95,38 @@ for x in dictforword:
 # print(dictforword["fokkers"])
 
 fintake.close()
-finsave = open("wordsSentenceAssignment\FilteredsentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
+finsave = open("wordsSentenceAssignment\ThirdFilteredsentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
 
 for oi in sentence:
     if str(oi).strip() != "":
         if str(oi).strip() != " ":
             for oii in listofwordstosave:
-                if str(oi).strip()[:str(oi).index("|") - 1]==str(oii):
-                    finsave.writelines(oi+"\n")
-print("Net")
-print(netrualwords)
-print(len(netrualwords))
+                if str(oi).strip()[:str(oi).index("|") - 1] == str(oii):
+                    finsave.writelines(oi + "\n")
 
+finsave.close()
+# print("Net")
+# print(netrualwords)
+# print(len(netrualwords))
 
 print(dictforword)
 print(dictforwordPositive)
-print(dictforwordNegative)
+print(len(dictforwordPositive))
+# print(dictforwordNegative)
+# print(len(dictforwordNegative))
+print(dictforword["ibm"])
+
+fextremePolarity = open("wordsSentenceAssignment\FourthFilteredsentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
+
+for i in dictforwordPositive:
+    print(dictforwordPositive[i])
+    print(int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])))
+    print(int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:])))
+
+    extremePercent = int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])) / int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
+    if float(extremePercent)>0.7 or float(extremePercent)<0.3:
+        print("Candidates "+str(i))
 
 
 
-
-
-
-finsave.close()
-
-
+fextremePolarity.close()

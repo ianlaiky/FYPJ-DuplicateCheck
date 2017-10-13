@@ -28,7 +28,6 @@ dictforword = {}
 dictforwordPositive = {}
 dictforwordNegative = {}
 
-
 linescount = 0
 for o in sentence:
 
@@ -43,12 +42,13 @@ for o in sentence:
                 dictforword[str(o).strip()[:str(o).index("|") - 1]] = "0/0"
 
             if str(o).strip()[:str(o).index("|") - 1] not in dictforwordPositive:
-                dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]="0/0"
+                dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]] = "0/0"
 
             percent = dictforword[str(o).strip()[:str(o).index("|") - 1]]
             firstpercent = str(percent[:str(percent).index("/")])
             secondpercent = str(percent[int(str(percent).index("/")) + 1:])
-            positivity=int(str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]][:str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]).index("/")]))
+            positivity = int(str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]][
+                                 :str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]).index("/")]))
             # negativity=int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
 
             if float(polarityDict[str(linescount)]) > 0.6 or float(polarityDict[str(linescount)]) < 0.4:
@@ -114,42 +114,52 @@ print(dictforwordPositive)
 print(len(dictforwordPositive))
 # print(dictforwordNegative)
 # print(len(dictforwordNegative))
-print(dictforword["ibm"])
+print(dictforword["mps"])
 
-fextremePolarity = open("wordsSentenceAssignment\FourthFilteredsentencesAssignmentWithPolarity.txt", 'w', encoding="utf-8")
+fextremePolarity = open("wordsSentenceAssignment\FourthFilteredsentencesAssignmentWithPolarity.txt", 'w',
+                        encoding="utf-8")
 
-savethewordsforin=[]
+# savethewordsforin=[]
 
+for lala in listofwordstosave:
+    fextremePolarity.writelines("Candidates " + lala + "\n")
+    # print(dictforwordPositive[lala])
+    firstpos = str(dictforwordPositive[lala][:int(str(dictforwordPositive[lala]).find("/"))])
+    secpos = str(dictforwordPositive[lala][int(str(dictforwordPositive[lala]).find("/")) + 1:])
+    # print(firstpos)
+    # print(secpos)
 
+    percentage = round((int(firstpos) / int(secpos))*100,2)
 
+    fextremePolarity.writelines("Positivity: " + str(percentage) + "%"+"\n\n")
 
-for i in dictforwordPositive:
-    print(dictforwordPositive[i])
-    print(int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])))
-    print(int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:])))
-
-    try:
-        extremePercent = int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])) / int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
-    except:
-        extremePercent=-1
-        pass
-
-    if float(extremePercent)>0.7 or float(extremePercent)<0.3:
-        print("Candidates "+str(i))
-        # fextremePolarity.writelines("Candidates "+str(i)+"\n\n")
-        savethewordsforin.append(str(i))
-realsave=list(set(savethewordsforin).intersection(listofwordstosave))
-for all in sentence:
-    if str(all).strip() != "":
-        if str(all).strip() != " ":
-            # print(str(o).strip())
-            print(str(all).strip()[str(all).index("|") + 2:])
-            # print(str(o).strip()[:str(o).index("|") -1])
-
-
-            if str(all).strip()[:str(all).index("|") - 1] in realsave:
-                fextremePolarity.writelines(str(all)+ "\n")
-
-print(len(realsave))
+# for i in dictforwordPositive:
+#     print(dictforwordPositive[i])
+#     print(int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])))
+#     print(int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:])))
+#
+#     try:
+#         extremePercent = int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])) / int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
+#     except:
+#         extremePercent=-1
+#         pass
+#
+#     if float(extremePercent)>0.7 or float(extremePercent)<0.3:
+#         print("Candidates "+str(i))
+#         # fextremePolarity.writelines("Candidates "+str(i)+"\n\n")
+#         savethewordsforin.append(str(i))
+# realsave=list(set(savethewordsforin).intersection(listofwordstosave))
+# for all in sentence:
+#     if str(all).strip() != "":
+#         if str(all).strip() != " ":
+#             # print(str(o).strip())
+#             print(str(all).strip()[str(all).index("|") + 2:])
+#             # print(str(o).strip()[:str(o).index("|") -1])
+#
+#
+#             if str(all).strip()[:str(all).index("|") - 1] in realsave:
+#                 fextremePolarity.writelines(str(all)+ "\n")
+#
+# print(len(realsave))
 
 fextremePolarity.close()

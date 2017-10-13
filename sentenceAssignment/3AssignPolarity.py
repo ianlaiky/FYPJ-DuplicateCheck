@@ -123,9 +123,15 @@ for i in dictforwordPositive:
     print(int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])))
     print(int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:])))
 
-    extremePercent = int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])) / int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
+    try:
+        extremePercent = int(str(dictforwordPositive[i][:str(dictforwordPositive[i]).index("/")])) / int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
+    except:
+        extremePercent=-1
+        pass
+
     if float(extremePercent)>0.7 or float(extremePercent)<0.3:
         print("Candidates "+str(i))
+        fextremePolarity.writelines("Candidates "+str(i)+"\n\n")
 
 
 

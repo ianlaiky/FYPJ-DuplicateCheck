@@ -44,11 +44,16 @@ for o in sentence:
             if str(o).strip()[:str(o).index("|") - 1] not in dictforwordPositive:
                 dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]] = "0/0"
 
+            if str(o).strip()[:str(o).index("|") - 1] not in dictforwordNegative:
+                dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]] = "0/0"
+
             percent = dictforword[str(o).strip()[:str(o).index("|") - 1]]
             firstpercent = str(percent[:str(percent).index("/")])
             secondpercent = str(percent[int(str(percent).index("/")) + 1:])
             positivity = int(str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]][
                                  :str(dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]]).index("/")]))
+            negativity = int(str(dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]][
+                                 :str(dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]]).index("/")]))
             # negativity=int(str(dictforwordPositive[i][int(str(dictforwordPositive[i]).index("/")) + 1:]))
 
             if float(polarityDict[str(linescount)]) > 0.6 or float(polarityDict[str(linescount)]) < 0.4:
@@ -56,8 +61,8 @@ for o in sentence:
                 if float(polarityDict[str(linescount)]) < 0.4:
                     positivity = int(positivity) + 1
                     # print("DDDDDDDDDDDDDDDDDDD")
-                # if float(polarityDict[str(linescount)]) > 0.6:
-                #     # negativity = int(negativity) + 1
+                if float(polarityDict[str(linescount)]) > 0.6:
+                    negativity = int(negativity) + 1
                 firstpercent = int(firstpercent) + 1
                 secondpercent = int(secondpercent) + 1
 
@@ -73,7 +78,7 @@ for o in sentence:
             dictforword[str(o).strip()[:str(o).index("|") - 1]] = str(firstpercent) + "/" + str(secondpercent)
 
             dictforwordPositive[str(o).strip()[:str(o).index("|") - 1]] = str(positivity) + "/" + str(firstpercent)
-            # dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]] = str(negativity) + "/" + str(firstpercent)
+            dictforwordNegative[str(o).strip()[:str(o).index("|") - 1]] = str(negativity) + "/" + str(firstpercent)
 
             linescount = int(linescount) + 1
             print(linescount)
@@ -126,12 +131,17 @@ for lala in listofwordstosave:
     # print(dictforwordPositive[lala])
     firstpos = str(dictforwordPositive[lala][:int(str(dictforwordPositive[lala]).find("/"))])
     secpos = str(dictforwordPositive[lala][int(str(dictforwordPositive[lala]).find("/")) + 1:])
+
+    firstneg=str(dictforwordNegative[lala][:int(str(dictforwordNegative[lala]).find("/"))])
+    secneg=str(dictforwordNegative[lala][int(str(dictforwordNegative[lala]).find("/")) + 1:])
     # print(firstpos)
     # print(secpos)
 
-    percentage = round((int(firstpos) / int(secpos)) * 100, 2)
+    percentagePos = round((int(firstpos) / int(secpos)) * 100, 2)
+    percentageNeg = round((int(firstneg) / int(secneg)) * 100, 2)
 
-    fextremePolarity.writelines("Positivity: " + str(percentage) + "%" + "\n\n")
+    fextremePolarity.writelines("Positive Sentences: " + str(percentagePos) + "%" + "\n")
+    fextremePolarity.writelines("Negative Sentences: " + str(percentageNeg) + "%" + "\n\n")
 
 # for i in dictforwordPositive:
 #     print(dictforwordPositive[i])

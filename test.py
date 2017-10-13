@@ -1,4 +1,6 @@
 import re
+
+import os
 from openpyxl import load_workbook
 
 import fnmatch
@@ -215,6 +217,16 @@ import fnmatch
 #
 # print(x.find("jami4"))
 
-x="between marina bay"
-y="marina bay"
-print(y in x)
+# x="between marina bay"
+# y="marina bay"
+# print(y in x)
+
+# print(os.getcwd())
+# directory=os.getcwd()+"\Foo"
+#
+# if not os.path.exists(directory):
+try:
+
+    os.mkdir("Foo")
+except:
+    pass

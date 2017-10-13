@@ -1,3 +1,11 @@
+import os
+
+try:
+
+    os.mkdir("wordsSentenceAssignment")
+except:
+    pass
+
 f = open("wordsSentenceAssignment\sentencesAssignment.txt", 'r', encoding="utf-8")
 files = f.readlines()
 f.close()

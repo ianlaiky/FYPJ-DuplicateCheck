@@ -1,4 +1,6 @@
 import re
+
+import os
 from openpyxl import load_workbook
 from collections import Counter
 import enchant
@@ -41,6 +43,11 @@ f = open(filestoOpen+".txt", 'r', encoding="utf-8")
 conf = f.readlines()
 f.close()
 
+try:
+
+    os.mkdir("wordsWithFrequency")
+except:
+    pass
 
 fout = open("wordsWithFrequency\\"+filestoOpen+"Frequency.txt", 'w', encoding="utf-8")
 

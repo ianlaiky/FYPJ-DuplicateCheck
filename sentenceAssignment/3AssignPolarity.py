@@ -129,9 +129,9 @@ for lala in listofwordstosave:
     # print(firstpos)
     # print(secpos)
 
-    percentage = round((int(firstpos) / int(secpos))*100,2)
+    percentage = round((int(firstpos) / int(secpos)) * 100, 2)
 
-    fextremePolarity.writelines("Positivity: " + str(percentage) + "%"+"\n\n")
+    fextremePolarity.writelines("Positivity: " + str(percentage) + "%" + "\n\n")
 
 # for i in dictforwordPositive:
 #     print(dictforwordPositive[i])

@@ -11,12 +11,12 @@ r = requests.get(userWeb, headers=headers)
 data = r.text
 soup = BeautifulSoup(data, "lxml")
 
+print(soup.find('class="container"'))
 
 
 
-
-for link in soup.find_all("container"):
-    print(link)
+# for link in soup.find_all("container"):
+#     print(link)
 
     # image = link.get("src")
     # imag = image.replace("image", "original")

@@ -1,18 +1,18 @@
-import re
-import requests
-from bs4 import BeautifulSoup
-import os
-headers = {'User-agent': 'Mozilla/5.0'}
-
-# userWeb = input("Website: ")
-userWeb = "https://search.insing.com/singapore/browse/art-galleries"
-
-r = requests.get(userWeb, headers=headers)
-data = r.text
-soup = BeautifulSoup(data, "lxml")
-
-print(soup.find('class="container"'))
-
+# import re
+# import requests
+# from bs4 import BeautifulSoup
+# import os
+# headers = {'User-agent': 'Mozilla/5.0'}
+#
+# # userWeb = input("Website: ")
+# userWeb = "https://search.insing.com/singapore/browse/art-galleries"
+#
+# r = requests.get(userWeb, headers=headers)
+# data = r.text
+# soup = BeautifulSoup(data, "lxml")
+#
+# # print(soup.find('class="container"'))
+# print(soup)
 
 
 # for link in soup.find_all("container"):

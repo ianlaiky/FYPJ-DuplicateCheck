@@ -6,27 +6,29 @@ import os
 headers = {'User-agent': 'Mozilla/5.0'}
 
 # userWeb = input("Website: ")
-userWeb = "http://www.timesbusinessdirectory.com/company/list/all/1"
-web2="http://www.timesbusinessdirectory.com/company"
+userWeb = "http://www.timesbusinessdirectory.com/company/details/80099338/innoflex-pte-ltd"
+# web2="http://www.timesbusinessdirectory.com/company"
 
 r = requests.get(userWeb, headers=headers)
 data = r.text
 soup = BeautifulSoup(data, "lxml")
+# print(soup)
 
 # print(soup.find('class="container"'))
-# print(soup.find_all('div',{"class": "contenth3"}))
+print(str(soup.find('span',{"class": "coprofileh3"}).find_parent()).strip())
+
 
 
 textlist={}
 
-
-for i in soup.find_all('div',{"class": "contenth3"}):
-    print(i.text)
-    print(i.find('a')['href'])
-    textlist[str(i.text).strip()]=str(i.find('a')['href'])
-
-
-print(textlist)
+#
+# for i in soup.find_all('div',{"class": "contenth3"}):
+#     print(i.text)
+#     print(i.find('a')['href'])
+#     textlist[str(i.text).strip()]=str(i.find('a')['href'])
+#
+#
+# print(textlist)
 
 
 

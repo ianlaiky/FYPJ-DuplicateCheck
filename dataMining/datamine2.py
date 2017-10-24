@@ -36,10 +36,13 @@ gammm = str(gammm).replace("\\n","")
 gammm = str(gammm).replace("\\t","")
 gammm = str(gammm).replace("b'","")
 
+print(gammm.split("<br/>")[4])
+print(gammm.split("<br/>")[5])
+print(gammm.split("<br/>")[6])
 
-for breaks in gammm.split("<br/>"):
-
-    print(breaks)
+# for breaks in gammm.split("<br/>"):
+#
+#             print(breaks)
 
 
 # print(inner_text)

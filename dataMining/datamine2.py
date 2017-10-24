@@ -27,7 +27,19 @@ inner_text = soup.find('span',{"class": "coprofileh3"}).find_parent()
 
 decomposingthis=inner_text.find('span')
 decomposingthis.decompose()
-print(decomposingthis)
+
+
+# print(str(inner_text.renderContents()).strip())
+gammm = str(inner_text.renderContents()).strip()
+gammm = str(gammm).replace("\\r","")
+gammm = str(gammm).replace("\\n","")
+gammm = str(gammm).replace("\\t","")
+gammm = str(gammm).replace("b'","")
+
+
+for breaks in gammm.split("<br/>"):
+
+    print(breaks)
 
 
 # print(inner_text)

@@ -12,12 +12,28 @@ userWeb = "http://www.timesbusinessdirectory.com/company/details/80099338/innofl
 r = requests.get(userWeb, headers=headers)
 data = r.text
 soup = BeautifulSoup(data, "lxml")
+
+
 # print(soup)
 
 # print(soup.find('class="container"'))
-print(str(soup.find('span',{"class": "coprofileh3"}).find_parent()).strip())
+
+# print(str(soup.find('span',{"class": "coprofileh3"}).find_parent()).strip())
 
 
+
+inner_text = soup.find('span',{"class": "coprofileh3"}).find_parent()
+
+
+decomposingthis=inner_text.find('span')
+decomposingthis.decompose()
+print(decomposingthis)
+
+
+# print(inner_text)
+
+# print(inner_text.find(style="padding-left: 15px;"))
+# print(inner_text.find('td'))
 
 textlist={}
 

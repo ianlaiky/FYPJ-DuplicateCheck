@@ -10,7 +10,7 @@ try:
     os.mkdir("extractedData")
 except:
     pass
-f = open("extractedData\ExtractedData.txt", 'w', encoding="utf8")
+f = open("extractedData\ExtractedDataTimesbusinessdirectory.txt", 'w', encoding="utf8")
 
 
 # f.writelines(str("dsd") + "\n\n")
@@ -42,6 +42,8 @@ for links in range(946):
         print(i.find('a')['href'])
         textlist[str(i.text).strip()]=str(i.find('a')['href'])
         f.writelines(str(i.text).strip()+"\n")
+
+
 
 
 print(textlist)

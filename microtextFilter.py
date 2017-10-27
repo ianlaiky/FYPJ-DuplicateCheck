@@ -5,7 +5,7 @@ import enchant
 import unicodedata
 
 # forum data for reading
-forumdataforreading = "datafiles\sgforums.xlsx"
+forumdataforreading = "datafiles\edmwtest.xlsx"
 
 
 def excelinputRe(filetoeopn, filecheckksheets, columnNo):

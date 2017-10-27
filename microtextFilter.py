@@ -72,6 +72,7 @@ def multiplepunctuationRemover(words):
     line32 = re.sub('\-\-+', ' ', line32)
     line32 = re.sub('\_\_+', ' ', line32)
     line32 = re.sub('\=\=+', ' ', line32)
+    line32 = re.sub('\*\*+', ' ', line32)
 
     # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line))) != "None":
     #     line=line.replace("/"," ")

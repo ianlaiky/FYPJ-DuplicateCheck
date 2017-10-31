@@ -87,8 +87,8 @@ tempppppaarrrrr = []
 
 # punctuation remover
 def multiplepunctuationRemover(words):
-    line32 = re.sub('\.\.+', ' ', words)
-    line32 = re.sub('\!!+', ' ', line32)
+    # line32 = re.sub('\.\.+', ' ', words)
+    line32 = re.sub('\!!+', ' ', words)
     line32 = re.sub('\?\?+', ' ', line32)
     line32 = re.sub('\-\-+', ' ', line32)
     line32 = re.sub('\_\_+', ' ', line32)
@@ -456,7 +456,7 @@ for i in excelinput(forumdataforreading, 0, 0):
 
     i = str(i).replace('…', '...')
 
-    # i = str(i).replace('/', " / ")
+    i = str(i).replace('.', "")
     # i = str(i).replace('"', " ")
     # i = str(i).replace('(', " ")
     # i = str(i).replace(')', " ")
@@ -468,6 +468,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     # i = str(i).lower()
     # do blank check to see if have space
 
+
     ixre = multiplepunctuationRemover(str(i))
 
     sentences = ""
@@ -475,11 +476,14 @@ for i in excelinput(forumdataforreading, 0, 0):
     # .replace to fix Ellipsis problem
     if str(ixre).find(" ") != -1:
         for x321 in re.split(" |,", ixre):
-            sentences = sentences + " " + wordduplicationcheckatEnd(str(x321).strip())
+
+                if str(x321)!="":
+                    if str(x321)!=" ":
+                        sentences = sentences + " " + wordduplicationcheckatEnd(str(x321).strip())
     else:
 
         sentences = sentences + " " + wordduplicationcheckatEnd(str(ixre).strip())
-    # print(sentences)
+    print(sentences)
 
 # ngram stopword seperator
 
@@ -492,37 +496,43 @@ for i in excelinput(forumdataforreading, 0, 0):
 
                 for nerln in stopwordsseperatorNER:
                     if str(re.match("^(" + str(nerln) + ")$", str(te).strip())) != "None":
-                        te = str(te).replace(str(nerln),"")
+                        # print(te)
+                        te = str(te).replace(str(nerln),"")
+                        # print(te)
+                        # print("DSFDFDFDE")
+                        sentencetosave = str(sentencetosave) + " " + str(te).strip()
                         wordcount = int(wordcount) + 1
 
-                    for qwe in stopwordsseperator:
-                        qwe=str(qwe).lower()
+                # print(te)
+                for qwe in stopwordsseperator:
+                    qwe=str(qwe).lower()
 
 
 
-
-                        # print(te.strip())
-                        if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
-                            # print(qwe)
-                            tempwordlaa = str(te).replace(qwe, "")
-                            sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
-                            wordcount = int(wordcount) + 1
+                    # print(te)
+                    # print(te.strip())
+                    if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
+                        # print(qwe)
+                        tempwordlaa = str(te).replace(qwe, "")
+                        sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
+                        wordcount = int(wordcount) + 1
                 if int(wordcount) == 0:
                     # print(wordcount)
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
 
-    # print(sentencetosave)
+    print(sentencetosave)
 
 
     for ghsplitted in sentencetosave.split(""):
+        # print(ghsplitted)
         if str(ghsplitted)!="":
             if str(ghsplitted)!=" ":
 
-                if str(ghsplitted).find("")!=-1:
+                if str(ghsplitted).find("")!=-1:
 
 
-                    for nersplitted in str(ghsplitted).split(""):
+                    for nersplitted in str(ghsplitted).split(""):
                         if str(nersplitted)!="":
                             if str(nersplitted)!=" ":
 

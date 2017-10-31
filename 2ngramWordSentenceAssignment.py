@@ -385,7 +385,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     return columnlist
 
 
-forumdataforreading = "../datafiles/sgforums.xlsx"
+forumdataforreading = "datafiles/Edmwcompiled311017.xlsx"
 
 arrayoffilteredsentences = []
 listofunformattedsentence = []
@@ -457,10 +457,10 @@ for i in excelinput(forumdataforreading, 0, 0):
 
 listofwordstocheck = []
 
-textreader = open("nGramCandidates.txt", 'r', encoding="utf-8")
+textreader = open("ngram/nGramCandidates.txt", 'r', encoding="utf-8")
 wordsfromfile = textreader.readlines()
 
-inputsen = open("NGramsentencesAssignment.txt", 'w', encoding="utf-8")
+inputsen = open("ngram/1NGramsentencesAssignment.txt", 'w', encoding="utf-8")
 
 for readme in wordsfromfile:
     print(str(readme))

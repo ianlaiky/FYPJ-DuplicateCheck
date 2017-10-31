@@ -518,8 +518,10 @@ for i in excelinput(forumdataforreading, 0, 0):
     for ghsplitted in sentencetosave.split(""):
         if str(ghsplitted)!="":
             if str(ghsplitted)!=" ":
+                for nersplitted in str(ghsplitted).split(""):
 
-                tempppppaarrrrr.append(str(ghsplitted).strip())
+
+                    tempppppaarrrrr.append(str(nersplitted).strip())
 
 
         # tempppppaarrrrr.append(sentences)

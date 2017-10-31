@@ -225,8 +225,12 @@ import fnmatch
 # directory=os.getcwd()+"\Foo"
 #
 # if not os.path.exists(directory):
-try:
+# try:
+#
+#     os.mkdir("Foo")
+# except:
+#     pass
 
-    os.mkdir("Foo")
-except:
-    pass
+
+iam = " james"
+print(iam.split(""))

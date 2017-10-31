@@ -490,7 +490,7 @@ for i in excelinput(forumdataforreading, 0, 0):
             if str(te) != " ":
                 wordcount = 0
 
-                for nerln in stopwordinNER:
+                for nerln in stopwordsseperatorNER:
                     if str(re.match("^(" + str(nerln) + ")$", str(te).strip())) != "None":
                         te = str(te).replace(str(nerln),"")
                         wordcount = int(wordcount) + 1
@@ -518,10 +518,16 @@ for i in excelinput(forumdataforreading, 0, 0):
     for ghsplitted in sentencetosave.split(""):
         if str(ghsplitted)!="":
             if str(ghsplitted)!=" ":
-                for nersplitted in str(ghsplitted).split(""):
+
+                if str(ghsplitted).find("")!=-1:
 
 
-                    tempppppaarrrrr.append(str(nersplitted).strip())
+                    for nersplitted in str(ghsplitted).split(""):
+                        if str(nersplitted)!="":
+                            if str(nersplitted)!=" ":
+
+
+                                tempppppaarrrrr.append(str(nersplitted).strip())
 
 
         # tempppppaarrrrr.append(sentences)

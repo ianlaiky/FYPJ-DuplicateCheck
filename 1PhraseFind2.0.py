@@ -8,16 +8,25 @@ import unicodedata
 forumdataforreading = "datafiles\Edmwcompiled311017.xlsx"
 
 stopwordsseperator = []
+stopwordsseperatorNER = []
 
 stopwirdin = open('filesdb\Seperator\stopwordSeperator.txt', 'r', encoding="utf-8")
 
 stopwilala = stopwirdin.readlines()
 
 for readlinesstopwoird in stopwilala:
-    stopwordsseperator.append(str(readlinesstopwoird).strip())
+    stopwordsseperator.append(str(readlinesstopwoird).lower().strip())
 
 print(stopwordsseperator)
 stopwirdin.close()
+
+
+stopwordinNER = open('filesdb\Seperator\stopwordsNER.txt', 'r', encoding="utf-8")
+stopNERreadline = stopwordinNER.readlines()
+for wordReadLine in stopNERreadline:
+    stopwordsseperatorNER.append(str(wordReadLine).lower().strip())
+print(stopwordsseperatorNER)
+stopwordinNER.close()
 
 
 def excelinputRe(filetoeopn, filecheckksheets, columnNo):
@@ -480,15 +489,24 @@ for i in excelinput(forumdataforreading, 0, 0):
         if str(te) != "":
             if str(te) != " ":
                 wordcount = 0
-                for qwe in stopwordsseperator:
-                    qwe=str(qwe).lower()
 
-                    # print(te.strip())
-                    if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
-                        # print(qwe)
-                        tempwordlaa = str(te).replace(qwe, "")
-                        sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
+                for nerln in stopwordinNER:
+                    if str(re.match("^(" + str(nerln) + ")$", str(te).strip())) != "None":
+                        te = str(te).replace(str(nerln),"")
                         wordcount = int(wordcount) + 1
+
+                    for qwe in stopwordsseperator:
+                        qwe=str(qwe).lower()
+
+
+
+
+                        # print(te.strip())
+                        if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
+                            # print(qwe)
+                            tempwordlaa = str(te).replace(qwe, "")
+                            sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
+                            wordcount = int(wordcount) + 1
                 if int(wordcount) == 0:
                     # print(wordcount)
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()

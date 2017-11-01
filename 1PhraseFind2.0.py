@@ -483,7 +483,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     else:
 
         sentences = sentences + " " + wordduplicationcheckatEnd(str(ixre).strip())
-    print(sentences)
+    # print(sentences)
 
 # ngram stopword seperator
 
@@ -521,10 +521,12 @@ for i in excelinput(forumdataforreading, 0, 0):
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
 
-    print(sentencetosave)
+    # print(sentencetosave)
 
 
     for ghsplitted in sentencetosave.split(""):
+        # print("SDS")
+        # print(ghsplitted)
         # print(ghsplitted)
         if str(ghsplitted)!="":
             if str(ghsplitted)!=" ":
@@ -548,6 +550,7 @@ for ghty in tempppppaarrrrr:
     newtempppppaarrrrr.append(str(ghty).lower())
 
 my_dict = Counter(newtempppppaarrrrr)
+# print(my_dict)
 
 del my_dict[' ']
 del my_dict['']

@@ -232,5 +232,11 @@ import fnmatch
 #     pass
 
 
-iam = " james"
-print(iam.split(""))
+# iam = " james"
+# print(iam.split(""))
+
+# import nltk
+# nltk.download('stopwords')
+
+from nltk.corpus import stopwords
+print(stopwords.words('english'))

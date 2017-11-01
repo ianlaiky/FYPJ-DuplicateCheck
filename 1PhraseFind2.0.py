@@ -20,7 +20,6 @@ for readlinesstopwoird in stopwilala:
 print(stopwordsseperator)
 stopwirdin.close()
 
-
 stopwordinNER = open('filesdb\Seperator\stopwordsNER.txt', 'r', encoding="utf-8")
 stopNERreadline = stopwordinNER.readlines()
 for wordReadLine in stopNERreadline:
@@ -477,19 +476,19 @@ for i in excelinput(forumdataforreading, 0, 0):
     if str(ixre).find(" ") != -1:
         for x321 in re.split(" |,", ixre):
 
-                if str(x321)!="":
-                    if str(x321)!=" ":
-                        sentences = sentences + " " + wordduplicationcheckatEnd(str(x321).strip())
+            if str(x321) != "":
+                if str(x321) != " ":
+                    sentences = sentences + " " + wordduplicationcheckatEnd(str(x321).strip())
     else:
 
         sentences = sentences + " " + wordduplicationcheckatEnd(str(ixre).strip())
-    # print(sentences)
+        # print(sentences)
 
-# ngram stopword seperator
+    # ngram stopword seperator
 
     sentencetosave = ""
     for te in sentences.split(" "):
-        te=str(te).lower()
+        te = str(te).lower()
         if str(te) != "":
             if str(te) != " ":
                 wordcount = 0
@@ -497,7 +496,7 @@ for i in excelinput(forumdataforreading, 0, 0):
                 for nerln in stopwordsseperatorNER:
                     if str(re.match("^(" + str(nerln) + ")$", str(te).strip())) != "None":
                         # print(te)
-                        te = str(te).replace(str(nerln),"")
+                        te = str(te).replace(str(nerln), "")
                         # print(te)
                         # print("DSFDFDFDE")
                         sentencetosave = str(sentencetosave) + " " + str(te).strip()
@@ -505,9 +504,7 @@ for i in excelinput(forumdataforreading, 0, 0):
 
                 # print(te)
                 for qwe in stopwordsseperator:
-                    qwe=str(qwe).lower()
-
-
+                    qwe = str(qwe).lower()
 
                     # print(te)
                     # print(te.strip())
@@ -520,7 +517,6 @@ for i in excelinput(forumdataforreading, 0, 0):
                     # print(wordcount)
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
-
     # print(sentencetosave)
 
 
@@ -528,21 +524,18 @@ for i in excelinput(forumdataforreading, 0, 0):
         # print("SDS")
         # print(ghsplitted)
         # print(ghsplitted)
-        if str(ghsplitted)!="":
-            if str(ghsplitted)!=" ":
+        if str(ghsplitted) != "":
+            if str(ghsplitted) != " ":
 
-                if str(ghsplitted).find("")!=-1:
-
+                if str(ghsplitted).find("") != -1:
 
                     for nersplitted in str(ghsplitted).split(""):
-                        if str(nersplitted)!="":
-                            if str(nersplitted)!=" ":
-
-
+                        if str(nersplitted) != "":
+                            if str(nersplitted) != " ":
                                 tempppppaarrrrr.append(str(nersplitted).strip())
 
 
-        # tempppppaarrrrr.append(sentences)
+                                # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 # print(tempppppaarrrrr)

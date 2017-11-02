@@ -1,6 +1,6 @@
 from nltk import wordpunct_tokenize
 from nltk.corpus import stopwords
-word =" Tiagong from reliable source related to peter that peter doesn't allow her to step into the amk home liao. That's why until now havent visit the two past tense dotters"
+word ="I found a wild animal by the zookeeper den"
 
 
 
@@ -22,8 +22,7 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
             if myString.find(wordstoignore) == -1:
                 if startreadArea != "":
                     wewe=myString[myString.index(startreadArea) + indextoadd:myString.index(endReadArea)].replace("_"," ")
-                    for insert in str(wewe).split(" "):
-                        pyarr.append(insert)
+
                 else:
                     pyarr.append(myString.replace("\n", ""))
         except:

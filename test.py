@@ -238,5 +238,12 @@ import fnmatch
 # import nltk
 # nltk.download('stopwords')
 
-from nltk.corpus import stopwords
-print(stopwords.words('english'))
+# from nltk.corpus import stopwords
+# print(stopwords.words('english'))
+
+#
+# import nltk
+# nltk.download('reuters')
+
+
+

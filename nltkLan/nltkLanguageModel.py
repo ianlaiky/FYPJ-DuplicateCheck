@@ -115,6 +115,26 @@ import unicodedata
 # forum data for reading
 forumdataforreading = "UserDatabase.xlsx"
 
+stopwordsseperator = []
+stopwordsseperatorNER = []
+
+stopwirdin = open('..\\ filesdb\Seperator\stopwordSeperator.txt', 'r', encoding="utf-8")
+
+stopwilala = stopwirdin.readlines()
+
+for readlinesstopwoird in stopwilala:
+    stopwordsseperator.append(str(readlinesstopwoird).lower().strip())
+
+print(stopwordsseperator)
+stopwirdin.close()
+
+stopwordinNER = open('..\\filesdb\Seperator\stopwordsNER.txt', 'r', encoding="utf-8")
+stopNERreadline = stopwordinNER.readlines()
+for wordReadLine in stopNERreadline:
+    stopwordsseperatorNER.append(str(wordReadLine).lower().strip())
+print(stopwordsseperatorNER)
+stopwordinNER.close()
+
 
 def excelinputRe(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
@@ -174,13 +194,12 @@ tempppppaarrrrr = []
 
 # punctuation remover
 def multiplepunctuationRemover(words):
-    line32 = re.sub('\.\.+', ' ', words)
-    line32 = re.sub('\!!+', ' ', line32)
+    # line32 = re.sub('\.\.+', ' ', words)
+    line32 = re.sub('\!!+', ' ', words)
     line32 = re.sub('\?\?+', ' ', line32)
     line32 = re.sub('\-\-+', ' ', line32)
     line32 = re.sub('\_\_+', ' ', line32)
     line32 = re.sub('\=\=+', ' ', line32)
-    line32 = re.sub('\*\*+', ' ', line32)
 
     # if str(re.match("^[aA-zZ]+\/[aA-zZ]+$", str(line))) != "None":
     #     line=line.replace("/"," ")
@@ -505,15 +524,15 @@ def specificcharacterremoverandother(word):
 def wordduplicationcheckatEnd(wordstocheck):
     if wordstocheck[-1:] == ".":
         if wordstocheck[-2:-1] != ".":
-            tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-1]))
+            return (specificcharacterremoverandother(wordstocheck[0:-1]))
         else:
-            tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck))
+            return (specificcharacterremoverandother(wordstocheck))
     elif wordstocheck[-2:] == "'s":
-        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
+        return (specificcharacterremoverandother(wordstocheck[0:-2]))
     elif wordstocheck[-2:] == "’s":
-        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck[0:-2]))
+        return (specificcharacterremoverandother(wordstocheck[0:-2]))
     else:
-        tempppppaarrrrr.append(specificcharacterremoverandother(wordstocheck))
+        return (specificcharacterremoverandother(wordstocheck))
 
 
 counttttt = 0
@@ -541,11 +560,10 @@ for i in excelinput(forumdataforreading, 0, 0):
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
     i = str(i).replace('', " ")
-    i = str(i).replace('', " ")
 
     i = str(i).replace('…', '...')
 
-    # i = str(i).replace('/', " / ")
+    i = str(i).replace('.', "")
     # i = str(i).replace('"', " ")
     # i = str(i).replace('(', " ")
     # i = str(i).replace(')', " ")
@@ -557,27 +575,89 @@ for i in excelinput(forumdataforreading, 0, 0):
     # i = str(i).lower()
     # do blank check to see if have space
 
+
     ixre = multiplepunctuationRemover(str(i))
+
+    sentences = ""
 
     # .replace to fix Ellipsis problem
     if str(ixre).find(" ") != -1:
         for x321 in re.split(" |,", ixre):
-            wordduplicationcheckatEnd(str(x321).strip())
+
+            if str(x321) != "":
+                if str(x321) != " ":
+                    sentences = sentences + " " + wordduplicationcheckatEnd(str(x321).strip())
     else:
 
-        wordduplicationcheckatEnd(str(ixre).strip())
+        sentences = sentences + " " + wordduplicationcheckatEnd(str(ixre).strip())
+        # print(sentences)
+
+    # ngram stopword seperator
+
+    sentencetosave = ""
+    for te in sentences.split(" "):
+        te = str(te).lower()
+        if str(te) != "":
+            if str(te) != " ":
+                wordcount = 0
+
+                for nerln in stopwordsseperatorNER:
+                    if str(re.match("^(" + str(nerln) + ")$", str(te).strip())) != "None":
+                        # print(te)
+                        te = str(te).replace(str(nerln), "")
+                        # print(te)
+                        # print("DSFDFDFDE")
+                        sentencetosave = str(sentencetosave) + " " + str(te).strip()
+                        wordcount = int(wordcount) + 1
+
+                # print(te)
+                for qwe in stopwordsseperator:
+                    qwe = str(qwe).lower()
+
+                    # print(te)
+                    # print(te.strip())
+                    if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
+                        # print(qwe)
+                        tempwordlaa = str(te).replace(qwe, "")
+                        sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
+                        wordcount = int(wordcount) + 1
+                if int(wordcount) == 0:
+                    # print(wordcount)
+                    sentencetosave = str(sentencetosave) + " " + str(te).strip()
+
+    # print(sentencetosave)
+
+
+    for ghsplitted in sentencetosave.split(""):
+        # print("SDS")
+        # print(ghsplitted)
+        # print(ghsplitted)
+        if str(ghsplitted) != "":
+            if str(ghsplitted) != " ":
+
+                if str(ghsplitted).find("") != -1:
+
+                    for nersplitted in str(ghsplitted).split(""):
+                        if str(nersplitted) != "":
+                            if str(nersplitted) != " ":
+                                tempppppaarrrrr.append(str(nersplitted).strip())
+
+
+                                # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
+# print(tempppppaarrrrr)
 for ghty in tempppppaarrrrr:
     newtempppppaarrrrr.append(str(ghty).lower())
 
 my_dict = Counter(newtempppppaarrrrr)
+# print(my_dict)
 
 del my_dict[' ']
 del my_dict['']
 
 # total freq
-f = open('allfreq.txt', 'w', encoding="utf-8")
+f = open('Allfreq.txt', 'w', encoding="utf-8")
 for fg in sorted(my_dict, key=my_dict.get, reverse=True):
     f.writelines(str(fg) + "\t\t" + str(my_dict[fg]) + "\n")
 print("Done")
@@ -695,8 +775,8 @@ for i in arrofileobjects:
 userWeb = ''
 userinput = ''
 fdup = open('dupefound.txt', 'w', encoding="utf-8")
-fnodup = open('nodupefound.txt', 'w', encoding="utf-8")
-fnodupwspecial = open('nodupefoundSpecialCharacter.txt', 'w', encoding="utf-8")
+fnodup = open("AintNodupefound.txt", 'w', encoding="utf-8")
+fnodupwspecial = open("AintNodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
 
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")

@@ -5,6 +5,7 @@ from openpyxl import load_workbook
 import os
 
 word = ""
+inputExcelSheetForumData="..\datafiles\sgforums.xlsx"
 
 f = open('SinglishSentencesForNer.txt', 'w', encoding="utf-8")
 
@@ -74,7 +75,7 @@ worksheet = workbook.add_worksheet()
 # worksheet.write(row, col, "ds")
 # row += 1
 
-for inread in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
+for inread in excelinput(inputExcelSheetForumData, 0, 0):
     tokens = wordpunct_tokenize(inread)
 
     words = [word.lower() for word in tokens]

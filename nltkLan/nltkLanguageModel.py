@@ -44,7 +44,8 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
         # print(myString)
 
         try:
-            if myString.find(wordstoignore) == -1:
+            # Change the number as needed
+            if myString.find(wordstoignore) == 2:
                 if startreadArea != "":
                     pyarr.append(
                         (str(myString[
@@ -98,7 +99,7 @@ for inread in excelinput(inputExcelSheetForumData, 0, 0):
     # print(languages_ratios)
     # print(languages_ratios["singlish"])
 
-    if int(languages_ratios["singlish"]) > 2:
+    if int(languages_ratios["singlish"]) > -1:
         print("".join(inread.splitlines()))
 
         f.writelines("".join(inread.splitlines()) + "\n\n")
@@ -540,6 +541,7 @@ counttttt = 0
 
 # RAW DATA HERE
 for i in excelinput(forumdataforreading, 0, 0):
+    print("dsdsdsadsasadsadsadsadsdsadsdsa")
     # print(i)
     print("Currently scanning Line: " + str(counttttt))
     counttttt = counttttt + 1
@@ -578,6 +580,7 @@ for i in excelinput(forumdataforreading, 0, 0):
 
 
     ixre = multiplepunctuationRemover(str(i))
+    print(ixre)
 
     sentences = ""
 
@@ -598,8 +601,11 @@ for i in excelinput(forumdataforreading, 0, 0):
     asentencess=sentences
     for nerln in stopwordsseperatorNER:
         if str(re.match("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
-            # print(te)
+            print("yes")
             asentencess = str(asentencess).replace(str(nerln), "")
+    print(asentencess)
+    print("dssd")
+    # input()
 
 
     sentencetosave = ""
@@ -633,16 +639,16 @@ for i in excelinput(forumdataforreading, 0, 0):
                     # print(wordcount)
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
-    # print(sentencetosave)
-
+    print(sentencetosave)
+    # input()
 
     for ghsplitted in sentencetosave.split(""):
         # print("SDS")
-        # print(ghsplitted)
+
         # print(ghsplitted)
         if str(ghsplitted) != "":
             if str(ghsplitted) != " ":
-
+                # print(ghsplitted)
                 if str(ghsplitted).find("") != -1:
 
                     for nersplitted in str(ghsplitted).split(""):

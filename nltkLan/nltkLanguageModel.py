@@ -594,15 +594,16 @@ for i in excelinput(forumdataforreading, 0, 0):
         # print(sentences)
 
     # ngram stopword seperator
-
-
+    # sentences=sentences.lower()
+    asentencess=sentences
     for nerln in stopwordsseperatorNER:
-        if str(re.match("\\b(" + str(nerln) + ")\\b", str(sentences).strip())) != "None":
+        if str(re.match("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
             # print(te)
-            sentences = str(sentences).replace(str(nerln), "")
+            asentencess = str(asentencess).replace(str(nerln), "")
+
 
     sentencetosave = ""
-    for te in sentences.split(" "):
+    for te in asentencess.split(" "):
         te = str(te).lower()
         if str(te) != "":
             if str(te) != " ":

@@ -68,7 +68,7 @@ print(set(senticNetWords))
 languages_ratios = {}
 row = 0
 col = 0
-workbook =xlsxwriter.Workbook('UserDatabase.xlsx')
+workbook = xlsxwriter.Workbook('UserDatabase.xlsx')
 worksheet = workbook.add_worksheet()
 
 # worksheet.write(row, col, "ds")
@@ -100,7 +100,7 @@ for inread in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
     if int(languages_ratios["singlish"]) > 2:
         print("".join(inread.splitlines()))
 
-        f.writelines("".join(inread.splitlines())+"\n\n")
+        f.writelines("".join(inread.splitlines()) + "\n\n")
         worksheet.write(row, col, "".join(inread.splitlines()))
         row += 1
 f.close()
@@ -118,7 +118,7 @@ forumdataforreading = "UserDatabase.xlsx"
 stopwordsseperator = []
 stopwordsseperatorNER = []
 
-stopwirdin = open('..\\ filesdb\Seperator\stopwordSeperator.txt', 'r', encoding="utf-8")
+stopwirdin = open('..\\filesdb\Seperator\stopwordSeperator.txt', 'r', encoding="utf-8")
 
 stopwilala = stopwirdin.readlines()
 

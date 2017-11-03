@@ -246,4 +246,8 @@ import fnmatch
 # nltk.download('reuters')
 
 
-# print(str(re.search(r"\bam\b", str("am d"))))
+# print(str(re.search(r"\bam\b", str("am d"))))\pr
+nerln="jam i"
+jam="jam i ds"
+
+print(str(re.search("\\b(" + str(nerln) + ")\\b", str(jam).strip())) )

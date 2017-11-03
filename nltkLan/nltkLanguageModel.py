@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 import os
 
 word = ""
-inputExcelSheetForumData="..\datafiles\sgforums.xlsx"
+inputExcelSheetForumData="..\datafiles\Edmwcompiled311017.xlsx"
 
 f = open('SinglishSentencesForNer.txt', 'w', encoding="utf-8")
 
@@ -603,7 +603,7 @@ for i in excelinput(forumdataforreading, 0, 0):
                 wordcount = 0
 
                 for nerln in stopwordsseperatorNER:
-                    if str(re.match("^(" + str(nerln) + ")$", str(te).strip())) != "None":
+                    if str(re.match("\\b(" + str(nerln) + ")\\b", str(te).strip())) != "None":
                         # print(te)
                         te = str(te).replace(str(nerln), "")
                         # print(te)

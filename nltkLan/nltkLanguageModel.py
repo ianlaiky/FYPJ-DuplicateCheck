@@ -11,7 +11,7 @@ import unicodedata
 
 word = ""
 
-cutoffRatio = 2
+cutoffRatio = 1
 
 inputExcelSheetForumData = "..\datafiles\Edmwcompiled311017.xlsx"
 

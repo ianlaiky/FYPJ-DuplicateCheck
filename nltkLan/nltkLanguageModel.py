@@ -584,7 +584,7 @@ for i in excelinput(forumdataforreading, 0, 0):
 
 
     ixre = multiplepunctuationRemover(str(i))
-    print(ixre)
+    # print(ixre)
 
     sentences = ""
 

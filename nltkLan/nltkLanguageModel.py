@@ -6,9 +6,9 @@ import os
 
 word = ""
 
-cutoffRatio = 2
+cutoffRatio = -1
 
-inputExcelSheetForumData = "..\datafiles\Edmwcompiled311017.xlsx"
+inputExcelSheetForumData = "..\datafiles\\test.xlsx"
 
 f = open('SinglishSentencesForNer.txt', 'w', encoding="utf-8")
 
@@ -609,7 +609,7 @@ for i in excelinput(forumdataforreading, 0, 0):
     for nerln in stopwordsseperatorNER:
         # print(nerln)
         if str(re.search("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
-            print("yes")
+            # print("yes")
             asentencess = str(asentencess).replace(str(nerln), "")
     # print(asentencess)
     # print("dssd")
@@ -647,7 +647,7 @@ for i in excelinput(forumdataforreading, 0, 0):
                     # print(wordcount)
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
-    print(sentencetosave)
+    # print(sentencetosave)
     # input()
 
     for ghsplitted in sentencetosave.split(""):
@@ -657,7 +657,7 @@ for i in excelinput(forumdataforreading, 0, 0):
         # input()
         if str(ghsplitted) != "":
             if str(ghsplitted) != " ":
-                print(ghsplitted)
+                # print(ghsplitted)
                 if str(ghsplitted).find("") != -1:
 
                     for nersplitted in str(ghsplitted).split(""):

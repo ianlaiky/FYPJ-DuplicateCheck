@@ -74,8 +74,8 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
 
 senticNetWords = pythonFile("..\\filesdb\senticnet.py", "['", "']", 2, "-----nil--------")
 # print(senticNetWords)
-print(senticNetWords)
-print(set(senticNetWords))
+# print(senticNetWords)
+# print(set(senticNetWords))
 
 languages_ratios = {}
 row = 0

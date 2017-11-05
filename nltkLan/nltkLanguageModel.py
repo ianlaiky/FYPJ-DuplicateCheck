@@ -802,7 +802,7 @@ userWeb = ''
 userinput = ''
 fdup = open('dupefound.txt', 'w', encoding="utf-8")
 fnodup = open("ANodupefound.txt", 'w', encoding="utf-8")
-fnodupwspecial = open("ANodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
+# fnodupwspecial = open("ANodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
 
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")
@@ -931,8 +931,8 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
 
             line = re.search('[^A-Za-z]', str(ixxx))
             # print(line)
-            if 'None' != str(line):
-                if characterinvalidationchecker(str(ixxx).strip()) is True:
+            # if 'None' != str(line):
+                # if characterinvalidationchecker(str(ixxx).strip()) is True:
                     # (variant assignment) start word check upper and lower case and end to variants list (*performance issue)
 
                     # for checkkwor in tempppppaarrrrr:
@@ -941,9 +941,9 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
                     # end upper lower check
 
                     # new test
-
-                    fnodupwspecial.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
-                    fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+                    #
+                    # fnodupwspecial.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
+                    # fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
             # for chhs in tempppppaarrrrr:
             #     if caseless_equal(str(chhs),str(ixxx)) is True:
@@ -974,4 +974,4 @@ print("All complete")
 
 fdup.close()
 fnodup.close()
-fnodupwspecial.close()
+# fnodupwspecial.close()

@@ -801,8 +801,8 @@ for i in arrofileobjects:
 userWeb = ''
 userinput = ''
 fdup = open('dupefound.txt', 'w', encoding="utf-8")
-fnodup = open("AintNodupefound.txt", 'w', encoding="utf-8")
-fnodupwspecial = open("AintNodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
+fnodup = open("ANodupefound.txt", 'w', encoding="utf-8")
+fnodupwspecial = open("ANodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
 
 # for x in range(100):
 #     fnodup.writelines("duhhh"+"\n")

@@ -6,14 +6,15 @@ from openpyxl import load_workbook
 import fnmatch
 
 
-# import enchant
-#
-# d = enchant.Dict("en_US")
-# de = enchant.Dict("en_GB")
-#
-# print(d.check("cool"))
-# print(de.check("on-line"))
-# print(de.check("afk"))
+import enchant
+
+d = enchant.Dict("en_US")
+de = enchant.Dict("en_GB")
+
+print(d.check("cool"))
+print(de.check("on-line"))
+print(de.check("afk"))
+input()
 
 # if d.check("running") is True:
 #     print("ts")
@@ -360,4 +361,4 @@ import fnmatch
 # # f.close()
 # workbook.close()
 
-print(str(re.search("\\b(" + str("going to") + ")\\b", str("I am going to lan"))))
+# print(str(re.search("\\b(" + str("going to") + ")\\b", str("I am going to lan"))))

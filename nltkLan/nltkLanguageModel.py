@@ -3,6 +3,11 @@ from nltk import wordpunct_tokenize
 from nltk.corpus import stopwords
 from openpyxl import load_workbook
 import os
+import re
+from openpyxl import load_workbook
+from collections import Counter
+import enchant
+import unicodedata
 
 word = ""
 
@@ -115,11 +120,7 @@ for inread in excelinput(inputExcelSheetForumData, 0, 0):
 f.close()
 workbook.close()
 
-import re
-from openpyxl import load_workbook
-from collections import Counter
-import enchant
-import unicodedata
+
 
 # forum data for reading
 forumdataforreading = "UserDatabase.xlsx"
@@ -795,7 +796,7 @@ for i in conf:
 for i in arrofileobjects:
     print("Files loaded")
     print(i.getFilename())
-    print(i.getArray())
+    # print(i.getArray())
 
 userWeb = ''
 userinput = ''

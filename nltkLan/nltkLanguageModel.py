@@ -5,6 +5,9 @@ from openpyxl import load_workbook
 import os
 
 word = ""
+
+cutoffRatio = 2
+
 inputExcelSheetForumData = "..\datafiles\Edmwcompiled311017.xlsx"
 
 f = open('SinglishSentencesForNer.txt', 'w', encoding="utf-8")
@@ -103,7 +106,7 @@ for inread in excelinput(inputExcelSheetForumData, 0, 0):
 
 
     # Change the number as needed
-    if int(languages_ratios["singlish"]) > -1:
+    if int(languages_ratios["singlish"]) > int(cutoffRatio):
         print("".join(inread.splitlines()))
 
         f.writelines("".join(inread.splitlines()) + "\n\n")

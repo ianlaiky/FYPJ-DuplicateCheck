@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 import os
 
 word = ""
-inputExcelSheetForumData="..\datafiles\Edmwcompiled311017.xlsx"
+inputExcelSheetForumData = "..\datafiles\Edmwcompiled311017.xlsx"
 
 f = open('SinglishSentencesForNer.txt', 'w', encoding="utf-8")
 
@@ -44,9 +44,10 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
         # print(myString)
 
         try:
-            # Change the number as needed
-            if myString.find(wordstoignore) == 2:
+
+            if myString.find(wordstoignore) == -1:
                 if startreadArea != "":
+                    # print(myString)
                     pyarr.append(
                         (str(myString[
                              myString.index(startreadArea) + indextoadd:myString.index(endReadArea)]).lower().replace(
@@ -65,6 +66,7 @@ def pythonFile(filetoopen, startreadArea, endReadArea, indextoadd, wordstoignore
 
 senticNetWords = pythonFile("..\\filesdb\senticnet.py", "['", "']", 2, "-----nil--------")
 # print(senticNetWords)
+print(senticNetWords)
 print(set(senticNetWords))
 
 languages_ratios = {}
@@ -99,6 +101,8 @@ for inread in excelinput(inputExcelSheetForumData, 0, 0):
     # print(languages_ratios)
     # print(languages_ratios["singlish"])
 
+
+    # Change the number as needed
     if int(languages_ratios["singlish"]) > -1:
         print("".join(inread.splitlines()))
 
@@ -598,13 +602,14 @@ for i in excelinput(forumdataforreading, 0, 0):
 
     # ngram stopword seperator
     # sentences=sentences.lower()
-    asentencess=sentences
+    asentencess = sentences
     for nerln in stopwordsseperatorNER:
-        if str(re.match("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
+        # print(nerln)
+        if str(re.search("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
             print("yes")
             asentencess = str(asentencess).replace(str(nerln), "")
-    print(asentencess)
-    print("dssd")
+    # print(asentencess)
+    # print("dssd")
     # input()
 
 
@@ -616,7 +621,7 @@ for i in excelinput(forumdataforreading, 0, 0):
                 wordcount = 0
 
                 for nerln in stopwordsseperatorNER:
-                    if str(re.match("\\b(" + str(nerln) + ")\\b", str(te).strip())) != "None":
+                    if str(re.search("\\b(" + str(nerln) + ")\\b", str(te).strip())) != "None":
                         # print(te)
                         te = str(te).replace(str(nerln), "")
                         # print(te)
@@ -644,28 +649,31 @@ for i in excelinput(forumdataforreading, 0, 0):
 
     for ghsplitted in sentencetosave.split(""):
         # print("SDS")
-
+        #
         # print(ghsplitted)
+        # input()
         if str(ghsplitted) != "":
             if str(ghsplitted) != " ":
-                # print(ghsplitted)
+                print(ghsplitted)
                 if str(ghsplitted).find("") != -1:
 
                     for nersplitted in str(ghsplitted).split(""):
                         if str(nersplitted) != "":
                             if str(nersplitted) != " ":
+                                # print("SDSsss")
+                                # print(nersplitted)
                                 tempppppaarrrrr.append(str(nersplitted).strip())
 
 
                                 # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
-# print(tempppppaarrrrr)
+print(tempppppaarrrrr)
 for ghty in tempppppaarrrrr:
     newtempppppaarrrrr.append(str(ghty).lower())
 
 my_dict = Counter(newtempppppaarrrrr)
-# print(my_dict)
+print(my_dict)
 
 del my_dict[' ']
 del my_dict['']

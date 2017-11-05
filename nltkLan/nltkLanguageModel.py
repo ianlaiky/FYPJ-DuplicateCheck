@@ -548,7 +548,7 @@ counttttt = 0
 
 # RAW DATA HERE
 for i in excelinput(forumdataforreading, 0, 0):
-    print("dsdsdsadsasadsadsadsadsdsadsdsa")
+    # print("dsdsdsadsasadsadsadsadsdsadsdsa")
     # print(i)
     print("Currently scanning Line: " + str(counttttt))
     counttttt = counttttt + 1

@@ -6,9 +6,9 @@ import os
 
 word = ""
 
-cutoffRatio = -1
+cutoffRatio = 2
 
-inputExcelSheetForumData = "..\datafiles\\test.xlsx"
+inputExcelSheetForumData = "..\datafiles\Edmwcompiled311017.xlsx"
 
 f = open('SinglishSentencesForNer.txt', 'w', encoding="utf-8")
 

@@ -5,16 +5,15 @@ from openpyxl import load_workbook
 
 import fnmatch
 
-
-import enchant
-
-d = enchant.Dict("en_US")
-de = enchant.Dict("en_GB")
-
-print(d.check("cool"))
-print(de.check("on-line"))
-print(de.check("afk"))
-input()
+# import enchant
+#
+# d = enchant.Dict("en_US")
+# de = enchant.Dict("en_GB")
+#
+# print(d.check("cool"))
+# print(de.check("on-line"))
+# print(de.check("afk"))
+# input()
 
 # if d.check("running") is True:
 #     print("ts")

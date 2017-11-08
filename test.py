@@ -329,7 +329,7 @@ import fnmatch
 # # row += 1
 #
 # # for inread in excelinput(inputExcelSheetForumData, 0, 0):
-# tokens = wordpunct_tokenize(" Didn't she boast about her finances?? ")
+# tokens = wordpunct_tokenize(" dont bo chap leh ")
 #
 # words = [word.lower() for word in tokens]
 #
@@ -351,14 +351,14 @@ import fnmatch
 # print(languages_ratios)
 # print(languages_ratios["singlish"])
 #
-# # if int(languages_ratios["singlish"]) > 2:
-# #     print("".join(inread.splitlines()))
-# #
-# #     f.writelines("".join(inread.splitlines()) + "\n\n")
-# #     worksheet.write(row, col, "".join(inread.splitlines()))
-# #     row += 1
-# # f.close()
-# workbook.close()
+# if int(languages_ratios["singlish"]) > 2:
+#     print("".join(inread.splitlines()))
+#
+#     f.writelines("".join(inread.splitlines()) + "\n\n")
+#     worksheet.write(row, col, "".join(inread.splitlines()))
+#     row += 1
+# f.close()
+workbook.close()
 
 # word = "going to"
 # sentence="I am going to lan"
@@ -370,10 +370,10 @@ import fnmatch
 
 
 
-from langdetect import detect
-from langdetect import detect_langs
-from langdetect import DetectorFactory
-# DetectorFactory.seed = 0
-
-print(detect("James is good"))
-print(detect_langs("James is good"))
+# from langdetect import detect
+# from langdetect import detect_langs
+# from langdetect import DetectorFactory
+# # DetectorFactory.seed = 0
+#
+# print(detect("James is good"))
+# print(detect_langs("James is good"))

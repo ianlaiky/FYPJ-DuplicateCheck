@@ -360,7 +360,10 @@ import fnmatch
 # # f.close()
 # workbook.close()
 
-# print(str(re.search("\\b(" + str("going to") + ")\\b", str("I am going to lan"))))
+word = "going to"
+sentence="I am going to lan"
+
+print(str(re.search("\\b(" + str(word) + ")\\b", str(sentence))))
 # from typing import Counter
 # r = ["james","james"]
 # print(Counter(r))

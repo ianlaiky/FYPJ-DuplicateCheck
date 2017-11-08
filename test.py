@@ -360,10 +360,20 @@ import fnmatch
 # # f.close()
 # workbook.close()
 
-word = "going to"
-sentence="I am going to lan"
-
-print(str(re.search("\\b(" + str(word) + ")\\b", str(sentence))))
+# word = "going to"
+# sentence="I am going to lan"
+#
+# print(str(re.search("\\b(" + str(word) + ")\\b", str(sentence))))
 # from typing import Counter
 # r = ["james","james"]
 # print(Counter(r))
+
+
+
+from langdetect import detect
+from langdetect import detect_langs
+from langdetect import DetectorFactory
+# DetectorFactory.seed = 0
+
+print(detect("James is good"))
+print(detect_langs("James is good"))

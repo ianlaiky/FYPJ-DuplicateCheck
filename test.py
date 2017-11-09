@@ -373,7 +373,15 @@ import fnmatch
 # from langdetect import detect
 # from langdetect import detect_langs
 # from langdetect import DetectorFactory
-# # DetectorFactory.seed = 0
+# DetectorFactory.seed = 0
 #
 # print(detect("James is good"))
 # print(detect_langs("James is good"))
+
+# from langdetect import detect, DetectorFactory
+# DetectorFactory.seed = 0
+# print(detect('今一はお前さん'))
+
+from langdetect import detector_factory
+detector_factory.init_factory()
+print(detector_factory._factory.langlist)

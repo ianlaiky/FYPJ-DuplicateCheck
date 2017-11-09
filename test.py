@@ -378,10 +378,12 @@ import fnmatch
 # print(detect("James is good"))
 # print(detect_langs("James is good"))
 
-# from langdetect import detect, DetectorFactory
-# DetectorFactory.seed = 0
-# print(detect('今一はお前さん'))
+from langdetect import detect, DetectorFactory
+from langdetect import detect_langs
+DetectorFactory.seed = 0
+print(detect('Have you eaten?'))
+print(detect_langs('What did you eat?'))
 
-from langdetect import detector_factory
-detector_factory.init_factory()
-print(detector_factory._factory.langlist)
+# from langdetect import detector_factory
+# detector_factory.init_factory()
+# print(detector_factory._factory.langlist)

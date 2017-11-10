@@ -381,8 +381,11 @@ import fnmatch
 from langdetect import detect, DetectorFactory
 from langdetect import detect_langs
 DetectorFactory.seed = 0
-print(detect('Have you eaten?'))
-print(detect_langs('What did you eat?'))
+print(detect("http://www.ahtv.cn/c/2014/0627/00300331_45.html all the old times actress of singapore...last time all jin pretty now a days actress cmi_________________己所不欲 勿施于人，己所欲 亦勿施于人"))
+
+
+
+# print(detect_langs('What did you eat?'))
 
 # from langdetect import detector_factory
 # detector_factory.init_factory()

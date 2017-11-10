@@ -40,6 +40,9 @@ sentenceCount = 0
 
 sgenCount=0
 
+fsaveSinglish=open("SinglishSentences.txt",'w',encoding="utf-8")
+ffailedDetect=open("FailedSentences.txt",'w',encoding="utf-8")
+
 for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
     print(str(i).strip())
     # print(detect(i))
@@ -48,8 +51,10 @@ for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
     try:
 
         if str(detect(str(i).strip()))=="sgen":
+            fsaveSinglish.writelines(str(i).strip()+"\n")
             sgenCount=sgenCount+1
     except:
+        ffailedDetect.writelines(str(i).strip())
         pass
 
 
@@ -62,3 +67,6 @@ print("Singlish sentences: "+str(sgenCount)+"/"+str(sentenceCount))
 
 print(detect('Have you eaten?'))
 print(detect_langs('Dont be in like this way'))
+
+fsaveSinglish.close()
+ffailedDetect.close()

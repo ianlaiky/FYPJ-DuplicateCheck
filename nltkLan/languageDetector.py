@@ -41,12 +41,16 @@ sentenceCount = 0
 sgenCount=0
 
 for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
-    print(i)
+    print(str(i).strip())
     # print(detect(i))
 
     print("Sentence No: "+str(sentenceCount))
-    if str(detect(str(i).strip()))=="sgen":
-        sgenCount=sgenCount+1
+    try:
+
+        if str(detect(str(i).strip()))=="sgen":
+            sgenCount=sgenCount+1
+    except:
+        pass
 
 
 

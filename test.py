@@ -378,11 +378,11 @@ import fnmatch
 # print(detect("James is good"))
 # print(detect_langs("James is good"))
 
-# from langdetect import detect, DetectorFactory
-# from langdetect import detect_langs
-# DetectorFactory.seed = 0
-# # print(detect("I am a great human being"))
-# print(detect_langs("where got"))
+from langdetect import detect, DetectorFactory
+from langdetect import detect_langs
+DetectorFactory.seed = 0
+# print(detect("My gpa cannot make it"))
+print(detect_langs("holy shit sia, kenneth kena hit by car"))
 
 
 

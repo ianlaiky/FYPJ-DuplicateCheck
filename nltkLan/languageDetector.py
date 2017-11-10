@@ -84,8 +84,8 @@ print("Singlish sentences: "+str(sgenCount)+"/"+str(sentenceCount))
 
 
 
-print(detect('Have you eaten?'))
-print(detect_langs('Dont be in like this way'))
+# print(detect('Have you eaten?'))
+# print(detect_langs('Dont be in like this way'))
 
 fsaveSinglish.close()
 ffailedDetect.close()

@@ -70,10 +70,10 @@ for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
     try:
 
         if str(detect(str(i).strip()))=="sgen":
-            fsaveSinglish.writelines(str(i).strip()+"\n")
+            fsaveSinglish.writelines(str(i).strip()+"\n\n")
             sgenCount=sgenCount+1
     except:
-        ffailedDetect.writelines(str(i).strip()+"\n")
+        ffailedDetect.writelines(str(i).strip()+"\n\n")
         pass
 
 

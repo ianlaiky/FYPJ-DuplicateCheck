@@ -44,6 +44,25 @@ fsaveSinglish=open("SinglishSentences.txt",'w',encoding="utf-8")
 ffailedDetect=open("FailedSentences.txt",'w',encoding="utf-8")
 
 for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
+
+    i = str(i).replace('\n', " ")
+    i = str(i).replace('\\n', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
+    i = str(i).replace('', " ")
     print(str(i).strip())
     # print(detect(i))
 
@@ -54,7 +73,7 @@ for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
             fsaveSinglish.writelines(str(i).strip()+"\n")
             sgenCount=sgenCount+1
     except:
-        ffailedDetect.writelines(str(i).strip())
+        ffailedDetect.writelines(str(i).strip()+"\n")
         pass
 
 

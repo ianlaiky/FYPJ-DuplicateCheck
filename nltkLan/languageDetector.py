@@ -1,3 +1,4 @@
+
 from langdetect import detect, DetectorFactory
 from langdetect import detect_langs
 DetectorFactory.seed = 0

@@ -954,18 +954,27 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
                 incount = 0
                 for xiccc in listOfAllThingsOfCurrDict:
                     # print(str("jalan jalan") in listOfAllThingsOfCurrDict)
-                    regexOutput = "None"
-                    try:
-                        regexOutput = str(re.search("\\b(" + str(xiccc) + ")\\b", str(ixxx).strip()))
+                    # regexOutput = "None"
+                    # try:
+                    #     regexOutput = str(re.search("\\b(" + str(xiccc) + ")\\b", str(ixxx).strip()))
+                    #
+                    # except:
+                    #     pass
+                    #
+                    # # print(xiccc)
+                    # if str(regexOutput) != "None":
+                    #     print("HELLLOOOO" + str(xiccc))
+                    #     incount = incount + 1
+                    #     break
 
-                    except:
-                        pass
+                    eachword=0
+                    for incheckpls in str(xiccc).split(" "):
+                        if incheckpls in str(ixxx).split(" "):
+                            eachword=eachword+1
+                    if int(eachword)==len(str(xiccc).split(" ")):
+                        print("works")
+                        incount=1
 
-                    # print(xiccc)
-                    if str(regexOutput) != "None":
-                        print("HELLLOOOO" + str(xiccc))
-                        incount = incount + 1
-                        break
 
                 print(str(ixxx) + str(incount))
                 # print(incount)

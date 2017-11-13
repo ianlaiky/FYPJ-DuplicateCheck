@@ -40,6 +40,7 @@ text,filesdb\senticnet.py,[','],-----nil--------
 text,filesdb\microtext.py,[","],"#microtext"
 phonetic,filesdb\ortho_variant.txt
 text,filesdb\wordlist.txt,,,------nil----
+text,filesdb\senticNetTempNoUnderscore.txt,,,------nil----
 text,filesdb\words.txt,,,-----nil------
 text,filesdb\wordsen.txt,,,-------nil-------
 text,filesdb\emoticons.py,[","],emoticon = {}

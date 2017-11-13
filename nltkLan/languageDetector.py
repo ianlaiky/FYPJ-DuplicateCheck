@@ -848,9 +848,15 @@ def characterinvalidationchecker(word):
                                '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;', '=>', ':-', '.;', '?)', '{', '}', '!"',
                                '!=', '";', '/b]']
 
-    languageToIgnore = ['ko','zh-cn','zh-tw']
+    languageToIgnore = ['ko', 'zh-cn', 'zh-tw']
 
     returnvalue = True
+    detectoinReceiver = "NIL"
+
+    try:
+        detectoinReceiver = str(detect(str(word))).lower()
+    except:
+        pass
 
     for io in texttochecktoinvalidate:
         # print(len(texttochecktoinvalidate))
@@ -877,7 +883,8 @@ def characterinvalidationchecker(word):
         returnvalue = False
     elif str(re.match("^([\w]+)\s+(wrote)$", str(word))) != "None":
         returnvalue = False
-    elif str(detect(str(word))).lower() in languageToIgnore:
+
+    elif detectoinReceiver in languageToIgnore:
         returnvalue = False
 
     return returnvalue

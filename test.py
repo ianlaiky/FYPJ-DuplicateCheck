@@ -382,7 +382,7 @@ from langdetect import detect, DetectorFactory
 from langdetect import detect_langs
 DetectorFactory.seed = 0
 # print(detect("My gpa cannot make it"))
-print(detect_langs("谁能凭爱意"))
+print(detect_langs("419177 6117f"))
 
 # print(detect_langs('What did you eat?'))
 

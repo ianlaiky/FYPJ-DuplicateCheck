@@ -50,7 +50,7 @@ col = 0
 workbook = xlsxwriter.Workbook('DatabaseForLangdetect.xlsx')
 worksheet = workbook.add_worksheet()
 
-for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
+for i in excelinput("..\datafiles\Testdata.xlsx", 0, 0):
 
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
@@ -575,8 +575,8 @@ for i in excelinput(forumdataforreading, 0, 0):
     else:
 
         sentences = sentences + " " + wordduplicationcheckatEnd(str(ixre).strip())
-        # print(sentences)
-
+    # print(sentences)
+    # print("fdf")
     # ngram stopword seperator
     # sentences=sentences.lower()
     asentencess = sentences

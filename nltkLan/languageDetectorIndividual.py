@@ -586,51 +586,51 @@ for i in excelinput(forumdataforreading, 0, 0):
     # ngram stopword seperator
     # sentences=sentences.lower()
     asentencess = sentences
-    for nerln in stopwordsseperatorNER:
-        # print(nerln)
-        if str(re.search("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
-            # print("yes")
-            asentencess = str(asentencess).replace(str(nerln), "")
+    # for nerln in stopwordsseperatorNER:
+    #     # print(nerln)
+    #     if str(re.search("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
+    #         # print("yes")
+    #         asentencess = str(asentencess).replace(str(nerln), "")
     # print(asentencess)
     # print("dssd")
     # input()
 
 
-    sentencetosave = ""
-    for te in asentencess.split(" "):
-        te = str(te).lower()
-        if str(te) != "":
-            if str(te) != " ":
-                wordcount = 0
+    # sentencetosave = ""
+    # for te in asentencess.split(" "):
+    #     te = str(te).lower()
+    #     if str(te) != "":
+    #         if str(te) != " ":
+    #             wordcount = 0
 
-                for nerln in stopwordsseperatorNER:
-                    if str(re.search("\\b(" + str(nerln) + ")\\b", str(te).strip())) != "None":
-                        # print(te)
-                        te = str(te).replace(str(nerln), "")
-                        # print(te)
-                        # print("DSFDFDFDE")
-                        sentencetosave = str(sentencetosave) + " " + str(te).strip()
-                        wordcount = int(wordcount) + 1
+                # for nerln in stopwordsseperatorNER:
+                #     if str(re.search("\\b(" + str(nerln) + ")\\b", str(te).strip())) != "None":
+                #         # print(te)
+                #         te = str(te).replace(str(nerln), "")
+                #         # print(te)
+                #         # print("DSFDFDFDE")
+                #         sentencetosave = str(sentencetosave) + " " + str(te).strip()
+                #         wordcount = int(wordcount) + 1
 
                 # print(te)
-                for qwe in stopwordsseperator:
-                    qwe = str(qwe).lower()
-
-                    # print(te)
-                    # print(te.strip())
-                    if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
-                        # print(qwe)
-                        tempwordlaa = str(te).replace(qwe, "")
-                        sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
-                        wordcount = int(wordcount) + 1
-                if int(wordcount) == 0:
-                    # print(wordcount)
-                    sentencetosave = str(sentencetosave) + " " + str(te).strip()
+                # for qwe in stopwordsseperator:
+                #     qwe = str(qwe).lower()
+                #
+                #     # print(te)
+                #     # print(te.strip())
+                #     if str(re.match("^(" + str(qwe) + ")$", str(te).strip())) != "None":
+                #         # print(qwe)
+                #         tempwordlaa = str(te).replace(qwe, "")
+                #         sentencetosave = str(sentencetosave) + " " + str(tempwordlaa).strip()
+                #         wordcount = int(wordcount) + 1
+                # if int(wordcount) == 0:
+                #     # print(wordcount)
+                #     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
     # print(sentencetosave)
     # input()
 
-    for ghsplitted in sentencetosave.split(""):
+    for ghsplitted in asentencess.split(" "):
         # print("SDS")
         #
         # print(ghsplitted)
@@ -663,7 +663,7 @@ del my_dict[' ']
 del my_dict['']
 
 # total freq
-f = open('LangDetectAllfreq.txt', 'w', encoding="utf-8")
+f = open('LangDetect2Allfreq.txt', 'w', encoding="utf-8")
 for fg in sorted(my_dict, key=my_dict.get, reverse=True):
     f.writelines(str(fg) + "\t\t" + str(my_dict[fg]) + "\n")
 print("Done")
@@ -780,8 +780,8 @@ for i in arrofileobjects:
 
 userWeb = ''
 userinput = ''
-fdup = open('LangDetectdupefound.txt', 'w', encoding="utf-8")
-fnodup = open("LangDetectANodupefound.txt", 'w', encoding="utf-8")
+fdup = open('LangDetectdupe2found.txt', 'w', encoding="utf-8")
+fnodup = open("LangDetect2ANodupefound.txt", 'w', encoding="utf-8")
 # fnodupwspecial = open("ANodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
 
 # for x in range(100):

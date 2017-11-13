@@ -895,6 +895,21 @@ uniqueverynewtempppppaarrrrr = [item.lower() for item in verynewtempppppaarrrrr]
 
 indexforengremoval = 0
 
+
+def savingRegexExp(enteringWord):
+    returnthis = False
+
+    if str(re.match("^([\w]+)\s+(wrote)$", str(enteringWord))):
+        returnthis=True
+
+
+    return returnthis
+
+
+
+
+
+
 # sort special char to diff file, save all non-dup to one file
 for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
     # ixxx = str(specificcharacterremoverandother(ixxxo))

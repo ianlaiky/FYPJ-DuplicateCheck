@@ -637,14 +637,15 @@ for i in excelinput(forumdataforreading, 0, 0):
         if str(ghsplitted) != "":
             if str(ghsplitted) != " ":
                 # print(ghsplitted)
-                if str(ghsplitted).find("") != -1:
-
-                    for nersplitted in str(ghsplitted).split(""):
-                        if str(nersplitted) != "":
-                            if str(nersplitted) != " ":
-                                # print("SDSsss")
-                                # print(nersplitted)
-                                tempppppaarrrrr.append(str(nersplitted).strip())
+                # if str(ghsplitted).find("") != -1:
+                #
+                #     for nersplitted in str(ghsplitted).split(""):
+                #         if str(nersplitted) != "":
+                #             if str(nersplitted) != " ":
+                #                 # print("SDSsss")
+                #                 # print(nersplitted)
+                #                 tempppppaarrrrr.append(str(nersplitted).strip())
+                tempppppaarrrrr.append(str(ghsplitted).strip())
 
 
                                 # tempppppaarrrrr.append(sentences)

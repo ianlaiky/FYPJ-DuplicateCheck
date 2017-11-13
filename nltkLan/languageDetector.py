@@ -848,7 +848,7 @@ def characterinvalidationchecker(word):
                                '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;', '=>', ':-', '.;', '?)', '{', '}', '!"',
                                '!=', '";', '/b]']
 
-    languageToIgnore = ['ko', 'zh-cn', 'zh-tw']
+    languageToIgnore = ['ko', 'zh-cn', 'zh-tw','ja']
 
     returnvalue = True
     detectoinReceiver = "NIL"

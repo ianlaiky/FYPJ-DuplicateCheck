@@ -393,3 +393,25 @@ print(detect_langs("lets go jalan jala"))
 #
 #
 # print(str(re.match("^([\w]+)\s+(wrote)$", str(word))))
+
+
+# t0=[]
+# t1 = ['james','cutt','poo']
+# t2 = ['dsadsa','gfdgcutt','gfdpoo']
+# t3 = ['jamgfdgs','cugfdgtt','poddo']
+# t0.append(t1)
+# t0.append(t2)
+# t0.append(t3)
+#
+# t4=[]
+# for i in t0:
+#     t4=t4+i
+# print(t4)
+
+# for i in range(100):
+#     print(i)
+#     if i == 39:
+#         break
+
+print(str(re.search("\\b(" + str("jalan jalan") + ")\\b", str("lets go jalan jalan kay?").strip())))
+

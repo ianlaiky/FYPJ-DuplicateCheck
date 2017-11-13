@@ -776,6 +776,7 @@ userWeb = ''
 userinput = ''
 fdup = open('LangDetectdupefound.txt', 'w', encoding="utf-8")
 fnodup = open("LangDetectANodupefound.txt", 'w', encoding="utf-8")
+fnodupWithSomeExisting = open("LangDetectANodupefoundWithExistingSinglish.txt", 'w', encoding="utf-8")
 # fnodupwspecial = open("ANodupefoundSpecialCharacter.txt", 'w', encoding="utf-8")
 
 # for x in range(100):
@@ -786,6 +787,10 @@ my_dicInArray = []
 parseinDict = {}
 parseinDictDiff = {}
 
+listOfAllThingsOfCurrDict=[]
+
+
+
 for index, abc in enumerate(my_dict):
     wordsfoundaryyyy = []
     print("Scanning: " + str(index) + "/" + str(len(my_dict)) + "\t" + str(
@@ -795,6 +800,7 @@ for index, abc in enumerate(my_dict):
 
 for c in arrofileobjects:
     print("Processing File: " + str(c.getFilename()))
+    listOfAllThingsOfCurrDict=listOfAllThingsOfCurrDict+c.getArray()
     # print(c.getArray())
     # listyincheck = []
 
@@ -946,8 +952,39 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
 
             # new test
             if characterinvalidationchecker(str(ixxx).strip()) is True:
-                fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
-                fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+
+
+                for xiccc in listOfAllThingsOfCurrDict:
+                    print(xiccc)
+
+                    regexreturnvalue = "None"
+                    regexCount = 0
+                    try:
+                        if str(re.search("\\b(" + str(xiccc) + ")\\b", str(ixxx).strip()))!="None":
+                            regexCount=regexCount+1
+
+
+                    except:
+                        pass
+
+
+
+
+                if int(regexCount) == 0:
+
+                    fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
+                    fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+
+
+                else:
+
+
+                    fnodupWithSomeExisting.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
+                    fnodupWithSomeExisting.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+
+
+
+
     print("English removal & variant assignment: " + str(indexforengremoval) + "/" + str(
         len(parseinDictDiff)) + "  " + str(round((int(indexforengremoval) / int(len(parseinDictDiff))) * 100)) + "%")
     indexforengremoval = indexforengremoval + 1

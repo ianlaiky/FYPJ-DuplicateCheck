@@ -50,7 +50,7 @@ col = 0
 workbook = xlsxwriter.Workbook('DatabaseForLangdetect.xlsx')
 worksheet = workbook.add_worksheet()
 
-for i in excelinput("..\datafiles\Testdata.xlsx", 0, 0):
+for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
 
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
@@ -745,7 +745,7 @@ def phoneticcase(filetotopen):
 # files read form config
 arrofileobjects = []
 
-confff = open("config.txt", 'r')
+confff = open("configLangDetect.txt", 'r')
 conf = confff.readlines()
 confff.close()
 
@@ -787,9 +787,7 @@ my_dicInArray = []
 parseinDict = {}
 parseinDictDiff = {}
 
-listOfAllThingsOfCurrDict=[]
-
-
+listOfAllThingsOfCurrDict = []
 
 for index, abc in enumerate(my_dict):
     wordsfoundaryyyy = []
@@ -800,7 +798,7 @@ for index, abc in enumerate(my_dict):
 
 for c in arrofileobjects:
     print("Processing File: " + str(c.getFilename()))
-    listOfAllThingsOfCurrDict=listOfAllThingsOfCurrDict+c.getArray()
+    listOfAllThingsOfCurrDict = listOfAllThingsOfCurrDict + c.getArray()
     # print(c.getArray())
     # listyincheck = []
 
@@ -854,7 +852,7 @@ def characterinvalidationchecker(word):
                                '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;', '=>', ':-', '.;', '?)', '{', '}', '!"',
                                '!=', '";', '/b]']
 
-    languageToIgnore = ['ko', 'zh-cn', 'zh-tw','ja']
+    languageToIgnore = ['ko', 'zh-cn', 'zh-tw', 'ja']
 
     returnvalue = True
     detectoinReceiver = "NIL"
@@ -953,37 +951,35 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
             # new test
             if characterinvalidationchecker(str(ixxx).strip()) is True:
 
-
+                incount = 0
                 for xiccc in listOfAllThingsOfCurrDict:
-                    print(xiccc)
-
-                    regexreturnvalue = "None"
-                    regexCount = 0
+                    # print(str("jalan jalan") in listOfAllThingsOfCurrDict)
+                    regexOutput = "None"
                     try:
-                        if str(re.search("\\b(" + str(xiccc) + ")\\b", str(ixxx).strip()))!="None":
-                            regexCount=regexCount+1
-
+                        regexOutput = str(re.search("\\b(" + str(xiccc) + ")\\b", str(ixxx).strip()))
 
                     except:
                         pass
 
+                    # print(xiccc)
+                    if str(regexOutput) != "None":
+                        print("HELLLOOOO" + str(xiccc))
+                        incount = incount + 1
+                        break
 
-
-
-                if int(regexCount) == 0:
+                print(str(ixxx) + str(incount))
+                # print(incount)
+                if incount == 0:
 
                     fnodup.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
                     fnodup.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
 
-                else:
 
+                else:
 
                     fnodupWithSomeExisting.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
                     fnodupWithSomeExisting.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
-
-
-
 
     print("English removal & variant assignment: " + str(indexforengremoval) + "/" + str(
         len(parseinDictDiff)) + "  " + str(round((int(indexforengremoval) / int(len(parseinDictDiff))) * 100)) + "%")

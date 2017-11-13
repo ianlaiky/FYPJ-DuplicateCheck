@@ -382,7 +382,7 @@ from langdetect import detect, DetectorFactory
 from langdetect import detect_langs
 DetectorFactory.seed = 0
 # print(detect("My cannot make it with my grades"))
-print(detect_langs("lets go jalan jala"))
+print(detect_langs("lets go jal jalan okay?"))
 
 # print(detect_langs('What did you eat?'))
 
@@ -413,5 +413,7 @@ print(detect_langs("lets go jalan jala"))
 #     if i == 39:
 #         break
 
-print(str(re.search("\\b(" + str("jalan jalan") + ")\\b", str("lets go jalan jalan kay?").strip())))
-
+# print(str(re.search("\\b(" + str("jalan jalan") + ")\\b", str("lets go jalan jalan kay?").strip())))
+# print(str("jalan jalan") in str("go jalan jalan kay"))
+# if "jamesd" in [t for t in t1]:
+#     print("yes")

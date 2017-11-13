@@ -378,20 +378,18 @@ import fnmatch
 # print(detect("James is good"))
 # print(detect_langs("James is good"))
 
-# from langdetect import detect, DetectorFactory
-# from langdetect import detect_langs
-# DetectorFactory.seed = 0
-# # print(detect("My gpa cannot make it"))
-# print(detect_langs("gxelan wrote: I am just balance sheet trader... normal salary normal basic. Just pure funding n investment bk lil to no risk taking Flow trader basic gd bonus depends on pnl Those low basic n comms high one is prop trader or those small setup nia, not even hedge fund or anythint. Those is pian jiak one those are opportunist 套利 arbitrage RW flipping.... trading itself is non value de....hedge is to counter move or insider info IR or wealth inside, they are different but both is not consider pian jiak....iphone flipper also same thing ma..... but still legit profit.....__________________万般带不走，唯有业缠身 "))
-
-
+from langdetect import detect, DetectorFactory
+from langdetect import detect_langs
+DetectorFactory.seed = 0
+# print(detect("My gpa cannot make it"))
+print(detect_langs("谁能凭爱意"))
 
 # print(detect_langs('What did you eat?'))
 
 # from langdetect import detector_factory
 # detector_factory.init_factory()
 # print(detector_factory._factory.langlist)
-word ="  wrote"
-
-
-print(str(re.match("^([\w]+)\s+(wrote)$", str(word))))
+# word ="  wrote"
+#
+#
+# print(str(re.match("^([\w]+)\s+(wrote)$", str(word))))

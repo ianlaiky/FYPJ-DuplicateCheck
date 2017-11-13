@@ -847,6 +847,9 @@ def characterinvalidationchecker(word):
                                '<w:lsdexception', 'locked="false"', 'unhidewhenused="false"', 'name="medium', '£',
                                '€ڰ:', '_', '#', '?"', '<', '~', "'')", '?;', '=>', ':-', '.;', '?)', '{', '}', '!"',
                                '!=', '";', '/b]']
+
+    languageToIgnore = ['ko','zh-cn']
+
     returnvalue = True
 
     for io in texttochecktoinvalidate:
@@ -873,6 +876,8 @@ def characterinvalidationchecker(word):
     elif str(re.match("^[^(\w\d)]$", word)) != "None":
         returnvalue = False
     elif str(re.match("^([\w]+)\s+(wrote)$", str(word))) != "None":
+        returnvalue = False
+    elif str(detect(str(word))).lower() in languageToIgnore:
         returnvalue = False
 
     return returnvalue

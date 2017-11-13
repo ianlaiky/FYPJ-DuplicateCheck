@@ -116,7 +116,7 @@ for readlinesstopwoird in stopwilala:
 print(stopwordsseperator)
 stopwirdin.close()
 
-stopwordinNER = open('..\\filesdb\Seperator\stopwordsNER.txt', 'r', encoding="utf-8")
+stopwordinNER = open('..\\filesdb\Seperator\stopwordsLangDetect.txt', 'r', encoding="utf-8")
 stopNERreadline = stopwordinNER.readlines()
 for wordReadLine in stopNERreadline:
     stopwordsseperatorNER.append(str(wordReadLine).lower().strip())

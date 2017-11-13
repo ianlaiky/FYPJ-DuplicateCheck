@@ -878,6 +878,8 @@ def characterinvalidationchecker(word):
         returnvalue = False
     elif str(re.match("^[^(\w\d)]$", word)) != "None":
         returnvalue = False
+    elif str(re.match("^([\w]+)\s+(wrote)$", str(word)))!= "None":
+        returnvalue=False
 
     return returnvalue
 
@@ -899,8 +901,7 @@ indexforengremoval = 0
 def savingRegexExp(enteringWord):
     returnthis = False
 
-    if str(re.match("^([\w]+)\s+(wrote)$", str(enteringWord))):
-        returnthis=True
+
 
 
     return returnthis

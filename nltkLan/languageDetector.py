@@ -9,11 +9,10 @@ from collections import Counter
 import enchant
 import unicodedata
 
-
 from langdetect import detect, DetectorFactory
 from langdetect import detect_langs
-DetectorFactory.seed = 0
 
+DetectorFactory.seed = 0
 
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
@@ -36,12 +35,14 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
             columnlist.append(str(r[columnNo]))
 
     return columnlist
+
+
 sentenceCount = 0
 
-sgenCount=0
+sgenCount = 0
 
-fsaveSinglish=open("SinglishSentences.txt",'w',encoding="utf-8")
-ffailedDetect=open("FailedSentences.txt",'w',encoding="utf-8")
+fsaveSinglish = open("SinglishSentences.txt", 'w', encoding="utf-8")
+ffailedDetect = open("FailedSentences.txt", 'w', encoding="utf-8")
 
 languages_ratios = {}
 row = 0
@@ -49,7 +50,7 @@ col = 0
 workbook = xlsxwriter.Workbook('DatabaseForLangdetect.xlsx')
 worksheet = workbook.add_worksheet()
 
-for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
+for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
 
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
@@ -72,34 +73,27 @@ for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx",0,0):
     print(str(i).strip())
     # print(detect(i))
 
-    print("Sentence No: "+str(sentenceCount))
+    print("Sentence No: " + str(sentenceCount))
     try:
 
-        if str(detect(str(i).strip()))=="sgen":
+        if str(detect(str(i).strip())) == "sgen":
             # print("Acceptec")
-            fsaveSinglish.writelines(str(i).strip()+"\n\n")
-            sgenCount=sgenCount+1
-            worksheet.write(row, col,str(i).strip())
+            fsaveSinglish.writelines(str(i).strip() + "\n\n")
+            sgenCount = sgenCount + 1
+            worksheet.write(row, col, str(i).strip())
             row += 1
     except:
-        ffailedDetect.writelines(str(i).strip()+"\n\n")
+        ffailedDetect.writelines(str(i).strip() + "\n\n")
         pass
 
-
-
-    sentenceCount=sentenceCount+1
-print("Singlish sentences: "+str(sgenCount)+"/"+str(sentenceCount))
-
-
-
+    sentenceCount = sentenceCount + 1
+print("Singlish sentences: " + str(sgenCount) + "/" + str(sentenceCount))
 
 # print(detect('Have you eaten?'))
 # print(detect_langs('Dont be in like this way'))
 workbook.close()
 fsaveSinglish.close()
 ffailedDetect.close()
-
-
 
 # forum data for reading
 forumdataforreading = "DatabaseForLangdetect.xlsx"
@@ -649,7 +643,7 @@ for i in excelinput(forumdataforreading, 0, 0):
                 tempppppaarrrrr.append(str(ghsplitted).strip())
 
 
-                                # tempppppaarrrrr.append(sentences)
+                # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 print(tempppppaarrrrr)
@@ -878,8 +872,8 @@ def characterinvalidationchecker(word):
         returnvalue = False
     elif str(re.match("^[^(\w\d)]$", word)) != "None":
         returnvalue = False
-    elif str(re.match("^([\w]+)\s+(wrote)$", str(word)))!= "None":
-        returnvalue=False
+    elif str(re.match("^([\w]+)\s+(wrote)$", str(word))) != "None":
+        returnvalue = False
 
     return returnvalue
 
@@ -901,14 +895,7 @@ indexforengremoval = 0
 def savingRegexExp(enteringWord):
     returnthis = False
 
-
-
-
     return returnthis
-
-
-
-
 
 
 # sort special char to diff file, save all non-dup to one file
@@ -928,18 +915,18 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
             line = re.search('[^A-Za-z]', str(ixxx))
             # print(line)
             # if 'None' != str(line):
-                # if characterinvalidationchecker(str(ixxx).strip()) is True:
-                    # (variant assignment) start word check upper and lower case and end to variants list (*performance issue)
+            # if characterinvalidationchecker(str(ixxx).strip()) is True:
+            # (variant assignment) start word check upper and lower case and end to variants list (*performance issue)
 
-                    # for checkkwor in tempppppaarrrrr:
-                    #     if caseless_equal(str(checkkwor), str(ixxx)) is True:
-                    #         tempwordsthatonlyrunperword = str(tempwordsthatonlyrunperword) + " / " + str(checkkwor)
-                    # end upper lower check
+            # for checkkwor in tempppppaarrrrr:
+            #     if caseless_equal(str(checkkwor), str(ixxx)) is True:
+            #         tempwordsthatonlyrunperword = str(tempwordsthatonlyrunperword) + " / " + str(checkkwor)
+            # end upper lower check
 
-                    # new test
-                    #
-                    # fnodupwspecial.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
-                    # fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
+            # new test
+            #
+            # fnodupwspecial.writelines("Word: " + str(ixxx) + " " + str(tempwordthatl) + "\n")
+            # fnodupwspecial.writelines("Frequency: " + str(my_dict[ixxx]) + "\n\n")
 
             # for chhs in tempppppaarrrrr:
             #     if caseless_equal(str(chhs),str(ixxx)) is True:

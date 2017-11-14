@@ -382,7 +382,7 @@ from langdetect import detect, DetectorFactory
 from langdetect import detect_langs
 DetectorFactory.seed = 0
 # print(detect("My cannot make it with my grades"))
-print(detect_langs("lets go jal jalan okay?"))
+print(detect_langs("Singapore | Apple introduces music and movies in iTunes for 12 countries in Asia\\"))
 
 # print(detect_langs('What did you eat?'))
 

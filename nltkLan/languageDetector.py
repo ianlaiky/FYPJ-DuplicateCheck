@@ -967,14 +967,13 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
                     #     incount = incount + 1
                     #     break
 
-                    eachword=0
+                    eachword = 0
                     for incheckpls in str(xiccc).split(" "):
                         if incheckpls in str(ixxx).split(" "):
-                            eachword=eachword+1
-                    if int(eachword)==len(str(xiccc).split(" ")):
+                            eachword = eachword + 1
+                    if int(eachword) == len(str(xiccc).split(" ")):
                         print("works")
-                        incount=1
-
+                        incount = 1
 
                 print(str(ixxx) + str(incount))
                 # print(incount)

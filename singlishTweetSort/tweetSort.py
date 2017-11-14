@@ -28,27 +28,29 @@ col1 = 0
 workbook1 = xlsxwriter.Workbook('SinglishSentences.xlsx')
 worksheet1 = workbook1.add_worksheet()
 
-sencoun = 0
 
+sencoun = 0
 
 for i in inputsen:
     if str(i) !="":
         if str(i)!=" ":
 
             # print(str(i).strip())
-            print("Sentences No: "+str(sencoun)+str(len(inputsen)))
-            sencoun=sencoun+1
+            print("Sentences No: "+str(sencoun))
+
 
             try:
 
                 if str(detect(str(i).strip()))=="sgen":
-                    worksheet1.write(row1, col1, "test")
+                    worksheet1.write(row1, col1, str(i))
+                    print(str(i))
                     row1=row1+1
                 else:
                     failedsen.writelines(str(i).strip() + "\n\n")
             except:
                 failedsen.writelines(str(i).strip()+"\n\n")
 
+    sencoun = sencoun + 1
 
 
 workbook1.close()

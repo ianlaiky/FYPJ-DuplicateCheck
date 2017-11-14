@@ -972,6 +972,9 @@ for ixxx in sorted(parseinDictDiff, key=parseinDictDiff.get, reverse=True):
                         if incheckpls in str(ixxx).split(" "):
                             eachword = eachword + 1
                     if int(eachword) == len(str(xiccc).split(" ")):
+
+
+
                         print("works")
                         incount = 1
 

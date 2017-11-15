@@ -20,6 +20,7 @@ sgenCount = 0
 
 inputsen = open('post_unique.txt', 'r', encoding='latin-1')
 failedsen = open('NonSinglishSentences.txt', 'w', encoding='utf-8')
+singlishsen = open('SinglishSentences.txt', 'w', encoding='utf-8')
 
 languages_ratios = {}
 row1 = 0
@@ -28,31 +29,30 @@ col1 = 0
 workbook1 = xlsxwriter.Workbook('SinglishSentences.xlsx')
 worksheet1 = workbook1.add_worksheet()
 
-
 sencoun = 0
 
 for i in inputsen:
-    if str(i) !="":
-        if str(i)!=" ":
+    if str(i) != "":
+        if str(i) != " ":
 
             # print(str(i).strip())
-            print("Sentences No: "+str(sencoun))
-
+            print("Sentences No: " + str(sencoun))
 
             try:
 
-                if str(detect(str(i).strip()))=="sgen":
+                if str(detect(str(i).strip())) == "sgen":
                     worksheet1.write(row1, col1, str(i))
+                    singlishsen.writelines(str(i).strip() + "\n")
                     print(str(i))
-                    row1=row1+1
+                    row1 = row1 + 1
                 else:
                     failedsen.writelines(str(i).strip() + "\n\n")
             except:
-                failedsen.writelines(str(i).strip()+"\n\n")
+                failedsen.writelines(str(i).strip() + "\n\n")
 
     sencoun = sencoun + 1
 
-
 workbook1.close()
-
-
+singlishsen.close()
+failedsen.close()
+inputsen.close()

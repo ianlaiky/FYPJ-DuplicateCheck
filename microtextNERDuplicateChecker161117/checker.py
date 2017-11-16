@@ -261,8 +261,14 @@ for indexCurr, scroll1 in enumerate(microTextEnglishFull[0]):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newCol1 = str(col1OfObj) + ", " + str(microTextEnglishFull[1][int(indexCurr)])
-            newCol2 = str(col2OfObj) + ", " + str(microTextEnglishFull[2][int(indexCurr)])
+            if str(col1OfObj) != "":
+                newCol1 = str(col1OfObj) + ", " + str(microTextEnglishFull[1][int(indexCurr)])
+            else:
+                newCol1 = str(microTextEnglishFull[1][int(indexCurr)])
+            if str(col2OfObj) != "":
+                newCol2 = str(col2OfObj) + ", " + str(microTextEnglishFull[2][int(indexCurr)])
+            else:
+                newCol2 = str(microTextEnglishFull[2][int(indexCurr)])
 
             # setting new data
             savingasAdict[str(scroll1)] = Data(col0OfObj, newCol1, newCol2, col3OfObj, col4OfObj,
@@ -288,8 +294,15 @@ for indexCurr1, scroll2 in enumerate(microTextSinglishFull[0]):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol3 = str(col3OfObj) + ", " + str(microTextSinglishFull[1][int(indexCurr1)])
-            newcol4 = str(col4OfObj) + ", " + str(microTextSinglishFull[2][int(indexCurr1)])
+            if str(col3OfObj) != "":
+                newcol3 = str(col3OfObj) + ", " + str(microTextSinglishFull[1][int(indexCurr1)])
+            else:
+                newcol3 = str(microTextSinglishFull[1][int(indexCurr1)])
+
+            if str(col4OfObj) != "":
+                newcol4 = str(col4OfObj) + ", " + str(microTextSinglishFull[2][int(indexCurr1)])
+            else:
+                newcol4 = str(microTextSinglishFull[2][int(indexCurr1)])
 
             # setting new data
             savingasAdict[str(scroll2)] = Data(col0OfObj, col1OfObj, col2OfObj, newcol3, newcol4, col5OfObj, col6OfObj)
@@ -310,8 +323,14 @@ for indexCurr2, scroll3 in enumerate(nerLocationFull[0]):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(nerLocationFull[1][int(indexCurr2)])
-            newcol6 = str(col6OfObj) + ", " + str(nerLocationFull[2][int(indexCurr2)])
+            if str(col5OfObj) != "":
+                newcol5 = str(col5OfObj) + ", " + str(nerLocationFull[1][int(indexCurr2)])
+            else:
+                newcol5 = str(nerLocationFull[1][int(indexCurr2)])
+            if str(col6OfObj) != "":
+                newcol6 = str(col6OfObj) + ", " + str(nerLocationFull[2][int(indexCurr2)])
+            else:
+                newcol6 = str(nerLocationFull[2][int(indexCurr2)])
 
             savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
@@ -330,8 +349,15 @@ for indexCurr2, scroll3 in enumerate(nerOrganisationFull[0]):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(nerOrganisationFull[1][int(indexCurr2)])
-            newcol6 = str(col6OfObj) + ", " + str(nerOrganisationFull[2][int(indexCurr2)])
+            if str(col5OfObj) != "":
+                newcol5 = str(col5OfObj) + ", " + str(nerOrganisationFull[1][int(indexCurr2)])
+            else:
+                newcol5 = str(nerOrganisationFull[1][int(indexCurr2)])
+
+            if str(col6OfObj) != "":
+                newcol6 = str(col6OfObj) + ", " + str(nerOrganisationFull[2][int(indexCurr2)])
+            else:
+                newcol6 = str(nerOrganisationFull[2][int(indexCurr2)])
 
             savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
@@ -351,8 +377,14 @@ for indexCurr2, scroll3 in enumerate(nerPeopleFull[0]):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(nerPeopleFull[1][int(indexCurr2)])
-            newcol6 = str(col6OfObj) + ", " + str(nerPeopleFull[2][int(indexCurr2)])
+            if str(col5OfObj) != "":
+                newcol5 = str(col5OfObj) + ", " + str(nerPeopleFull[1][int(indexCurr2)])
+            else:
+                newcol5 = str(nerPeopleFull[1][int(indexCurr2)])
+            if str(col6OfObj) != "":
+                newcol6 = str(col6OfObj) + ", " + str(nerPeopleFull[2][int(indexCurr2)])
+            else:
+                newcol6 = str(nerPeopleFull[2][int(indexCurr2)])
 
             savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj,
                                                col4OfObj,
@@ -374,16 +406,20 @@ for indexCurr2, scroll3 in enumerate(nerMiscellaneousFull[0]):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(nerMiscellaneousFull[1][int(indexCurr2)])
-            newcol6 = str(col6OfObj) + ", " + str(nerMiscellaneousFull[2][int(indexCurr2)])
+            if str(col5OfObj) != "":
+                newcol5 = str(col5OfObj) + ", " + str(nerMiscellaneousFull[1][int(indexCurr2)])
+            else:
+                newcol5 = str(nerMiscellaneousFull[1][int(indexCurr2)])
+            if str(col6OfObj) != "":
+                newcol6 = str(col6OfObj) + ", " + str(nerMiscellaneousFull[2][int(indexCurr2)])
+            else:
+                newcol6 = str(nerMiscellaneousFull[2][int(indexCurr2)])
 
             savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
             savingasAdict[str(scroll3)] = Data(nerMiscellaneousFull[0][int(indexCurr2)], "", "", "", "",
                                                nerMiscellaneousFull[1][int(indexCurr2)],
                                                nerMiscellaneousFull[2][int(indexCurr2)])
-
-
 
 row1 = 1
 col1 = 0
@@ -412,16 +448,14 @@ for ioio in savingasAdict:
     print(savingasAdict[ioio].getcol6())
     print("____________")
 
+    worksheet1.write(row1, 0, savingasAdict[ioio].getcol0())
+    worksheet1.write(row1, 1, savingasAdict[ioio].getcol1())
+    worksheet1.write(row1, 2, savingasAdict[ioio].getcol2())
+    worksheet1.write(row1, 3, savingasAdict[ioio].getcol3())
+    worksheet1.write(row1, 4, savingasAdict[ioio].getcol4())
+    worksheet1.write(row1, 5, savingasAdict[ioio].getcol5())
+    worksheet1.write(row1, 6, savingasAdict[ioio].getcol6())
 
-
-    worksheet1.write(row1, 0,savingasAdict[ioio].getcol0())
-    worksheet1.write(row1, 1,savingasAdict[ioio].getcol1())
-    worksheet1.write(row1, 2,savingasAdict[ioio].getcol2())
-    worksheet1.write(row1, 3,savingasAdict[ioio].getcol3())
-    worksheet1.write(row1, 4,savingasAdict[ioio].getcol4())
-    worksheet1.write(row1, 5,savingasAdict[ioio].getcol5())
-    worksheet1.write(row1, 6,savingasAdict[ioio].getcol6())
-
-    row1=row1+1
+    row1 = row1 + 1
 
 workbook1.close()

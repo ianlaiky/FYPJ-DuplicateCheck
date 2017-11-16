@@ -385,13 +385,22 @@ for indexCurr2, scroll3 in enumerate(nerMiscellaneousFull[0]):
 
 
 
-row1 = 0
+row1 = 1
 col1 = 0
 
 workbook1 = xlsxwriter.Workbook('DuplicatedData.xlsx')
 worksheet1 = workbook1.add_worksheet()
 
 print(len(savingasAdict))
+
+worksheet1.write(0, 0, "Overlap")
+worksheet1.write(0, 1, "MicroText_English")
+worksheet1.write(0, 2, "Polarity_English")
+worksheet1.write(0, 3, "Microtext_Singlish")
+worksheet1.write(0, 4, "Polarity_Singlish")
+worksheet1.write(0, 5, "NER")
+worksheet1.write(0, 6, "Tag")
+
 for ioio in savingasAdict:
     print(ioio)
     print(savingasAdict[ioio].getcol0())
@@ -404,6 +413,7 @@ for ioio in savingasAdict:
     print("____________")
 
 
+
     worksheet1.write(row1, 0,savingasAdict[ioio].getcol0())
     worksheet1.write(row1, 1,savingasAdict[ioio].getcol1())
     worksheet1.write(row1, 2,savingasAdict[ioio].getcol2())
@@ -413,4 +423,5 @@ for ioio in savingasAdict:
     worksheet1.write(row1, 6,savingasAdict[ioio].getcol6())
 
     row1=row1+1
+
 workbook1.close()

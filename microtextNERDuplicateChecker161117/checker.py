@@ -21,8 +21,11 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     # print(next(data)[0:])
 
     for r in data:
-        # print(r[0])
-        columnlist.append(r[columnNo])
+
+        if str(r) != "":
+            if str(r) != " ":
+                # print(r[0])
+                columnlist.append(r[columnNo])
 
     return columnlist
 
@@ -42,7 +45,6 @@ microTextEnglishCol3 = excelinput("dataFiles\Microtext.xlsx", 2, 2)
 del microTextEnglishCol1[0]
 del microTextEnglishCol2[0]
 del microTextEnglishCol3[0]
-
 
 microTextEnglishFull.append(microTextEnglishCol1)
 microTextEnglishFull.append(microTextEnglishCol2)
@@ -91,6 +93,10 @@ nerOrganisationCol1 = excelinput("dataFiles\\NER.xlsx", 6, 3)
 nerOrganisationCol2 = excelinput("dataFiles\\NER.xlsx", 6, 0)
 nerOrganisationCol3 = excelinput("dataFiles\\NER.xlsx", 6, 1)
 
+del nerOrganisationCol1[0]
+del nerOrganisationCol2[0]
+del nerOrganisationCol3[0]
+
 newOrganisationCol1 = []
 newOrganisationCol2 = []
 newOrganisationCol3 = []
@@ -108,6 +114,10 @@ nerOrganisationFull.append(newOrganisationCol3)
 nerPeopleCol1 = excelinput("dataFiles\\NER.xlsx", 7, 3)
 nerPeopleCol2 = excelinput("dataFiles\\NER.xlsx", 7, 0)
 nerPeopleCol3 = excelinput("dataFiles\\NER.xlsx", 7, 1)
+
+del nerPeopleCol1[0]
+del nerPeopleCol2[0]
+del nerPeopleCol3[0]
 
 newPeopleCol1 = []
 newPeopleCol2 = []
@@ -130,6 +140,10 @@ nerPeopleFull.append(newPeopleCol3)
 nerMiscellaneousCol1 = excelinput("dataFiles\\NER.xlsx", 8, 3)
 nerMiscellaneousCol2 = excelinput("dataFiles\\NER.xlsx", 8, 0)
 nerMiscellaneousCol3 = excelinput("dataFiles\\NER.xlsx", 8, 1)
+
+del nerMiscellaneousCol1[0]
+del nerMiscellaneousCol2[0]
+del nerMiscellaneousCol3[0]
 
 newNerMiscellaneousCol1 = []
 newNerMiscellaneousCol2 = []
@@ -234,10 +248,11 @@ class Data():
 
 savingasAdict = {}
 
-for indexCurr, scroll1 in enumerate(microTextEnglishFull):
-    if str(scroll1[0][indexCurr]) in microtextEnglishFreqMore2:
-        if str(scroll1[0][indexCurr]) in savingasAdict:
-            objectt = savingasAdict[str(scroll1[0][indexCurr])]
+for indexCurr, scroll1 in enumerate(microTextEnglishFull[0]):
+
+    if str(scroll1) in microtextEnglishFreqMore2:
+        if str(scroll1) in savingasAdict:
+            objectt = savingasAdict[str(scroll1)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
             col2OfObj = objectt.getcol2()
@@ -246,24 +261,25 @@ for indexCurr, scroll1 in enumerate(microTextEnglishFull):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newCol1 = str(col1OfObj) + ", " + str(scroll1[1][indexCurr])
-            newCol2 = str(col2OfObj) + ", " + str(scroll1[2][indexCurr])
+            newCol1 = str(col1OfObj) + ", " + str(microTextEnglishFull[1][int(indexCurr)])
+            newCol2 = str(col2OfObj) + ", " + str(microTextEnglishFull[2][int(indexCurr)])
 
             # setting new data
-            savingasAdict[str(scroll1[0][indexCurr])] = Data(col0OfObj, newCol1, newCol2, col3OfObj, col4OfObj,
-                                                             col5OfObj, col6OfObj)
+            savingasAdict[str(scroll1)] = Data(col0OfObj, newCol1, newCol2, col3OfObj, col4OfObj,
+                                               col5OfObj, col6OfObj)
 
 
         else:
-            savingasAdict[str(scroll1[0][indexCurr])] = Data(str(scroll1[0][indexCurr]), str(scroll1[1][indexCurr]),
-                                                             str(scroll1[2][indexCurr]), "", "", "", "")
+            savingasAdict[str(scroll1)] = Data(str(microTextEnglishFull[0][int(indexCurr)]),
+                                               str(microTextEnglishFull[1][int(indexCurr)]),
+                                               str(microTextEnglishFull[2][int(indexCurr)]), "", "", "", "")
 
-        print(str(scroll1[0][indexCurr]))
+        print(str(microTextEnglishFull[0][int(indexCurr)]))
 
-for indexCurr1, scroll2 in enumerate(microTextSinglishFull):
-    if str(scroll2[0][indexCurr1]) in microtextEnglishFreqMore2:
-        if str(scroll2[0][indexCurr1]) in savingasAdict:
-            objectt = savingasAdict[str(scroll2[0][indexCurr1])]
+for indexCurr1, scroll2 in enumerate(microTextSinglishFull[0]):
+    if str(scroll2) in microtextEnglishFreqMore2:
+        if str(scroll2) in savingasAdict:
+            objectt = savingasAdict[str(scroll2)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
             col2OfObj = objectt.getcol2()
@@ -272,20 +288,20 @@ for indexCurr1, scroll2 in enumerate(microTextSinglishFull):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol3 = str(col3OfObj) + ", " + str(scroll2[1][indexCurr1])
-            newcol4 = str(col4OfObj) + ", " + str(scroll2[2][indexCurr1])
+            newcol3 = str(col3OfObj) + ", " + str(microTextSinglishFull[1][int(indexCurr1)])
+            newcol4 = str(col4OfObj) + ", " + str(microTextSinglishFull[2][int(indexCurr1)])
 
             # setting new data
-            savingasAdict[str(scroll2[0][indexCurr1])] = Data(col0OfObj, col1OfObj, col2OfObj, newcol3, newcol4,
-                                                              col5OfObj, col6OfObj)
+            savingasAdict[str(scroll2)] = Data(col0OfObj, col1OfObj, col2OfObj, newcol3, newcol4, col5OfObj, col6OfObj)
         else:
-            savingasAdict[str(scroll2[0][indexCurr1])] = Data(scroll2[0][indexCurr1], "", "", scroll2[1][indexCurr1],
-                                                              scroll2[2][indexCurr1], "", "")
+            savingasAdict[str(scroll2)] = Data(microTextSinglishFull[0][int(indexCurr1)], "", "",
+                                               microTextSinglishFull[1][int(indexCurr1)],
+                                               microTextSinglishFull[2][int(indexCurr1)], "", "")
 
-for indexCurr2, scroll3 in enumerate(nerLocationFull):
-    if str(scroll3[0][indexCurr2]) in microtextEnglishFreqMore2:
-        if str(scroll3[0][indexCurr2]) in savingasAdict:
-            objectt = savingasAdict[str(scroll3[0][indexCurr2])]
+for indexCurr2, scroll3 in enumerate(nerLocationFull[0]):
+    if str(scroll3) in microtextEnglishFreqMore2:
+        if str(scroll3) in savingasAdict:
+            objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
             col2OfObj = objectt.getcol2()
@@ -294,19 +310,18 @@ for indexCurr2, scroll3 in enumerate(nerLocationFull):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(scroll3[1][indexCurr2])
-            newcol6 = str(col6OfObj) + ", " + str(scroll3[2][indexCurr2])
+            newcol5 = str(col5OfObj) + ", " + str(nerLocationFull[1][int(indexCurr2)])
+            newcol6 = str(col6OfObj) + ", " + str(nerLocationFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj,
-                                                              newcol5, newcol6)
+            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(scroll3[0][indexCurr2], "", "", "", "",
-                                                              scroll3[1][indexCurr2], scroll3[2][indexCurr2])
+            savingasAdict[str(scroll3)] = Data(nerLocationFull[0][int(indexCurr2)], "", "", "", "",
+                                               nerLocationFull[1][int(indexCurr2)], nerLocationFull[2][int(indexCurr2)])
 
-for indexCurr2, scroll3 in enumerate(nerOrganisationFull):
-    if str(scroll3[0][indexCurr2]) in microtextEnglishFreqMore2:
-        if str(scroll3[0][indexCurr2]) in savingasAdict:
-            objectt = savingasAdict[str(scroll3[0][indexCurr2])]
+for indexCurr2, scroll3 in enumerate(nerOrganisationFull[0]):
+    if str(scroll3) in microtextEnglishFreqMore2:
+        if str(scroll3) in savingasAdict:
+            objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
             col2OfObj = objectt.getcol2()
@@ -315,20 +330,19 @@ for indexCurr2, scroll3 in enumerate(nerOrganisationFull):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(scroll3[1][indexCurr2])
-            newcol6 = str(col6OfObj) + ", " + str(scroll3[2][indexCurr2])
+            newcol5 = str(col5OfObj) + ", " + str(nerOrganisationFull[1][int(indexCurr2)])
+            newcol6 = str(col6OfObj) + ", " + str(nerOrganisationFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj,
-                                                              col4OfObj,
-                                                              newcol5, newcol6)
+            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(scroll3[0][indexCurr2], "", "", "", "",
-                                                              scroll3[1][indexCurr2], scroll3[2][indexCurr2])
+            savingasAdict[str(scroll3)] = Data(nerOrganisationFull[0][int(indexCurr2)], "", "", "", "",
+                                               nerOrganisationFull[1][int(indexCurr2)],
+                                               nerOrganisationFull[2][int(indexCurr2)])
 
-for indexCurr2, scroll3 in enumerate(nerPeopleFull):
-    if str(scroll3[0][indexCurr2]) in microtextEnglishFreqMore2:
-        if str(scroll3[0][indexCurr2]) in savingasAdict:
-            objectt = savingasAdict[str(scroll3[0][indexCurr2])]
+for indexCurr2, scroll3 in enumerate(nerPeopleFull[0]):
+    if str(scroll3) in microtextEnglishFreqMore2:
+        if str(scroll3) in savingasAdict:
+            objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
             col2OfObj = objectt.getcol2()
@@ -337,20 +351,21 @@ for indexCurr2, scroll3 in enumerate(nerPeopleFull):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(scroll3[1][indexCurr2])
-            newcol6 = str(col6OfObj) + ", " + str(scroll3[2][indexCurr2])
+            newcol5 = str(col5OfObj) + ", " + str(nerPeopleFull[1][int(indexCurr2)])
+            newcol6 = str(col6OfObj) + ", " + str(nerPeopleFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj,
-                                                              col4OfObj,
-                                                              newcol5, newcol6)
+            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj,
+                                               col4OfObj,
+                                               newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(scroll3[0][indexCurr2], "", "", "", "",
-                                                              scroll3[1][indexCurr2], scroll3[2][indexCurr2])
+            savingasAdict[str(scroll3)] = Data(nerPeopleFull[0][int(indexCurr2)], "", "", "", "",
+                                               nerPeopleFull[1][int(indexCurr2)],
+                                               nerPeopleFull[2][int(indexCurr2)])
 
-for indexCurr2, scroll3 in enumerate(nerMiscellaneousFull):
-    if str(scroll3[0][indexCurr2]) in microtextEnglishFreqMore2:
-        if str(scroll3[0][indexCurr2]) in savingasAdict:
-            objectt = savingasAdict[str(scroll3[0][indexCurr2])]
+for indexCurr2, scroll3 in enumerate(nerMiscellaneousFull[0]):
+    if str(scroll3) in microtextEnglishFreqMore2:
+        if str(scroll3) in savingasAdict:
+            objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
             col2OfObj = objectt.getcol2()
@@ -359,15 +374,23 @@ for indexCurr2, scroll3 in enumerate(nerMiscellaneousFull):
             col5OfObj = objectt.getcol5()
             col6OfObj = objectt.getcol6()
 
-            newcol5 = str(col5OfObj) + ", " + str(scroll3[1][indexCurr2])
-            newcol6 = str(col6OfObj) + ", " + str(scroll3[2][indexCurr2])
+            newcol5 = str(col5OfObj) + ", " + str(nerMiscellaneousFull[1][int(indexCurr2)])
+            newcol6 = str(col6OfObj) + ", " + str(nerMiscellaneousFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj,
-                                                              col4OfObj,
-                                                              newcol5, newcol6)
+            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3[0][indexCurr2])] = Data(scroll3[0][indexCurr2], "", "", "", "",
-                                                              scroll3[1][indexCurr2], scroll3[2][indexCurr2])
+            savingasAdict[str(scroll3)] = Data(nerMiscellaneousFull[0][int(indexCurr2)], "", "", "", "",
+                                               nerMiscellaneousFull[1][int(indexCurr2)],
+                                               nerMiscellaneousFull[2][int(indexCurr2)])
+
+
+
+row1 = 0
+col1 = 0
+
+workbook1 = xlsxwriter.Workbook('DuplicatedData.xlsx')
+worksheet1 = workbook1.add_worksheet()
+
 print(len(savingasAdict))
 for ioio in savingasAdict:
     print(ioio)
@@ -381,17 +404,13 @@ for ioio in savingasAdict:
     print("____________")
 
 
+    worksheet1.write(row1, 0,savingasAdict[ioio].getcol0())
+    worksheet1.write(row1, 1,savingasAdict[ioio].getcol1())
+    worksheet1.write(row1, 2,savingasAdict[ioio].getcol2())
+    worksheet1.write(row1, 3,savingasAdict[ioio].getcol3())
+    worksheet1.write(row1, 4,savingasAdict[ioio].getcol4())
+    worksheet1.write(row1, 5,savingasAdict[ioio].getcol5())
+    worksheet1.write(row1, 6,savingasAdict[ioio].getcol6())
 
-
-
-# row1 = 0
-# col1 = 0
-#
-# workbook1 = xlsxwriter.Workbook('DuplicatedData.xlsx')
-# worksheet1 = workbook1.add_worksheet()
-#
-#
-#
-#
-#
-# worksheet1.write(row1, col1,"test")
+    row1=row1+1
+workbook1.close()

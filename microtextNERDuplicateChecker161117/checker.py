@@ -188,7 +188,7 @@ print(Counter(alllist))
 
 for counts in freqCount:
     if int(freqCount[counts]) > 1:
-        microtextEnglishFreqMore2.append(str(counts))
+        microtextEnglishFreqMore2.append(str(counts).lower())
 
 print(microtextEnglishFreqMore2)
 
@@ -250,8 +250,8 @@ savingasAdict = {}
 
 for indexCurr, scroll1 in enumerate(microTextEnglishFull[0]):
 
-    if str(scroll1) in microtextEnglishFreqMore2:
-        if str(scroll1) in savingasAdict:
+    if str(scroll1).lower() in microtextEnglishFreqMore2:
+        if str(scroll1).lower() in savingasAdict:
             objectt = savingasAdict[str(scroll1)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
@@ -271,20 +271,20 @@ for indexCurr, scroll1 in enumerate(microTextEnglishFull[0]):
                 newCol2 = str(microTextEnglishFull[2][int(indexCurr)])
 
             # setting new data
-            savingasAdict[str(scroll1)] = Data(col0OfObj, newCol1, newCol2, col3OfObj, col4OfObj,
+            savingasAdict[str(scroll1).lower()] = Data(col0OfObj, newCol1, newCol2, col3OfObj, col4OfObj,
                                                col5OfObj, col6OfObj)
 
 
         else:
-            savingasAdict[str(scroll1)] = Data(str(microTextEnglishFull[0][int(indexCurr)]),
+            savingasAdict[str(scroll1).lower()] = Data(str(microTextEnglishFull[0][int(indexCurr)]),
                                                str(microTextEnglishFull[1][int(indexCurr)]),
                                                str(microTextEnglishFull[2][int(indexCurr)]), "", "", "", "")
 
         print(str(microTextEnglishFull[0][int(indexCurr)]))
 
 for indexCurr1, scroll2 in enumerate(microTextSinglishFull[0]):
-    if str(scroll2) in microtextEnglishFreqMore2:
-        if str(scroll2) in savingasAdict:
+    if str(scroll2).lower() in microtextEnglishFreqMore2:
+        if str(scroll2).lower() in savingasAdict:
             objectt = savingasAdict[str(scroll2)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
@@ -305,15 +305,15 @@ for indexCurr1, scroll2 in enumerate(microTextSinglishFull[0]):
                 newcol4 = str(microTextSinglishFull[2][int(indexCurr1)])
 
             # setting new data
-            savingasAdict[str(scroll2)] = Data(col0OfObj, col1OfObj, col2OfObj, newcol3, newcol4, col5OfObj, col6OfObj)
+            savingasAdict[str(scroll2).lower()] = Data(col0OfObj, col1OfObj, col2OfObj, newcol3, newcol4, col5OfObj, col6OfObj)
         else:
-            savingasAdict[str(scroll2)] = Data(microTextSinglishFull[0][int(indexCurr1)], "", "",
+            savingasAdict[str(scroll2).lower()] = Data(microTextSinglishFull[0][int(indexCurr1)], "", "",
                                                microTextSinglishFull[1][int(indexCurr1)],
                                                microTextSinglishFull[2][int(indexCurr1)], "", "")
 
 for indexCurr2, scroll3 in enumerate(nerLocationFull[0]):
-    if str(scroll3) in microtextEnglishFreqMore2:
-        if str(scroll3) in savingasAdict:
+    if str(scroll3).lower() in microtextEnglishFreqMore2:
+        if str(scroll3).lower() in savingasAdict:
             objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
@@ -332,14 +332,14 @@ for indexCurr2, scroll3 in enumerate(nerLocationFull[0]):
             else:
                 newcol6 = str(nerLocationFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
+            savingasAdict[str(scroll3).lower()] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3)] = Data(nerLocationFull[0][int(indexCurr2)], "", "", "", "",
+            savingasAdict[str(scroll3).lower()] = Data(nerLocationFull[0][int(indexCurr2)], "", "", "", "",
                                                nerLocationFull[1][int(indexCurr2)], nerLocationFull[2][int(indexCurr2)])
 
 for indexCurr2, scroll3 in enumerate(nerOrganisationFull[0]):
-    if str(scroll3) in microtextEnglishFreqMore2:
-        if str(scroll3) in savingasAdict:
+    if str(scroll3).lower() in microtextEnglishFreqMore2:
+        if str(scroll3).lower() in savingasAdict:
             objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
@@ -359,15 +359,15 @@ for indexCurr2, scroll3 in enumerate(nerOrganisationFull[0]):
             else:
                 newcol6 = str(nerOrganisationFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
+            savingasAdict[str(scroll3).lower()] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3)] = Data(nerOrganisationFull[0][int(indexCurr2)], "", "", "", "",
+            savingasAdict[str(scroll3).lower()] = Data(nerOrganisationFull[0][int(indexCurr2)], "", "", "", "",
                                                nerOrganisationFull[1][int(indexCurr2)],
                                                nerOrganisationFull[2][int(indexCurr2)])
 
 for indexCurr2, scroll3 in enumerate(nerPeopleFull[0]):
-    if str(scroll3) in microtextEnglishFreqMore2:
-        if str(scroll3) in savingasAdict:
+    if str(scroll3).lower() in microtextEnglishFreqMore2:
+        if str(scroll3).lower() in savingasAdict:
             objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
@@ -386,17 +386,17 @@ for indexCurr2, scroll3 in enumerate(nerPeopleFull[0]):
             else:
                 newcol6 = str(nerPeopleFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj,
+            savingasAdict[str(scroll3).lower()] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj,
                                                col4OfObj,
                                                newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3)] = Data(nerPeopleFull[0][int(indexCurr2)], "", "", "", "",
+            savingasAdict[str(scroll3).lower()] = Data(nerPeopleFull[0][int(indexCurr2)], "", "", "", "",
                                                nerPeopleFull[1][int(indexCurr2)],
                                                nerPeopleFull[2][int(indexCurr2)])
 
 for indexCurr2, scroll3 in enumerate(nerMiscellaneousFull[0]):
-    if str(scroll3) in microtextEnglishFreqMore2:
-        if str(scroll3) in savingasAdict:
+    if str(scroll3).lower() in microtextEnglishFreqMore2:
+        if str(scroll3).lower() in savingasAdict:
             objectt = savingasAdict[str(scroll3)]
             col0OfObj = objectt.getcol0()
             col1OfObj = objectt.getcol1()
@@ -415,9 +415,9 @@ for indexCurr2, scroll3 in enumerate(nerMiscellaneousFull[0]):
             else:
                 newcol6 = str(nerMiscellaneousFull[2][int(indexCurr2)])
 
-            savingasAdict[str(scroll3)] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
+            savingasAdict[str(scroll3).lower()] = Data(col0OfObj, col1OfObj, col2OfObj, col3OfObj, col4OfObj, newcol5, newcol6)
         else:
-            savingasAdict[str(scroll3)] = Data(nerMiscellaneousFull[0][int(indexCurr2)], "", "", "", "",
+            savingasAdict[str(scroll3).lower()] = Data(nerMiscellaneousFull[0][int(indexCurr2)], "", "", "", "",
                                                nerMiscellaneousFull[1][int(indexCurr2)],
                                                nerMiscellaneousFull[2][int(indexCurr2)])
 

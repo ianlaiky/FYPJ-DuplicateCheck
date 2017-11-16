@@ -173,15 +173,12 @@ alllist = alllist + nerOrganisationFull[0]
 alllist = alllist + nerPeopleFull[0]
 alllist = alllist + nerMiscellaneousFull[0]
 
-listOfList = []
-listOfList.append(microTextEnglishFull)
-listOfList.append(microTextSinglishFull)
-listOfList.append(nerLocationFull)
-listOfList.append(nerOrganisationFull)
-listOfList.append(nerPeopleFull)
-listOfList.append(nerMiscellaneousFull)
+allListLower = []
+for lowww in alllist:
+    allListLower.append(str(lowww).lower())
 
-freqCount = Counter(alllist)
+
+freqCount = Counter(allListLower)
 
 print(alllist)
 print(Counter(alllist))

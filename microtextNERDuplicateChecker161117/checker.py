@@ -24,6 +24,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
         columnlist.append(r[columnNo])
 
     return columnlist
+# col 1 to check
 microTextEnglishFull=[]
 microTextSinglishFull=[]
 nerLocationFull=[]
@@ -75,9 +76,9 @@ nerLocationFull.append(newnerLocationCol1)
 nerLocationFull.append(newnerLocationCol2)
 nerLocationFull.append(newnerLocationCol3)
 
-print(nerLocationFull)
-print(nerLocationFull[0][57])
-print(nerLocationFull[1][57])
-print(nerLocationFull[2][57])
+# print(nerLocationFull)
+# print(nerLocationFull[0][57])
+# print(nerLocationFull[1][57])
+# print(nerLocationFull[2][57])
 
 

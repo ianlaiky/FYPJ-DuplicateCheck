@@ -113,3 +113,27 @@ nerPeopleFull.append(newPeopleCol3)
 print(nerPeopleFull[0][5])
 print(nerPeopleFull[1][5])
 print(nerPeopleFull[2][5])
+
+nerMiscellaneousCol1=excelinput("dataFiles\\NER.xlsx", 8, 3)
+nerMiscellaneousCol2=excelinput("dataFiles\\NER.xlsx", 8, 0)
+nerMiscellaneousCol3=excelinput("dataFiles\\NER.xlsx", 8, 1)
+
+newNerMiscellaneousCol1=[]
+newNerMiscellaneousCol2=[]
+newNerMiscellaneousCol3=[]
+
+for indexner4,ner4 in enumerate(nerMiscellaneousCol1):
+    if str(ner4) != "None":
+        newNerMiscellaneousCol1.append(nerMiscellaneousCol1[indexner4])
+        newNerMiscellaneousCol2.append(nerMiscellaneousCol2[indexner4])
+        newNerMiscellaneousCol3.append(nerMiscellaneousCol3[indexner4])
+
+nerMiscellaneousFull.append(newNerMiscellaneousCol1)
+nerMiscellaneousFull.append(newNerMiscellaneousCol2)
+nerMiscellaneousFull.append(newNerMiscellaneousCol3)
+
+print(nerMiscellaneousFull[0][5])
+print(nerMiscellaneousFull[1][5])
+print(nerMiscellaneousFull[2][5])
+
+

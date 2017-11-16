@@ -1,5 +1,5 @@
 from openpyxl import load_workbook
-
+from collections import Counter
 import fnmatch
 
 
@@ -114,15 +114,15 @@ print(nerPeopleFull[0][5])
 print(nerPeopleFull[1][5])
 print(nerPeopleFull[2][5])
 
-nerMiscellaneousCol1=excelinput("dataFiles\\NER.xlsx", 8, 3)
-nerMiscellaneousCol2=excelinput("dataFiles\\NER.xlsx", 8, 0)
-nerMiscellaneousCol3=excelinput("dataFiles\\NER.xlsx", 8, 1)
+nerMiscellaneousCol1 = excelinput("dataFiles\\NER.xlsx", 8, 3)
+nerMiscellaneousCol2 = excelinput("dataFiles\\NER.xlsx", 8, 0)
+nerMiscellaneousCol3 = excelinput("dataFiles\\NER.xlsx", 8, 1)
 
-newNerMiscellaneousCol1=[]
-newNerMiscellaneousCol2=[]
-newNerMiscellaneousCol3=[]
+newNerMiscellaneousCol1 = []
+newNerMiscellaneousCol2 = []
+newNerMiscellaneousCol3 = []
 
-for indexner4,ner4 in enumerate(nerMiscellaneousCol1):
+for indexner4, ner4 in enumerate(nerMiscellaneousCol1):
     if str(ner4) != "None":
         newNerMiscellaneousCol1.append(nerMiscellaneousCol1[indexner4])
         newNerMiscellaneousCol2.append(nerMiscellaneousCol2[indexner4])
@@ -136,4 +136,20 @@ print(nerMiscellaneousFull[0][5])
 print(nerMiscellaneousFull[1][5])
 print(nerMiscellaneousFull[2][5])
 
+microtextEnglishTemp = Counter(microTextEnglishFull)
+microtextEnglishFreqMore2 = []
 
+# for i1 in microtextEnglishTemp:
+#     if int(microtextEnglishTemp[i1]) > 1:
+#         microtextEnglishFreqMore2.append(str(i1))
+
+alllist = []
+alllist = microTextEnglishFull[0]
+alllist = alllist + microTextSinglishFull[0]
+alllist = alllist + nerLocationFull[0]
+alllist = alllist + nerOrganisationFull[0]
+alllist = alllist + nerPeopleFull[0]
+alllist = alllist + nerMiscellaneousFull[0]
+
+print(alllist)
+print(Counter(alllist))

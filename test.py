@@ -1,6 +1,8 @@
 import re
 
 import os
+
+import xlsxwriter
 from openpyxl import load_workbook
 
 import fnmatch
@@ -417,3 +419,25 @@ print(detect_langs("#fb #li\\"))
 # print(str("jalan jalan") in str("go jalan jalan kay"))
 # if "jamesd" in [t for t in t1]:
 #     print("yes")
+
+# row1 = 0
+# col1 = 0
+#
+# workbook1 = xlsxwriter.Workbook('SinglishSentences.xlsx')
+# worksheet1 = workbook1.add_worksheet()
+#
+# worksheet1.write(row1, col1,"test")
+#
+#
+# workbook1.close()
+
+
+# testdict={}
+#
+# testdict["op"]="123"
+#
+# print("op" in testdict)
+
+test1=[2,3,4,5]
+del test1[0]
+print(test1)

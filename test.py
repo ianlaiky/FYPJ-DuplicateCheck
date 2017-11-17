@@ -384,7 +384,7 @@ from langdetect import detect, DetectorFactory
 from langdetect import detect_langs
 DetectorFactory.seed = 0
 # print(detect("My cannot make it with my grades"))
-print(detect_langs("#fb #li\\"))
+print(detect_langs("Good morning sunshine"))
 
 # print(detect_langs('What did you eat?'))
 
@@ -438,6 +438,6 @@ print(detect_langs("#fb #li\\"))
 #
 # print("op" in testdict)
 
-test1=[2,3,4,5]
-del test1[0]
-print(test1)
+# test1=[2,3,4,5]
+# del test1[0]
+# print(test1)

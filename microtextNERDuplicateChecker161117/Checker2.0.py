@@ -73,6 +73,7 @@ class Data():
 
 
 arrayOfFilesData = []
+listarrayOfFilesData=[]
 listOfAllAbbr = []
 
 dictOfObj = {}
@@ -113,6 +114,7 @@ for readfiles in filesToReadList:
     arrayOfFilesData.append(FinalcolFullForm)
     arrayOfFilesData.append(FinalcolcolPolar)
     arrayOfFilesData.append(FinalSheetName)
+    listarrayOfFilesData.append(arrayOfFilesData)
 
 freqCount = Counter(listOfAllAbbr)
 
@@ -122,35 +124,38 @@ for counts in freqCount:
     if int(freqCount[counts]) > 1:
         microtextEnglishFreqMore2.append(str(counts).lower())
 print(arrayOfFilesData)
-for index1, readin in enumerate(arrayOfFilesData[0]):
+for index2, dasdf in enumerate(listarrayOfFilesData):
+    print("sdfsdfdsf")
 
+
+    for index1, readin in enumerate(dasdf[0]):
     # print(readin)
-    if str(readin).lower() in microtextEnglishFreqMore2:
-        if str(readin) in dictOfObj:
-            print("wrer")
-            getcurrObj = dictOfObj[str(readin).lower()]
-            currCol0 = str(getcurrObj.getcol0())
-            currCol1 = str(getcurrObj.getcol1())
-            currCol2 = str(getcurrObj.getcol2())
-            currCol3 = str(getcurrObj.getcol3())
+        if str(readin).lower() in microtextEnglishFreqMore2:
+            if str(readin) in dictOfObj:
+                print("wrer")
+                getcurrObj = dictOfObj[str(readin).lower()]
+                currCol0 = str(getcurrObj.getcol0())
+                currCol1 = str(getcurrObj.getcol1())
+                currCol2 = str(getcurrObj.getcol2())
+                currCol3 = str(getcurrObj.getcol3())
 
-            # print(currCol0)
-            # print(currCol1)
-            # print(currCol2)
-            # print(currCol3)
+                # print(currCol0)
+                # print(currCol1)
+                # print(currCol2)
+                # print(currCol3)
 
-            newCol1 = str(currCol1) + ", "+str(arrayOfFilesData[1][index1])
-            newCol2 = str(currCol2) + ", "+str(arrayOfFilesData[2][index1])
-            newCol3 = str(currCol3) + ", "+str(arrayOfFilesData[3][index1])
+                newCol1 = str(currCol1) + ", "+str(listarrayOfFilesData[index2][1][index1])
+                newCol2 = str(currCol2) + ", "+str(listarrayOfFilesData[index2][2][index1])
+                newCol3 = str(currCol3) + ", "+str(listarrayOfFilesData[index2][3][index1])
 
-            dictOfObj[str(readin).lower()]=Data(str(currCol0),str(newCol1),str(newCol2),str(newCol3))
+                dictOfObj[str(readin).lower()]=Data(str(currCol0),str(newCol1),str(newCol2),str(newCol3))
 
-        else:
+            else:
 
-            print(str(arrayOfFilesData[0][index1]))
-            dictOfObj[str(readin).lower()] = Data(str(arrayOfFilesData[0][index1]), str(arrayOfFilesData[1][index1]), str(arrayOfFilesData[2][index1]), str(arrayOfFilesData[3][index1]))
+                print(str(arrayOfFilesData[0][index1]))
+                dictOfObj[str(readin).lower()] = Data(str(listarrayOfFilesData[index2][0][index1]), str(listarrayOfFilesData[index2][1][index1]), str(listarrayOfFilesData[index2][2][index1]), str(listarrayOfFilesData[index2][3][index1]))
 
-            print("fdsdsfdsfdsfdsfds")
+                print("fdsdsfdsfdsfdsfds")
 
 
 row1 = 1

@@ -2,15 +2,14 @@ import xlsxwriter
 from openpyxl import load_workbook
 from collections import Counter
 
-
-
-filesToReadList=[]
+filesToReadList = []
 filesToReadList.append("dataFiles\\Microtext.xlsx,2,0,1,2")
 filesToReadList.append("dataFiles\\Microtext.xlsx,0,0,1,2")
 filesToReadList.append("dataFiles\\NER.xlsx,5,3,0,1")
 filesToReadList.append("dataFiles\\NER.xlsx,6,3,0,1")
 filesToReadList.append("dataFiles\\NER.xlsx,7,3,1,2")
 filesToReadList.append("dataFiles\\NER.xlsx,8,3,1,2")
+
 
 # tempcurrSheet=""
 
@@ -40,7 +39,43 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 
     return columnlist
 
-arrayOfFilesData=[]
+
+class Data():
+    def __init__(self, col0, col1, col2, col3):
+        self.savcol0 = col0
+        self.savcol1 = col1
+        self.savcol2 = col2
+        self.savcol3 = col3
+
+    def getcol0(self):
+        return self.savcol0
+
+    def getcol1(self):
+        return self.savcol1
+
+    def getcol2(self):
+        return self.savcol2
+
+    def getcol3(self):
+        return self.savcol3
+
+    def setcol0(self, scol0):
+        self.savcol0 = scol0
+
+    def setcol1(self, scol1):
+        self.savcol1 = scol1
+
+    def setcol2(self, scol2):
+        self.savcol2 = scol2
+
+    def setcol3(self, scol3):
+        self.savcol3 = scol3
+
+
+arrayOfFilesData = []
+listOfAllAbbr = []
+
+dictOfObj = {}
 
 for readfiles in filesToReadList:
     wb = load_workbook(str(readfiles).strip().split(",")[0])
@@ -50,30 +85,87 @@ for readfiles in filesToReadList:
     print(str(readfiles).strip().split(",")[2])
     print(str(readfiles).strip().split(",")[3])
     print(str(readfiles).strip().split(",")[4])
-    colAbbr=excelinput(str(readfiles).strip().split(",")[0],str(readfiles).strip().split(",")[1],str(readfiles).strip().split(",")[2])
-    colFullForm=excelinput(str(readfiles).strip().split(",")[0],str(readfiles).strip().split(",")[1],str(readfiles).strip().split(",")[3])
-    colPolar=excelinput(str(readfiles).strip().split(",")[0],str(readfiles).strip().split(",")[1],str(readfiles).strip().split(",")[4])
+    colAbbr = excelinput(str(readfiles).strip().split(",")[0], str(readfiles).strip().split(",")[1],
+                         str(readfiles).strip().split(",")[2])
+    colFullForm = excelinput(str(readfiles).strip().split(",")[0], str(readfiles).strip().split(",")[1],
+                             str(readfiles).strip().split(",")[3])
+    colPolar = excelinput(str(readfiles).strip().split(",")[0], str(readfiles).strip().split(",")[1],
+                          str(readfiles).strip().split(",")[4])
 
-    sheetnames=wb.get_sheet_names()[int(str(readfiles).strip().split(",")[1])]
+    sheetnames = wb.get_sheet_names()[int(str(readfiles).strip().split(",")[1])]
 
-    FinalcolAbbr=[]
-    FinalcolFullForm=[]
-    FinalcolcolPolar=[]
-    FinalSheetName=[]
+    FinalcolAbbr = []
+    FinalcolFullForm = []
+    FinalcolcolPolar = []
+    FinalSheetName = []
 
-    for index,checkcol in enumerate(colAbbr):
-        if str(checkcol)!="":
-            if str(checkcol)!=" ":
-                FinalcolAbbr.append(str(colAbbr[index]))
-                FinalcolFullForm.append(str(colFullForm[index]))
-                FinalcolcolPolar.append(str(colPolar[index]))
-                FinalSheetName.append(str(sheetnames))
+    for index, checkcol in enumerate(colAbbr):
+        if str(checkcol) != "":
+            if str(checkcol) != " ":
+                if str(checkcol) != "None":
+                    listOfAllAbbr.append(str(colAbbr[index]))
+                    FinalcolAbbr.append(str(colAbbr[index]))
+                    FinalcolFullForm.append(str(colFullForm[index]))
+                    FinalcolcolPolar.append(str(colPolar[index]))
+                    FinalSheetName.append(str(sheetnames))
 
     arrayOfFilesData.append(FinalcolAbbr)
     arrayOfFilesData.append(FinalcolFullForm)
     arrayOfFilesData.append(FinalcolcolPolar)
     arrayOfFilesData.append(FinalSheetName)
 
-for ia in arrayOfFilesData:
-    for i1 in ia:
-        print(i1)
+freqCount = Counter(listOfAllAbbr)
+
+microtextEnglishFreqMore2 = []
+
+for counts in freqCount:
+    if int(freqCount[counts]) > 1:
+        microtextEnglishFreqMore2.append(str(counts).lower())
+
+for index1, iaa in enumerate(arrayOfFilesData):
+    for readin in iaa[0]:
+        if str(readin) in microtextEnglishFreqMore2:
+            if str(readin) in dictOfObj:
+                getcurrObj = dictOfObj[str(readin)]
+                currCol0 = str(getcurrObj.getcol0)
+                currCol1 = str(getcurrObj.getcol1)
+                currCol2 = str(getcurrObj.getcol2)
+                currCol3 = str(getcurrObj.getcol3)
+
+                newCol1 = str(currCol1) + str(arrayOfFilesData[1][index1])
+                newCol2 = str(currCol2) + str(arrayOfFilesData[2][index1])
+                newCol3 = str(currCol3) + str(arrayOfFilesData[3][index1])
+
+                dictOfObj[str(readin)]=Data(str(currCol0),str(newCol1),str(newCol2),str(newCol3))
+            else:
+
+
+                dictOfObj[str(readin)] = Data(str(arrayOfFilesData[0][index1]), str(arrayOfFilesData[1][index1]), str(arrayOfFilesData[2][index1]), str(arrayOfFilesData[3][index1]))
+
+
+row1 = 1
+col1 = 0
+
+workbook1 = xlsxwriter.Workbook('DuplicatedDataFile.xlsx')
+worksheet1 = workbook1.add_worksheet()
+
+
+worksheet1.write(0, 0, "Overlap")
+worksheet1.write(0, 1, "Full Form (Microtext/NER)")
+worksheet1.write(0, 2, "Detail (Polarity/NER Category)")
+worksheet1.write(0, 3, "Source (Tab)")
+
+
+for uiui in dictOfObj:
+    print(dictOfObj[uiui].getcol0)
+    print(dictOfObj[uiui].getcol1)
+    print(dictOfObj[uiui].getcol2)
+    print(dictOfObj[uiui].getcol3)
+    worksheet1.write(row1, 0, dictOfObj[uiui].getcol0())
+    worksheet1.write(row1, 1, dictOfObj[uiui].getcol1())
+    worksheet1.write(row1, 2, dictOfObj[uiui].getcol2())
+    worksheet1.write(row1, 3, dictOfObj[uiui].getcol3())
+    row1 = row1 + 1
+
+
+workbook1.close()

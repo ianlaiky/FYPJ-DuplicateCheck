@@ -128,7 +128,7 @@ for index1, readin in enumerate(arrayOfFilesData[0]):
     if str(readin).lower() in microtextEnglishFreqMore2:
         if str(readin) in dictOfObj:
             print("wrer")
-            getcurrObj = dictOfObj[str(readin)]
+            getcurrObj = dictOfObj[str(readin).lower()]
             currCol0 = str(getcurrObj.getcol0())
             currCol1 = str(getcurrObj.getcol1())
             currCol2 = str(getcurrObj.getcol2())
@@ -143,12 +143,12 @@ for index1, readin in enumerate(arrayOfFilesData[0]):
             newCol2 = str(currCol2) + ", "+str(arrayOfFilesData[2][index1])
             newCol3 = str(currCol3) + ", "+str(arrayOfFilesData[3][index1])
 
-            dictOfObj[str(readin)]=Data(str(currCol0),str(newCol1),str(newCol2),str(newCol3))
+            dictOfObj[str(readin).lower()]=Data(str(currCol0),str(newCol1),str(newCol2),str(newCol3))
 
         else:
 
             print(str(arrayOfFilesData[0][index1]))
-            dictOfObj[str(readin)] = Data(str(arrayOfFilesData[0][index1]), str(arrayOfFilesData[1][index1]), str(arrayOfFilesData[2][index1]), str(arrayOfFilesData[3][index1]))
+            dictOfObj[str(readin).lower()] = Data(str(arrayOfFilesData[0][index1]), str(arrayOfFilesData[1][index1]), str(arrayOfFilesData[2][index1]), str(arrayOfFilesData[3][index1]))
 
             print("fdsdsfdsfdsfdsfds")
 

@@ -141,6 +141,7 @@ for index1, iaa in enumerate(arrayOfFilesData):
 
 
                 dictOfObj[str(readin)] = Data(str(arrayOfFilesData[0][index1]), str(arrayOfFilesData[1][index1]), str(arrayOfFilesData[2][index1]), str(arrayOfFilesData[3][index1]))
+                print("fdsdsfdsfdsfdsfds")
 
 
 row1 = 1
@@ -155,7 +156,7 @@ worksheet1.write(0, 1, "Full Form (Microtext/NER)")
 worksheet1.write(0, 2, "Detail (Polarity/NER Category)")
 worksheet1.write(0, 3, "Source (Tab)")
 
-
+print("FRE@Q:"+str(len(microtextEnglishFreqMore2)))
 for uiui in dictOfObj:
     print(dictOfObj[uiui].getcol0)
     print(dictOfObj[uiui].getcol1)

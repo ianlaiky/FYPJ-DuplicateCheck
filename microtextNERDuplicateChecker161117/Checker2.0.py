@@ -121,31 +121,40 @@ microtextEnglishFreqMore2 = []
 for counts in freqCount:
     if int(freqCount[counts]) > 1:
         microtextEnglishFreqMore2.append(str(counts).lower())
+print(arrayOfFilesData)
+for index1, readin in enumerate(arrayOfFilesData[0]):
 
-for index1, iaa in enumerate(arrayOfFilesData):
-    for readin in iaa[0]:
-        if str(readin) in microtextEnglishFreqMore2:
-            if str(readin) in dictOfObj:
-                getcurrObj = dictOfObj[str(readin)]
-                currCol0 = str(getcurrObj.getcol0)
-                currCol1 = str(getcurrObj.getcol1)
-                currCol2 = str(getcurrObj.getcol2)
-                currCol3 = str(getcurrObj.getcol3)
+    # print(readin)
+    if str(readin).lower() in microtextEnglishFreqMore2:
+        if str(readin) in dictOfObj:
+            print("wrer")
+            getcurrObj = dictOfObj[str(readin)]
+            currCol0 = str(getcurrObj.getcol0())
+            currCol1 = str(getcurrObj.getcol1())
+            currCol2 = str(getcurrObj.getcol2())
+            currCol3 = str(getcurrObj.getcol3())
 
-                newCol1 = str(currCol1) + str(arrayOfFilesData[1][index1])
-                newCol2 = str(currCol2) + str(arrayOfFilesData[2][index1])
-                newCol3 = str(currCol3) + str(arrayOfFilesData[3][index1])
+            # print(currCol0)
+            # print(currCol1)
+            # print(currCol2)
+            # print(currCol3)
 
-                dictOfObj[str(readin)]=Data(str(currCol0),str(newCol1),str(newCol2),str(newCol3))
-            else:
+            newCol1 = str(currCol1) + ", "+str(arrayOfFilesData[1][index1])
+            newCol2 = str(currCol2) + ", "+str(arrayOfFilesData[2][index1])
+            newCol3 = str(currCol3) + ", "+str(arrayOfFilesData[3][index1])
 
+            dictOfObj[str(readin)]=Data(str(currCol0),str(newCol1),str(newCol2),str(newCol3))
 
-                dictOfObj[str(readin)] = Data(str(arrayOfFilesData[0][index1]), str(arrayOfFilesData[1][index1]), str(arrayOfFilesData[2][index1]), str(arrayOfFilesData[3][index1]))
-                print("fdsdsfdsfdsfdsfds")
+        else:
+
+            print(str(arrayOfFilesData[0][index1]))
+            dictOfObj[str(readin)] = Data(str(arrayOfFilesData[0][index1]), str(arrayOfFilesData[1][index1]), str(arrayOfFilesData[2][index1]), str(arrayOfFilesData[3][index1]))
+
+            print("fdsdsfdsfdsfdsfds")
 
 
 row1 = 1
-col1 = 0
+
 
 workbook1 = xlsxwriter.Workbook('DuplicatedDataFile.xlsx')
 worksheet1 = workbook1.add_worksheet()
@@ -157,11 +166,13 @@ worksheet1.write(0, 2, "Detail (Polarity/NER Category)")
 worksheet1.write(0, 3, "Source (Tab)")
 
 print("FRE@Q:"+str(len(microtextEnglishFreqMore2)))
+# print(dictOfObj["12"].getcol0)
+
 for uiui in dictOfObj:
-    print(dictOfObj[uiui].getcol0)
-    print(dictOfObj[uiui].getcol1)
-    print(dictOfObj[uiui].getcol2)
-    print(dictOfObj[uiui].getcol3)
+    print(dictOfObj[uiui].getcol0())
+    print(dictOfObj[uiui].getcol1())
+    print(dictOfObj[uiui].getcol2())
+    print(dictOfObj[uiui].getcol3())
     worksheet1.write(row1, 0, dictOfObj[uiui].getcol0())
     worksheet1.write(row1, 1, dictOfObj[uiui].getcol1())
     worksheet1.write(row1, 2, dictOfObj[uiui].getcol2())

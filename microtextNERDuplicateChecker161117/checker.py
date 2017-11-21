@@ -456,3 +456,4 @@ for ioio in savingasAdict:
     row1 = row1 + 1
 
 workbook1.close()
+print("fdsf "+str(len(microtextEnglishFreqMore2)))

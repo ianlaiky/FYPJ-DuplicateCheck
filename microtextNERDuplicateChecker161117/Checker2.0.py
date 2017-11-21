@@ -116,6 +116,7 @@ for readfiles in filesToReadList:
     arrayOfFilesData.append(FinalSheetName)
     listarrayOfFilesData.append(arrayOfFilesData)
 
+
 freqCount = Counter(listOfAllAbbr)
 
 microtextEnglishFreqMore2 = []
@@ -129,10 +130,13 @@ for index2, dasdf in enumerate(listarrayOfFilesData):
 
 
     for index1, readin in enumerate(dasdf[0]):
-    # print(readin)
+        print("prinnting")
+        print(readin)
+        input()
         if str(readin).lower() in microtextEnglishFreqMore2:
             if str(readin) in dictOfObj:
                 print("wrer")
+
                 getcurrObj = dictOfObj[str(readin).lower()]
                 currCol0 = str(getcurrObj.getcol0())
                 currCol1 = str(getcurrObj.getcol1())

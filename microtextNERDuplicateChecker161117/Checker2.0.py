@@ -130,9 +130,9 @@ for index2, dasdf in enumerate(listarrayOfFilesData):
 
 
     for index1, readin in enumerate(dasdf[0]):
-        print("prinnting")
-        print(readin)
-        input()
+        # print("prinnting")
+        # print(readin)
+        # input()
         if str(readin).lower() in microtextEnglishFreqMore2:
             if str(readin) in dictOfObj:
                 print("wrer")
@@ -156,7 +156,9 @@ for index2, dasdf in enumerate(listarrayOfFilesData):
 
             else:
 
-                print(str(arrayOfFilesData[0][index1]))
+                print(str(listarrayOfFilesData[index2][0][index1]))
+                print(str(listarrayOfFilesData[index2][3][index1]))
+
                 dictOfObj[str(readin).lower()] = Data(str(listarrayOfFilesData[index2][0][index1]), str(listarrayOfFilesData[index2][1][index1]), str(listarrayOfFilesData[index2][2][index1]), str(listarrayOfFilesData[index2][3][index1]))
 
                 print("fdsdsfdsfdsfdsfds")

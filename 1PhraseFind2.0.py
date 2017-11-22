@@ -662,7 +662,7 @@ for i in conf:
 for i in arrofileobjects:
     print("Files loaded")
     print(i.getFilename())
-    print(i.getArray())
+    # print(i.getArray())
 
 userWeb = ''
 userinput = ''

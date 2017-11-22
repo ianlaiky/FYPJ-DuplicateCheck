@@ -170,7 +170,7 @@ for index2, dasdf in enumerate(listarrayOfFilesData):
                 print(listarrayOfFilesData[index2])
                 print(listarrayOfFilesData[index2][0])
                 print(readin)
-                input()
+
                 # print(listarrayOfFilesData[index2][index13][0])
                 # print(listarrayOfFilesData[index2][index13][0][index1])
                 print(str(listarrayOfFilesData[index2][1][index13]))

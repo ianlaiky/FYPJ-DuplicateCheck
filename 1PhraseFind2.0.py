@@ -431,6 +431,7 @@ counttttt = 0
 
 # RAW DATA HERE
 for i in excelinput(forumdataforreading, 0, 0):
+    # print("dsdsdsadsasadsadsadsadsdsadsdsa")
     # print(i)
     print("Currently scanning Line: " + str(counttttt))
     counttttt = counttttt + 1
@@ -469,6 +470,7 @@ for i in excelinput(forumdataforreading, 0, 0):
 
 
     ixre = multiplepunctuationRemover(str(i))
+    # print(ixre)
 
     sentences = ""
 
@@ -482,19 +484,30 @@ for i in excelinput(forumdataforreading, 0, 0):
     else:
 
         sentences = sentences + " " + wordduplicationcheckatEnd(str(ixre).strip())
-        # print(sentences)
-
+    # print(sentences)
+    # print("fdf")
     # ngram stopword seperator
+    # sentences=sentences.lower()
+    asentencess = sentences
+    for nerln in stopwordsseperatorNER:
+        # print(nerln)
+        if str(re.search("\\b(" + str(nerln) + ")\\b", str(asentencess).strip())) != "None":
+            # print("yes")
+            asentencess = str(asentencess).replace(str(nerln), "")
+    # print(asentencess)
+    # print("dssd")
+    # input()
+
 
     sentencetosave = ""
-    for te in sentences.split(" "):
+    for te in asentencess.split(" "):
         te = str(te).lower()
         if str(te) != "":
             if str(te) != " ":
                 wordcount = 0
 
                 for nerln in stopwordsseperatorNER:
-                    if str(re.match("^(" + str(nerln) + ")$", str(te).strip())) != "None":
+                    if str(re.search("\\b(" + str(nerln) + ")\\b", str(te).strip())) != "None":
                         # print(te)
                         te = str(te).replace(str(nerln), "")
                         # print(te)
@@ -518,24 +531,28 @@ for i in excelinput(forumdataforreading, 0, 0):
                     sentencetosave = str(sentencetosave) + " " + str(te).strip()
 
     # print(sentencetosave)
-
+    # input()
 
     for ghsplitted in sentencetosave.split(""):
         # print("SDS")
+        #
         # print(ghsplitted)
-        # print(ghsplitted)
+        # input()
         if str(ghsplitted) != "":
             if str(ghsplitted) != " ":
+                # print(ghsplitted)
+                # if str(ghsplitted).find("") != -1:
+                #
+                #     for nersplitted in str(ghsplitted).split(""):
+                #         if str(nersplitted) != "":
+                #             if str(nersplitted) != " ":
+                #                 # print("SDSsss")
+                #                 # print(nersplitted)
+                #                 tempppppaarrrrr.append(str(nersplitted).strip())
+                tempppppaarrrrr.append(str(ghsplitted).strip())
 
-                if str(ghsplitted).find("") != -1:
 
-                    for nersplitted in str(ghsplitted).split(""):
-                        if str(nersplitted) != "":
-                            if str(nersplitted) != " ":
-                                tempppppaarrrrr.append(str(nersplitted).strip())
-
-
-                                # tempppppaarrrrr.append(sentences)
+                # tempppppaarrrrr.append(sentences)
 print("Converting to lowercase...")
 newtempppppaarrrrr = []
 # print(tempppppaarrrrr)

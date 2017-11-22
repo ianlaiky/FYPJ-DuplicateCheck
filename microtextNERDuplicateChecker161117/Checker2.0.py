@@ -130,9 +130,10 @@ print(listarrayOfFilesData)
 for fdsdsfs in listarrayOfFilesData:
     print(fdsdsfs)
 
-print(listarrayOfFilesData[0])
-print(listarrayOfFilesData[0][0])
-input()
+# print(listarrayOfFilesData[0])
+# print(listarrayOfFilesData[0][0])
+# print(listarrayOfFilesData[0][0][0])
+# input()
 for index2, dasdf in enumerate(listarrayOfFilesData):
     print("sdfsdfdsf")
     print(dasdf)
@@ -142,7 +143,7 @@ for index2, dasdf in enumerate(listarrayOfFilesData):
 
         print("prinnting")
         print(readin)
-        input()
+        # input()
         if str(readin).lower() in microtextEnglishFreqMore2:
             if str(readin) in dictOfObj:
                 print("wrer")

@@ -105,7 +105,7 @@ for readfiles in filesToReadList:
         if str(checkcol) != "":
             if str(checkcol) != " ":
                 if str(checkcol) != "None":
-                    listOfAllAbbr.append(str(colAbbr[index]))
+                    listOfAllAbbr.append(str(colAbbr[index]).lower())
                     FinalcolAbbr.append(str(colAbbr[index]))
                     FinalcolFullForm.append(str(colFullForm[index]))
                     FinalcolcolPolar.append(str(colPolar[index]))

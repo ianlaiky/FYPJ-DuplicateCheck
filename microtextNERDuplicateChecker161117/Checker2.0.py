@@ -137,17 +137,17 @@ for fdsdsfs in listarrayOfFilesData:
 # print(listarrayOfFilesData[0][0][0])
 # input()
 for index2, dasdf in enumerate(listarrayOfFilesData):
-    print("sdfsdfdsf")
+    print("Checking:")
     print(dasdf)
 
     for index13, readin in enumerate(dasdf[0]):
 
-        print("prinnting")
-        print(readin)
+        # print("prinnting")
+        # print(readin)
         # input()
         if str(readin).lower() in microtextEnglishFreqMore2:
             if str(readin) in dictOfObj:
-                print("wrer")
+                # print("wrer")
 
                 getcurrObj = dictOfObj[str(readin).lower()]
                 currCol0 = str(getcurrObj.getcol0())
@@ -167,22 +167,22 @@ for index2, dasdf in enumerate(listarrayOfFilesData):
                 dictOfObj[str(readin).lower()] = Data(str(currCol0), str(newCol1), str(newCol2), str(newCol3))
 
             else:
-                print(listarrayOfFilesData)
-                print(listarrayOfFilesData[index2])
-                print(listarrayOfFilesData[index2][0])
-                print(readin)
+                # print(listarrayOfFilesData)
+                # print(listarrayOfFilesData[index2])
+                # print(listarrayOfFilesData[index2][0])
+                # print(readin)
 
                 # print(listarrayOfFilesData[index2][index13][0])
                 # print(listarrayOfFilesData[index2][index13][0][index1])
-                print(str(listarrayOfFilesData[index2][1][index13]))
-                print(str(listarrayOfFilesData[index2][2][index13]))
+                # print(str(listarrayOfFilesData[index2][1][index13]))
+                # print(str(listarrayOfFilesData[index2][2][index13]))
 
                 dictOfObj[str(readin).lower()] = Data(str(listarrayOfFilesData[index2][0][index13]),
                                                       str(listarrayOfFilesData[index2][1][index13]),
                                                       str(listarrayOfFilesData[index2][2][index13]),
                                                       str(listarrayOfFilesData[index2][3][index13]))
 
-                print("fdsdsfdsfdsfdsfds")
+                # print("fdsdsfdsfdsfdsfds")
 
 row1 = 1
 
@@ -194,14 +194,14 @@ worksheet1.write(0, 1, "Full Form (Microtext/NER)")
 worksheet1.write(0, 2, "Detail (Polarity/NER Category)")
 worksheet1.write(0, 3, "Source (Tab)")
 
-print("FRE@Q:" + str(len(microtextEnglishFreqMore2)))
+
 # print(dictOfObj["12"].getcol0)
 
 for uiui in dictOfObj:
-    print(dictOfObj[uiui].getcol0())
-    print(dictOfObj[uiui].getcol1())
-    print(dictOfObj[uiui].getcol2())
-    print(dictOfObj[uiui].getcol3())
+    # print(dictOfObj[uiui].getcol0())
+    # print(dictOfObj[uiui].getcol1())
+    # print(dictOfObj[uiui].getcol2())
+    # print(dictOfObj[uiui].getcol3())
     worksheet1.write(row1, 0, dictOfObj[uiui].getcol0())
     worksheet1.write(row1, 1, dictOfObj[uiui].getcol1())
     worksheet1.write(row1, 2, dictOfObj[uiui].getcol2())
@@ -209,3 +209,4 @@ for uiui in dictOfObj:
     row1 = row1 + 1
 
 workbook1.close()
+print("Overlapped Found:" + str(len(microtextEnglishFreqMore2)))

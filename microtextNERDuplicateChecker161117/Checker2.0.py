@@ -12,9 +12,12 @@ for fsfsd in fileconfigread:
 
             if str(fsfsd[:1]) != "#":
                 print(str(fsfsd).strip())
+
                 filesToReadList.append(str(fsfsd).strip())
 
 print(filesToReadList)
+
+
 # tempcurrSheet=""
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
@@ -39,8 +42,10 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
 
         if str(r) != "":
             if str(r) != " ":
+                if str(r) != "None":
+                    print("Looking through.... Please Wait: " + str(r[0]))
                 # print(r[0])
-                print("Looking through.... Please Wait: "+str(r[0]))
+
                 columnlist.append(str(r[int(columnNo)]))
     print("Saving...Please Wait. This may take a while")
     return columnlist
@@ -196,7 +201,6 @@ worksheet1.write(0, 0, "Overlap")
 worksheet1.write(0, 1, "Full Form (Microtext/NER)")
 worksheet1.write(0, 2, "Detail (Polarity/NER Category)")
 worksheet1.write(0, 3, "Source (Tab)")
-
 
 # print(dictOfObj["12"].getcol0)
 

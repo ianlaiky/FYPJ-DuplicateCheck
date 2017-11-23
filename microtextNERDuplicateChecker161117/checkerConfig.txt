@@ -1,0 +1,22 @@
+# Format:
+#
+# Files, Sheet No, abbreviation/Microtext to be checked,IV word, Polarity/Standford Ner tag
+# E.g.
+# dataFiles\\Microtext.xlsx,2,0,1,2
+# dataFiles\\Microtext.xlsx,0,0,1,2
+#
+#
+#
+#
+
+
+
+
+
+
+dataFiles\\Microtext.xlsx,2,0,1,2
+dataFiles\\Microtext.xlsx,0,0,1,2
+dataFiles\\NER.xlsx,5,3,0,1
+dataFiles\\NER.xlsx,6,3,0,1
+dataFiles\\NER.xlsx,7,3,0,1
+dataFiles\\NER.xlsx,8,3,0,1

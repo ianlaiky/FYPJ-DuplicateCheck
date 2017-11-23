@@ -39,11 +39,12 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     # print(next(data)[0:])
 
     for r in data:
+        print(r)
 
         if str(r) != "":
             if str(r) != " ":
-                if str(r) != "None":
-                    print("Looking through.... Please Wait: " + str(r[0]))
+                if str(r[columnNo]) != "None":
+                    print("Looking through.... Please Wait: " + str(r[columnNo]))
                 # print(r[0])
 
                 columnlist.append(str(r[int(columnNo)]))

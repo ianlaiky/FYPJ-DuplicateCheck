@@ -1,8 +1,5 @@
 import xlsxwriter as xlsxwriter
-from nltk import wordpunct_tokenize
-from nltk.corpus import stopwords
-from openpyxl import load_workbook
-import os
+
 import re
 from openpyxl import load_workbook
 from collections import Counter
@@ -10,7 +7,7 @@ import enchant
 import unicodedata
 
 from langdetect import detect, DetectorFactory
-from langdetect import detect_langs
+
 
 DetectorFactory.seed = 0
 

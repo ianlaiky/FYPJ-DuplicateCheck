@@ -5,6 +5,10 @@
 # dataFiles\\Microtext.xlsx,2,0,1,2
 # dataFiles\\Microtext.xlsx,0,0,1,2
 #
+# (First line: It reads the Microtext.xlsx file, 3rd sheet, first column for abbreviation, second column as IV word and third column as polarity
+# Second Line: : It reads the Microtext.xlsx file, 1st sheet, first column for abbreviation, second column as IV word and third column as polarity)
+#
+# Things to note: array starts from zero, as such the first sheet is 0, second sheet is 1, and so on.
 #
 #
 #

@@ -111,12 +111,12 @@ for readlinesstopwoird in stopwilala:
 print(stopwordsseperator)
 stopwirdin.close()
 
-stopwordinNER = open('..\\filesdb\Seperator\stopwordsLangDetect.txt', 'r', encoding="utf-8")
-stopNERreadline = stopwordinNER.readlines()
-for wordReadLine in stopNERreadline:
-    stopwordsseperatorNER.append(str(wordReadLine).lower().strip())
-print(stopwordsseperatorNER)
-stopwordinNER.close()
+# stopwordinNER = open('..\\filesdb\Seperator\stopwordsLangDetect.txt', 'r', encoding="utf-8")
+# stopNERreadline = stopwordinNER.readlines()
+# for wordReadLine in stopNERreadline:
+#     stopwordsseperatorNER.append(str(wordReadLine).lower().strip())
+# print(stopwordsseperatorNER)
+# stopwordinNER.close()
 
 
 def excelinputRe(filetoeopn, filecheckksheets, columnNo):

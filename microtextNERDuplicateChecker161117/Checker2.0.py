@@ -27,6 +27,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     print(wb.get_sheet_names())
     print("Sheets Loaded: " + wb.get_sheet_names()[int(filecheckksheets)])
     sheet = wb[wb.get_sheet_names()[int(filecheckksheets)]]
+
     # tempcurrSheet=str(sheet)
 
     #
@@ -39,8 +40,9 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
         if str(r) != "":
             if str(r) != " ":
                 # print(r[0])
+                print("Looking through.... Please Wait: "+str(r[0]))
                 columnlist.append(str(r[int(columnNo)]))
-
+    print("Saving...Please Wait. This may take a while")
     return columnlist
 
 
@@ -90,6 +92,7 @@ for readfiles in filesToReadList:
     print(str(readfiles).strip().split(",")[2])
     print(str(readfiles).strip().split(",")[3])
     print(str(readfiles).strip().split(",")[4])
+    print("Loading files.. Please wait.")
     colAbbr = excelinput(str(readfiles).strip().split(",")[0], str(readfiles).strip().split(",")[1],
                          str(readfiles).strip().split(",")[2])
     colFullForm = excelinput(str(readfiles).strip().split(",")[0], str(readfiles).strip().split(",")[1],

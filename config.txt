@@ -15,8 +15,8 @@
 # and if you want to omit "#microtext from the scan
 #  
 # Format:
-# E.g. py,microtext.py,["",""],3,"#microtext"
-# 3 is entered since in ["" the words start after ["" after 3 characters
+# E.g. py,microtext.py,["",""],"#microtext"
+#
 #
 #
 #

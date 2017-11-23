@@ -39,7 +39,7 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     # print(next(data)[0:])
 
     for r in data:
-        print(r)
+        # print(r)
 
         if str(r) != "":
             if str(r) != " ":

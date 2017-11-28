@@ -145,6 +145,8 @@ for fdsdsfs in listarrayOfFilesData:
 # print(listarrayOfFilesData[0][0])
 # print(listarrayOfFilesData[0][0][0])
 # input()
+countdsdsa=0
+
 for index2, dasdf in enumerate(listarrayOfFilesData):
     print("Checking:")
     print(dasdf)
@@ -155,7 +157,10 @@ for index2, dasdf in enumerate(listarrayOfFilesData):
         # print(readin)
         # input()
         if str(readin).lower() in microtextEnglishFreqMore2:
-            if str(readin) in dictOfObj:
+            # if str(readin).lower() in microtextEnglishFreqMore2:
+                # if str(readin).lower()=="ai":
+                #     countdsdsa=int(countdsdsa)+1
+            if str(readin).lower() in dictOfObj:
                 # print("wrer")
 
                 getcurrObj = dictOfObj[str(readin).lower()]
@@ -218,3 +223,6 @@ for uiui in dictOfObj:
 
 workbook1.close()
 print("Overlapped Found:" + str(len(microtextEnglishFreqMore2)))
+
+print("AIII0" + str(freqCount["ai"]))
+print(countdsdsa)

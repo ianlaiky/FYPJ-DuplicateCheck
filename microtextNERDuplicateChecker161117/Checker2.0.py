@@ -145,7 +145,7 @@ for fdsdsfs in listarrayOfFilesData:
 # print(listarrayOfFilesData[0][0])
 # print(listarrayOfFilesData[0][0][0])
 # input()
-countdsdsa=0
+
 
 for index2, dasdf in enumerate(listarrayOfFilesData):
     print("Checking:")
@@ -225,4 +225,3 @@ workbook1.close()
 print("Overlapped Found:" + str(len(microtextEnglishFreqMore2)))
 
 print("AIII0" + str(freqCount["ai"]))
-print(countdsdsa)

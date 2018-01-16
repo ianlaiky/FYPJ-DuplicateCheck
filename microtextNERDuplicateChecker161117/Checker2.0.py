@@ -15,6 +15,7 @@ for fsfsd in fileconfigread:
 
                 filesToReadList.append(str(fsfsd).strip())
 
+
 print(filesToReadList)
 
 

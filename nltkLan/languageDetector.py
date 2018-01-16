@@ -1,16 +1,20 @@
+# C:\Users\L31201\PycharmProjects\fypjDuplicateCheck\nltkLan\languageDetector.py
 import xlsxwriter as xlsxwriter
-
+from nltk import wordpunct_tokenize
+from nltk.corpus import stopwords
+from openpyxl import load_workbook
+import os
 import re
 from openpyxl import load_workbook
 from collections import Counter
 import enchant
 import unicodedata
+import langdetect
 
 from langdetect import detect, DetectorFactory
-
-
 DetectorFactory.seed = 0
 
+from langdetect import detect_langs
 
 def excelinput(filetoeopn, filecheckksheets, columnNo):
     columnlist = []
@@ -34,12 +38,14 @@ def excelinput(filetoeopn, filecheckksheets, columnNo):
     return columnlist
 
 
-sentenceCount = 0
+sentenceCount = 1 #Initially 0
 
 sgenCount = 0
 
 fsaveSinglish = open("SinglishSentences.txt", 'w', encoding="utf-8")
 ffailedDetect = open("FailedSentences.txt", 'w', encoding="utf-8")
+# languagePercentage = open("C:/Users/L31201/Desktop/languagedetectPercentage.txt", "w", encoding="utf-8")
+smsPercentage = open("C:/Users/L31201/Desktop/enPercentage.txt", "w", encoding="utf-8") # smsPercentage.txt
 
 languages_ratios = {}
 row = 0
@@ -47,8 +53,8 @@ col = 0
 workbook = xlsxwriter.Workbook('DatabaseForLangdetect.xlsx')
 worksheet = workbook.add_worksheet()
 
-for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
-
+# for i in excelinput("..\datafiles\SentenceDifferences.xlsx", 0, 0):
+for i in excelinput("..\datafiles\smsDataEnglish.xlsx", 0, 0): # smsData.xlsx
     i = str(i).replace('\n', " ")
     i = str(i).replace('\\n', " ")
     i = str(i).replace('', " ")
@@ -70,10 +76,30 @@ for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
     print(str(i).strip())
     # print(detect(i))
 
-    print("Sentence No: " + str(sentenceCount))
+    print("Sentence No: " + str(sentenceCount) + "\n")
+
+    try:
+        # Self-add
+        x = 0
+        detectionList = detect_langs(str(i))
+        size = len(detectionList)
+        sentence = "Sentence: " + str(i) + " \n" + "Language: " + str(
+            detectionList[x].lang + " \n" + "Percentage: " + str(detectionList[x].prob * 100) + "%\n\n")
+        x += 1
+        while (x < size):
+            sentence[:-1]
+            sentence += "Language: " + str(
+                detectionList[x].lang + " \n" + "Percentage: " + str(detectionList[x].prob * 100) + "%\n\n")
+            x += 1
+        smsPercentage.write(sentence)
+
+    except langdetect.lang_detect_exception.LangDetectException:
+        pass
+
     try:
 
-        if str(detect(str(i).strip())) == "sgen":
+        # if str(detect(str(i).strip())) == "sgen":
+        if str(detect(str(i).strip())) == "en":
             # print("Acceptec")
             fsaveSinglish.writelines(str(i).strip() + "\n\n")
             sgenCount = sgenCount + 1
@@ -84,13 +110,21 @@ for i in excelinput("..\datafiles\Edmwcompiled311017.xlsx", 0, 0):
         pass
 
     sentenceCount = sentenceCount + 1
-print("Singlish sentences: " + str(sgenCount) + "/" + str(sentenceCount))
+
+sentence1 = "Singlish sentences: " + str(sgenCount) + "/" + str(sentenceCount-1)
+sentence2 = "sgen Percentage: " + str((sgenCount / (sentenceCount-1)) * 100) + "%\n"
+print(sentence1)
+print(sentence2)
+
+smsPercentage.write(sentence1)
+smsPercentage.write(sentence2)
 
 # print(detect('Have you eaten?'))
 # print(detect_langs('Dont be in like this way'))
 workbook.close()
 fsaveSinglish.close()
 ffailedDetect.close()
+smsPercentage.close()
 
 # forum data for reading
 forumdataforreading = "DatabaseForLangdetect.xlsx"
